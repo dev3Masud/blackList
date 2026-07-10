@@ -56,6 +56,7 @@ jobs:
           if git diff --cached --quiet; then
             echo "No changes to commit."
           else
-            git commit -m "auto: update blacklists from feeds [skip ci]"
+            commit_time=$(date -u +'%d/%m/%Y %H:%M UTC')
+            git commit -m "auto: update blacklists [$commit_time] [skip ci]"
             git push origin main
           fi
