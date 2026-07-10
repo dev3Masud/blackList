@@ -1,6 +1,6 @@
 # Compiled Blacklist Variant (Hosts format) - MEDIUM
 # Total Domains: 100000
-# Last updated: 2026-07-10 10:41:37 UTC
+# Last updated: 2026-07-10 10:55:01 UTC
 
 0.0.0.0 0--0-0-bitbucket-searchserver.supertms.com
 0.0.0.0 0--0.info

@@ -8,6 +8,27 @@ This directory contains the compiled **Adblock** blocklist variant.
 
 ---
 
+## 📦 Blocked Categories & Domain Types
+
+This variant contains lists designed to block the following domain categories:
+
+| Category | Type of Domains Blocked |
+| -------- | ----------------------- |
+| 🔴 **Malware Sites** | Command & control servers, distribution endpoints, ransomware, and spyware platforms. |
+| 🔴 **Phishing Pages** | Fraudulent login pages, credential harvesting forms, and identity spoofing sites. |
+| 🔴 **Cryptomining** | Cryptojacking scripts, browser miners, and pool connection endpoints. |
+| 🔴 **Advertising Domains** | Ad delivery networks, promotional servers, and banner scripting endpoints. |
+| 🔴 **Tracking & Telemetry** | Analytics scripts, user profiling telemetry, and commercial data harvesting domains. |
+| 🔴 **Spam & Scam Domains** | Malicious email redirectors, lottery scam landing pages, and deceptive bulk sites. |
+| 🔴 **Dating Portals** | Matchmaking platforms, hookup sites, and related relationship portals. |
+| 🔴 **Social Tracking** | Social networking trackers, widgets, and domain collectors that profile user browsing. |
+| 🔴 **Gambling & Casinos** | Online betting sites, slot machines, lottery portals, and digital casinos. |
+| 🔴 **Torrent & P2P** | BitTorrent trackers, magnet index sites, piracy portals, and peer communication networks. |
+| 🔴 **Scrapers & Crawlers** | Suspicious automated scraper bots, web scanner networks, and scraping systems. |
+| 🔴 **NSFW (Adult) Content** | Pornography, adult video portals, online dating platforms, and age-restricted domains. |
+
+---
+
 ## 🚀 How to Use
 
 Select your preferred format below to load into your adblocker:

@@ -8,6 +8,16 @@ This directory contains the compiled **Nsfw** blocklist variant.
 
 ---
 
+## 📦 Blocked Categories & Domain Types
+
+This variant contains lists designed to block the following domain categories:
+
+| Category | Type of Domains Blocked |
+| -------- | ----------------------- |
+| 🔴 **NSFW (Adult) Content** | Pornography, adult video portals, online dating platforms, and age-restricted domains. |
+
+---
+
 ## 🚀 How to Use
 
 Select your preferred format below to load into your adblocker:

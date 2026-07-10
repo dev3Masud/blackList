@@ -8,6 +8,21 @@ This directory contains the compiled **Medium** blocklist variant.
 
 ---
 
+## 📦 Blocked Categories & Domain Types
+
+This variant contains lists designed to block the following domain categories:
+
+| Category | Type of Domains Blocked |
+| -------- | ----------------------- |
+| 🔴 **Malware Sites** | Command & control servers, distribution endpoints, ransomware, and spyware platforms. |
+| 🔴 **Phishing Pages** | Fraudulent login pages, credential harvesting forms, and identity spoofing sites. |
+| 🔴 **Cryptomining** | Cryptojacking scripts, browser miners, and pool connection endpoints. |
+| 🔴 **Advertising Domains** | Ad delivery networks, promotional servers, and banner scripting endpoints. |
+| 🔴 **Tracking & Telemetry** | Analytics scripts, user profiling telemetry, and commercial data harvesting domains. |
+| 🔴 **Spam & Scam Domains** | Malicious email redirectors, lottery scam landing pages, and deceptive bulk sites. |
+
+---
+
 ## 🚀 How to Use
 
 Select your preferred format below to load into your adblocker:

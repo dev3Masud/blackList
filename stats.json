@@ -1,19 +1,19 @@
 {
-  "last_updated": "2026-07-10T10:41:16.321695+00:00",
+  "last_updated": "2026-07-10T10:54:40.631108+00:00",
   "total_domains": 630558,
   "categories": {
+    "cryptomining": 313,
+    "social": 51491,
     "malware": 100000,
-    "spam": 24651,
     "tracking": 100000,
+    "phishing": 100000,
+    "ads": 100000,
+    "gambling": 100000,
     "nsfw": 100000,
     "dating": 1334,
-    "social": 51491,
-    "phishing": 100000,
+    "spam": 24651,
     "torrent": 34321,
-    "cryptomining": 313,
-    "crawled": 20,
-    "gambling": 100000,
-    "ads": 100000
+    "crawled": 20
   },
   "feeds": [
     {

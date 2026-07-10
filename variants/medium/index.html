@@ -15,6 +15,7 @@
       --accent-primary: #4f46e5;
       --accent-secondary: #06b6d4;
       --success-color: #10b981;
+      --danger-color: #f43f5e;
       --glass-bg: rgba(15, 17, 26, 0.55);
       --glass-border: rgba(255, 255, 255, 0.06);
       --glass-border-hover: rgba(255, 255, 255, 0.12);
@@ -161,6 +162,45 @@
       padding-bottom: 0.5rem;
     }
 
+    /* Category lists */
+    .category-list {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1rem;
+      margin: 1.5rem 0;
+    }
+    @media (min-width: 600px) {
+      .category-list {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+    .category-item {
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid var(--glass-border);
+      border-radius: 12px;
+      padding: 1.1rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+      transition: all 0.3s ease;
+    }
+    .category-item:hover {
+      background: rgba(255, 255, 255, 0.04);
+      border-color: var(--accent-secondary);
+    }
+    .category-tag {
+      font-weight: 700;
+      color: var(--text-primary);
+      font-size: 0.95rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .category-desc {
+      color: var(--text-secondary);
+      font-size: 0.85rem;
+    }
+
     /* Downloads Table */
     table {
       width: 100%;
@@ -290,6 +330,53 @@
       </ul>
 
       <p class="desc">Balanced protection and usability. Blocks security threats, ads, trackers, and spam domains. Recommended for standard home networks.</p>
+
+      <h2>📦 Blocked Categories & Domain Types</h2>
+      <div class="category-list">
+        
+        <div class="category-item">
+          <span class="category-tag">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#f43f5e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="15" y1="9" x2="9" y2="15"></line></svg>
+            Malware Sites
+          </span>
+          <span class="category-desc">Command & control servers, distribution endpoints, ransomware, and spyware platforms.</span>
+        </div>
+        <div class="category-item">
+          <span class="category-tag">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#f43f5e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="15" y1="9" x2="9" y2="15"></line></svg>
+            Phishing Pages
+          </span>
+          <span class="category-desc">Fraudulent login pages, credential harvesting forms, and identity spoofing sites.</span>
+        </div>
+        <div class="category-item">
+          <span class="category-tag">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#f43f5e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="15" y1="9" x2="9" y2="15"></line></svg>
+            Cryptomining
+          </span>
+          <span class="category-desc">Cryptojacking scripts, browser miners, and pool connection endpoints.</span>
+        </div>
+        <div class="category-item">
+          <span class="category-tag">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#f43f5e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="15" y1="9" x2="9" y2="15"></line></svg>
+            Advertising Domains
+          </span>
+          <span class="category-desc">Ad delivery networks, promotional servers, and banner scripting endpoints.</span>
+        </div>
+        <div class="category-item">
+          <span class="category-tag">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#f43f5e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="15" y1="9" x2="9" y2="15"></line></svg>
+            Tracking & Telemetry
+          </span>
+          <span class="category-desc">Analytics scripts, user profiling telemetry, and commercial data harvesting domains.</span>
+        </div>
+        <div class="category-item">
+          <span class="category-tag">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#f43f5e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="15" y1="9" x2="9" y2="15"></line></svg>
+            Spam & Scam Domains
+          </span>
+          <span class="category-desc">Malicious email redirectors, lottery scam landing pages, and deceptive bulk sites.</span>
+        </div>
+      </div>
 
       <h2>🚀 Compile Formats</h2>
       <table>

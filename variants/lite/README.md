@@ -8,6 +8,18 @@ This directory contains the compiled **Lite** blocklist variant.
 
 ---
 
+## 📦 Blocked Categories & Domain Types
+
+This variant contains lists designed to block the following domain categories:
+
+| Category | Type of Domains Blocked |
+| -------- | ----------------------- |
+| 🔴 **Malware Sites** | Command & control servers, distribution endpoints, ransomware, and spyware platforms. |
+| 🔴 **Phishing Pages** | Fraudulent login pages, credential harvesting forms, and identity spoofing sites. |
+| 🔴 **Cryptomining** | Cryptojacking scripts, browser miners, and pool connection endpoints. |
+
+---
+
 ## 🚀 How to Use
 
 Select your preferred format below to load into your adblocker:

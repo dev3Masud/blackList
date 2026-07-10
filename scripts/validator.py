@@ -97,8 +97,31 @@ def save_variant(variant_name, categories_list, category_domains, max_per_cat):
     write_variant_html(variant_name, len(domains_list))
     print(f"[+] Saved variant '{variant_name}' ({len(domains_list)} domains) to {variant_dir}")
 
+category_details = {
+    "cryptomining": ("Cryptomining", "Cryptojacking scripts, browser miners, and pool connection endpoints."),
+    "malware": ("Malware Sites", "Command & control servers, distribution endpoints, ransomware, and spyware platforms."),
+    "phishing": ("Phishing Pages", "Fraudulent login pages, credential harvesting forms, and identity spoofing sites."),
+    "ads": ("Advertising Domains", "Ad delivery networks, promotional servers, and banner scripting endpoints."),
+    "tracking": ("Tracking & Telemetry", "Analytics scripts, user profiling telemetry, and commercial data harvesting domains."),
+    "spam": ("Spam & Scam Domains", "Malicious email redirectors, lottery scam landing pages, and deceptive bulk sites."),
+    "dating": ("Dating Portals", "Matchmaking platforms, hookup sites, and related relationship portals."),
+    "social": ("Social Tracking", "Social networking trackers, widgets, and domain collectors that profile user browsing."),
+    "gambling": ("Gambling & Casinos", "Online betting sites, slot machines, lottery portals, and digital casinos."),
+    "torrent": ("Torrent & P2P", "BitTorrent trackers, magnet index sites, piracy portals, and peer communication networks."),
+    "crawled": ("Scrapers & Crawlers", "Suspicious automated scraper bots, web scanner networks, and scraping systems."),
+    "nsfw": ("NSFW (Adult) Content", "Pornography, adult video portals, online dating platforms, and age-restricted domains.")
+}
+
+variant_categories = {
+    "lite": ["malware", "phishing", "cryptomining"],
+    "medium": ["malware", "phishing", "cryptomining", "ads", "tracking", "spam"],
+    "high": ["malware", "phishing", "cryptomining", "ads", "tracking", "spam", "dating", "social", "gambling", "torrent", "crawled"],
+    "nsfw": ["nsfw"],
+    "adblock": ["malware", "phishing", "cryptomining", "ads", "tracking", "spam", "dating", "social", "gambling", "torrent", "crawled", "nsfw"]
+}
+
 def write_variant_readme(variant_name, count):
-    """Writes a beautiful README.md for the specific variant folder."""
+    """Writes a beautiful README.md for the specific variant folder detailing categories."""
     descriptions = {
         "lite": "Designed for maximum speed and stability. Targets high-severity security threats like malware, phishing, and cryptomining. Near-zero false positives.",
         "medium": "Balanced protection and usability. Blocks security threats, ads, trackers, and spam domains. Recommended for standard home networks.",
@@ -108,6 +131,13 @@ def write_variant_readme(variant_name, count):
     }
     
     desc = descriptions.get(variant_name, "DNS blocking lists.")
+    
+    cats = variant_categories.get(variant_name, [])
+    cat_rows = ""
+    for c in cats:
+        title, d_desc = category_details.get(c, (c, ""))
+        cat_rows += f"| 🔴 **{title}** | {d_desc} |\n"
+
     readme_content = f"""# 🛡️ blackList - {variant_name.capitalize()} Variant
 
 This directory contains the compiled **{variant_name.capitalize()}** blocklist variant.
@@ -116,6 +146,15 @@ This directory contains the compiled **{variant_name.capitalize()}** blocklist v
 *   **Total blocked domains**: `{count:,}`
 *   **Target audience**: {desc}
 
+---
+
+## 📦 Blocked Categories & Domain Types
+
+This variant contains lists designed to block the following domain categories:
+
+| Category | Type of Domains Blocked |
+| -------- | ----------------------- |
+{cat_rows}
 ---
 
 ## 🚀 How to Use
@@ -169,6 +208,19 @@ def write_variant_html(variant_name, count):
     
     desc = descriptions.get(variant_name, "DNS blocking lists.")
     
+    cats = variant_categories.get(variant_name, [])
+    cat_html = ""
+    for c in cats:
+        title, d_desc = category_details.get(c, (c, ""))
+        cat_html += f"""
+        <div class="category-item">
+          <span class="category-tag">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#f43f5e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="15" y1="9" x2="9" y2="15"></line></svg>
+            {title}
+          </span>
+          <span class="category-desc">{d_desc}</span>
+        </div>"""
+
     html_content = f"""<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -186,6 +238,7 @@ def write_variant_html(variant_name, count):
       --accent-primary: #4f46e5;
       --accent-secondary: #06b6d4;
       --success-color: #10b981;
+      --danger-color: #f43f5e;
       --glass-bg: rgba(15, 17, 26, 0.55);
       --glass-border: rgba(255, 255, 255, 0.06);
       --glass-border-hover: rgba(255, 255, 255, 0.12);
@@ -332,6 +385,45 @@ def write_variant_html(variant_name, count):
       padding-bottom: 0.5rem;
     }}
 
+    /* Category lists */
+    .category-list {{
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1rem;
+      margin: 1.5rem 0;
+    }}
+    @media (min-width: 600px) {{
+      .category-list {{
+        grid-template-columns: 1fr 1fr;
+      }}
+    }}
+    .category-item {{
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid var(--glass-border);
+      border-radius: 12px;
+      padding: 1.1rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+      transition: all 0.3s ease;
+    }}
+    .category-item:hover {{
+      background: rgba(255, 255, 255, 0.04);
+      border-color: var(--accent-secondary);
+    }}
+    .category-tag {{
+      font-weight: 700;
+      color: var(--text-primary);
+      font-size: 0.95rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }}
+    .category-desc {{
+      color: var(--text-secondary);
+      font-size: 0.85rem;
+    }}
+
     /* Downloads Table */
     table {{
       width: 100%;
@@ -461,6 +553,11 @@ def write_variant_html(variant_name, count):
       </ul>
 
       <p class="desc">{desc}</p>
+
+      <h2>📦 Blocked Categories & Domain Types</h2>
+      <div class="category-list">
+        {cat_html}
+      </div>
 
       <h2>🚀 Compile Formats</h2>
       <table>
