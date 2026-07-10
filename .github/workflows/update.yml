@@ -50,8 +50,8 @@ jobs:
 
       - name: Commit and Push Final Lists
         run: |
-          git config --global user.name "dev3Masud"
-          git config --global user.email "masud50cf@gmail.com"
+          git config --global user.name "${{ secrets.COMMIT_USER_NAME }}"
+          git config --global user.email "${{ secrets.COMMIT_USER_EMAIL }}"
           git add raw/ categories/ master/ stats.json
           if git diff --cached --quiet; then
             echo "No changes to commit."
