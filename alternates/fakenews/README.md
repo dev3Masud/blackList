@@ -3,7 +3,7 @@
 This directory contains the compiled **fakenews** blocklist.
 
 *   **Status**: Active
-*   **Total blocked domains**: `392,005`
+*   **Total blocked domains**: `2,711,763`
 *   **Target audience**: Alternate blocklist configuration. Combines the base security blocklist with: malware, phishing, cryptomining, ads, tracking, spam.
 
 ---
@@ -12,14 +12,14 @@ This directory contains the compiled **fakenews** blocklist.
 
 This configuration contains lists designed to block the following domain categories:
 
-| Category | Blocked Domains | Description |
-| -------- | --------------- | ----------- |
-| 🔴 **Malware Sites** | `100,000` | Command & control servers, distribution endpoints, ransomware, and spyware platforms. |
-| 🔴 **Phishing Pages** | `100,000` | Fraudulent login pages, credential harvesting forms, and identity spoofing sites. |
-| 🔴 **Cryptomining** | `297` | Cryptojacking scripts, browser miners, and pool connection endpoints. |
-| 🔴 **Advertising Domains** | `100,000` | Ad delivery networks, promotional servers, and banner scripting endpoints. |
-| 🔴 **Tracking & Telemetry** | `100,000` | Analytics scripts, user profiling telemetry, and commercial data harvesting domains. |
-| 🔴 **Spam & Scam Domains** | `24,090` | Malicious email redirectors, lottery scam landing pages, and deceptive bulk sites. |
+| Category | Blocked Domains (Capped) | Total Discovered | Description |
+| -------- | ------------------------ | ---------------- | ----------- |
+| 🔴 **Malware Sites** | `1,753,011` | `1,753,011` | Command & control servers, distribution endpoints, ransomware, and spyware platforms. |
+| 🔴 **Phishing Pages** | `120,121` | `120,121` | Fraudulent login pages, credential harvesting forms, and identity spoofing sites. |
+| 🔴 **Cryptomining** | `297` | `297` | Cryptojacking scripts, browser miners, and pool connection endpoints. |
+| 🔴 **Advertising Domains** | `722,678` | `722,678` | Ad delivery networks, promotional servers, and banner scripting endpoints. |
+| 🔴 **Tracking & Telemetry** | `718,193` | `718,193` | Analytics scripts, user profiling telemetry, and commercial data harvesting domains. |
+| 🔴 **Spam & Scam Domains** | `24,090` | `24,090` | Malicious email redirectors, lottery scam landing pages, and deceptive bulk sites. |
 
 ---
 

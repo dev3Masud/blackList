@@ -3,7 +3,7 @@
 This directory contains the compiled **fakenews-social** blocklist.
 
 *   **Status**: Active
-*   **Total blocked domains**: `416,629`
+*   **Total blocked domains**: `2,736,315`
 *   **Target audience**: Alternate blocklist configuration. Combines the base security blocklist with: malware, phishing, cryptomining, ads, tracking, spam, social.
 
 ---
@@ -12,15 +12,15 @@ This directory contains the compiled **fakenews-social** blocklist.
 
 This configuration contains lists designed to block the following domain categories:
 
-| Category | Blocked Domains | Description |
-| -------- | --------------- | ----------- |
-| 🔴 **Malware Sites** | `100,000` | Command & control servers, distribution endpoints, ransomware, and spyware platforms. |
-| 🔴 **Phishing Pages** | `100,000` | Fraudulent login pages, credential harvesting forms, and identity spoofing sites. |
-| 🔴 **Cryptomining** | `297` | Cryptojacking scripts, browser miners, and pool connection endpoints. |
-| 🔴 **Advertising Domains** | `100,000` | Ad delivery networks, promotional servers, and banner scripting endpoints. |
-| 🔴 **Tracking & Telemetry** | `100,000` | Analytics scripts, user profiling telemetry, and commercial data harvesting domains. |
-| 🔴 **Spam & Scam Domains** | `24,090` | Malicious email redirectors, lottery scam landing pages, and deceptive bulk sites. |
-| 🔴 **Social Tracking** | `24,625` | Social networking trackers, widgets, and domain collectors that profile user browsing. |
+| Category | Blocked Domains (Capped) | Total Discovered | Description |
+| -------- | ------------------------ | ---------------- | ----------- |
+| 🔴 **Malware Sites** | `1,753,011` | `1,753,011` | Command & control servers, distribution endpoints, ransomware, and spyware platforms. |
+| 🔴 **Phishing Pages** | `120,121` | `120,121` | Fraudulent login pages, credential harvesting forms, and identity spoofing sites. |
+| 🔴 **Cryptomining** | `297` | `297` | Cryptojacking scripts, browser miners, and pool connection endpoints. |
+| 🔴 **Advertising Domains** | `722,678` | `722,678` | Ad delivery networks, promotional servers, and banner scripting endpoints. |
+| 🔴 **Tracking & Telemetry** | `718,193` | `718,193` | Analytics scripts, user profiling telemetry, and commercial data harvesting domains. |
+| 🔴 **Spam & Scam Domains** | `24,090` | `24,090` | Malicious email redirectors, lottery scam landing pages, and deceptive bulk sites. |
+| 🔴 **Social Tracking** | `24,625` | `24,625` | Social networking trackers, widgets, and domain collectors that profile user browsing. |
 
 ---
 
