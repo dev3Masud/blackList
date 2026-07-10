@@ -1,17 +1,17 @@
 [
   {
+    "name": "NoCoin Cryptomining List",
+    "category": "cryptomining",
+    "success": true,
+    "count": 313,
+    "error": ""
+  },
+  {
     "name": "AdGuard Tracking Filter",
     "category": "tracking",
     "success": true,
     "count": 3511,
     "error": ""
-  },
-  {
-    "name": "NoCoin Cryptomining List",
-    "category": "cryptomining",
-    "success": false,
-    "count": 0,
-    "error": "HTTP 404"
   },
   {
     "name": "URLHaus Malware Domains",
@@ -42,10 +42,10 @@
     "error": ""
   },
   {
-    "name": "BlockList Project - Facebook",
-    "category": "social",
+    "name": "Phishing Army",
+    "category": "phishing",
     "success": true,
-    "count": 22362,
+    "count": 144845,
     "error": ""
   },
   {
@@ -63,10 +63,10 @@
     "error": ""
   },
   {
-    "name": "BlockList Project - Porn (NSFW)",
-    "category": "nsfw",
+    "name": "BlockList Project - Facebook",
+    "category": "social",
     "success": true,
-    "count": 953397,
+    "count": 22362,
     "error": ""
   },
   {
@@ -77,10 +77,24 @@
     "error": ""
   },
   {
-    "name": "Phishing Army",
-    "category": "phishing",
+    "name": "BlockList Project - Gambling",
+    "category": "gambling",
     "success": true,
-    "count": 144845,
+    "count": 292045,
+    "error": ""
+  },
+  {
+    "name": "BlockList Project - Porn (NSFW)",
+    "category": "nsfw",
+    "success": true,
+    "count": 953397,
+    "error": ""
+  },
+  {
+    "name": "StevenBlack NSFW Alternate",
+    "category": "nsfw",
+    "success": true,
+    "count": 154663,
     "error": ""
   },
   {
@@ -91,10 +105,17 @@
     "error": ""
   },
   {
-    "name": "BlockList Project - Gambling",
-    "category": "gambling",
+    "name": "FadeMind Spam Hosts",
+    "category": "spam",
     "success": true,
-    "count": 292045,
+    "count": 57,
+    "error": ""
+  },
+  {
+    "name": "Sakib-m Torrent Trackers List",
+    "category": "torrent",
+    "success": true,
+    "count": 445,
     "error": ""
   },
   {
@@ -105,10 +126,45 @@
     "error": ""
   },
   {
+    "name": "EasyPrivacy Tracking List",
+    "category": "tracking",
+    "success": true,
+    "count": 42594,
+    "error": ""
+  },
+  {
     "name": "OISD NSFW Blocklist",
     "category": "nsfw",
     "success": true,
     "count": 372529,
+    "error": ""
+  },
+  {
+    "name": "Polish Filters Team - KADhosts",
+    "category": "ads",
+    "success": true,
+    "count": 45681,
+    "error": ""
+  },
+  {
+    "name": "StevenBlack Gambling Alternate",
+    "category": "gambling",
+    "success": true,
+    "count": 84948,
+    "error": ""
+  },
+  {
+    "name": "DandelionSprout Anti-Malware",
+    "category": "malware",
+    "success": true,
+    "count": 12325,
+    "error": ""
+  },
+  {
+    "name": "AdGuard DNS Ads list",
+    "category": "ads",
+    "success": true,
+    "count": 154344,
     "error": ""
   }
 ]

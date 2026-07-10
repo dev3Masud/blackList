@@ -1,6 +1,6 @@
 # Category: SPAM
-# Count: 8140
-# Last updated: 2026-07-10 07:58:15 UTC
+# Count: 8197
+# Last updated: 2026-07-10 08:02:47 UTC
 # Filtered against whitelist to prevent false positives.
 
 001www.com
@@ -8,6 +8,7 @@
 0hacks.com
 0pencase.com
 1.pandawamovie.com
+100.1qingdao.com
 100arcade.com
 100extensionsforgames.com
 100giveaways.com
@@ -81,6 +82,7 @@
 774378.com
 7games7.com
 7hacks.com
+7minuteworkout.com
 7videos.info
 8ballpool.social-cheats.com
 8cheat.com
@@ -121,6 +123,7 @@ addition4u.com
 addmefastfreebot.com
 addon-teamspeak.com
 addpaypal.com
+addshoppers.com
 adjust-local-settings.com
 adminpanelfaker.space
 adminpaneltop.site
@@ -314,6 +317,7 @@ areyouabot.net
 areyouahuman.co
 argonfiles.com
 argosvoucher.net
+arklighting.co
 armhack.com
 armorhack.com
 aromedtransport.sharezips.info
@@ -653,6 +657,7 @@ bountywin.com
 bowaq.ru
 boxhillpaper.com
 boxinghd.net
+brandedleadgeneration.com
 brandnewop.com
 brave-frontier-hack.com
 bravefrontiercheats.com
@@ -1071,6 +1076,7 @@ click2pics.net
 click4images.net
 click4img.com
 clickhosted.com
+clicktshirtprinting.co.uk
 clipskeeper.com
 clixtk.com
 clomgiriwil.com
@@ -1787,6 +1793,7 @@ divhacks.com
 divinedeals.info
 divinedeals.net
 divinegenerator.com
+divisioncore.com
 dizyhackz.com
 dl-it.net
 dl3dsemulator.com
@@ -2697,6 +2704,7 @@ firsthack.com
 firstleak.com
 firstuploader.com
 fishin.rs
+fitnesshealthreporter.com
 fivps1203.com
 fiwoko.ru
 fix-apple-maan-error.info
@@ -2946,6 +2954,7 @@ freefiledownload.net
 freefileus.com
 freefire-generator.site
 freeflappybirdhacks.com
+freeforums.org
 freegamecards.info
 freegamecards.us
 freegamecode.us
@@ -3896,6 +3905,7 @@ gtavgenerator.info
 gtavlaunch.com
 gtavmoneycheat.com
 gtjailbreak.com
+gtradersoft.com
 guardiansofmiddleearth.sharezips.info
 guccigang.top
 gugelo.ru
@@ -4317,6 +4327,7 @@ hearthstonebetakeys.cc
 hearthstonegenerator.com
 hearthstonehack.com
 hearthstonetool.com
+heartrevitalized.com
 heatherfallonphotography.com
 heaven4cheats.eu
 hecuq.ru
@@ -4682,6 +4693,7 @@ jailbreaktut.com
 jailbreakyourps4.com
 jailbroken.co
 jakahi.ru
+janeaustenjoy.com
 jasvud.ru
 javainstall.org
 jaxx-wallet.com
@@ -5134,6 +5146,7 @@ mediakash.com
 medialateral.com
 mediasearchdirect.com
 medlafare.com
+medtecchina.com
 meediabuy.com
 meetmecredits.com
 meez.us
@@ -5324,6 +5337,7 @@ mot-de-passe-facebook.com
 motabu.ru
 motdepasse.net
 motifiles.com
+motoren.ru
 movepix.com
 movichart.com
 movie-hater.com
@@ -5442,6 +5456,7 @@ mycsgotrade.com
 mydownlodablethings.net
 mydownstore.com
 mydownzone.com
+mydreamdegree.com
 myetherzero.com
 myextrafiles.com
 myfbhacks.com
@@ -5610,6 +5625,7 @@ notedicelol.com
 notification-box.com
 notnen.ru
 novahacks.com
+novastarled.com
 novedadesdiarias.com
 novitadelgiorno.com
 now-dns.net
@@ -5688,6 +5704,7 @@ onlinehack24.com
 onlinehacks.us
 onlinehacks4you.com
 onlinehackzforyou.com
+onlineloan-personal.net
 onlineminecraftforfree.net
 onlinepasswordhacker.com
 onlineshoppinggiftcards.net
@@ -5727,6 +5744,7 @@ ordermedonline.com
 orgdotcom.com
 originalhack.info
 osmovie.xyz
+otherinbox.com
 ourhackgames.com
 ourhackz.com
 outdonuthack.com
@@ -5784,6 +5802,7 @@ paypalmoneyaddergenerator.com
 paysafe.leadrights.com
 paysafecardgenerator.com
 pboh.punklocalbabez.com
+pcbutts1-therealtruth.blogspot.com
 pcdownloadstation.com
 pcdownstation.com
 pcfullgamesfree.com
@@ -5928,6 +5947,7 @@ playgamess.net
 playhck.com
 playinhd.biz
 playkeys.pw
+playlott.com
 playmovie.biz
 playnewgame.net
 playpoke.net
@@ -6063,6 +6083,7 @@ productsrev.com
 profacebook.net
 profacebookhack.com
 profbhack.com
+profitsitesbiz.com
 progamestools.com
 progenerators24.website
 programhacks.net
@@ -6495,6 +6516,7 @@ secure-runescape.com
 secure.lawsuit-runescape.com
 securefile.info
 securefileupload.com
+securesignupoffers.org
 security.system.ssl-verified.site
 sef7at.com
 sega-rom.com
@@ -7061,6 +7083,7 @@ streamunion.com
 streamvid.tv
 stressthem.to
 strongcheats.com
+stsoftware.biz
 studioomovie.com
 stv24x7.com
 subchat.net
@@ -7152,6 +7175,7 @@ techietricks.net
 techlivegen.com
 technicalfault.tech
 techonetium.com
+tekindustri.upnjatim.ac.id
 telaw.ru
 telechargement-fr.us
 telechargementspremium.com
@@ -7218,6 +7242,7 @@ thecrimebay.store
 thecsgoknife.com
 thedailyreward.com
 thedataworld.com
+thedatingconference.com
 thefreeiphoneunlock.com
 theft4me.com
 thegamehack.com
@@ -7274,6 +7299,7 @@ timesaverpack.sharezips.net
 timeswap.net
 timeswap.pro
 timtogo.ru
+tinaborg.com
 tintubright.com
 tinyfileshost.com
 titancash.org
@@ -7498,6 +7524,7 @@ ultrasn0wtool.com
 un-accident-video.jibonerareknamtaka.com
 undefined.pw
 undetectedcheats.com
+unionleisurewear.com
 unionxcase.com
 unique-skins.net
 uniquehack.com
@@ -7665,6 +7692,7 @@ vizeveso.ru
 vizol.ru
 vkonte.club
 vkonte.live
+vntanktransport.com
 vodkahack.com
 vokahoko.ru
 volifern.ru
@@ -7685,6 +7713,7 @@ vukoldi.ru
 vurud.ru
 vutera.ru
 vvassup.com
+vydoxtrial.com
 w595505.com
 wahib.ru
 walemedia.com
@@ -7913,6 +7942,34 @@ wwe2k14superstarsdlc.goblogz.net
 wwe2kbeta.com
 wwesupercardhack.xyz
 www-secure-runescape.co
+www.7minuteworkout.com
+www.addshoppers.com
+www.arklighting.co
+www.brandedleadgeneration.com
+www.clicktshirtprinting.co.uk
+www.divisioncore.com
+www.fitnesshealthreporter.com
+www.freeforums.org
+www.gtradersoft.com
+www.heartrevitalized.com
+www.janeaustenjoy.com
+www.medtecchina.com
+www.motoren.ru
+www.mydreamdegree.com
+www.novastarled.com
+www.onlineloan-personal.net
+www.otherinbox.com
+www.oz-offers.com
+www.playlott.com
+www.profitsitesbiz.com
+www.securesignupoffers.org
+www.stsoftware.biz
+www.thedatingconference.com
+www.tinaborg.com
+www.tkdami.net
+www.unionleisurewear.com
+www.vntanktransport.com
+www.vydoxtrial.com
 wwwtestsportsclubs.com
 wxyrxthxswyxrcx.com
 x-codes.com
