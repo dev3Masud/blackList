@@ -1,12 +1,5 @@
 [
   {
-    "name": "NoCoin Cryptomining List",
-    "category": "cryptomining",
-    "success": false,
-    "count": 0,
-    "error": "HTTP 404"
-  },
-  {
     "name": "AdGuard Tracking Filter",
     "category": "tracking",
     "success": true,
@@ -14,17 +7,17 @@
     "error": ""
   },
   {
+    "name": "NoCoin Cryptomining List",
+    "category": "cryptomining",
+    "success": false,
+    "count": 0,
+    "error": "HTTP 404"
+  },
+  {
     "name": "StevenBlack Adware & Malware",
     "category": "ads",
     "success": true,
     "count": 78462,
-    "error": ""
-  },
-  {
-    "name": "URLHaus Malware Domains",
-    "category": "malware",
-    "success": true,
-    "count": 514,
     "error": ""
   },
   {
@@ -35,17 +28,17 @@
     "error": ""
   },
   {
+    "name": "URLHaus Malware Domains",
+    "category": "malware",
+    "success": true,
+    "count": 514,
+    "error": ""
+  },
+  {
     "name": "ShadowWhisperer - Dating",
     "category": "dating",
     "success": true,
     "count": 1343,
-    "error": ""
-  },
-  {
-    "name": "BlockList Project - Porn (NSFW)",
-    "category": "nsfw",
-    "success": true,
-    "count": 953397,
     "error": ""
   },
   {
@@ -56,13 +49,6 @@
     "error": ""
   },
   {
-    "name": "BlockList Project - Twitter",
-    "category": "social",
-    "success": true,
-    "count": 1193,
-    "error": ""
-  },
-  {
     "name": "BlockList Project - TikTok",
     "category": "social",
     "success": true,
@@ -70,10 +56,17 @@
     "error": ""
   },
   {
+    "name": "BlockList Project - Twitter",
+    "category": "social",
+    "success": true,
+    "count": 1193,
+    "error": ""
+  },
+  {
     "name": "Phishing Army",
     "category": "phishing",
     "success": true,
-    "count": 144937,
+    "count": 144845,
     "error": ""
   },
   {
@@ -98,35 +91,24 @@
     "error": ""
   },
   {
+    "name": "BlockList Project - Porn (NSFW)",
+    "category": "nsfw",
+    "success": true,
+    "count": 953397,
+    "error": ""
+  },
+  {
     "name": "OISD NSFW Blocklist",
     "category": "nsfw",
     "success": true,
-    "count": 371931,
+    "count": 372134,
     "error": ""
   },
   {
     "name": "OISD Big Blocklist",
     "category": "ads",
     "success": true,
-    "count": 327035,
+    "count": 328746,
     "error": ""
-  },
-  {
-    "name": "Crawler: phishstats.info",
-    "category": "crawled",
-    "success": true,
-    "count": 39
-  },
-  {
-    "name": "Crawler: openphish.com",
-    "category": "crawled",
-    "success": true,
-    "count": 18
-  },
-  {
-    "name": "Crawler: www.malwaredomainlist.com",
-    "category": "crawled",
-    "success": true,
-    "count": 0
   }
 ]
