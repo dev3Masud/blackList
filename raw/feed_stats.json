@@ -1,0 +1,132 @@
+[
+  {
+    "name": "Phishing Army",
+    "category": "phishing",
+    "success": true,
+    "count": 144937,
+    "error": ""
+  },
+  {
+    "name": "StevenBlack Adware & Malware",
+    "category": "ads",
+    "success": true,
+    "count": 78462,
+    "error": ""
+  },
+  {
+    "name": "URLHaus Malware Domains",
+    "category": "malware",
+    "success": true,
+    "count": 514,
+    "error": ""
+  },
+  {
+    "name": "AdGuard Tracking Filter",
+    "category": "tracking",
+    "success": true,
+    "count": 3511,
+    "error": ""
+  },
+  {
+    "name": "NoCoin Cryptomining List",
+    "category": "cryptomining",
+    "success": false,
+    "count": 0,
+    "error": "HTTP 404"
+  },
+  {
+    "name": "ShadowWhisperer - Dating",
+    "category": "dating",
+    "success": true,
+    "count": 1343,
+    "error": ""
+  },
+  {
+    "name": "Spam404",
+    "category": "spam",
+    "success": true,
+    "count": 8140,
+    "error": ""
+  },
+  {
+    "name": "BlockList Project - Facebook",
+    "category": "social",
+    "success": true,
+    "count": 22362,
+    "error": ""
+  },
+  {
+    "name": "BlockList Project - Twitter",
+    "category": "social",
+    "success": true,
+    "count": 1193,
+    "error": ""
+  },
+  {
+    "name": "BlockList Project - TikTok",
+    "category": "social",
+    "success": true,
+    "count": 3725,
+    "error": ""
+  },
+  {
+    "name": "BlockList Project - YouTube",
+    "category": "social",
+    "success": true,
+    "count": 24280,
+    "error": ""
+  },
+  {
+    "name": "BlockList Project - Torrent & Piracy",
+    "category": "torrent",
+    "success": true,
+    "count": 2620,
+    "error": ""
+  },
+  {
+    "name": "OISD NSFW Blocklist",
+    "category": "nsfw",
+    "success": true,
+    "count": 371931,
+    "error": ""
+  },
+  {
+    "name": "OISD Big Blocklist",
+    "category": "ads",
+    "success": true,
+    "count": 493500,
+    "error": ""
+  },
+  {
+    "name": "BlockList Project - Gambling",
+    "category": "gambling",
+    "success": true,
+    "count": 292045,
+    "error": ""
+  },
+  {
+    "name": "BlockList Project - Porn (NSFW)",
+    "category": "nsfw",
+    "success": true,
+    "count": 953397,
+    "error": ""
+  },
+  {
+    "name": "Crawler: phishstats.info",
+    "category": "crawled",
+    "success": true,
+    "count": 0
+  },
+  {
+    "name": "Crawler: openphish.com",
+    "category": "crawled",
+    "success": true,
+    "count": 18
+  },
+  {
+    "name": "Crawler: www.malwaredomainlist.com",
+    "category": "crawled",
+    "success": true,
+    "count": 0
+  }
+]

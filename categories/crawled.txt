@@ -1,24 +1,10 @@
 # Category: CRAWLED
-# Count: 20
-# Last updated: 2026-07-10 01:49:21 UTC
+# Count: 5
+# Last updated: 2026-07-10 02:05:55 UTC
+# Filtered against whitelist to prevent false positives.
 
 amazon.com
-console.error
-customelements.define
-customelements.get
-d.split
 data.count
-e.has
-hubs.la
 json.parse
 maxcdn.bootstrapcdn.com
-object.hasown
-promise.all
-r.remove
-self.astro
-t.map
-t.me
-this.lastchild.remove
-this.start
-x.com
 xhtml1-strict.dtd

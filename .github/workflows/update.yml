@@ -2,7 +2,7 @@ name: Update Blacklists and Dashboard Stats
 
 on:
   schedule:
-    - cron: '0 */8 * * *' # 3 times a day (every 8 hours)
+    - cron: '0 */8 * * *' # 3 times a day (every 8 hours: 00:00, 08:00, 16:00 UTC)
   workflow_dispatch: # Enable manual run
   push:
     branches:
@@ -10,7 +10,9 @@ on:
     paths:
       - 'config.yaml'
       - 'whitelist.txt'
-      - 'scripts/update_blacklist.py'
+      - 'scripts/crawl_bot.py'
+      - 'scripts/crawler.py'
+      - 'scripts/validator.py'
 
 permissions:
   contents: write
@@ -34,18 +36,33 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
-      - name: Run Blacklist Update Script
-        run: python scripts/update_blacklist.py
+      # Step 1: Autonomous Crawler Bot
+      # Visits seed pages, detects category from page content,
+      # follows outbound links, runs for 1 hour, saves to raw/
+      - name: "Step 1: Run Crawler Bot (Autonomous Web Crawler)"
+        run: python scripts/crawl_bot.py
+
+      # Step 2: Fetch Public Blocklist Feeds
+      # Downloads curated blacklist feeds from public sources
+      # and merges them into raw/<category>.txt files
+      - name: "Step 2: Run Feed Fetcher (Blocklist Downloader)"
+        run: python scripts/crawler.py
+
+      # Step 3: Validate and Compile Final Lists
+      # Reads raw/ files, runs domain validation, applies whitelist,
+      # writes clean categories/ and master/ files, updates stats.json
+      - name: "Step 3: Run Validator (Clean & Compile Blacklists)"
+        run: python scripts/validator.py
 
       - name: Commit and Push Changes
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add categories/ master/ stats.json
-          # Check if there are changes to commit
+          git add raw/ categories/ master/ stats.json
+          # Only commit if there are actual changes
           if git diff --cached --quiet; then
             echo "No changes to commit."
           else
-            git commit -m "auto: update blacklists and statistics [skip ci]"
+            git commit -m "auto: crawl + update blacklists [skip ci]"
             git push origin main
           fi

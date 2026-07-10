@@ -81,8 +81,9 @@ If you wish to run the compilation script locally:
    source venv/bin/activate
    pip install -r requirements.txt
    ```
-3. Run the generator script:
+3. Run the crawler & validator pipeline:
    ```bash
-   python scripts/update_blacklist.py
+   python scripts/crawler.py
+   python scripts/validator.py
    ```
 4. Customize feeds inside [config.yaml](file:///home/who/Documents/AI-Coding/Github/blackList/config.yaml) and whitelists inside [whitelist.txt](file:///home/who/Documents/AI-Coding/Github/blackList/whitelist.txt).

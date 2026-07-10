@@ -1,67 +1,68 @@
-# Blacklist configuration
-whitelist_file: "whitelist.txt"
+whitelist_file: whitelist.txt
 max_domains_per_category: 100000
-
-# Output destinations
+crawler_duration_seconds: 3600
+crawler_max_workers: 3
+crawler_delay_seconds: 1.5
+crawl_seeds:
+- https://openphish.com
+- https://urlhaus.abuse.ch
+- https://phishing.database.explorate.re
+- https://mdl.sh
+- https://www.stopforumspam.com/forum
 outputs:
-  categories_dir: "categories"
-  master_dir: "master"
-  stats_file: "stats.json"
-
-# Feed configuration grouped by category
-# We select stable, public, free-to-use feeds
+  categories_dir: categories
+  master_dir: master
+  stats_file: stats.json
 feeds:
-  - name: "AdGuard Tracking Filter"
-    url: "https://adguardteam.github.io/HostlistsRegistry/assets/filter_3.txt"
-    category: "tracking"
-  - name: "URLHaus Malware Domains"
-    url: "https://urlhaus.abuse.ch/downloads/hostfile/"
-    category: "malware"
-  - name: "Phishing Army"
-    url: "https://phishing.army/download/phishing_army_blocklist_extended.txt"
-    category: "phishing"
-  - name: "NoCoin Cryptomining List"
-    url: "https://raw.githubusercontent.com/NoCoin-org/nocoin/master/hosts"
-    category: "cryptomining"
-  - name: "StevenBlack Adware & Malware"
-    url: "https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts"
-    category: "ads"
-  - name: "OISD Big Blocklist"
-    url: "https://big.oisd.nl"
-    category: "ads"
-  - name: "Spam404"
-    url: "https://raw.githubusercontent.com/Spam404/lists/master/main-blacklist.txt"
-    category: "spam"
-  - name: "BlockList Project - Porn (NSFW)"
-    url: "https://raw.githubusercontent.com/blocklistproject/Lists/master/porn.txt"
-    category: "nsfw"
-  - name: "OISD NSFW Blocklist"
-    url: "https://nsfw.oisd.nl"
-    category: "nsfw"
-  - name: "ShadowWhisperer - Dating"
-    url: "https://raw.githubusercontent.com/ShadowWhisperer/BlockLists/master/Lists/Dating"
-    category: "dating"
-  - name: "BlockList Project - Facebook"
-    url: "https://raw.githubusercontent.com/blocklistproject/Lists/master/facebook.txt"
-    category: "social"
-  - name: "BlockList Project - TikTok"
-    url: "https://raw.githubusercontent.com/blocklistproject/Lists/master/tiktok.txt"
-    category: "social"
-  - name: "BlockList Project - Twitter"
-    url: "https://raw.githubusercontent.com/blocklistproject/Lists/master/twitter.txt"
-    category: "social"
-  - name: "BlockList Project - YouTube"
-    url: "https://raw.githubusercontent.com/blocklistproject/Lists/master/youtube.txt"
-    category: "social"
-  - name: "BlockList Project - Gambling"
-    url: "https://raw.githubusercontent.com/blocklistproject/Lists/master/gambling.txt"
-    category: "gambling"
-  - name: "BlockList Project - Torrent & Piracy"
-    url: "https://raw.githubusercontent.com/blocklistproject/Lists/master/torrent.txt"
-    category: "torrent"
-
-# Websites to crawl directly for domain extraction
+- name: AdGuard Tracking Filter
+  url: https://adguardteam.github.io/HostlistsRegistry/assets/filter_3.txt
+  category: tracking
+- name: URLHaus Malware Domains
+  url: https://urlhaus.abuse.ch/downloads/hostfile/
+  category: malware
+- name: Phishing Army
+  url: https://phishing.army/download/phishing_army_blocklist_extended.txt
+  category: phishing
+- name: NoCoin Cryptomining List
+  url: https://raw.githubusercontent.com/NoCoin-org/nocoin/master/hosts
+  category: cryptomining
+- name: StevenBlack Adware & Malware
+  url: https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts
+  category: ads
+- name: OISD Big Blocklist
+  url: https://big.oisd.nl
+  category: ads
+- name: Spam404
+  url: https://raw.githubusercontent.com/Spam404/lists/master/main-blacklist.txt
+  category: spam
+- name: BlockList Project - Porn (NSFW)
+  url: https://raw.githubusercontent.com/blocklistproject/Lists/master/porn.txt
+  category: nsfw
+- name: OISD NSFW Blocklist
+  url: https://nsfw.oisd.nl
+  category: nsfw
+- name: ShadowWhisperer - Dating
+  url: https://raw.githubusercontent.com/ShadowWhisperer/BlockLists/master/Lists/Dating
+  category: dating
+- name: BlockList Project - Facebook
+  url: https://raw.githubusercontent.com/blocklistproject/Lists/master/facebook.txt
+  category: social
+- name: BlockList Project - TikTok
+  url: https://raw.githubusercontent.com/blocklistproject/Lists/master/tiktok.txt
+  category: social
+- name: BlockList Project - Twitter
+  url: https://raw.githubusercontent.com/blocklistproject/Lists/master/twitter.txt
+  category: social
+- name: BlockList Project - YouTube
+  url: https://raw.githubusercontent.com/blocklistproject/Lists/master/youtube.txt
+  category: social
+- name: BlockList Project - Gambling
+  url: https://raw.githubusercontent.com/blocklistproject/Lists/master/gambling.txt
+  category: gambling
+- name: BlockList Project - Torrent & Piracy
+  url: https://raw.githubusercontent.com/blocklistproject/Lists/master/torrent.txt
+  category: torrent
 crawl_sources:
-  - "https://openphish.com"
-  - "https://phishstats.info"
-  - "https://www.malwaredomainlist.com"
+- https://openphish.com
+- https://phishstats.info
+- https://www.malwaredomainlist.com

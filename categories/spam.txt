@@ -1,6 +1,7 @@
 # Category: SPAM
 # Count: 8140
-# Last updated: 2026-07-10 01:49:19 UTC
+# Last updated: 2026-07-10 02:05:55 UTC
+# Filtered against whitelist to prevent false positives.
 
 001www.com
 0daygameparadise.com
