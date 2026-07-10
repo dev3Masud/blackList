@@ -225,76 +225,100 @@ def crawl_bot(seed_urls, whitelist, duration_seconds=3600, max_workers=3, delay=
     - Runs for duration_seconds total
     - Returns dict of {category: set(domains)}
     """
-    visited = set()
-    queue = deque(seed_urls)
+    visited = set()       # Domains already fetched
+    queued_domains = set()  # Domains already in queue (prevents flooding)
+    queue = deque()
     category_domains = {}
-    
+
+    # Seed the queue
+    for url in seed_urls:
+        d = extract_domain(url)
+        if d and d not in queued_domains:
+            queue.append(url)
+            queued_domains.add(d)
+
     start_time = time.time()
     elapsed = 0
     total_visited = 0
     total_discovered = 0
-    
+
     logger.info(f"🤖 Crawler Bot Started. Duration: {duration_seconds}s | Seeds: {len(seed_urls)}")
-    
-    while queue and elapsed < duration_seconds:
+
+    while elapsed < duration_seconds:
         elapsed = time.time() - start_time
-        remaining = duration_seconds - elapsed
-        logger.info(f"⏱  Elapsed: {elapsed:.0f}s / {duration_seconds}s | Queue: {len(queue)} | Visited: {total_visited} | Found: {total_discovered}")
-        
-        # Pull a batch of URLs from the queue
+
+        # ── Build a batch of unvisited URLs ──────────────────────────────
+        # Drain the queue until we fill the batch or exhaust the queue.
         batch = []
-        for _ in range(min(max_workers, len(queue))):
-            if queue:
-                url = queue.popleft()
-                domain = extract_domain(url)
-                if domain and domain not in visited:
-                    visited.add(domain)
-                    batch.append(url)
-        
+        drain_limit = len(queue)   # don't spin forever on a stale queue
+        drained = 0
+        while queue and len(batch) < max_workers and drained < drain_limit:
+            url = queue.popleft()
+            drained += 1
+            domain = extract_domain(url)
+            if domain and domain not in visited:
+                visited.add(domain)
+                batch.append(url)
+
         if not batch:
+            # Queue is empty or only has already-visited domains
+            logger.info("Queue exhausted — crawler bot stopping early.")
             break
-        
-        # Fetch pages concurrently
+
+        logger.info(
+            f"⏱  Elapsed: {elapsed:.0f}s / {duration_seconds}s "
+            f"| Queue: {len(queue)} | Visited: {total_visited} | Found: {total_discovered}"
+        )
+
+        # ── Fetch pages concurrently ─────────────────────────────────────
         with ThreadPoolExecutor(max_workers=max_workers) as executor:
             futures = {executor.submit(fetch_page, url): url for url in batch}
             for future in as_completed(futures):
                 original_url = futures[future]
                 html, final_url = future.result()
-                
+
                 if not html:
                     continue
-                
+
                 total_visited += 1
-                
+
                 # Detect category from page content + URL
                 category = detect_category(html, final_url or original_url)
-                
-                # Extract the actual domain from this page
+
+                # Record the domain under its detected category
                 page_domain = extract_domain(final_url or original_url)
                 if page_domain and is_valid_domain(page_domain) and not is_whitelisted(page_domain, whitelist):
-                    if category not in category_domains:
-                        category_domains[category] = set()
-                    category_domains[category].add(page_domain)
+                    category_domains.setdefault(category, set()).add(page_domain)
                     total_discovered += 1
                     logger.info(f"  ✅ [{category.upper()}] {page_domain}")
-                
-                # Extract outbound links and add new ones to queue
+
+                # ── Follow outbound links to NEW domains only ────────────
                 outbound_links = extract_outbound_links(html, final_url or original_url)
                 new_links = 0
                 for link in outbound_links:
                     link_domain = extract_domain(link)
-                    if link_domain and link_domain not in visited and not is_whitelisted(link_domain, whitelist):
+                    # Only queue if domain hasn't been seen at all yet
+                    if (
+                        link_domain
+                        and link_domain not in visited
+                        and link_domain not in queued_domains
+                        and not is_whitelisted(link_domain, whitelist)
+                    ):
                         queue.append(link)
+                        queued_domains.add(link_domain)  # mark as queued
                         new_links += 1
-                
+
                 if new_links:
-                    logger.info(f"  🔗 Added {new_links} new links from {page_domain or original_url}")
-        
+                    logger.info(f"  🔗 Queued {new_links} new domains from {page_domain or original_url}")
+
         # Polite delay between batches
         time.sleep(delay)
-    
+
     elapsed = time.time() - start_time
-    logger.info(f"🏁 Crawler Bot Finished. Total time: {elapsed:.1f}s | Visited: {total_visited} | Discovered: {total_discovered}")
+    logger.info(
+        f"🏁 Crawler Bot Finished. "
+        f"Total time: {elapsed:.1f}s | Visited: {total_visited} | Discovered: {total_discovered}"
+    )
     return category_domains
 
 
