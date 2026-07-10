@@ -1,0 +1,56 @@
+# Whitelist of common safe domains to avoid false-positives
+# Feel free to add more as needed.
+
+# Core Infrastructure & OS
+localhost
+local
+localhost.localdomain
+broadcasthost
+
+# Tech Giants
+google.com
+www.google.com
+google-analytics.com
+gstatic.com
+apis.google.com
+gmail.com
+microsoft.com
+www.microsoft.com
+windows.com
+apple.com
+www.apple.com
+icloud.com
+
+# CDNs & Hosting
+cloudflare.com
+www.cloudflare.com
+cloudflare-dns.com
+cdnjs.cloudflare.com
+github.com
+www.github.com
+githubusercontent.com
+raw.githubusercontent.com
+github.io
+amazonaws.com
+aws.amazon.com
+fastly.net
+akamaihd.net
+cloudfront.net
+
+# Development & Common APIs
+npm.org
+npmjs.com
+yarnpkg.com
+pypi.org
+python.org
+golang.org
+rust-lang.org
+docker.com
+registry.npmjs.org
+unpkg.com
+jsdelivr.net
+cdnjs.cloudflare.com
+fonts.googleapis.com
+fonts.gstatic.com
+schema.org
+w3.org

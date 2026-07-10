@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GitHub Domain Blacklist Registry</title>
+  <meta name="description" content="A community-driven threat intelligence domain blacklist with categorized segments. Auto-updated daily.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  
+  <!-- Sleek visual backdrop blobs -->
+  <div class="bg-blobs">
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+  </div>
+
+  <div class="container">
+    
+    <!-- Top Header bar -->
+    <header>
+      <div class="logo-section">
+        <h1>🛡️ Blacklist Registry</h1>
+        <p>Categorized, daily-compiled domain feeds for threat mitigation</p>
+      </div>
+      <div class="badge-pulse">
+        <div class="pulse-dot"></div>
+        <span>Auto-Update Daily</span>
+      </div>
+    </header>
+
+    <!-- Dashboard layout grid -->
+    <div class="dashboard-grid">
+      
+      <!-- Search & Overview Column -->
+      <div style="display: flex; flex-direction: column; gap: 30px;">
+        
+        <!-- Search box section -->
+        <section class="glass-card search-card" id="search-section">
+          <h2>Domain Security Lookup</h2>
+          <p style="color: var(--text-secondary); margin-bottom: 15px; font-size: 0.95rem;">
+            Check if a specific domain is compiled within our blacklist database.
+          </p>
+          <div class="search-container">
+            <div class="search-input-wrapper">
+              <svg class="search-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="11" cy="11" r="8"></circle>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+              </svg>
+              <input type="text" id="domain-query" class="search-input" placeholder="e.g. malwaredomain.com" aria-label="Domain name search input">
+            </div>
+            <button class="search-btn" onclick="checkDomain()">
+              <span>Search</span>
+            </button>
+          </div>
+          <div id="search-result" class="search-result"></div>
+        </section>
+
+        <!-- General stats indicators -->
+        <section class="glass-card">
+          <div class="stats-header" style="margin-bottom: 20px;">
+            <h2>Registry Analytics</h2>
+            <p id="update-timestamp" style="color: var(--text-secondary); font-size: 0.85rem; margin-top: 4px;">Loading statistics...</p>
+          </div>
+          
+          <div class="stats-container">
+            <div class="stat-card">
+              <div class="stat-val" id="stat-total">0</div>
+              <div class="stat-label">Total Unique Domains</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-val" id="stat-categories">0</div>
+              <div class="stat-label">Categories</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-val" id="stat-feeds">0</div>
+              <div class="stat-label">Sources Monitored</div>
+            </div>
+          </div>
+
+          <h3>Segmented Sub-Feeds</h3>
+          <div class="categories-grid" id="categories-container">
+            <!-- Dynamically populated category cards -->
+          </div>
+        </section>
+
+      </div>
+
+      <!-- Master Downloads Column -->
+      <aside class="glass-card master-card">
+        <div>
+          <h2 class="master-title">Unified Blocklists</h2>
+          <p style="color: var(--text-secondary); font-size: 0.9rem;">
+            Compile all threat indicators into a single file formatted for various ad blockers, DNS servers, and firewall configurations.
+          </p>
+        </div>
+
+        <div class="download-list">
+          
+          <div class="download-item">
+            <div class="download-item-info">
+              <span class="download-name">domains.txt</span>
+              <span class="download-desc">Raw plaintext domains list</span>
+            </div>
+            <div class="action-row">
+              <button class="btn-icon" onclick="copyText('master/domains.txt')" title="Copy Link" aria-label="Copy Link to domains.txt">
+                🔗
+              </button>
+              <a href="master/domains.txt" class="btn-icon" download title="Download file" aria-label="Download domains.txt">
+                ⬇️
+              </a>
+            </div>
+          </div>
+
+          <div class="download-item">
+            <div class="download-item-info">
+              <span class="download-name">hosts.txt</span>
+              <span class="download-desc">Hosts file mapping (0.0.0.0 target)</span>
+            </div>
+            <div class="action-row">
+              <button class="btn-icon" onclick="copyText('master/hosts.txt')" title="Copy Link" aria-label="Copy Link to hosts.txt">
+                🔗
+              </button>
+              <a href="master/hosts.txt" class="btn-icon" download title="Download file" aria-label="Download hosts.txt">
+                ⬇️
+              </a>
+            </div>
+          </div>
+
+          <div class="download-item">
+            <div class="download-item-info">
+              <span class="download-name">adblock.txt</span>
+              <span class="download-desc">AdBlock syntax (||domain.com^)</span>
+            </div>
+            <div class="action-row">
+              <button class="btn-icon" onclick="copyText('master/adblock.txt')" title="Copy Link" aria-label="Copy Link to adblock.txt">
+                🔗
+              </button>
+              <a href="master/adblock.txt" class="btn-icon" download title="Download file" aria-label="Download adblock.txt">
+                ⬇️
+              </a>
+            </div>
+          </div>
+
+          <div class="download-item">
+            <div class="download-item-info">
+              <span class="download-name">domains.json</span>
+              <span class="download-desc">JSON mapping (domain: [categories])</span>
+            </div>
+            <div class="action-row">
+              <button class="btn-icon" onclick="copyText('master/domains.json')" title="Copy Link" aria-label="Copy Link to domains.json">
+                🔗
+              </button>
+              <a href="master/domains.json" class="btn-icon" download title="Download file" aria-label="Download domains.json">
+                ⬇️
+              </a>
+            </div>
+          </div>
+
+        </div>
+      </aside>
+
+      <!-- Threat Intelligence Feeds table -->
+      <section class="glass-card feeds-card">
+        <h2>Monitored Upstream Threat Feeds</h2>
+        <p style="color: var(--text-secondary); font-size: 0.95rem; margin-top: 4px;">
+          Direct intelligence sources scraped and aggregated by our validation engine daily.
+        </p>
+        <div class="table-wrapper">
+          <table>
+            <thead>
+              <tr>
+                <th>Feed Name</th>
+                <th>Target Category</th>
+                <th>Status</th>
+                <th>Domains Found</th>
+              </tr>
+            </thead>
+            <tbody id="feeds-table-body">
+              <!-- Dynamically populated feeds -->
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+    </div>
+
+    <footer>
+      <p>Powered by GitHub Actions & Pages. Code licensed under MIT. Backlist project by <a href="https://github.com/dev3Masud" target="_blank" rel="noopener noreferrer">dev3Masud</a>.</p>
+    </footer>
+
+  </div>
+
+  <script>
+    // State storage
+    let blacklistData = null;
+    let globalStats = null;
+
+    // Run initializer on load
+    document.addEventListener("DOMContentLoaded", () => {
+      // Fetch stats.json
+      fetch("stats.json")
+        .then(response => response.json())
+        .then(data => {
+          globalStats = data;
+          renderStats(data);
+        })
+        .catch(err => {
+          console.error("Error loading stats.json:", err);
+          document.getElementById("update-timestamp").innerText = "Error loading stats database.";
+        });
+    });
+
+    // Populate dynamic UI stats
+    function renderStats(stats) {
+      // 1. Timestamp formatting
+      const date = new Date(stats.last_updated);
+      document.getElementById("update-timestamp").innerText = `Last automated compilation: ${date.toLocaleString()} (${Intl.DateTimeFormat().resolvedOptions().timeZone})`;
+
+      // 2. Counters
+      document.getElementById("stat-total").innerText = stats.total_domains.toLocaleString();
+      document.getElementById("stat-categories").innerText = Object.keys(stats.categories).length;
+      document.getElementById("stat-feeds").innerText = stats.feeds.length;
+
+      // 3. Category grid cards
+      const categoryContainer = document.getElementById("categories-container");
+      categoryContainer.innerHTML = "";
+      Object.entries(stats.categories).forEach(([name, count]) => {
+        const card = document.createElement("div");
+        card.className = "category-card";
+        card.innerHTML = `
+          <div class="category-header">
+            <span class="category-title">${name}</span>
+            <span class="category-count">${count.toLocaleString()}</span>
+          </div>
+          <div class="category-download-actions">
+            <a href="categories/${name}.txt" class="btn-secondary" download>
+              ⬇️ Download list
+            </a>
+            <button class="btn-secondary" onclick="copyText('categories/${name}.txt')">
+              🔗 URL
+            </button>
+          </div>
+        `;
+        categoryContainer.appendChild(card);
+      });
+
+      // 4. Upstream feed table details
+      const tableBody = document.getElementById("feeds-table-body");
+      tableBody.innerHTML = "";
+      stats.feeds.forEach(feed => {
+        const row = document.createElement("tr");
+        const statusBadge = feed.success 
+          ? `<span class="badge-status status-online">🟢 Active</span>` 
+          : `<span class="badge-status status-offline" title="${feed.error || 'Unknown Error'}">🔴 Offline</span>`;
+        
+        row.innerHTML = `
+          <td style="font-weight: 600;">${feed.name}</td>
+          <td style="text-transform: capitalize; color: var(--text-secondary);">${feed.category}</td>
+          <td>${statusBadge}</td>
+          <td style="font-family: var(--font-mono);">${feed.count.toLocaleString()}</td>
+        `;
+        tableBody.appendChild(row);
+      });
+    }
+
+    // Lazy load the full blacklist JSON only when performing checks to avoid large payload bottlenecks
+    async function lazyLoadDatabase() {
+      if (blacklistData) return blacklistData;
+      
+      const searchResult = document.getElementById("search-result");
+      searchResult.style.display = "block";
+      searchResult.className = "search-result";
+      searchResult.innerText = "Loading database file...";
+
+      try {
+        const response = await fetch("master/domains.json");
+        if (!response.ok) throw new Error("Could not fetch domain map");
+        blacklistData = await response.json();
+        return blacklistData;
+      } catch (err) {
+        console.error(err);
+        searchResult.className = "search-result result-blocked";
+        searchResult.innerText = "Failed to load database. Check if master/domains.json exists.";
+        return null;
+      }
+    }
+
+    // Lookup function
+    async function checkDomain() {
+      const queryInput = document.getElementById("domain-query");
+      const searchResult = document.getElementById("search-result");
+      let query = queryInput.value.trim().toLowerCase();
+
+      if (!query) {
+        searchResult.style.display = "none";
+        return;
+      }
+
+      // If they input a URL, extract domain
+      try {
+        if (query.includes("://") || query.startsWith("www.")) {
+          let temp = query;
+          if (!temp.includes("://")) temp = "http://" + temp;
+          query = new URL(temp).hostname;
+        }
+      } catch(e) {}
+
+      // Strip potential leading/trailing points or path remnants
+      query = query.replace(/^www\./, "");
+      
+      const db = await lazyLoadDatabase();
+      if (!db) return;
+
+      searchResult.style.display = "block";
+
+      if (query in db) {
+        const categories = db[query];
+        searchResult.className = "search-result result-blocked";
+        searchResult.innerHTML = `⚠️ <strong>BLOCKED:</strong> "${query}" is blacklisted under categories: <strong>${categories.join(", ")}</strong>.`;
+      } else {
+        searchResult.className = "search-result result-safe";
+        searchResult.innerHTML = `✅ <strong>SAFE:</strong> "${query}" was not found in active blacklist registries.`;
+      }
+    }
+
+    // Helper: copy to clipboard
+    function copyText(subpath) {
+      // Get absolute URL base
+      const absoluteUrl = window.location.origin + window.location.pathname.replace("index.html", "") + subpath;
+      
+      navigator.clipboard.writeText(absoluteUrl).then(() => {
+        // Find triggering button and provide momentary success styling
+        const btn = event.currentTarget;
+        const originalText = btn.innerHTML;
+        btn.innerHTML = "✅";
+        btn.classList.add("copy-success");
+        
+        setTimeout(() => {
+          btn.innerHTML = originalText;
+          btn.classList.remove("copy-success");
+        }, 1500);
+      }).catch(err => {
+        console.error("Could not copy link:", err);
+      });
+    }
+
+    // Search query on Enter key press
+    document.getElementById("domain-query").addEventListener("keypress", (e) => {
+      if (e.key === 'Enter') {
+        checkDomain();
+      }
+    });
+  </script>
+</body>
+</html>
