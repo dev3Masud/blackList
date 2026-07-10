@@ -1,6 +1,6 @@
 # Compiled Blacklist Variant (Hosts format) - NSFW
 # Total Domains: 100000
-# Last updated: 2026-07-10 10:05:20 UTC
+# Last updated: 2026-07-10 10:32:35 UTC
 
 0.0.0.0 0----q.tumblr.com
 0.0.0.0 0--liamariejohnson--0.nedrobin.net
@@ -421,6 +421,7 @@
 0.0.0.0 0180-telefonsex.net
 0.0.0.0 01800.blogspot.com
 0.0.0.0 018583.com
+0.0.0.0 018777.com.cn
 0.0.0.0 018china.com
 0.0.0.0 018wm.com
 0.0.0.0 0190-livesex.com
@@ -1169,6 +1170,7 @@
 0.0.0.0 085rr.com
 0.0.0.0 086216.com
 0.0.0.0 086242.com
+0.0.0.0 086356.com
 0.0.0.0 0867c.com
 0.0.0.0 0867g.com
 0.0.0.0 0867h.com
@@ -1304,6 +1306,7 @@
 0.0.0.0 0900telesex.com
 0.0.0.0 0900tina.de
 0.0.0.0 090258.com
+0.0.0.0 0903520.com
 0.0.0.0 090373.com
 0.0.0.0 0903overzicht.be
 0.0.0.0 0906-18plusclub.startspot.nl
@@ -1361,6 +1364,7 @@
 0.0.0.0 0916tuan.com
 0.0.0.0 0917osj.com
 0.0.0.0 0917sy.com
+0.0.0.0 0917txx.com
 0.0.0.0 091953.com
 0.0.0.0 091lu.com
 0.0.0.0 091sex.tumblr.com
@@ -1385,6 +1389,7 @@
 0.0.0.0 0952xinge.com
 0.0.0.0 0953120.com
 0.0.0.0 0954u.com
+0.0.0.0 095990.com
 0.0.0.0 095se2.com
 0.0.0.0 095se5.com
 0.0.0.0 096230.com
@@ -1657,6 +1662,7 @@
 0.0.0.0 0lcvk4.shop
 0.0.0.0 0ldperv.tumblr.com
 0.0.0.0 0lh0ro.garden
+0.0.0.0 0lietb.garden
 0.0.0.0 0limits4-deactivated20140606.tumblr.com
 0.0.0.0 0livejasmin.com
 0.0.0.0 0lnbz3.garden
@@ -1729,6 +1735,7 @@
 0.0.0.0 0pe3.top
 0.0.0.0 0penh0le4u.tumblr.com
 0.0.0.0 0pentoanything.tumblr.com
+0.0.0.0 0peoiu.garden
 0.0.0.0 0peracoin.com
 0.0.0.0 0pgg5n.com
 0.0.0.0 0pn.ru
@@ -1885,6 +1892,7 @@
 0.0.0.0 0wetlatinpussy0.tumblr.com
 0.0.0.0 0wgd.top
 0.0.0.0 0wh.top
+0.0.0.0 0wh9hp.garden
 0.0.0.0 0whj.com
 0.0.0.0 0wi.top
 0.0.0.0 0witter.com
@@ -1894,8 +1902,10 @@
 0.0.0.0 0x1s5i1mc.garden
 0.0.0.0 0x294a.top
 0.0.0.0 0x4d0x690x6c0x66.tumblr.com
+0.0.0.0 0x5bbi.garden
 0.0.0.0 0x7121.com
 0.0.0.0 0x7a69.net
+0.0.0.0 0xah99.garden
 0.0.0.0 0xb.top
 0.0.0.0 0xct6i.garden
 0.0.0.0 0xdaily.com
@@ -1945,6 +1955,7 @@
 0.0.0.0 0yxuug.garden
 0.0.0.0 0yyw6l.garden
 0.0.0.0 0z1.cc
+0.0.0.0 0z13c4.garden
 0.0.0.0 0z3.top
 0.0.0.0 0z4.top
 0.0.0.0 0z4t25.garden
@@ -2935,6 +2946,7 @@
 0.0.0.0 102.122.2o7.net
 0.0.0.0 102.over-blog.com
 0.0.0.0 102.prostitutki-msk.com
+0.0.0.0 102090.xyz
 0.0.0.0 10209j8j8.shop
 0.0.0.0 1020smart9381.baby
 0.0.0.0 1020xxx.com
@@ -2959,6 +2971,7 @@
 0.0.0.0 1024cg15.com
 0.0.0.0 1024cg3.com
 0.0.0.0 1024cg5.com
+0.0.0.0 1024cg6.com
 0.0.0.0 1024cg7.com
 0.0.0.0 1024cgw.com
 0.0.0.0 1024dns.com
@@ -3257,6 +3270,7 @@
 0.0.0.0 10xflix.bar
 0.0.0.0 10xflix.cyou
 0.0.0.0 10xflix.lol
+0.0.0.0 10xflix.you
 0.0.0.0 10xhellometro.112.2o7.net
 0.0.0.0 10xonegreatfamily.112.2o7.net
 0.0.0.0 10xpics.com
@@ -3528,6 +3542,7 @@
 0.0.0.0 1122productions.com
 0.0.0.0 11235813.webzdarma.cz
 0.0.0.0 1124xnxx.com
+0.0.0.0 1128.qecdgwe.xyz
 0.0.0.0 112932932398721112.lol
 0.0.0.0 112ap.com
 0.0.0.0 112ax.com
@@ -3735,6 +3750,7 @@
 0.0.0.0 11sn.top
 0.0.0.0 11softball.com
 0.0.0.0 11softbol.com
+0.0.0.0 11stoney.com
 0.0.0.0 11sw.top
 0.0.0.0 11t0w6x.garden
 0.0.0.0 11t55.com
@@ -3885,6 +3901,7 @@
 0.0.0.0 12289.dating-central.net
 0.0.0.0 122907224924.c.mystat-in.net
 0.0.0.0 122955.tumblr.com
+0.0.0.0 122chan.top
 0.0.0.0 122py.com
 0.0.0.0 122ty.com
 0.0.0.0 123-amateur.com
@@ -3922,6 +3939,7 @@
 0.0.0.0 123.ywxww.net
 0.0.0.0 1230146.xyz
 0.0.0.0 12304982h5.xyz
+0.0.0.0 1230fs.com
 0.0.0.0 1230kjfk.com
 0.0.0.0 1230xxx.com
 0.0.0.0 12311.org.cn
@@ -4043,6 +4061,7 @@
 0.0.0.0 123dessous.fr
 0.0.0.0 123dh.cc
 0.0.0.0 123doujin.com
+0.0.0.0 123dwe.com.cn
 0.0.0.0 123erotiekwinkel.com
 0.0.0.0 123escortes.com
 0.0.0.0 123escorts.com
@@ -4241,6 +4260,7 @@
 0.0.0.0 123tranny.com
 0.0.0.0 123tribute.tumblr.com
 0.0.0.0 123trouver.info
+0.0.0.0 123us.top
 0.0.0.0 123vibrator.nl
 0.0.0.0 123vibrators.com
 0.0.0.0 123video.be
@@ -4516,6 +4536,7 @@
 0.0.0.0 130kg.fr.free.fr
 0.0.0.0 130kilos.free.fr
 0.0.0.0 130tyesy.vercel.app
+0.0.0.0 130za.com
 0.0.0.0 131.by
 0.0.0.0 1310majo.tumblr.com
 0.0.0.0 13121978.tumblr.com
@@ -4560,6 +4581,7 @@
 0.0.0.0 133lc.com
 0.0.0.0 133py.com
 0.0.0.0 133qingli.com
+0.0.0.0 133tuscanyway.com
 0.0.0.0 133tyesy.vercel.app
 0.0.0.0 134-112-56-85.cprapid.com
 0.0.0.0 1341.asia-solid.com
@@ -4589,6 +4611,7 @@
 0.0.0.0 13726xxx.vip
 0.0.0.0 137731.net
 0.0.0.0 1377x.to
+0.0.0.0 1378mtshasta.com
 0.0.0.0 137ac.com
 0.0.0.0 137af.com
 0.0.0.0 137ah.com
@@ -4827,6 +4850,7 @@
 0.0.0.0 138shenbosbo.com
 0.0.0.0 139-23downloads.blogspot.com
 0.0.0.0 139326.com
+0.0.0.0 13987133168.com
 0.0.0.0 139av.cc
 0.0.0.0 139da.com
 0.0.0.0 139dns.com
@@ -5059,6 +5083,7 @@
 0.0.0.0 1566y.com
 0.0.0.0 15694.hittail.com
 0.0.0.0 156j.com
+0.0.0.0 1570cypressave.com
 0.0.0.0 1573.com.tw
 0.0.0.0 157qihu.com
 0.0.0.0 158-158-74-174.cprapid.com
@@ -5744,6 +5769,7 @@
 0.0.0.0 17live.nl
 0.0.0.0 17livesex.nl
 0.0.0.0 17lo.tv
+0.0.0.0 17love.live
 0.0.0.0 17maobf.com
 0.0.0.0 17maobk.com
 0.0.0.0 17maogf.com
@@ -6040,6 +6066,7 @@
 0.0.0.0 1855drsahni.com
 0.0.0.0 185guildford.com.au
 0.0.0.0 185tyesy.vercel.app
+0.0.0.0 1860020.com
 0.0.0.0 18618372286.com
 0.0.0.0 1864.tumblr.com
 0.0.0.0 1866786obey.com
@@ -6376,6 +6403,7 @@
 0.0.0.0 18dreams.net
 0.0.0.0 18dsc.com.hk
 0.0.0.0 18dvd.com
+0.0.0.0 18dz.pw
 0.0.0.0 18e833887670.com
 0.0.0.0 18easy.com
 0.0.0.0 18eighteen.com
@@ -6633,6 +6661,7 @@
 0.0.0.0 18jtv.com
 0.0.0.0 18jtv.tv
 0.0.0.0 18kami.com
+0.0.0.0 18kdy.com
 0.0.0.0 18keyspace.de
 0.0.0.0 18kin-navi.com
 0.0.0.0 18kin.info
@@ -6718,6 +6747,7 @@
 0.0.0.0 18metart.com
 0.0.0.0 18mh.cc
 0.0.0.0 18mh.co
+0.0.0.0 18mh.me
 0.0.0.0 18mh.net
 0.0.0.0 18mh.org
 0.0.0.0 18mh.vip
@@ -7006,6 +7036,7 @@
 0.0.0.0 18roulette.live
 0.0.0.0 18rouman.org
 0.0.0.0 18rourou.xyz
+0.0.0.0 18rr.org
 0.0.0.0 18rr.xyz
 0.0.0.0 18russian.com
 0.0.0.0 18s.mobi
@@ -7098,6 +7129,7 @@
 0.0.0.0 18sm.info
 0.0.0.0 18sm.ru
 0.0.0.0 18snap.tv
+0.0.0.0 18snaptv.com
 0.0.0.0 18sophie.com
 0.0.0.0 18sqdh.com
 0.0.0.0 18ssss.com
@@ -7347,6 +7379,7 @@
 0.0.0.0 18xxx.xyz
 0.0.0.0 18xxx18.com
 0.0.0.0 18xxx3.blogspot.com
+0.0.0.0 18xxx3.club
 0.0.0.0 18xxx3.xyz
 0.0.0.0 18xxx7.shop
 0.0.0.0 18xxxav.click
@@ -7456,6 +7489,7 @@
 0.0.0.0 18zh.life
 0.0.0.0 18zhuce.com
 0.0.0.0 18zp.cc
+0.0.0.0 18zy.vip
 0.0.0.0 19-18.b.cdn13.com
 0.0.0.0 19-18ans.blogspot.com
 0.0.0.0 19-ans.com
@@ -7482,7 +7516,6 @@
 0.0.0.0 190tyesy.vercel.app
 0.0.0.0 190uu.com
 0.0.0.0 190xx.com
-0.0.0.0 1910cc.com
 0.0.0.0 1911tv.com
 0.0.0.0 1916yz.com
 0.0.0.0 19195501.tumblr.com
@@ -7742,6 +7775,7 @@
 0.0.0.0 1a-weiber-4u.de
 0.0.0.0 1a.nl
 0.0.0.0 1a0.top
+0.0.0.0 1a0r4bkbz.garden
 0.0.0.0 1a1sex.com
 0.0.0.0 1a5.top
 0.0.0.0 1abbsolute.tumblr.com
@@ -7831,7 +7865,6 @@
 0.0.0.0 1aventuranosexo.cjb.net
 0.0.0.0 1averagejoe64.tumblr.com
 0.0.0.0 1avi.com
-0.0.0.0 1az.top
 0.0.0.0 1azax.blogspot.com
 0.0.0.0 1b0.top
 0.0.0.0 1b1h.com
@@ -7863,6 +7896,7 @@
 0.0.0.0 1bbwpornblog.com
 0.0.0.0 1bbwtube.net
 0.0.0.0 1bd.top
+0.0.0.0 1bdkfy79p.garden
 0.0.0.0 1bdsm.com
 0.0.0.0 1bdsmtube.com
 0.0.0.0 1beautifulboyx.blogspot.com
@@ -7896,6 +7930,7 @@
 0.0.0.0 1bm.cqcounter.com
 0.0.0.0 1bnhzd.top
 0.0.0.0 1bodyluver.tumblr.com
+0.0.0.0 1bofc5m.garden
 0.0.0.0 1bokeponline.top
 0.0.0.0 1bombe-sexuelle.com
 0.0.0.0 1bondage.com
@@ -7929,6 +7964,7 @@
 0.0.0.0 1byday.com
 0.0.0.0 1byday.org
 0.0.0.0 1bydaygirls.com
+0.0.0.0 1bylb6.garden
 0.0.0.0 1c-edi.ru
 0.0.0.0 1c-umi.ru
 0.0.0.0 1c2c3c4c.com
@@ -7949,11 +7985,14 @@
 0.0.0.0 1camsexy.com
 0.0.0.0 1camtocam.fr
 0.0.0.0 1cash.net
+0.0.0.0 1cashpayment.com
 0.0.0.0 1casinolisting.com
 0.0.0.0 1casting.cz
 0.0.0.0 1castingporno.com
+0.0.0.0 1caun8.garden
 0.0.0.0 1cbg.com
 0.0.0.0 1cc.tw
+0.0.0.0 1ccrou5.garden
 0.0.0.0 1ccw.com
 0.0.0.0 1cekc.com
 0.0.0.0 1cekc.net
@@ -7976,6 +8015,7 @@
 0.0.0.0 1chinablog.com
 0.0.0.0 1chino1.tumblr.com
 0.0.0.0 1chipperam.tumblr.com
+0.0.0.0 1chiys.com
 0.0.0.0 1christymackxxx.tumblr.com
 0.0.0.0 1ci.top
 0.0.0.0 1cili.com
@@ -8023,6 +8063,7 @@
 0.0.0.0 1d25j1.garden
 0.0.0.0 1d3c8a1eaa.faeaeeaafa.com
 0.0.0.0 1d5vyj.garden
+0.0.0.0 1d74rs.garden
 0.0.0.0 1d92.top
 0.0.0.0 1dafsmut.tumblr.com
 0.0.0.0 1date.nl
@@ -8030,7 +8071,9 @@
 0.0.0.0 1day1girl.skynetblogs.be
 0.0.0.0 1dayschools.com
 0.0.0.0 1dcaiha.garden
+0.0.0.0 1dcs833.garden
 0.0.0.0 1de.cqcounter.com
+0.0.0.0 1dei0a.garden
 0.0.0.0 1delhiescorts.in
 0.0.0.0 1desire2many.tumblr.com
 0.0.0.0 1desiremovies.mov
@@ -8081,6 +8124,7 @@
 0.0.0.0 1eagle1.com
 0.0.0.0 1easylink.com
 0.0.0.0 1ebonytube.com
+0.0.0.0 1ebpy64.garden
 0.0.0.0 1ebyt.com
 0.0.0.0 1ecfeb16d364.com
 0.0.0.0 1echangephotos.blogspot.com
@@ -8090,7 +8134,6 @@
 0.0.0.0 1eher.com
 0.0.0.0 1ejaculationinterne.com
 0.0.0.0 1empiredirect.com
-0.0.0.0 1en.top
 0.0.0.0 1en10.com
 0.0.0.0 1ensestfilmizle.blogspot.com
 0.0.0.0 1eo.top
@@ -8138,6 +8181,7 @@
 0.0.0.0 1f6.top
 0.0.0.0 1f9.net
 0.0.0.0 1f9.top
+0.0.0.0 1f9jvk.garden
 0.0.0.0 1facebookcoquine.blogspot.com
 0.0.0.0 1fap.com
 0.0.0.0 1fatpussy.com
@@ -8233,6 +8277,7 @@
 0.0.0.0 1gay71.vip
 0.0.0.0 1gaybear.free.fr
 0.0.0.0 1gaybears.com
+0.0.0.0 1gaybl.my9fuf.lol
 0.0.0.0 1gayblvd.com
 0.0.0.0 1gaydaddytube.com
 0.0.0.0 1gayfucktube.com
@@ -8253,6 +8298,7 @@
 0.0.0.0 1geilefrauen.com
 0.0.0.0 1geilemeid.startspot.nl
 0.0.0.0 1genericpills.net
+0.0.0.0 1geys.com
 0.0.0.0 1gf2rt3.hair
 0.0.0.0 1gfcwf.skin
 0.0.0.0 1gh2da.top
@@ -8264,6 +8310,7 @@
 0.0.0.0 1girl1pitcher.org
 0.0.0.0 1girl2men.tumblr.com
 0.0.0.0 1girlpettingzoo.com
+0.0.0.0 1gj75v.garden
 0.0.0.0 1glamour.com
 0.0.0.0 1gljmx.top
 0.0.0.0 1goat.tumblr.com
@@ -8293,6 +8340,7 @@
 0.0.0.0 1guy2needles.net
 0.0.0.0 1gw.top
 0.0.0.0 1gx.top
+0.0.0.0 1h26.top
 0.0.0.0 1h3.top
 0.0.0.0 1h4.top
 0.0.0.0 1h6.top
@@ -8405,6 +8453,7 @@
 0.0.0.0 1indiansex.com
 0.0.0.0 1indiansextube.com
 0.0.0.0 1internet.org
+0.0.0.0 1iq6b4.garden
 0.0.0.0 1it.cqcounter.com
 0.0.0.0 1ittle-0ne.tumblr.com
 0.0.0.0 1iv.top
@@ -8412,6 +8461,7 @@
 0.0.0.0 1ix.top
 0.0.0.0 1iy.top
 0.0.0.0 1j2.top
+0.0.0.0 1j31yck.garden
 0.0.0.0 1j41.top
 0.0.0.0 1j7.top
 0.0.0.0 1j98cz.garden
@@ -8455,7 +8505,6 @@
 0.0.0.0 1kaola.com
 0.0.0.0 1kav.cc
 0.0.0.0 1kgdbktld.garden
-0.0.0.0 1kh.top
 0.0.0.0 1ki.top
 0.0.0.0 1kibby.tumblr.com
 0.0.0.0 1kif.com
@@ -8473,6 +8522,7 @@
 0.0.0.0 1kj.top
 0.0.0.0 1kjw.com
 0.0.0.0 1kkee.vip
+0.0.0.0 1kl4pka.garden
 0.0.0.0 1kmovies.cc
 0.0.0.0 1kn.top
 0.0.0.0 1korgasms.com
@@ -8481,6 +8531,7 @@
 0.0.0.0 1kuaifu.com
 0.0.0.0 1kuss.de
 0.0.0.0 1kutvocht.startspot.nl
+0.0.0.0 1kvf.com
 0.0.0.0 1kx.top
 0.0.0.0 1kzp.com
 0.0.0.0 1l-view.mail.ru
@@ -8534,6 +8585,7 @@
 0.0.0.0 1loveroftheamateurs.tumblr.com
 0.0.0.0 1loveshemale4ever.tumblr.com
 0.0.0.0 1lq.top
+0.0.0.0 1ltr3.net.cn
 0.0.0.0 1luckydick.tumblr.com
 0.0.0.0 1luckygambler.com
 0.0.0.0 1luckyhotwife.tumblr.com
@@ -8542,7 +8594,6 @@
 0.0.0.0 1lzz.com
 0.0.0.0 1m13.top
 0.0.0.0 1m2.top
-0.0.0.0 1m4.top
 0.0.0.0 1machine82.tumblr.com
 0.0.0.0 1mag1ne.blog
 0.0.0.0 1maitresse-dominatrice.com
@@ -8620,7 +8671,7 @@
 0.0.0.0 1minxie.tumblr.com
 0.0.0.0 1mistabangkxxx.tumblr.com
 0.0.0.0 1mistressvixen.tumblr.com
-0.0.0.0 1ml.top
+0.0.0.0 1mkhv0.garden
 0.0.0.0 1mo.top
 0.0.0.0 1mobilporn.blogspot.com
 0.0.0.0 1modelagency.com
@@ -8640,7 +8691,6 @@
 0.0.0.0 1movieplex.website
 0.0.0.0 1moviesearch.com
 0.0.0.0 1movieshd.org
-0.0.0.0 1mp.top
 0.0.0.0 1mp3-sex.dr.ag
 0.0.0.0 1mr.top
 0.0.0.0 1mrl1.com
@@ -8650,9 +8700,9 @@
 0.0.0.0 1mylf.com
 0.0.0.0 1mylfdom.com
 0.0.0.0 1mysticknight.tumblr.com
+0.0.0.0 1n0v0x.garden
 0.0.0.0 1n22.com
 0.0.0.0 1n66.top
-0.0.0.0 1n7.top
 0.0.0.0 1nacktefrauen.com
 0.0.0.0 1nastychick.com
 0.0.0.0 1natkutje.startspot.nl
@@ -8695,7 +8745,6 @@
 0.0.0.0 1nt0them1st.tumblr.com
 0.0.0.0 1nt0them1stpornroll.tumblr.com
 0.0.0.0 1nterracial-sluts.tumblr.com
-0.0.0.0 1nu.top
 0.0.0.0 1nudechat.com
 0.0.0.0 1nudedude.tumblr.com
 0.0.0.0 1nudes.blogspot.com
@@ -8706,6 +8755,7 @@
 0.0.0.0 1nurumassage.com
 0.0.0.0 1nut.com
 0.0.0.0 1nv0g6.garden
+0.0.0.0 1nxi1mw.garden
 0.0.0.0 1ny.top
 0.0.0.0 1o2o3o.com
 0.0.0.0 1o4.top
@@ -8804,11 +8854,13 @@
 0.0.0.0 1op1camsex.nl
 0.0.0.0 1or.top
 0.0.0.0 1orall.tumblr.com
+0.0.0.0 1osa.org.cn
 0.0.0.0 1ot.top
 0.0.0.0 1ou.top
 0.0.0.0 1p0rn.com
 0.0.0.0 1p17.top
 0.0.0.0 1p30s.com
+0.0.0.0 1p34.top
 0.0.0.0 1p5.top
 0.0.0.0 1p52.com
 0.0.0.0 1p54.com
@@ -8998,6 +9050,7 @@
 0.0.0.0 1pussyfiend.tumblr.com
 0.0.0.0 1pv6pref1x.dynv6.net
 0.0.0.0 1py.top
+0.0.0.0 1pyjg4.com.cn
 0.0.0.0 1pz17.xyz
 0.0.0.0 1pz28.xyz
 0.0.0.0 1pz30.xyz
@@ -9015,6 +9068,7 @@
 0.0.0.0 1q42.com
 0.0.0.0 1q56.com
 0.0.0.0 1q59.com
+0.0.0.0 1q5kmu.garden
 0.0.0.0 1q64.com
 0.0.0.0 1q66.top
 0.0.0.0 1q81.com
@@ -9024,7 +9078,6 @@
 0.0.0.0 1qchi.com
 0.0.0.0 1qdhzb.garden
 0.0.0.0 1qingdao.com
-0.0.0.0 1qo.top
 0.0.0.0 1qporndc.top
 0.0.0.0 1qqtv.net
 0.0.0.0 1qs.top
@@ -9036,12 +9089,13 @@
 0.0.0.0 1qy0.top
 0.0.0.0 1qypjj.com
 0.0.0.0 1r4.com
+0.0.0.0 1r65.top
+0.0.0.0 1r9rh2r.garden
 0.0.0.0 1rad-readerreviews.com
 0.0.0.0 1ranger1.tumblr.com
 0.0.0.0 1ranma.tumblr.com
 0.0.0.0 1ratusange168.blogspot.com
 0.0.0.0 1re.info
-0.0.0.0 1re.top
 0.0.0.0 1redhead.com
 0.0.0.0 1redirect.com
 0.0.0.0 1reifefrauen.com
@@ -9061,7 +9115,6 @@
 0.0.0.0 1rg.top
 0.0.0.0 1rj.top
 0.0.0.0 1rk.net
-0.0.0.0 1rn.top
 0.0.0.0 1ro.top
 0.0.0.0 1ro4u.webout.life
 0.0.0.0 1robust.tumblr.com
@@ -9210,11 +9263,11 @@
 0.0.0.0 1shemaletubes.com
 0.0.0.0 1shemalewebcam.com
 0.0.0.0 1shizhan.com
+0.0.0.0 1shjshg.garden
 0.0.0.0 1shortcummings.tumblr.com
 0.0.0.0 1shorten24.cyou
 0.0.0.0 1shynaturist.tumblr.com
 0.0.0.0 1si.cqcounter.com
-0.0.0.0 1si.top
 0.0.0.0 1sick-fuck-559.tumblr.com
 0.0.0.0 1sickfuck.tumblr.com
 0.0.0.0 1sisdj-chihuahua-2024.com.mx
@@ -9232,7 +9285,6 @@
 0.0.0.0 1sluxxx.com
 0.0.0.0 1sms3videos.com
 0.0.0.0 1smut.tumblr.com
-0.0.0.0 1sn.top
 0.0.0.0 1snapchatforsex.tumblr.com
 0.0.0.0 1snapchatporn.blogspot.com
 0.0.0.0 1snaprencontre.tumblr.com
@@ -9244,6 +9296,7 @@
 0.0.0.0 1spanking.com
 0.0.0.0 1spider.com
 0.0.0.0 1squeeze.tumblr.com
+0.0.0.0 1squns.garden
 0.0.0.0 1ss.top
 0.0.0.0 1ssdfr.garden
 0.0.0.0 1sss1.com
@@ -9287,6 +9340,7 @@
 0.0.0.0 1start.be
 0.0.0.0 1stat.ru
 0.0.0.0 1stbabes.com
+0.0.0.0 1stbangkokescort.com
 0.0.0.0 1stbbw.com
 0.0.0.0 1stbbwporn.com
 0.0.0.0 1stbdsm.com
@@ -9384,7 +9438,6 @@
 0.0.0.0 1superporn.com
 0.0.0.0 1supervideo.net
 0.0.0.0 1superxxx.com
-0.0.0.0 1supjav.top
 0.0.0.0 1sweetass.com
 0.0.0.0 1sweetsubmission.tumblr.com
 0.0.0.0 1swingerphonesex.com
@@ -9470,7 +9523,6 @@
 0.0.0.0 1topcams.com
 0.0.0.0 1toplist.com
 0.0.0.0 1toy.net
-0.0.0.0 1tp.top
 0.0.0.0 1tr.cqcounter.com
 0.0.0.0 1trailhorseluvr.tumblr.com
 0.0.0.0 1tranny.cc
@@ -9522,12 +9574,11 @@
 0.0.0.0 1u3.top
 0.0.0.0 1u34.top
 0.0.0.0 1u4p8.cc
+0.0.0.0 1u8onmw.garden
 0.0.0.0 1u9.top
 0.0.0.0 1ua.cqcounter.com
 0.0.0.0 1ud.top
-0.0.0.0 1ue.top
 0.0.0.0 1uf.top
-0.0.0.0 1ug.com.cn
 0.0.0.0 1uh.cc
 0.0.0.0 1uj.top
 0.0.0.0 1uk.cqcounter.com
@@ -9609,7 +9660,6 @@
 0.0.0.0 1wetpussy.com
 0.0.0.0 1wf.top
 0.0.0.0 1wfv48l.garden
-0.0.0.0 1wg.top
 0.0.0.0 1whitecockwhore.tumblr.com
 0.0.0.0 1wildtube.com
 0.0.0.0 1wildwear.8m.com
@@ -9619,9 +9669,9 @@
 0.0.0.0 1win62940.help
 0.0.0.0 1win82361.help
 0.0.0.0 1winazerbaijanbonus.gay
+0.0.0.0 1wincricket.com
 0.0.0.0 1wiredpussy.com
 0.0.0.0 1wish.net
-0.0.0.0 1wo.top
 0.0.0.0 1wolfsexz-hryo.buzz
 0.0.0.0 1worlditsolutions.com
 0.0.0.0 1wp.org
@@ -9657,14 +9707,12 @@
 0.0.0.0 1xbetmyanmar.bet
 0.0.0.0 1xbetmyanmar.net
 0.0.0.0 1xbettiyu.com
-0.0.0.0 1xbook.top
 0.0.0.0 1xcrow.com
-0.0.0.0 1xe.top
 0.0.0.0 1xflip.com
+0.0.0.0 1xh8bsu.garden
 0.0.0.0 1xhamster.com
 0.0.0.0 1xila.com
 0.0.0.0 1xmhbr.garden
-0.0.0.0 1xn.top
 0.0.0.0 1xnxx.art
 0.0.0.0 1xnxx.cc
 0.0.0.0 1xnxx.net
@@ -9704,6 +9752,7 @@
 0.0.0.0 1xxx.tv
 0.0.0.0 1xxx.xyz
 0.0.0.0 1xxxe.top
+0.0.0.0 1xxxes.cc
 0.0.0.0 1xxxgrossistexxx1.over-blog.com
 0.0.0.0 1xxxmalayalam.com
 0.0.0.0 1xxxpics.com
@@ -9719,27 +9768,24 @@
 0.0.0.0 1xxxy.top
 0.0.0.0 1xz.top
 0.0.0.0 1y.is
+0.0.0.0 1y0v9n.garden
 0.0.0.0 1y1go.com
 0.0.0.0 1y2y3y.com
-0.0.0.0 1y6.top
 0.0.0.0 1y7.top
 0.0.0.0 1y8c.top
 0.0.0.0 1y8pim.top
 0.0.0.0 1y9.com
-0.0.0.0 1y9.top
 0.0.0.0 1yasam.com
 0.0.0.0 1ydmc.com
 0.0.0.0 1yi.top
 0.0.0.0 1yj.top
 0.0.0.0 1yk.top
-0.0.0.0 1yl.top
 0.0.0.0 1ynu8d.garden
 0.0.0.0 1yo.top
 0.0.0.0 1yohzl.garden
 0.0.0.0 1yoongs.tumblr.com
 0.0.0.0 1youngporn.com
 0.0.0.0 1youngteenporn.com
-0.0.0.0 1yr.top
 0.0.0.0 1ysf1u.garden
 0.0.0.0 1yummygirl.blogspot.com
 0.0.0.0 1yv.top
@@ -9756,11 +9802,9 @@
 0.0.0.0 1zfgay.shop
 0.0.0.0 1zhibo.cc
 0.0.0.0 1zhibo.xyz
-0.0.0.0 1zhishi.com.cn
 0.0.0.0 1zigetvar.com
 0.0.0.0 1zk.top
 0.0.0.0 1zlb.top
-0.0.0.0 1zn.top
 0.0.0.0 1zon.ru
 0.0.0.0 1zone1.free.fr
 0.0.0.0 1zooporn.org
@@ -9942,7 +9986,6 @@
 0.0.0.0 2014gangbang-o-rama-69xxx-2k.tumblr.com
 0.0.0.0 2014naughtylist.tumblr.com
 0.0.0.0 2014pornoizle.blogspot.com
-0.0.0.0 2014pttwc.org.cn
 0.0.0.0 2014videoizle.blogspot.com
 0.0.0.0 2015-bdsm-bisexual.tumblr.com
 0.0.0.0 2015-bdsm-bondage.tumblr.com
@@ -10114,6 +10157,7 @@
 0.0.0.0 203ww.com
 0.0.0.0 2048.cc
 0.0.0.0 2048.vip
+0.0.0.0 204820481.xyz
 0.0.0.0 204855.xyz
 0.0.0.0 2048bt.icu
 0.0.0.0 2048btbt.xyz
@@ -10127,7 +10171,6 @@
 0.0.0.0 204ww.com
 0.0.0.0 204y.com
 0.0.0.0 204zz.com
-0.0.0.0 2058.top
 0.0.0.0 20585485p.rfihub.com
 0.0.0.0 205ff.com
 0.0.0.0 205gu.com
@@ -10143,6 +10186,7 @@
 0.0.0.0 206dd.com
 0.0.0.0 206ff.com
 0.0.0.0 206jj.com
+0.0.0.0 206studio.com
 0.0.0.0 206vb.com
 0.0.0.0 206z.top
 0.0.0.0 207-87-18-203.wsmg.digex.net
@@ -10173,7 +10217,6 @@
 0.0.0.0 208nn.com
 0.0.0.0 208oo.com
 0.0.0.0 208tt.com
-0.0.0.0 208v.top
 0.0.0.0 208va.com
 0.0.0.0 208ww.com
 0.0.0.0 208zz.com
@@ -10275,7 +10318,6 @@
 0.0.0.0 20www.com
 0.0.0.0 20xg.com
 0.0.0.0 20xxx.com
-0.0.0.0 20y.top
 0.0.0.0 20yop.com
 0.0.0.0 20yotube.com
 0.0.0.0 20zzz.com
@@ -10319,7 +10361,6 @@
 0.0.0.0 212uu.com
 0.0.0.0 212va.com
 0.0.0.0 212xnxx.com
-0.0.0.0 212z.com
 0.0.0.0 2137864.tumblr.com
 0.0.0.0 213dd.com
 0.0.0.0 213f.top
@@ -10438,6 +10479,7 @@
 0.0.0.0 21jzy.com
 0.0.0.0 21kiski.ru
 0.0.0.0 21kpussy.com
+0.0.0.0 21lawedu.com
 0.0.0.0 21leadershipmen.info
 0.0.0.0 21livesex.com
 0.0.0.0 21lux.com
@@ -10453,6 +10495,7 @@
 0.0.0.0 21mrsid.tumblr.com
 0.0.0.0 21mstar.com
 0.0.0.0 21myip.monster
+0.0.0.0 21n4fv10x.garden
 0.0.0.0 21nakedbabes.tumblr.com
 0.0.0.0 21nakedblondlove.tumblr.com
 0.0.0.0 21nakedbukkake.tumblr.com
@@ -10529,7 +10572,6 @@
 0.0.0.0 21sextreme.gaypornstarsreport.com
 0.0.0.0 21sextreme.info
 0.0.0.0 21sextreme.us
-0.0.0.0 21sextremeapp.com
 0.0.0.0 21sextremelive.com
 0.0.0.0 21sextremer.com
 0.0.0.0 21sextremr.com
@@ -10573,6 +10615,8 @@
 0.0.0.0 21sexyreme.com
 0.0.0.0 21sexytury.com
 0.0.0.0 21sexyury.com
+0.0.0.0 21shiye.com
+0.0.0.0 21shu.com
 0.0.0.0 21site.com
 0.0.0.0 21speech.com
 0.0.0.0 21st-digit.tumblr.com
@@ -10603,7 +10647,6 @@
 0.0.0.0 22000jnrevldcsz.com
 0.0.0.0 22000verdcsarvecsd.com
 0.0.0.0 22006.engine.mobileapptracking.com
-0.0.0.0 22025.top
 0.0.0.0 220517.xyz
 0.0.0.0 220hs.com
 0.0.0.0 220images.com
@@ -10640,7 +10683,6 @@
 0.0.0.0 222gmv.com
 0.0.0.0 222md.cc
 0.0.0.0 222porno.ru
-0.0.0.0 222singles.com
 0.0.0.0 222tsextou.com
 0.0.0.0 222xxx.cc
 0.0.0.0 2233.biz
@@ -10670,6 +10712,7 @@
 0.0.0.0 224gui.com
 0.0.0.0 224jin.com
 0.0.0.0 224nan.com
+0.0.0.0 224swd.garden
 0.0.0.0 224tan.com
 0.0.0.0 224v.top
 0.0.0.0 224va.com
@@ -10719,7 +10762,6 @@
 0.0.0.0 227yu.com
 0.0.0.0 2288ba.com
 0.0.0.0 2288betsextou.com
-0.0.0.0 228av.com
 0.0.0.0 228bbw.ru
 0.0.0.0 228i.top
 0.0.0.0 228jw.com
@@ -10784,6 +10826,7 @@
 0.0.0.0 22eejj.com
 0.0.0.0 22eepp.com
 0.0.0.0 22eerr.com
+0.0.0.0 22fengxian.com
 0.0.0.0 22ffee.com
 0.0.0.0 22ffhh.com
 0.0.0.0 22ffjj.com
@@ -10897,6 +10940,7 @@
 0.0.0.0 22tv.com
 0.0.0.0 22v.xyz
 0.0.0.0 22whatsappsexfun.pages.dev
+0.0.0.0 22win1.com.ph
 0.0.0.0 22xnxx.com
 0.0.0.0 22xpxp.info
 0.0.0.0 22xxhh.com
@@ -11017,6 +11061,7 @@
 0.0.0.0 237ss.com
 0.0.0.0 23837.hittail.com
 0.0.0.0 2388h34h034.surf
+0.0.0.0 2388uu.top
 0.0.0.0 238bb.com
 0.0.0.0 238f.top
 0.0.0.0 238hh.com
@@ -11029,6 +11074,7 @@
 0.0.0.0 23912898h54.baby
 0.0.0.0 2393877.bond
 0.0.0.0 239905.com
+0.0.0.0 239939.com
 0.0.0.0 239999.xyz
 0.0.0.0 239ee.com
 0.0.0.0 239gu.com
@@ -11340,6 +11386,7 @@
 0.0.0.0 24bdsm.me
 0.0.0.0 24bdsmtube.com
 0.0.0.0 24binow.tumblr.com
+0.0.0.0 24bjw.com
 0.0.0.0 24bok.com
 0.0.0.0 24bokep.blogspot.com
 0.0.0.0 24bondagetube.com
@@ -12086,6 +12133,7 @@
 0.0.0.0 25maovip.com
 0.0.0.0 25msmalldickpussyfree.tumblr.com
 0.0.0.0 25nup.com
+0.0.0.0 25orf6.garden
 0.0.0.0 25plus.net
 0.0.0.0 25pornmovies.com
 0.0.0.0 25redlover.tumblr.com
@@ -12755,6 +12803,7 @@
 0.0.0.0 290xx.com
 0.0.0.0 291aa.com
 0.0.0.0 291dd.com
+0.0.0.0 291faultssy.xyz
 0.0.0.0 291jj.com
 0.0.0.0 291ku.com
 0.0.0.0 291ll.com
@@ -12933,7 +12982,6 @@
 0.0.0.0 2axxx.de
 0.0.0.0 2ay.top
 0.0.0.0 2azgin.com
-0.0.0.0 2b0.top
 0.0.0.0 2b18.com
 0.0.0.0 2b2a.com
 0.0.0.0 2b2n3b.hair
@@ -13437,6 +13485,7 @@
 0.0.0.0 2intim.de
 0.0.0.0 2iq.com
 0.0.0.0 2is.top
+0.0.0.0 2ix8ic.garden
 0.0.0.0 2j2.top
 0.0.0.0 2j4h3h.hair
 0.0.0.0 2j5.top
@@ -13454,6 +13503,7 @@
 0.0.0.0 2jav.net
 0.0.0.0 2javsb.top
 0.0.0.0 2javxxx.com
+0.0.0.0 2jedu.com
 0.0.0.0 2jf.top
 0.0.0.0 2ji-planet.com
 0.0.0.0 2ji.pink
@@ -13794,7 +13844,6 @@
 0.0.0.0 2pussy.com
 0.0.0.0 2pw.top
 0.0.0.0 2pyuk8.garden
-0.0.0.0 2pz.top
 0.0.0.0 2q.gx4vrf.sbs
 0.0.0.0 2q0.top
 0.0.0.0 2q20nf.garden
@@ -99953,52 +100002,3 @@
 0.0.0.0 atuiguang.com
 0.0.0.0 atumultuousmind.blogspot.com
 0.0.0.0 aturesexce.com
-0.0.0.0 atuttoporno.com
-0.0.0.0 atveypytu.gq
-0.0.0.0 atvgroup.it
-0.0.0.0 atvids.com
-0.0.0.0 atvizyon.com
-0.0.0.0 atvplus.oewabox.at
-0.0.0.0 atvpurosangue.blogspot.com
-0.0.0.0 atvsafari.online
-0.0.0.0 atwi.pl
-0.0.0.0 atwinkslove.tumblr.com
-0.0.0.0 atwinkslovevids.tumblr.com
-0.0.0.0 atwinktube.com
-0.0.0.0 atwmcd.com
-0.0.0.0 atwola.com
-0.0.0.0 atworkporn.com
-0.0.0.0 atworksex.com
-0.0.0.0 atx-gaylove.tumblr.com
-0.0.0.0 atxaustinatx.tumblr.com
-0.0.0.0 atxbbwslut2share.tumblr.com
-0.0.0.0 atxbimale46.tumblr.com
-0.0.0.0 atxccu.org
-0.0.0.0 atxcowboi.tumblr.com
-0.0.0.0 atxfuncouple.tumblr.com
-0.0.0.0 atxjason.com
-0.0.0.0 atxmanagement.com
-0.0.0.0 atxmersch.tumblr.com
-0.0.0.0 atxnetwork.com
-0.0.0.0 atxperv.tumblr.com
-0.0.0.0 atxsir.tumblr.com
-0.0.0.0 atxvoyeur.tumblr.com
-0.0.0.0 atxxx.net
-0.0.0.0 aty259.sbs
-0.0.0.0 atyourgiantmastersmercy.tumblr.com
-0.0.0.0 atypical-tits.tumblr.com
-0.0.0.0 atypicalcollegeguy.tumblr.com
-0.0.0.0 atz742.sbs
-0.0.0.0 atzns.com
-0.0.0.0 au-au-au-maar-wel-lekker.startspot.nl
-0.0.0.0 au-bonheur-des-dames.fr
-0.0.0.0 au-cdn.effectivemeasure.net
-0.0.0.0 au-chan.shop
-0.0.0.0 au-china.com
-0.0.0.0 au-cinema.com
-0.0.0.0 au-gmtdmp.mookie1.com
-0.0.0.0 au-insight.ants.vn
-0.0.0.0 au-mur-des-rencontres.com
-0.0.0.0 au-oui.tumblr.com
-0.0.0.0 au-paradis-des-muses.over-blog.com
-0.0.0.0 au-pays-des-mamours.over-blog.com

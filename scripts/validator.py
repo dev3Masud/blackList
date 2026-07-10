@@ -288,6 +288,31 @@ def main():
     with open(master_json_path, "w") as f:
         json.dump(domain_map, f, separators=(',', ':'))  # minified — no whitespace
 
+    # 4b. Write sharded lookup database (for high-speed client-side check without downloading 150MB)
+    print("[*] Compiling sharded lookup database...")
+    import hashlib
+    shards = {}
+    for d, cats in domain_map.items():
+        h = hashlib.sha256(d.encode('utf-8')).hexdigest()[:2]
+        if h not in shards:
+            shards[h] = {}
+        shards[h][d] = cats
+
+    lookup_dir = "lookup"
+    os.makedirs(lookup_dir, exist_ok=True)
+    
+    # Clean out any old shards to prevent stale files
+    if os.path.exists(lookup_dir):
+        for f in os.listdir(lookup_dir):
+            if f.endswith(".json"):
+                os.remove(os.path.join(lookup_dir, f))
+            
+    # Write new shards
+    for h, data_map in shards.items():
+        with open(os.path.join(lookup_dir, f"{h}.json"), "w") as f:
+            json.dump(data_map, f, separators=(',', ':'))  # minified
+    print(f"[+] Saved {len(shards)} lookup shard files in '{lookup_dir}/'")
+
     # Compile Variant Blocklists
     print("[*] Compiling variant blocklists...")
     save_variant("lite", ["malware", "phishing", "cryptomining"], category_domains, max_per_cat)

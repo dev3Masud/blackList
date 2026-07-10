@@ -145,32 +145,7 @@ function setupTabs() {
   });
 }
 
-// Lazy Load JSON Map
-async function lazyLoadDatabase() {
-  if (blacklistData) return blacklistData;
-  
-  const searchResult = document.getElementById("search-result");
-  searchResult.style.display = "block";
-  searchResult.className = "search-result loading";
-  searchResult.innerHTML = `
-    <span class="spinner"></span>
-    <span>Loading security registry database...</span>
-  `;
-
-  try {
-    const response = await fetch("master/domains.json");
-    if (!response.ok) throw new Error("Could not fetch domains.json");
-    blacklistData = await response.json();
-    return blacklistData;
-  } catch (err) {
-    console.error(err);
-    searchResult.className = "search-result result-blocked";
-    searchResult.innerHTML = `❌ <strong>Error:</strong> Failed to fetch lookup database. Ensure master/domains.json is compiled.`;
-    return null;
-  }
-}
-
-// Check domain (with Wildcard Subdomain matching)
+// Check domain (with Wildcard Subdomain matching using sharded lookup database)
 async function checkDomain() {
   const queryInput = document.getElementById("domain-query");
   const searchResult = document.getElementById("search-result");
@@ -195,14 +170,46 @@ async function checkDomain() {
 
   query = query.replace(/^www\./, "");
   
-  const db = await lazyLoadDatabase();
-  if (!db) return;
-
+  // Show loading indicator
   searchResult.style.display = "block";
+  searchResult.className = "search-result loading";
+  searchResult.innerHTML = `
+    <span class="spinner"></span>
+    <span>Checking security registry database...</span>
+  `;
+
+  // Helper to fetch shard and check domain
+  async function lookupInShard(domain) {
+    try {
+      // 1. Compute SHA-256 hex string of domain in Javascript
+      const msgBuffer = new TextEncoder().encode(domain);
+      const hashBuffer = await crypto.subtle.digest('SHA-256', msgBuffer);
+      const hashArray = Array.from(new Uint8Array(hashBuffer));
+      const hashHex = hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
+      
+      // First 2 hex characters determine the shard file
+      const shardPrefix = hashHex.substring(0, 2);
+      
+      // Fetch the specific shard file (only ~50KB)
+      const response = await fetch(`lookup/${shardPrefix}.json`);
+      if (!response.ok) {
+        // If file doesn't exist, domain is not blocked
+        if (response.status === 404) return null;
+        throw new Error(`Failed to load lookup shard ${shardPrefix}`);
+      }
+      
+      const shardData = await response.json();
+      return shardData[domain] || null;
+    } catch (err) {
+      console.error("Lookup error:", err);
+      return null;
+    }
+  }
 
   // 1. Direct Match Check
-  if (query in db) {
-    renderMatchResult(query, db[query]);
+  const directCategories = await lookupInShard(query);
+  if (directCategories) {
+    renderMatchResult(query, directCategories);
     return;
   }
 
@@ -210,8 +217,9 @@ async function checkDomain() {
   const parts = query.split('.');
   for (let i = 1; i < parts.length; i++) {
     const parent = parts.slice(i).join('.');
-    if (parent in db) {
-      renderMatchResult(query, db[parent], parent);
+    const parentCategories = await lookupInShard(parent);
+    if (parentCategories) {
+      renderMatchResult(query, parentCategories, parent);
       return;
     }
   }

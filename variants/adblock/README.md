@@ -3,7 +3,7 @@
 This directory contains the compiled **Adblock** blocklist variant.
 
 *   **Status**: Active
-*   **Total blocked domains**: `630,546`
+*   **Total blocked domains**: `630,558`
 *   **Target audience**: Optimized ruleset formatted for browser extensions (uBlock Origin, AdGuard). Supports cosmetic and network blocking.
 
 ---
