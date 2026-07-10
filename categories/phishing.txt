@@ -1,6 +1,6 @@
 # Category: PHISHING
 # Count: 100000
-# Last updated: 2026-07-10 09:19:25 UTC
+# Last updated: 2026-07-10 09:29:54 UTC
 # Filtered against whitelist to prevent false positives.
 
 0-ll1xpl-sasa7-web.d6rbpf.cfd
