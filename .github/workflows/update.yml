@@ -2,7 +2,7 @@ name: Update Blacklists and Dashboard Stats
 
 on:
   schedule:
-    - cron: '0 0 * * *' # Daily at 00:00 UTC
+    - cron: '0 */8 * * *' # 3 times a day (every 8 hours)
   workflow_dispatch: # Enable manual run
   push:
     branches:
@@ -10,7 +10,7 @@ on:
     paths:
       - 'config.yaml'
       - 'whitelist.txt'
-      - 'update_blacklist.py'
+      - 'scripts/update_blacklist.py'
 
 permissions:
   contents: write
@@ -35,7 +35,7 @@ jobs:
           pip install -r requirements.txt
 
       - name: Run Blacklist Update Script
-        run: python update_blacklist.py
+        run: python scripts/update_blacklist.py
 
       - name: Commit and Push Changes
         run: |

@@ -83,6 +83,6 @@ If you wish to run the compilation script locally:
    ```
 3. Run the generator script:
    ```bash
-   python update_blacklist.py
+   python scripts/update_blacklist.py
    ```
 4. Customize feeds inside [config.yaml](file:///home/who/Documents/AI-Coding/Github/blackList/config.yaml) and whitelists inside [whitelist.txt](file:///home/who/Documents/AI-Coding/Github/blackList/whitelist.txt).
