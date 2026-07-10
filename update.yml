@@ -1,0 +1,62 @@
+name: Update Blacklists and Dashboard Stats
+
+on:
+  schedule:
+    - cron: '0 */8 * * *' # 3 times a day (every 8 hours: 00:00, 08:00, 16:00 UTC)
+  workflow_dispatch: # Allow manual trigger
+  push:
+    branches:
+      - main
+    paths:
+      - 'scripts/crawler.py'
+      - 'scripts/validator.py'
+      - 'config.yaml'
+      - 'whitelist.txt'
+
+permissions:
+  contents: write
+
+jobs:
+  update:
+    name: Fetch Feeds and Validate Blacklists
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+
+      - name: Install Dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Fetch Public Blocklist Feeds
+        # Downloads curated blacklist feeds from public sources
+        # (OISD, AdGuard, URLHaus, StevenBlack, Phishing Army, etc.)
+        # and merges them into raw/<category>.txt files.
+        run: python scripts/crawler.py
+
+      - name: Validate and Compile Blacklists
+        # Reads all raw/ files, validates domain syntax, applies whitelist
+        # to prevent false positives, writes clean categories/ and master/
+        # files, and updates stats.json for the dashboard.
+        run: python scripts/validator.py
+
+      - name: Commit and Push Final Lists
+        run: |
+          git config --global user.name "${{ secrets.COMMIT_USER_NAME }}"
+          git config --global user.email "${{ secrets.COMMIT_USER_EMAIL }}"
+          git add raw/ categories/ master/ stats.json
+          if git diff --cached --quiet; then
+            echo "No changes to commit."
+          else
+            commit_time=$(date -u +'%d/%m/%Y %H:%M UTC')
+            git commit -m "auto: update blacklists [$commit_time] [skip ci]"
+            git push origin main
+          fi
