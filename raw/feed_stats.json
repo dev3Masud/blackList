@@ -1,12 +1,5 @@
 [
   {
-    "name": "NoCoin Cryptomining List",
-    "category": "cryptomining",
-    "success": true,
-    "count": 313,
-    "error": ""
-  },
-  {
     "name": "AdGuard Tracking Filter",
     "category": "tracking",
     "success": true,
@@ -14,17 +7,24 @@
     "error": ""
   },
   {
-    "name": "Spam404",
-    "category": "spam",
-    "success": true,
-    "count": 8140,
-    "error": ""
-  },
-  {
     "name": "StevenBlack Adware & Malware",
     "category": "ads",
     "success": true,
     "count": 78462,
+    "error": ""
+  },
+  {
+    "name": "NoCoin Cryptomining List",
+    "category": "cryptomining",
+    "success": true,
+    "count": 313,
+    "error": ""
+  },
+  {
+    "name": "Spam404",
+    "category": "spam",
+    "success": true,
+    "count": 8140,
     "error": ""
   },
   {
@@ -42,17 +42,17 @@
     "error": ""
   },
   {
-    "name": "Phishing Army",
-    "category": "phishing",
-    "success": true,
-    "count": 144841,
-    "error": ""
-  },
-  {
     "name": "BlockList Project - Facebook",
     "category": "social",
     "success": true,
     "count": 22362,
+    "error": ""
+  },
+  {
+    "name": "Phishing Army",
+    "category": "phishing",
+    "success": true,
+    "count": 144841,
     "error": ""
   },
   {
@@ -70,24 +70,17 @@
     "error": ""
   },
   {
-    "name": "BlockList Project - YouTube",
-    "category": "social",
-    "success": true,
-    "count": 24280,
-    "error": ""
-  },
-  {
-    "name": "BlockList Project - Torrent & Piracy",
-    "category": "torrent",
-    "success": true,
-    "count": 2620,
-    "error": ""
-  },
-  {
     "name": "BlockList Project - Gambling",
     "category": "gambling",
     "success": true,
     "count": 292045,
+    "error": ""
+  },
+  {
+    "name": "BlockList Project - YouTube",
+    "category": "social",
+    "success": true,
+    "count": 24280,
     "error": ""
   },
   {
@@ -98,17 +91,17 @@
     "error": ""
   },
   {
+    "name": "BlockList Project - Torrent & Piracy",
+    "category": "torrent",
+    "success": true,
+    "count": 2620,
+    "error": ""
+  },
+  {
     "name": "FadeMind Spam Hosts",
     "category": "spam",
     "success": true,
     "count": 57,
-    "error": ""
-  },
-  {
-    "name": "StevenBlack Gambling Alternate",
-    "category": "gambling",
-    "success": true,
-    "count": 84948,
     "error": ""
   },
   {
@@ -133,6 +126,13 @@
     "error": ""
   },
   {
+    "name": "StevenBlack Gambling Alternate",
+    "category": "gambling",
+    "success": true,
+    "count": 84948,
+    "error": ""
+  },
+  {
     "name": "Polish Filters Team - KADhosts",
     "category": "ads",
     "success": true,
@@ -140,17 +140,17 @@
     "error": ""
   },
   {
-    "name": "DandelionSprout Anti-Malware",
-    "category": "malware",
-    "success": true,
-    "count": 12325,
-    "error": ""
-  },
-  {
     "name": "AdGuard DNS Ads list",
     "category": "ads",
     "success": true,
     "count": 154344,
+    "error": ""
+  },
+  {
+    "name": "DandelionSprout Anti-Malware",
+    "category": "malware",
+    "success": true,
+    "count": 12325,
     "error": ""
   },
   {
@@ -168,31 +168,10 @@
     "error": ""
   },
   {
-    "name": "OISD NSFW Blocklist",
-    "category": "nsfw",
-    "success": true,
-    "count": 388413,
-    "error": ""
-  },
-  {
     "name": "HaGeZi Anti-Piracy (Torrent)",
     "category": "torrent",
     "success": true,
     "count": 32791,
-    "error": ""
-  },
-  {
-    "name": "HaGeZi Dynamic DNS",
-    "category": "malware",
-    "success": true,
-    "count": 1517,
-    "error": ""
-  },
-  {
-    "name": "HaGeZi Gambling",
-    "category": "gambling",
-    "success": true,
-    "count": 296680,
     "error": ""
   },
   {
@@ -203,10 +182,31 @@
     "error": ""
   },
   {
+    "name": "HaGeZi Dynamic DNS",
+    "category": "malware",
+    "success": true,
+    "count": 1517,
+    "error": ""
+  },
+  {
+    "name": "OISD NSFW Blocklist",
+    "category": "nsfw",
+    "success": true,
+    "count": 388413,
+    "error": ""
+  },
+  {
     "name": "OISD Big Blocklist",
     "category": "ads",
     "success": true,
     "count": 328448,
+    "error": ""
+  },
+  {
+    "name": "HaGeZi Gambling",
+    "category": "gambling",
+    "success": true,
+    "count": 296680,
     "error": ""
   },
   {
@@ -220,14 +220,14 @@
     "name": "1Hosts Lite",
     "category": "ads",
     "success": true,
-    "count": 208720,
+    "count": 208674,
     "error": ""
   },
   {
     "name": "1Hosts Xtra",
     "category": "tracking",
     "success": true,
-    "count": 1042968,
+    "count": 1045459,
     "error": ""
   }
 ]
