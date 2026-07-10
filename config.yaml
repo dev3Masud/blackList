@@ -77,4 +77,26 @@ feeds:
 - name: DandelionSprout Anti-Malware
   url: https://raw.githubusercontent.com/DandelionSprout/adfilt/master/Alternate%20versions%20Anti-Malware%20List/AntiMalwareHosts.txt
   category: malware
+- name: HaGeZi Multi PRO
+  url: https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/pro.txt
+  category: ads
+- name: HaGeZi Threat Intelligence (TIF)
+  url: https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/tif.txt
+  category: malware
+- name: HaGeZi NSFW (Adult)
+  url: https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/nsfw.txt
+  category: nsfw
+- name: HaGeZi Gambling
+  url: https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/gambling.txt
+  category: gambling
+- name: HaGeZi Anti-Piracy (Torrent)
+  url: https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/anti.piracy.txt
+  category: torrent
+- name: HaGeZi Fake (Scam/Spam)
+  url: https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/fake.txt
+  category: spam
+- name: HaGeZi Dynamic DNS
+  url: https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/dyndns.txt
+  category: malware
+
 
