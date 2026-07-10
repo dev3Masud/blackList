@@ -1,34 +1,30 @@
 #!/usr/bin/env python3
 """
 =============================================================
-  Autonomous Blacklist Crawler Bot
-  ----------------------------------
-  This bot visits seed URLs, classifies each page by category
-  (nsfw, phishing, gambling, social, malware, spam, dating, etc.)
-  based on page content keywords, then follows outbound links
-  to discover and categorize more domains.
+  Autonomous Blacklist Crawler Bot  v3  (Internet Crawler)
+  ─────────────────────────────────────────────────────────
+  Domain Discovery Sources (nothing large committed to repo):
+    1. Tranco Top-1M list  → downloaded to /tmp/, never saved to git
+    2. Certificate Transparency logs (crt.sh) → live random domain API
+    3. Threat intel seed URLs → phishing/malware domain lists
+    4. Outbound link following → organic web crawl discovery
 
-  It runs for a configurable duration (default 1 hour) in a
-  continuous loop and appends all discovered domains into
-  raw/<category>.txt files for the validator to process.
+  State persistence:
+    • raw/crawl_state.json  → only stores a small position counter
+    • NO large files committed to the repo
+
+  Targets: 100k+ sites per 3.5-hour run, 2× per day
 =============================================================
 """
 
-import os
-import re
-import sys
-import time
-import json
-import yaml
-import random
-import logging
+import os, re, sys, csv, time, json, gzip, yaml, random, logging
 import requests
-from urllib.parse import urlparse, urljoin
+from urllib.parse import urlparse
 from datetime import datetime, timezone
 from collections import deque
 from concurrent.futures import ThreadPoolExecutor, as_completed
 
-# ─────────────────────────── Logging Setup ──────────────────────────────────
+# ─────────────────────────── Logging ────────────────────────────────────────
 logging.basicConfig(
     level=logging.INFO,
     format="%(asctime)s [%(levelname)s] %(message)s",
@@ -36,371 +32,551 @@ logging.basicConfig(
 )
 logger = logging.getLogger("CrawlerBot")
 
-# ─────────────────────────── Regex Patterns ─────────────────────────────────
+# ──────────────────────────── Regexes ───────────────────────────────────────
 DOMAIN_REGEX = re.compile(
-    r'^(?:[a-z0-9](?:[a-z0-9-]{0,61}[a-z0-9])?\.)+[a-z0-9][a-z0-9-]{0,61}[a-z0-9]$',
-    re.IGNORECASE
+    r'^(?:[a-z0-9](?:[a-z0-9-]{0,61}[a-z0-9])?\.)+[a-z]{2,}$', re.IGNORECASE
 )
 IP_REGEX = re.compile(
-    r'^(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$'
+    r'^(?:(?:25[0-5]|2[0-4]\d|[01]?\d\d?)\.){3}(?:25[0-5]|2[0-4]\d|[01]?\d\d?)$'
 )
+HREF_RE = re.compile(r'href=["\']((https?://)[^"\'>\s]{4,})["\']', re.IGNORECASE)
 
-# ─────────────────────── Category Keyword Map ───────────────────────────────
-# These keyword lists help the bot detect a page's category
-# by scanning for keywords in the page title, meta tags, and body text.
+# ───────────────────── Category Keywords ────────────────────────────────────
 CATEGORY_KEYWORDS = {
     "nsfw": [
-        "porn", "xxx", "adult", "nude", "naked", "sex", "erotic",
-        "hentai", "18+", "mature content", "explicit", "OnlyFans",
-        "pornography", "webcam", "escorts", "camgirl", "fetish"
+        "porn","xxx","adult","nude","naked","sex","erotic","hentai","18+",
+        "mature content","explicit","onlyfans","pornography","webcam","escorts",
+        "camgirl","fetish","nudity","x-rated","sexual content",
     ],
     "dating": [
-        "dating", "date", "find love", "singles", "hookup", "match",
-        "partner", "relationship", "romance", "flirt", "meet singles",
-        "tinder", "bumble", "badoo", "hinge", "grindr"
+        "dating","find love","singles","hookup","match","romance","flirt",
+        "meet singles","tinder","bumble","badoo","hinge","grindr","relationship",
     ],
     "gambling": [
-        "casino", "poker", "bet", "betting", "gambling", "slots",
-        "jackpot", "lottery", "roulette", "blackjack", "sportsbook",
-        "online casino", "wager", "bookie", "odds", "free spins"
-    ],
-    "social": [
-        "facebook", "instagram", "tiktok", "twitter", "youtube",
-        "snapchat", "social media", "follow us", "subscribe", "likes",
-        "trending", "viral", "influencer", "reels", "stories"
+        "casino","poker","bet","betting","gambling","slots","jackpot","lottery",
+        "roulette","blackjack","sportsbook","wager","bookie","odds","free spins",
+        "online casino","betway","stake","1xbet","sports betting",
     ],
     "phishing": [
-        "verify your account", "confirm your password", "update your billing",
-        "your account has been suspended", "click here to login",
-        "bank account", "unusual activity", "secure your account",
-        "your paypal", "apple id", "microsoft account", "reset password",
-        "verify now", "limited time offer", "act now", "urgent"
+        "verify your account","confirm your password","update your billing",
+        "account suspended","click here to login","bank account",
+        "unusual activity","secure your account","your paypal","apple id",
+        "microsoft account","reset password","verify now","act now",
+        "account locked","login attempt","your account has been",
     ],
     "malware": [
-        "download now", "free software", "crack", "keygen", "serial key",
-        "warez", "free antivirus", "your computer is infected",
-        "remove virus", "speed up pc", "free download", "pirated",
-        "hack", "exploit", "rootkit", "trojan", "ransomware",
-        "free activation", "patch", "loader"
+        "download now","free software","crack","keygen","serial key","warez",
+        "free antivirus","your computer is infected","remove virus",
+        "free download","pirated","hack","exploit","rootkit","trojan",
+        "ransomware","free activation","patch","loader","nulled",
     ],
     "spam": [
-        "make money fast", "earn at home", "work from home",
-        "click here to win", "congratulations you won", "claim your prize",
-        "free gift", "limited offer", "get rich", "mlm", "pyramid",
-        "miracle cure", "lose weight fast", "diet pill", "supplement"
+        "make money fast","earn at home","work from home","click here to win",
+        "congratulations you won","claim your prize","free gift","get rich",
+        "mlm","pyramid scheme","miracle cure","lose weight fast","diet pill",
     ],
     "tracking": [
-        "ad tracking", "analytics", "pixel", "beacon", "fingerprint",
-        "telemetry", "data collection", "user tracking", "cookies",
-        "retargeting", "ad server", "impression tracker"
+        "ad tracking","analytics pixel","beacon","fingerprint","telemetry",
+        "data collection","user tracking","retargeting","ad server",
+        "impression tracker","third party tracking",
     ],
     "torrent": [
-        "torrent", "magnet link", "download torrent", "seeders", "leechers",
-        "piracy", "pirate bay", "1337x", "rarbg", "yts", "free movies",
-        "watch online", "stream free", "download free movie"
+        "torrent","magnet link","seeders","leechers","piracy","pirate bay",
+        "1337x","rarbg","yts","free movies","watch online free",
+        "download free movie","stream free","warez",
     ],
     "cryptomining": [
-        "mine bitcoin", "crypto mining", "pool mining", "hash rate",
-        "monero", "coinhive", "browser mining", "earn crypto",
-        "mining pool", "proof of work", "gpu mining", "mining rig"
+        "mine bitcoin","crypto mining","pool mining","hash rate","monero",
+        "coinhive","browser mining","earn crypto","mining pool","gpu mining",
+    ],
+    "ads": [
+        "advertise here","ad network","display ads","sponsored content",
+        "pop-up ads","banner ads","cpm network","traffic monetization",
+        "ad exchange","push notifications","native ads",
     ],
 }
 
 USER_AGENTS = [
-    "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
-    "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.0 Safari/605.1.15",
-    "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36",
-    "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/119.0",
+    "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/120.0.0.0 Safari/537.36",
+    "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 Version/16.0 Safari/605.1.15",
+    "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 Chrome/119.0.0.0 Safari/537.36",
+    "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:120.0) Gecko/20100101 Firefox/120.0",
+    "Mozilla/5.0 (iPhone; CPU iPhone OS 17_0 like Mac OS X) AppleWebKit/605.1.15 Mobile Safari/604.1",
 ]
 
-# ─────────────────────────── Config Loading ─────────────────────────────────
-def load_config(config_path="config.yaml"):
-    """Loads config.yaml safely."""
-    try:
-        with open(config_path, 'r') as f:
-            return yaml.safe_load(f)
-    except Exception as e:
-        logger.error(f"Error loading configuration: {e}")
-        sys.exit(1)
+# ─────────────────── Live Threat Intel Seeds ────────────────────────────────
+THREAT_SEED_URLS = [
+    ("phishing",    "https://openphish.com/feed.txt"),
+    ("malware",     "https://urlhaus.abuse.ch/downloads/text/"),
+    ("malware",     "https://hole.cert.pl/domains/domains.txt"),
+    ("phishing",    "https://phishing.army/download/phishing_army_blocklist.txt"),
+    ("phishing",    "https://raw.githubusercontent.com/mitchellkrogza/Phishing.Database/master/phishing-domains-ACTIVE.txt"),
+    ("ads",         "https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts"),
+    ("malware",     "https://raw.githubusercontent.com/DandelionSprout/adfilt/master/Alternate%20versions%20Anti-Malware%20List/AntiMalwareHosts.txt"),
+    ("tracking",    "https://v.firebog.net/hosts/Easyprivacy.txt"),
+]
 
-def load_whitelist(whitelist_path="whitelist.txt"):
-    """Loads whitelist.txt, ignoring comments and empty lines."""
-    whitelist = set()
-    if not os.path.exists(whitelist_path):
-        return whitelist
-    with open(whitelist_path, 'r') as f:
+# Tranco downloaded to /tmp — never committed to git
+TRANCO_TMP   = "/tmp/tranco_top1m.csv.gz"
+TRANCO_URL   = "https://tranco-list.eu/download/ranked/full"
+CRAWL_STATE  = "raw/crawl_state.json"
+
+# ═══════════════════════════ Helpers ════════════════════════════════════════
+
+def load_config(path="config.yaml"):
+    try:
+        with open(path) as f: return yaml.safe_load(f)
+    except Exception as e:
+        logger.error(f"Config error: {e}"); sys.exit(1)
+
+def load_whitelist(path="whitelist.txt"):
+    wl = set()
+    if not os.path.exists(path): return wl
+    with open(path) as f:
         for line in f:
             line = line.strip()
             if line and not line.startswith('#'):
-                whitelist.add(line.lower())
-    logger.info(f"Loaded {len(whitelist)} whitelisted entries.")
-    return whitelist
+                wl.add(line.lower())
+    logger.info(f"Loaded {len(wl)} whitelist entries.")
+    return wl
 
 def is_whitelisted(domain, whitelist):
-    """Checks if a domain or its parent is whitelisted."""
-    domain_lower = domain.lower()
-    if domain_lower in whitelist:
-        return True
-    parts = domain_lower.split('.')
+    d = domain.lower()
+    if d in whitelist: return True
+    parts = d.split('.')
     for i in range(1, len(parts)):
-        if '.'.join(parts[i:]) in whitelist:
-            return True
+        if '.'.join(parts[i:]) in whitelist: return True
     return False
 
 def is_valid_domain(domain):
-    """Returns True if domain passes regex validation and is not an IP."""
-    return bool(DOMAIN_REGEX.match(domain)) and not bool(IP_REGEX.match(domain))
+    return (bool(DOMAIN_REGEX.match(domain))
+            and not bool(IP_REGEX.match(domain))
+            and len(domain) <= 253
+            and '.' in domain)
 
-# ─────────────────────── Domain Extraction ──────────────────────────────────
 def extract_domain(url):
-    """Extracts clean domain from a full URL."""
     try:
-        parsed = urlparse(url)
-        domain = parsed.netloc.lower()
-        if ':' in domain:
-            domain = domain.split(':')[0]
-        if domain.startswith("www."):
-            domain = domain[4:]
-        return domain if domain else None
+        url = url if url.startswith('http') else 'http://' + url
+        host = urlparse(url).netloc.lower().split(':')[0]
+        return host[4:] if host.startswith('www.') else host
     except Exception:
         return None
 
-def extract_outbound_links(html, base_url):
-    """Extracts all outbound links found in href attributes."""
-    links = set()
-    href_matches = re.findall(r'href=["\'](https?://[^"\'>\s]+)["\']', html, re.IGNORECASE)
-    for href in href_matches:
+def clean_domain_line(line):
+    """Parse a domain from various list formats (hosts, plain, adblock)."""
+    line = line.strip()
+    if not line or line.startswith(('#', '!', ';', '//', '[')):
+        return None
+    # Hosts format: 0.0.0.0 domain.com or 127.0.0.1 domain.com
+    parts = line.split()
+    if len(parts) == 2 and parts[0] in ('0.0.0.0', '127.0.0.1'):
+        return parts[1].lower()
+    # Adblock format: ||domain.com^
+    if line.startswith('||'):
+        return line[2:].split('^')[0].split('/')[0].lower()
+    # Plain domain
+    return parts[0].lower() if parts else None
+
+def extract_outbound_domains(html, visited, queued, whitelist, limit=15):
+    """Extract up to `limit` new domains from outbound links in page HTML."""
+    found = []
+    for m in HREF_RE.finditer(html[:80000]):
+        if len(found) >= limit: break
+        d = extract_domain(m.group(1))
+        if (d and is_valid_domain(d)
+                and d not in visited
+                and d not in queued
+                and not is_whitelisted(d, whitelist)):
+            found.append(d)
+    return found
+
+def detect_category(html_text, url):
+    text = (url + " " + html_text[:60000]).lower()
+    scores = {
+        cat: sum(text.count(kw.lower()) for kw in kws)
+        for cat, kws in CATEGORY_KEYWORDS.items()
+    }
+    best = max(scores, key=scores.get)
+    return best if scores[best] > 0 else "crawled"
+
+# ═══════════════════ Domain Source 1: Tranco Top-1M ═════════════════════════
+
+def download_tranco(tmp_path=TRANCO_TMP):
+    """
+    Downloads Tranco list to /tmp/ (never added to git).
+    Uses cached /tmp/ file if it exists and is < 24h old.
+    Returns list of domain strings.
+    """
+    # Use /tmp/ cache if fresh
+    if os.path.exists(tmp_path):
+        age_h = (time.time() - os.path.getmtime(tmp_path)) / 3600
+        if age_h < 24:
+            logger.info(f"Using /tmp/ Tranco cache ({age_h:.1f}h old).")
+            return _parse_tranco(tmp_path)
+
+    logger.info("Downloading Tranco Top-1M → /tmp/ (not committed to repo)...")
+    try:
+        r = requests.get(TRANCO_URL, timeout=120, stream=True,
+                         headers={"User-Agent": random.choice(USER_AGENTS)})
+        r.raise_for_status()
+        with open(tmp_path, 'wb') as f:
+            for chunk in r.iter_content(65536): f.write(chunk)
+        logger.info(f"Tranco downloaded → {tmp_path}")
+    except Exception as e:
+        logger.warning(f"Tranco download failed: {e}")
+        return []
+    return _parse_tranco(tmp_path)
+
+def _parse_tranco(path):
+    domains = []
+    openers = [(gzip.open, {'mode': 'rt', 'encoding': 'utf-8', 'errors': 'ignore'}),
+               (open,      {'mode': 'r',  'encoding': 'utf-8', 'errors': 'ignore'})]
+    for opener, kwargs in openers:
         try:
-            full_url = urljoin(base_url, href)
-            if full_url.startswith("http"):
-                links.add(full_url)
+            with opener(path, **kwargs) as f:
+                for row in csv.reader(f):
+                    if len(row) >= 2:
+                        d = row[1].strip().lower()
+                        if is_valid_domain(d):
+                            domains.append(d)
+            break
         except Exception:
             continue
-    return links
+    logger.info(f"Tranco: loaded {len(domains):,} domains.")
+    return domains
 
-# ─────────────────────── Category Detection ──────────────────────────────────
-def detect_category(html_text, url):
-    """
-    Scans the page content and URL for category keywords.
-    Returns the best matching category, or 'crawled' if unknown.
-    """
-    search_text = (url + " " + html_text[:50000]).lower()
-    
-    scores = {}
-    for category, keywords in CATEGORY_KEYWORDS.items():
-        score = sum(search_text.count(kw.lower()) for kw in keywords)
-        if score > 0:
-            scores[category] = score
-    
-    if scores:
-        # Return category with highest keyword score
-        return max(scores, key=scores.get)
-    
-    return "crawled"  # Unknown category
+# ═══════════════════ Domain Source 2: crt.sh CT Logs ════════════════════════
 
-# ─────────────────────── Crawler Bot Core ───────────────────────────────────
-def fetch_page(url, timeout=20):
+def fetch_crtsh_domains(limit=5000, whitelist=set()):
     """
-    Fetches a web page and returns the (html_content, final_url) or (None, None)
+    Queries the Certificate Transparency crt.sh API with random TLDs
+    to discover fresh, real, registered domains across the internet.
+    Each query returns up to ~100 domains — we run many queries.
     """
-    try:
-        headers = {
-            'User-Agent': random.choice(USER_AGENTS),
-            'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
-            'Accept-Language': 'en-US,en;q=0.5',
-        }
-        resp = requests.get(url, headers=headers, timeout=timeout, allow_redirects=True)
-        if resp.status_code == 200 and 'text/html' in resp.headers.get('Content-Type', ''):
-            return resp.text, resp.url
-        return None, None
-    except Exception:
-        return None, None
+    # Random query terms — gives broad internet coverage
+    query_terms = [
+        "%.com", "%.net", "%.org", "%.io", "%.co",
+        "%.xyz", "%.online", "%.shop", "%.site", "%.info",
+        "%.de", "%.uk", "%.ru", "%.cn", "%.br",
+        "%.fr", "%.in", "%.jp", "%.au", "%.ca",
+        "%.club", "%.top", "%.app", "%.dev", "%.ai",
+    ]
+    found = set()
+    attempts = 0
 
+    logger.info(f"Fetching random domains from crt.sh Certificate Transparency logs...")
 
-def crawl_bot(seed_urls, whitelist, duration_seconds=3600, max_workers=3, delay=1.5):
+    while len(found) < limit and attempts < len(query_terms):
+        q = random.choice(query_terms)
+        query_terms_copy = list(query_terms)
+        random.shuffle(query_terms_copy)
+
+        for term in query_terms_copy:
+            if len(found) >= limit:
+                break
+            try:
+                url = f"https://crt.sh/?q={term}&output=json"
+                r = requests.get(url, timeout=20,
+                                 headers={"User-Agent": random.choice(USER_AGENTS)})
+                if r.status_code != 200:
+                    continue
+                entries = r.json()
+                for entry in entries:
+                    name = entry.get("name_value", "").lower()
+                    for d in name.split('\n'):
+                        d = d.strip().lstrip('*.')
+                        if is_valid_domain(d) and not is_whitelisted(d, whitelist):
+                            found.add(d)
+            except Exception:
+                pass
+            attempts += 1
+
+        break
+
+    result = list(found)[:limit]
+    logger.info(f"crt.sh: discovered {len(result):,} fresh domains.")
+    return result
+
+# ═══════════════════ Domain Source 3: Threat Intel Feeds ════════════════════
+
+def load_threat_seeds(whitelist):
+    """Downloads threat intel feeds. Returns list of (domain, category) tuples."""
+    results = []
+    for category, url in THREAT_SEED_URLS:
+        try:
+            r = requests.get(url, timeout=30,
+                             headers={"User-Agent": random.choice(USER_AGENTS)})
+            if r.status_code != 200:
+                continue
+            count = 0
+            for line in r.text.splitlines():
+                d = clean_domain_line(line)
+                if not d: continue
+                d = extract_domain(d) or d
+                if is_valid_domain(d) and not is_whitelisted(d, whitelist):
+                    results.append((d, category))
+                    count += 1
+            logger.info(f"  [{category}] {url.split('/')[-1]}: {count:,} domains")
+        except Exception as e:
+            logger.warning(f"  Feed failed {url}: {e}")
+    logger.info(f"Threat seeds total: {len(results):,} domains.")
+    return results
+
+# ═══════════════════════ Crawl State ════════════════════════════════════════
+
+def load_crawl_state():
+    if os.path.exists(CRAWL_STATE):
+        try:
+            with open(CRAWL_STATE) as f: return json.load(f)
+        except Exception: pass
+    return {"tranco_position": 0, "total_visited_all_runs": 0, "runs": 0}
+
+def save_crawl_state(state):
+    os.makedirs("raw", exist_ok=True)
+    with open(CRAWL_STATE, 'w') as f: json.dump(state, f, indent=2)
+
+# ═══════════════════════ Page Fetcher ═══════════════════════════════════════
+
+def fetch_page(domain, timeout=7):
+    """Try HTTPS then HTTP. Returns (html, final_url) or (None, None)."""
+    headers = {
+        'User-Agent': random.choice(USER_AGENTS),
+        'Accept': 'text/html,application/xhtml+xml;q=0.9,*/*;q=0.8',
+        'Accept-Language': 'en-US,en;q=0.5',
+        'Connection': 'close',
+    }
+    for scheme in ('https', 'http'):
+        try:
+            r = requests.get(f"{scheme}://{domain}", headers=headers,
+                             timeout=timeout, allow_redirects=True, stream=False)
+            if r.status_code == 200 and 'text/html' in r.headers.get('Content-Type',''):
+                return r.text[:150000], r.url
+        except Exception:
+            continue
+    return None, None
+
+# ════════════════════════ Main Crawler Loop ══════════════════════════════════
+
+def crawl_bot(tranco_domains, threat_seeds, crtsh_domains, whitelist,
+              tranco_start=0, duration_seconds=12600, max_workers=40, delay=0.3):
     """
-    Main crawler bot loop.
-    - Starts from seed_urls
-    - Visits pages, detects categories, follows outbound links
-    - Runs for duration_seconds total
-    - Returns dict of {category: set(domains)}
+    Feeds the queue from 3 sources and crawls for `duration_seconds`.
+    Returns (category_domains dict, new_tranco_position, total_visited).
     """
-    visited = set()       # Domains already fetched
-    queued_domains = set()  # Domains already in queue (prevents flooding)
-    queue = deque()
+    visited      = set()
+    queued       = set()
+    queue        = deque()
+    # Separate priority dict: forced category for threat seeds
+    forced_cat   = {}
     category_domains = {}
 
-    # Seed the queue
-    for url in seed_urls:
-        d = extract_domain(url)
-        if d and d not in queued_domains:
-            queue.append(url)
-            queued_domains.add(d)
+    def enqueue(domain, cat=None):
+        if domain and domain not in queued and is_valid_domain(domain):
+            queue.append(domain)
+            queued.add(domain)
+            if cat: forced_cat[domain] = cat
 
-    start_time = time.time()
-    elapsed = 0
+    # ── Priority 1: Threat intel (known-bad domains, already categorised) ──
+    logger.info("Loading threat intel seeds into queue...")
+    for domain, cat in threat_seeds:
+        enqueue(domain, cat)
+
+    # ── Priority 2: crt.sh random internet domains ──
+    logger.info("Loading crt.sh internet domains into queue...")
+    for d in crtsh_domains:
+        enqueue(d)
+
+    # ── Priority 3: Tranco list (continues from saved position) ──
+    logger.info(f"Loading Tranco domains from position {tranco_start:,}...")
+    tranco_pos = tranco_start
+    preload = 300000  # pre-load 300k domains into queue
+    loaded  = 0
+    for i in range(tranco_start, min(tranco_start + preload, len(tranco_domains))):
+        d = tranco_domains[i]
+        if not is_whitelisted(d, whitelist):
+            enqueue(d)
+            loaded += 1
+        tranco_pos = i + 1
+
+    logger.info(
+        f"Queue ready: {len(threat_seeds):,} threat + "
+        f"{len(crtsh_domains):,} crt.sh + "
+        f"{loaded:,} Tranco = {len(queue):,} total"
+    )
+
+    start_time   = time.time()
     total_visited = 0
     total_discovered = 0
+    last_log     = start_time
 
-    logger.info(f"🤖 Crawler Bot Started. Duration: {duration_seconds}s | Seeds: {len(seed_urls)}")
+    logger.info(
+        f"🤖 Crawler v3 Start | "
+        f"Duration: {duration_seconds/3600:.1f}h | "
+        f"Workers: {max_workers} | Target: 100k+ sites"
+    )
 
-    while elapsed < duration_seconds:
+    while True:
         elapsed = time.time() - start_time
-
-        # ── Build a batch of unvisited URLs ──────────────────────────────
-        # Drain the queue until we fill the batch or exhaust the queue.
-        batch = []
-        drain_limit = len(queue)   # don't spin forever on a stale queue
-        drained = 0
-        while queue and len(batch) < max_workers and drained < drain_limit:
-            url = queue.popleft()
-            drained += 1
-            domain = extract_domain(url)
-            if domain and domain not in visited:
-                visited.add(domain)
-                batch.append(url)
-
-        if not batch:
-            # Queue is empty or only has already-visited domains
-            logger.info("Queue exhausted — crawler bot stopping early.")
+        if elapsed >= duration_seconds:
+            logger.info("⏰ Duration reached. Stopping.")
             break
 
-        logger.info(
-            f"⏱  Elapsed: {elapsed:.0f}s / {duration_seconds}s "
-            f"| Queue: {len(queue)} | Visited: {total_visited} | Found: {total_discovered}"
-        )
+        # Build batch of unvisited domains
+        batch = []
+        drain_limit = min(len(queue), max_workers * 20)
+        drained = 0
+        while queue and len(batch) < max_workers and drained < drain_limit:
+            d = queue.popleft(); drained += 1
+            if d not in visited:
+                visited.add(d); batch.append(d)
 
-        # ── Fetch pages concurrently ─────────────────────────────────────
-        with ThreadPoolExecutor(max_workers=max_workers) as executor:
-            futures = {executor.submit(fetch_page, url): url for url in batch}
-            for future in as_completed(futures):
-                original_url = futures[future]
-                html, final_url = future.result()
+        if not batch:
+            logger.info("Queue exhausted.")
+            break
 
-                if not html:
-                    continue
+        # Progress log every 60 seconds
+        now = time.time()
+        if now - last_log >= 60:
+            rate = total_visited / max(elapsed, 1)
+            pct  = (total_visited / 100000) * 100
+            logger.info(
+                f"⏱  {elapsed/3600:.2f}h | "
+                f"Visited: {total_visited:,} ({pct:.0f}% of 100k target) | "
+                f"Discovered: {total_discovered:,} | "
+                f"Queue: {len(queue):,} | "
+                f"Rate: {rate:.1f}/s"
+            )
+            last_log = now
+
+        # Concurrent fetch
+        with ThreadPoolExecutor(max_workers=max_workers) as ex:
+            futures = {ex.submit(fetch_page, d): d for d in batch}
+            for fut in as_completed(futures):
+                domain = futures[fut]
+                html, final_url = fut.result()
+                if not html: continue
 
                 total_visited += 1
 
-                # Detect category from page content + URL
-                category = detect_category(html, final_url or original_url)
+                # Use forced category (threat seeds) or auto-detect
+                cat = forced_cat.pop(domain, None) or detect_category(
+                    html, final_url or f"http://{domain}"
+                )
 
-                # Record the domain under its detected category
-                page_domain = extract_domain(final_url or original_url)
-                if page_domain and is_valid_domain(page_domain) and not is_whitelisted(page_domain, whitelist):
-                    category_domains.setdefault(category, set()).add(page_domain)
+                final_domain = extract_domain(final_url) if final_url else domain
+                if final_domain and is_valid_domain(final_domain) and not is_whitelisted(final_domain, whitelist):
+                    category_domains.setdefault(cat, set()).add(final_domain)
                     total_discovered += 1
-                    logger.info(f"  ✅ [{category.upper()}] {page_domain}")
 
-                # ── Follow outbound links to NEW domains only ────────────
-                outbound_links = extract_outbound_links(html, final_url or original_url)
-                new_links = 0
-                for link in outbound_links:
-                    link_domain = extract_domain(link)
-                    # Only queue if domain hasn't been seen at all yet
-                    if (
-                        link_domain
-                        and link_domain not in visited
-                        and link_domain not in queued_domains
-                        and not is_whitelisted(link_domain, whitelist)
-                    ):
-                        queue.append(link)
-                        queued_domains.add(link_domain)  # mark as queued
-                        new_links += 1
+                # Follow outbound links → new domains only
+                new_doms = extract_outbound_domains(html, visited, queued, whitelist, limit=15)
+                for nd in new_doms:
+                    enqueue(nd)
 
-                if new_links:
-                    logger.info(f"  🔗 Queued {new_links} new domains from {page_domain or original_url}")
-
-        # Polite delay between batches
         time.sleep(delay)
 
     elapsed = time.time() - start_time
+    rate = total_visited / max(elapsed, 1)
     logger.info(
-        f"🏁 Crawler Bot Finished. "
-        f"Total time: {elapsed:.1f}s | Visited: {total_visited} | Discovered: {total_discovered}"
+        f"🏁 Done | {elapsed/3600:.2f}h | "
+        f"Visited: {total_visited:,} | "
+        f"Discovered: {total_discovered:,} | "
+        f"Rate: {rate:.1f}/s | Tranco pos: {tranco_pos:,}"
     )
-    return category_domains
+    return category_domains, tranco_pos, total_visited
 
+# ═══════════════════════ Write Raw Output ════════════════════════════════════
 
-# ────────────────────────── Raw File Appender ────────────────────────────────
 def append_to_raw(category_domains, raw_dir="raw"):
-    """Appends newly discovered domains into the existing raw/<category>.txt files."""
     os.makedirs(raw_dir, exist_ok=True)
-    
     total_new = 0
-    for category, domains in category_domains.items():
-        if not domains:
-            continue
-        
-        raw_file = os.path.join(raw_dir, f"{category}.txt")
-        
-        # Load existing domains to deduplicate
+    for cat, domains in category_domains.items():
+        if not domains: continue
+        raw_file = os.path.join(raw_dir, f"{cat}.txt")
         existing = set()
         if os.path.exists(raw_file):
-            with open(raw_file, "r") as f:
-                for line in f:
-                    existing.add(line.strip().lower())
-        
-        # Identify new domains
-        new_domains = sorted(d for d in domains if d not in existing)
-        
-        if new_domains:
-            with open(raw_file, "a") as f:
-                f.write("\n".join(new_domains) + "\n")
-            logger.info(f"[+] Appended {len(new_domains)} new domains to raw/{category}.txt")
-            total_new += len(new_domains)
-        else:
-            logger.info(f"[=] No new domains to append for category: {category}")
-    
+            with open(raw_file) as f:
+                existing = {l.strip().lower() for l in f if l.strip()}
+        new_doms = sorted(d for d in domains if d not in existing)
+        if new_doms:
+            with open(raw_file, 'a') as f:
+                f.write('\n'.join(new_doms) + '\n')
+            logger.info(f"  [{cat}] +{len(new_doms):,} new domains")
+            total_new += len(new_doms)
     return total_new
 
+# ═══════════════════════════ Main ════════════════════════════════════════════
 
-# ────────────────────────────── Main ────────────────────────────────────────
 def main():
-    print("=== 🤖 Autonomous Crawler Bot Starting ===")
-    
-    config = load_config()
-    whitelist = load_whitelist(config.get("whitelist_file", "whitelist.txt"))
-    
-    # Get crawl seeds from config. Add more URLs here to expand coverage.
-    seed_urls = config.get("crawl_seeds", [
-        # Threat intel feeds that list malicious URLs
-        "https://openphish.com",
-        "https://urlhaus.abuse.ch",
-        # Add any additional seed pages here via config.yaml
-    ])
-    
-    # Duration the bot will run (default 1 hour = 3600 seconds)
-    duration = config.get("crawler_duration_seconds", 3600)
-    max_workers = config.get("crawler_max_workers", 3)
-    delay = config.get("crawler_delay_seconds", 1.5)
-    
-    logger.info(f"Seeds: {len(seed_urls)} | Duration: {duration}s | Workers: {max_workers}")
-    
-    # Run the crawler bot
-    category_domains = crawl_bot(
-        seed_urls=seed_urls,
-        whitelist=whitelist,
-        duration_seconds=duration,
-        max_workers=max_workers,
-        delay=delay
+    print("=" * 62)
+    print("  🤖 Autonomous Internet Crawler Bot v3  (High-Volume)")
+    print("=" * 62)
+
+    config      = load_config()
+    whitelist   = load_whitelist(config.get("whitelist_file", "whitelist.txt"))
+    duration    = config.get("crawler_duration_seconds", 12600)   # 3.5 h
+    max_workers = config.get("crawler_max_workers", 40)
+    delay       = config.get("crawler_delay_seconds", 0.3)
+
+    # Load persistent position (tiny JSON, fine to commit)
+    state      = load_crawl_state()
+    tranco_pos = state.get("tranco_position", 0)
+    logger.info(f"Run #{state.get('runs',0)+1} | Resuming Tranco at pos {tranco_pos:,}")
+
+    # ── Source 1: Tranco Top-1M → /tmp/ only, never in git ──
+    tranco_domains = download_tranco()
+    if tranco_pos >= len(tranco_domains) and tranco_domains:
+        logger.info("Tranco exhausted — wrapping to position 0.")
+        tranco_pos = 0
+
+    # ── Source 2: crt.sh Certificate Transparency (random internet domains) ──
+    crtsh_domains = fetch_crtsh_domains(limit=10000, whitelist=whitelist)
+
+    # ── Source 3: Live threat intel feeds ──
+    threat_seeds = load_threat_seeds(whitelist)
+
+    # ── Run ──
+    category_domains, new_pos, visited_count = crawl_bot(
+        tranco_domains  = tranco_domains,
+        threat_seeds    = threat_seeds,
+        crtsh_domains   = crtsh_domains,
+        whitelist       = whitelist,
+        tranco_start    = tranco_pos,
+        duration_seconds= duration,
+        max_workers     = max_workers,
+        delay           = delay,
     )
-    
-    # Append results to raw/ folder
+
+    # ── Save results ──
     total_new = append_to_raw(category_domains)
-    
-    # Save a run summary
+
+    # ── Update tiny state file (just numbers, not domain lists) ──
+    state["tranco_position"]        = new_pos
+    state["total_visited_all_runs"] = state.get("total_visited_all_runs", 0) + visited_count
+    state["runs"]                   = state.get("runs", 0) + 1
+    state["last_run"]               = datetime.now(timezone.utc).isoformat()
+    state["last_run_visited"]       = visited_count
+    state["last_run_new_domains"]   = total_new
+    save_crawl_state(state)
+
+    # ── Run summary ──
     summary = {
-        "run_at": datetime.now(timezone.utc).isoformat(),
+        "run_at": state["last_run"],
         "duration_seconds": duration,
-        "categories_discovered": {cat: len(doms) for cat, doms in category_domains.items()},
-        "total_new_domains": total_new
+        "sites_visited": visited_count,
+        "new_domains_found": total_new,
+        "tranco_position": new_pos,
+        "total_visited_all_runs": state["total_visited_all_runs"],
+        "categories": {c: len(d) for c, d in category_domains.items()},
     }
-    with open("raw/bot_run_summary.json", "w") as f:
+    with open("raw/bot_run_summary.json", 'w') as f:
         json.dump(summary, f, indent=2)
-    
-    logger.info(f"✅ Crawler bot finished. {total_new} new domains appended to raw/.")
-    print("=== 🤖 Crawler Bot Complete ===")
+
+    print("=" * 62)
+    print(f"  ✅ Visited: {visited_count:,} | New blacklisted: {total_new:,}")
+    print(f"  📍 Tranco pos saved: {new_pos:,} / {len(tranco_domains):,}")
+    print(f"  🌐 Total all runs: {state['total_visited_all_runs']:,}")
+    print("=" * 62)
 
 
 if __name__ == "__main__":

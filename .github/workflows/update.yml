@@ -2,7 +2,7 @@ name: Update Blacklists (Feeds + Validator)
 
 on:
   schedule:
-    - cron: '30 0,8,16 * * *' # Runs 30 min after crawl_bot.yml (00:30, 08:30, 16:30 UTC)
+    - cron: '0 4,16 * * *' # Runs 4 hours after crawl_bot.yml starts (04:00, 16:00 UTC)
   workflow_dispatch: # Allow manual trigger
   push:
     branches:
