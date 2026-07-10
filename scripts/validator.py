@@ -176,7 +176,7 @@ def main():
         for d in master_domains_list:
             f.write(f"||{d}^\n")
 
-    # 4. Write master domains JSON format
+    # 4. Write master domains JSON format (minified to keep file size small)
     domain_map = {}
     for category, domains in category_domains.items():
         for d in domains:
@@ -186,7 +186,7 @@ def main():
 
     master_json_path = os.path.join(master_dir, "domains.json")
     with open(master_json_path, "w") as f:
-        json.dump(domain_map, f, indent=2)
+        json.dump(domain_map, f, separators=(',', ':'))  # minified — no whitespace
 
     # 5. Write stats file
     with open(stats_file, "w") as f:
