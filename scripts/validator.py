@@ -787,7 +787,8 @@ def main():
         final_list = sorted(list(domains))
         
         summary_stats["categories"][category] = len(final_list)
-        all_master_domains.update(final_list)
+        if category != "social":
+            all_master_domains.update(final_list)
 
         # Write clean category file
         cat_file_path = os.path.join(categories_dir, f"{category}.txt")
