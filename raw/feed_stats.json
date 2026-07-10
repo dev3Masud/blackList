@@ -1,9 +1,16 @@
 [
   {
-    "name": "Phishing Army",
-    "category": "phishing",
+    "name": "NoCoin Cryptomining List",
+    "category": "cryptomining",
+    "success": false,
+    "count": 0,
+    "error": "HTTP 404"
+  },
+  {
+    "name": "AdGuard Tracking Filter",
+    "category": "tracking",
     "success": true,
-    "count": 144937,
+    "count": 3511,
     "error": ""
   },
   {
@@ -21,18 +28,11 @@
     "error": ""
   },
   {
-    "name": "AdGuard Tracking Filter",
-    "category": "tracking",
+    "name": "Spam404",
+    "category": "spam",
     "success": true,
-    "count": 3511,
+    "count": 8140,
     "error": ""
-  },
-  {
-    "name": "NoCoin Cryptomining List",
-    "category": "cryptomining",
-    "success": false,
-    "count": 0,
-    "error": "HTTP 404"
   },
   {
     "name": "ShadowWhisperer - Dating",
@@ -42,10 +42,10 @@
     "error": ""
   },
   {
-    "name": "Spam404",
-    "category": "spam",
+    "name": "BlockList Project - Porn (NSFW)",
+    "category": "nsfw",
     "success": true,
-    "count": 8140,
+    "count": 953397,
     "error": ""
   },
   {
@@ -70,6 +70,13 @@
     "error": ""
   },
   {
+    "name": "Phishing Army",
+    "category": "phishing",
+    "success": true,
+    "count": 144937,
+    "error": ""
+  },
+  {
     "name": "BlockList Project - YouTube",
     "category": "social",
     "success": true,
@@ -84,6 +91,13 @@
     "error": ""
   },
   {
+    "name": "BlockList Project - Gambling",
+    "category": "gambling",
+    "success": true,
+    "count": 292045,
+    "error": ""
+  },
+  {
     "name": "OISD NSFW Blocklist",
     "category": "nsfw",
     "success": true,
@@ -94,28 +108,14 @@
     "name": "OISD Big Blocklist",
     "category": "ads",
     "success": true,
-    "count": 493500,
-    "error": ""
-  },
-  {
-    "name": "BlockList Project - Gambling",
-    "category": "gambling",
-    "success": true,
-    "count": 292045,
-    "error": ""
-  },
-  {
-    "name": "BlockList Project - Porn (NSFW)",
-    "category": "nsfw",
-    "success": true,
-    "count": 953397,
+    "count": 327035,
     "error": ""
   },
   {
     "name": "Crawler: phishstats.info",
     "category": "crawled",
     "success": true,
-    "count": 0
+    "count": 39
   },
   {
     "name": "Crawler: openphish.com",
