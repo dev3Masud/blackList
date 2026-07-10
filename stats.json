@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-07-10T09:19:24.303842+00:00",
+  "last_updated": "2026-07-10T09:29:52.875073+00:00",
   "total_domains": 594301,
   "categories": {
     "malware": 100000,
@@ -24,10 +24,10 @@
       "error": ""
     },
     {
-      "name": "URLHaus Malware Domains",
-      "category": "malware",
+      "name": "AdGuard Tracking Filter",
+      "category": "tracking",
       "success": true,
-      "count": 507,
+      "count": 3511,
       "error": ""
     },
     {
@@ -38,17 +38,17 @@
       "error": ""
     },
     {
-      "name": "AdGuard Tracking Filter",
-      "category": "tracking",
-      "success": true,
-      "count": 3511,
-      "error": ""
-    },
-    {
       "name": "Spam404",
       "category": "spam",
       "success": true,
       "count": 8140,
+      "error": ""
+    },
+    {
+      "name": "URLHaus Malware Domains",
+      "category": "malware",
+      "success": true,
+      "count": 507,
       "error": ""
     },
     {
@@ -59,10 +59,17 @@
       "error": ""
     },
     {
-      "name": "Phishing Army",
-      "category": "phishing",
+      "name": "BlockList Project - Facebook",
+      "category": "social",
       "success": true,
-      "count": 144845,
+      "count": 22362,
+      "error": ""
+    },
+    {
+      "name": "BlockList Project - Porn (NSFW)",
+      "category": "nsfw",
+      "success": true,
+      "count": 953397,
       "error": ""
     },
     {
@@ -73,10 +80,10 @@
       "error": ""
     },
     {
-      "name": "BlockList Project - Facebook",
-      "category": "social",
+      "name": "Phishing Army",
+      "category": "phishing",
       "success": true,
-      "count": 22362,
+      "count": 144845,
       "error": ""
     },
     {
@@ -94,13 +101,6 @@
       "error": ""
     },
     {
-      "name": "BlockList Project - Gambling",
-      "category": "gambling",
-      "success": true,
-      "count": 292045,
-      "error": ""
-    },
-    {
       "name": "BlockList Project - Torrent & Piracy",
       "category": "torrent",
       "success": true,
@@ -108,10 +108,10 @@
       "error": ""
     },
     {
-      "name": "StevenBlack Gambling Alternate",
+      "name": "BlockList Project - Gambling",
       "category": "gambling",
       "success": true,
-      "count": 84948,
+      "count": 292045,
       "error": ""
     },
     {
@@ -129,6 +129,13 @@
       "error": ""
     },
     {
+      "name": "StevenBlack Gambling Alternate",
+      "category": "gambling",
+      "success": true,
+      "count": 84948,
+      "error": ""
+    },
+    {
       "name": "Sakib-m Torrent Trackers List",
       "category": "torrent",
       "success": true,
@@ -140,13 +147,6 @@
       "category": "tracking",
       "success": true,
       "count": 42594,
-      "error": ""
-    },
-    {
-      "name": "AdGuard DNS Ads list",
-      "category": "ads",
-      "success": true,
-      "count": 154344,
       "error": ""
     },
     {
@@ -164,6 +164,13 @@
       "error": ""
     },
     {
+      "name": "AdGuard DNS Ads list",
+      "category": "ads",
+      "success": true,
+      "count": 154344,
+      "error": ""
+    },
+    {
       "name": "OISD NSFW Blocklist",
       "category": "nsfw",
       "success": true,
@@ -178,13 +185,6 @@
       "error": ""
     },
     {
-      "name": "HaGeZi Multi PRO",
-      "category": "ads",
-      "success": true,
-      "count": 230471,
-      "error": ""
-    },
-    {
       "name": "HaGeZi NSFW (Adult)",
       "category": "nsfw",
       "success": true,
@@ -192,17 +192,10 @@
       "error": ""
     },
     {
-      "name": "BlockList Project - Porn (NSFW)",
-      "category": "nsfw",
+      "name": "HaGeZi Multi PRO",
+      "category": "ads",
       "success": true,
-      "count": 953397,
-      "error": ""
-    },
-    {
-      "name": "HaGeZi Anti-Piracy (Torrent)",
-      "category": "torrent",
-      "success": true,
-      "count": 32791,
+      "count": 230471,
       "error": ""
     },
     {
@@ -217,6 +210,13 @@
       "category": "malware",
       "success": true,
       "count": 1517,
+      "error": ""
+    },
+    {
+      "name": "HaGeZi Anti-Piracy (Torrent)",
+      "category": "torrent",
+      "success": true,
+      "count": 32791,
       "error": ""
     },
     {
