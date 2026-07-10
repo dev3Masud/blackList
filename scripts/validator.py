@@ -56,18 +56,16 @@ def is_whitelisted(domain, whitelist):
             
     return False
 
-def save_variant(variant_name, categories_list, category_domains, max_per_cat):
-    """Combines specified categories and saves them under variants/variant_name/."""
+def save_variant(variant_name, categories_list, category_domains, base_path="variants"):
+    """Combines specified categories and saves them under base_path/variant_name/."""
     variant_domains = set()
     for cat in categories_list:
         if cat in category_domains:
             variant_domains.update(category_domains[cat])
             
     domains_list = sorted(list(variant_domains))
-    if len(domains_list) > max_per_cat:
-        domains_list = domains_list[:max_per_cat]
         
-    variant_dir = os.path.join("variants", variant_name)
+    variant_dir = os.path.join(base_path, variant_name)
     os.makedirs(variant_dir, exist_ok=True)
     
     # 1. Write domains.txt
@@ -93,9 +91,9 @@ def save_variant(variant_name, categories_list, category_domains, max_per_cat):
         for d in domains_list:
             f.write(f"||{d}^\n")
             
-    write_variant_readme(variant_name, len(domains_list))
-    write_variant_html(variant_name, len(domains_list))
-    print(f"[+] Saved variant '{variant_name}' ({len(domains_list)} domains) to {variant_dir}")
+    write_variant_readme(variant_name, len(domains_list), categories_list, category_domains, base_path)
+    write_variant_html(variant_name, len(domains_list), categories_list, category_domains, base_path)
+    print(f"[+] Saved {base_path} variant '{variant_name}' ({len(domains_list)} domains) to {variant_dir}")
 
 category_details = {
     "cryptomining": ("Cryptomining", "Cryptojacking scripts, browser miners, and pool connection endpoints."),
@@ -120,8 +118,8 @@ variant_categories = {
     "adblock": ["malware", "phishing", "cryptomining", "ads", "tracking", "spam", "dating", "social", "gambling", "torrent", "crawled", "nsfw"]
 }
 
-def write_variant_readme(variant_name, count):
-    """Writes a beautiful README.md for the specific variant folder detailing categories."""
+def write_variant_readme(variant_name, count, categories_list, category_domains, base_path="variants"):
+    """Writes a beautiful README.md for the specific variant/alternate folder detailing categories."""
     descriptions = {
         "lite": "Designed for maximum speed and stability. Targets high-severity security threats like malware, phishing, and cryptomining. Near-zero false positives.",
         "medium": "Balanced protection and usability. Blocks security threats, ads, trackers, and spam domains. Recommended for standard home networks.",
@@ -130,17 +128,19 @@ def write_variant_readme(variant_name, count):
         "adblock": "Optimized ruleset formatted for browser extensions (uBlock Origin, AdGuard). Supports cosmetic and network blocking."
     }
     
-    desc = descriptions.get(variant_name, "DNS blocking lists.")
+    desc = descriptions.get(variant_name, f"Alternate blocklist configuration. Combines the base security blocklist with: {', '.join(categories_list)}.")
     
-    cats = variant_categories.get(variant_name, [])
     cat_rows = ""
-    for c in cats:
+    for c in categories_list:
         title, d_desc = category_details.get(c, (c, ""))
-        cat_rows += f"| 🔴 **{title}** | {d_desc} |\n"
+        c_count = len(category_domains.get(c, []))
+        cat_rows += f"| 🔴 **{title}** | `{c_count:,}` | {d_desc} |\n"
 
-    readme_content = f"""# 🛡️ blackList - {variant_name.capitalize()} Variant
+    title_str = f"Alternate: {variant_name}" if base_path == "alternates" else f"{variant_name.capitalize()} Variant"
 
-This directory contains the compiled **{variant_name.capitalize()}** blocklist variant.
+    readme_content = f"""# 🛡️ blackList - {title_str}
+
+This directory contains the compiled **{variant_name}** blocklist.
 
 *   **Status**: Active
 *   **Total blocked domains**: `{count:,}`
@@ -150,10 +150,10 @@ This directory contains the compiled **{variant_name.capitalize()}** blocklist v
 
 ## 📦 Blocked Categories & Domain Types
 
-This variant contains lists designed to block the following domain categories:
+This configuration contains lists designed to block the following domain categories:
 
-| Category | Type of Domains Blocked |
-| -------- | ----------------------- |
+| Category | Blocked Domains | Description |
+| -------- | --------------- | ----------- |
 {cat_rows}
 ---
 
@@ -192,11 +192,11 @@ Select your preferred format below to load into your adblocker:
 ---
 *Maintained and auto-updated daily by the [blackList pipeline](https://github.com/dev3Masud/blackList).*
 """
-    readme_path = os.path.join("variants", variant_name, "README.md")
+    readme_path = os.path.join(base_path, variant_name, "README.md")
     with open(readme_path, "w") as f:
         f.write(readme_content)
 
-def write_variant_html(variant_name, count):
+def write_variant_html(variant_name, count, categories_list, category_domains, base_path="variants"):
     """Writes a beautiful, dark-mode self-contained index.html for each variant folder."""
     descriptions = {
         "lite": "Designed for maximum speed and stability. Targets high-severity security threats like malware, phishing, and cryptomining. Near-zero false positives.",
@@ -206,27 +206,32 @@ def write_variant_html(variant_name, count):
         "adblock": "Optimized ruleset formatted for browser extensions (uBlock Origin, AdGuard). Supports cosmetic and network blocking."
     }
     
-    desc = descriptions.get(variant_name, "DNS blocking lists.")
+    desc = descriptions.get(variant_name, f"Alternate blocklist configuration. Combines the base security blocklist with: {', '.join(categories_list)}.")
     
-    cats = variant_categories.get(variant_name, [])
     cat_html = ""
-    for c in cats:
+    for c in categories_list:
         title, d_desc = category_details.get(c, (c, ""))
+        c_count = len(category_domains.get(c, []))
         cat_html += f"""
         <div class="category-item">
-          <span class="category-tag">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#f43f5e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="15" y1="9" x2="9" y2="15"></line></svg>
-            {title}
-          </span>
+          <div style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
+            <span class="category-tag">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#f43f5e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="15" y1="9" x2="9" y2="15"></line></svg>
+              {title}
+            </span>
+            <span style="font-family: var(--font-mono); font-size: 0.85rem; font-weight: 700; background: rgba(244, 63, 94, 0.15); color: var(--danger-color); padding: 0.15rem 0.5rem; border-radius: 6px;">{c_count:,}</span>
+          </div>
           <span class="category-desc">{d_desc}</span>
         </div>"""
+
+    title_str = f"Alternate: {variant_name}" if base_path == "alternates" else f"{variant_name.capitalize()} Variant"
 
     html_content = f"""<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>blackList - {variant_name.capitalize()} Variant</title>
+  <title>blackList - {title_str}</title>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap');
     
@@ -493,6 +498,13 @@ def write_variant_html(variant_name, count):
       border-color: var(--success-color) !important;
     }}
 
+    /* Setup/Config Info */
+    .setup-desc {{
+      color: var(--text-secondary);
+      font-size: 0.95rem;
+      margin-bottom: 1.5rem;
+    }}
+
     /* Instructions formatting */
     ol {{
       margin: 1rem 0 1.5rem 1.5rem;
@@ -545,7 +557,7 @@ def write_variant_html(variant_name, count):
     </a>
 
     <main class="glass-card">
-      <h1>🛡️ blackList - {variant_name.capitalize()} Variant</h1>
+      <h1>🛡️ blackList - {title_str}</h1>
       
       <ul class="meta-list">
         <li>Status: <span class="badge">ACTIVE</span></li>
@@ -575,10 +587,10 @@ def write_variant_html(variant_name, count):
             <td>
               <div class="action-row">
                 <button class="btn-icon" onclick="copyText('domains.txt')" title="Copy URL">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#64748b" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
                 </button>
                 <a href="domains.txt" class="btn-icon" download title="Download">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#64748b" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
                 </a>
               </div>
             </td>
@@ -589,10 +601,10 @@ def write_variant_html(variant_name, count):
             <td>
               <div class="action-row">
                 <button class="btn-icon" onclick="copyText('hosts.txt')" title="Copy URL">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#64748b" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
                 </button>
                 <a href="hosts.txt" class="btn-icon" download title="Download">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#64748b" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
                 </a>
               </div>
             </td>
@@ -603,10 +615,10 @@ def write_variant_html(variant_name, count):
             <td>
               <div class="action-row">
                 <button class="btn-icon" onclick="copyText('adblock.txt')" title="Copy URL">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#64748b" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
                 </button>
                 <a href="adblock.txt" class="btn-icon" download title="Download">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#64748b" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
                 </a>
               </div>
             </td>
@@ -672,7 +684,7 @@ def write_variant_html(variant_name, count):
 </body>
 </html>
 """
-    html_path = os.path.join("variants", variant_name, "index.html")
+    html_path = os.path.join(base_path, variant_name, "index.html")
     with open(html_path, "w") as f:
         f.write(html_content)
 
@@ -749,11 +761,6 @@ def main():
     for category, domains in category_domains.items():
         final_list = sorted(list(domains))
         
-        # Enforce max limit per category if configured
-        if len(final_list) > max_per_cat:
-            print(f"[!] Category '{category}' exceeded limit. Truncating to {max_per_cat}.")
-            final_list = final_list[:max_per_cat]
-
         summary_stats["categories"][category] = len(final_list)
         all_master_domains.update(final_list)
 
@@ -835,20 +842,35 @@ def main():
 
     # Compile Variant Blocklists
     print("[*] Compiling variant blocklists...")
-    save_variant("lite", ["malware", "phishing", "cryptomining"], category_domains, max_per_cat)
-    save_variant("medium", ["malware", "phishing", "cryptomining", "ads", "tracking", "spam"], category_domains, max_per_cat)
-    save_variant("high", ["malware", "phishing", "cryptomining", "ads", "tracking", "spam", "dating", "social", "gambling", "torrent", "crawled"], category_domains, max_per_cat)
-    save_variant("nsfw", ["nsfw"], category_domains, max_per_cat)
+    save_variant("lite", ["malware", "phishing", "cryptomining"], category_domains)
+    save_variant("medium", ["malware", "phishing", "cryptomining", "ads", "tracking", "spam"], category_domains)
+    save_variant("high", ["malware", "phishing", "cryptomining", "ads", "tracking", "spam", "dating", "social", "gambling", "torrent", "crawled"], category_domains)
+    save_variant("nsfw", ["nsfw"], category_domains)
+    save_variant("adblock", ["malware", "phishing", "cryptomining", "ads", "tracking", "spam", "dating", "social", "gambling", "torrent", "crawled", "nsfw"], category_domains)
+
+    # Compile StevenBlack-Style Alternates
+    print("[*] Compiling StevenBlack-style alternates...")
+    base_cats = ["malware", "phishing", "cryptomining", "ads", "tracking"]
     
-    # Save a separate adblock variant folder representing full master list
-    adblock_var_dir = os.path.join("variants", "adblock")
-    os.makedirs(adblock_var_dir, exist_ok=True)
-    import shutil
-    shutil.copy2(os.path.join(master_dir, "adblock.txt"), os.path.join(adblock_var_dir, "adblock.txt"))
-    shutil.copy2(os.path.join(master_dir, "domains.txt"), os.path.join(adblock_var_dir, "domains.txt"))
-    shutil.copy2(os.path.join(master_dir, "hosts.txt"), os.path.join(adblock_var_dir, "hosts.txt"))
-    write_variant_readme("adblock", len(master_domains_list))
-    write_variant_html("adblock", len(master_domains_list))
+    # We will generate combinations of gambling, porn (nsfw), social, fakenews (spam)
+    ext_map = {
+        "fakenews": ["spam"],
+        "gambling": ["gambling"],
+        "porn": ["nsfw"],
+        "social": ["social"]
+    }
+    
+    ext_keys = list(ext_map.keys())
+    import itertools
+    for r in range(1, len(ext_keys) + 1):
+        for comb in itertools.combinations(ext_keys, r):
+            comb_name = "-".join(comb)
+            comb_cats = list(base_cats)
+            for key in comb:
+                comb_cats.extend(ext_map[key])
+            
+            # Save this alternate combination
+            save_variant(comb_name, comb_cats, category_domains, base_path="alternates")
 
     # 5. Write stats file
     with open(stats_file, "w") as f:
