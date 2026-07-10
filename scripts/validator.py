@@ -56,6 +56,106 @@ def is_whitelisted(domain, whitelist):
             
     return False
 
+def save_variant(variant_name, categories_list, category_domains, max_per_cat):
+    """Combines specified categories and saves them under variants/variant_name/."""
+    variant_domains = set()
+    for cat in categories_list:
+        if cat in category_domains:
+            variant_domains.update(category_domains[cat])
+            
+    domains_list = sorted(list(variant_domains))
+    if len(domains_list) > max_per_cat:
+        domains_list = domains_list[:max_per_cat]
+        
+    variant_dir = os.path.join("variants", variant_name)
+    os.makedirs(variant_dir, exist_ok=True)
+    
+    # 1. Write domains.txt
+    with open(os.path.join(variant_dir, "domains.txt"), "w") as f:
+        f.write(f"# Compiled Blacklist Variant - {variant_name.upper()}\n")
+        f.write(f"# Total Domains: {len(domains_list)}\n")
+        f.write(f"# Last updated: {datetime.now(timezone.utc).strftime('%Y-%m-%d %H:%M:%S UTC')}\n\n")
+        f.write("\n".join(domains_list))
+        
+    # 2. Write hosts.txt
+    with open(os.path.join(variant_dir, "hosts.txt"), "w") as f:
+        f.write(f"# Compiled Blacklist Variant (Hosts format) - {variant_name.upper()}\n")
+        f.write(f"# Total Domains: {len(domains_list)}\n")
+        f.write(f"# Last updated: {datetime.now(timezone.utc).strftime('%Y-%m-%d %H:%M:%S UTC')}\n\n")
+        for d in domains_list:
+            f.write(f"0.0.0.0 {d}\n")
+            
+    # 3. Write adblock.txt
+    with open(os.path.join(variant_dir, "adblock.txt"), "w") as f:
+        f.write(f"! Compiled Blacklist Variant (Adblock format) - {variant_name.upper()}\n")
+        f.write(f"! Total Domains: {len(domains_list)}\n")
+        f.write(f"! Last updated: {datetime.now(timezone.utc).strftime('%Y-%m-%d %H:%M:%S UTC')}\n\n")
+        for d in domains_list:
+            f.write(f"||{d}^\n")
+            
+    write_variant_readme(variant_name, len(domains_list))
+    print(f"[+] Saved variant '{variant_name}' ({len(domains_list)} domains) to {variant_dir}")
+
+def write_variant_readme(variant_name, count):
+    """Writes a beautiful README.md for the specific variant folder."""
+    descriptions = {
+        "lite": "Designed for maximum speed and stability. Targets high-severity security threats like malware, phishing, and cryptomining. Near-zero false positives.",
+        "medium": "Balanced protection and usability. Blocks security threats, ads, trackers, and spam domains. Recommended for standard home networks.",
+        "high": "Maximum security ruleset. Blocks ads, trackers, malware, spam, dating, social tracking, gambling, and torrent networks. May block some web features.",
+        "nsfw": "Dedicated blocklist for filtering adult content, pornography, and age-restricted domains. Ideal for parental controls.",
+        "adblock": "Optimized ruleset formatted for browser extensions (uBlock Origin, AdGuard). Supports cosmetic and network blocking."
+    }
+    
+    desc = descriptions.get(variant_name, "DNS blocking lists.")
+    readme_content = f"""# 🛡️ blackList - {variant_name.capitalize()} Variant
+
+This directory contains the compiled **{variant_name.capitalize()}** blocklist variant.
+
+*   **Status**: Active
+*   **Total blocked domains**: `{count:,}`
+*   **Target audience**: {desc}
+
+---
+
+## 🚀 How to Use
+
+Select your preferred format below to load into your adblocker:
+
+| Format | File Link | Description |
+| ------ | --------- | ----------- |
+| **Domains List** | [domains.txt](domains.txt) | Pure list of domains (best for custom scripts) |
+| **Hosts Format** | [hosts.txt](hosts.txt) | Standard hosts file (0.0.0.0 format) |
+| **Adblock Syntax** | [adblock.txt](adblock.txt) | Wildcard syntax (`||domain.com^`) |
+
+---
+
+## ⚙️ Setup Instructions
+
+### 1. Pi-hole (DNS Resolver)
+1. Copy the raw link to the **`domains.txt`** file above.
+2. Go to your Pi-hole admin panel.
+3. Navigate to **Group Management** -> **Adlists**.
+4. Paste the URL and click **Add**.
+
+### 2. AdGuard Home
+1. Copy the raw link to the **`hosts.txt`** file above.
+2. Go to AdGuard Home -> **Filters** -> **DNS blocklists**.
+3. Click **Add blocklist** -> **Add custom list**.
+4. Paste the URL and save.
+
+### 3. Browser Adblockers (uBlock Origin / AdGuard Extension)
+1. Copy the raw link to the **`adblock.txt`** file above.
+2. Open your extension settings page.
+3. Go to the **Filter Lists** tab.
+4. Scroll to the bottom, check **Import**, paste the URL, and click **Apply changes**.
+
+---
+*Maintained and auto-updated daily by the [blackList pipeline](https://github.com/dev3Masud/blackList).*
+"""
+    readme_path = os.path.join("variants", variant_name, "README.md")
+    with open(readme_path, "w") as f:
+        f.write(readme_content)
+
 def main():
     print("=== Step 2: Blacklist Domain Validator Start ===")
     config = load_config()
@@ -187,6 +287,22 @@ def main():
     master_json_path = os.path.join(master_dir, "domains.json")
     with open(master_json_path, "w") as f:
         json.dump(domain_map, f, separators=(',', ':'))  # minified — no whitespace
+
+    # Compile Variant Blocklists
+    print("[*] Compiling variant blocklists...")
+    save_variant("lite", ["malware", "phishing", "cryptomining"], category_domains, max_per_cat)
+    save_variant("medium", ["malware", "phishing", "cryptomining", "ads", "tracking", "spam"], category_domains, max_per_cat)
+    save_variant("high", ["malware", "phishing", "cryptomining", "ads", "tracking", "spam", "dating", "social", "gambling", "torrent", "crawled"], category_domains, max_per_cat)
+    save_variant("nsfw", ["nsfw"], category_domains, max_per_cat)
+    
+    # Save a separate adblock variant folder representing full master list
+    adblock_var_dir = os.path.join("variants", "adblock")
+    os.makedirs(adblock_var_dir, exist_ok=True)
+    import shutil
+    shutil.copy2(os.path.join(master_dir, "adblock.txt"), os.path.join(adblock_var_dir, "adblock.txt"))
+    shutil.copy2(os.path.join(master_dir, "domains.txt"), os.path.join(adblock_var_dir, "domains.txt"))
+    shutil.copy2(os.path.join(master_dir, "hosts.txt"), os.path.join(adblock_var_dir, "hosts.txt"))
+    write_variant_readme("adblock", len(master_domains_list))
 
     # 5. Write stats file
     with open(stats_file, "w") as f:

@@ -21,6 +21,15 @@ These lists combine all threat domains (excluding whitelisted ones) and are upda
 *   **AdBlock Filter Format:** `master/adblock.txt` (Compatible with uBlock Origin, AdGuard, Brave)
 *   **JSON Map Database:** `master/domains.json`
 
+### Curated Blocklist Variants
+We compile custom variants tailored for different use cases. Each folder contains `domains.txt`, `hosts.txt`, and `adblock.txt` formats along with detailed setup readmes:
+
+*   **[Lite / Mini](variants/lite/)**: High-severity threat coverage (malware, phishing, cryptomining) with near-zero false positives. Great for low-resource routers and smart TVs.
+*   **[Medium / Standard](variants/medium/)**: Balanced security + privacy coverage. Blocks malware, phishing, adware, tracking telemetry, and spam. *Recommended for general use.*
+*   **[High / Pro](variants/high/)**: Extreme coverage. Blocks all of the above plus social media tracking, dating platforms, gambling, torrent sites, and active crawlers.
+*   **[NSFW (Adult)](variants/nsfw/)**: Dedicated list targeting adult content, pornography, and age-restricted domains. Ideal for parental control setups.
+*   **[AdBlock](variants/adblock/)**: A dedicated browser extension ruleset format containing all compiled domains optimized for browser-level blocking.
+
 ### Categorized Sub-Lists
 If you only wish to block specific categories, you can pull separate feeds directly:
 
@@ -83,7 +92,7 @@ If you wish to run the compilation script locally:
    ```
 3. Run the crawler & validator pipeline:
    ```bash
-   python scripts/crawler.py
-   python scripts/validator.py
+   python3 scripts/crawler.py
+   python3 scripts/validator.py
    ```
 4. Customize feeds inside [config.yaml](file:///home/who/Documents/AI-Coding/Github/blackList/config.yaml) and whitelists inside [whitelist.txt](file:///home/who/Documents/AI-Coding/Github/blackList/whitelist.txt).

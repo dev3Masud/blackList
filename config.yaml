@@ -98,5 +98,11 @@ feeds:
 - name: HaGeZi Dynamic DNS
   url: https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/dyndns.txt
   category: malware
+- name: 1Hosts Lite
+  url: https://raw.githubusercontent.com/badmojr/1Hosts/master/Lite/domains.txt
+  category: ads
+- name: 1Hosts Xtra
+  url: https://raw.githubusercontent.com/badmojr/1Hosts/master/Xtra/domains.txt
+  category: tracking
 
 
