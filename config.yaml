@@ -1,8 +1,5 @@
 whitelist_file: whitelist.txt
 max_domains_per_category: 100000
-crawler_duration_seconds: 12600
-crawler_max_workers: 40
-crawler_delay_seconds: 0.3
 outputs:
   categories_dir: categories
   master_dir: master
