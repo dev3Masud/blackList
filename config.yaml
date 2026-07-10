@@ -1,5 +1,4 @@
 whitelist_file: whitelist.txt
-max_domains_per_category: 500000
 outputs:
   categories_dir: categories
   master_dir: master
