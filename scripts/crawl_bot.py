@@ -17,7 +17,7 @@
 =============================================================
 """
 
-import os, re, sys, csv, time, json, gzip, yaml, random, logging
+import os, re, sys, csv, time, json, gzip, yaml, random, logging, zipfile, io
 import requests
 from urllib.parse import urlparse
 from datetime import datetime, timezone
@@ -203,7 +203,8 @@ def detect_category(html_text, url):
 
 def download_tranco(tmp_path=TRANCO_TMP):
     """
-    Downloads Tranco list to /tmp/ (never added to git).
+    Downloads Top 1M list to /tmp/ (never added to git).
+    Tries Tranco first, then Cisco Umbrella, then Majestic Million.
     Uses cached /tmp/ file if it exists and is < 24h old.
     Returns list of domain strings.
     """
@@ -211,21 +212,74 @@ def download_tranco(tmp_path=TRANCO_TMP):
     if os.path.exists(tmp_path):
         age_h = (time.time() - os.path.getmtime(tmp_path)) / 3600
         if age_h < 24:
-            logger.info(f"Using /tmp/ Tranco cache ({age_h:.1f}h old).")
-            return _parse_tranco(tmp_path)
+            logger.info(f"Using /tmp/ cached top domains list ({age_h:.1f}h old).")
+            domains = _parse_tranco(tmp_path)
+            if domains:
+                return domains
 
-    logger.info("Downloading Tranco Top-1M → /tmp/ (not committed to repo)...")
+    # 1. Attempt Tranco
+    logger.info("Attempting download from Tranco...")
     try:
-        r = requests.get(TRANCO_URL, timeout=120, stream=True,
+        r = requests.get(TRANCO_URL, timeout=60, stream=True,
                          headers={"User-Agent": random.choice(USER_AGENTS)})
-        r.raise_for_status()
-        with open(tmp_path, 'wb') as f:
-            for chunk in r.iter_content(65536): f.write(chunk)
-        logger.info(f"Tranco downloaded → {tmp_path}")
+        if r.status_code == 200:
+            with open(tmp_path, 'wb') as f:
+                for chunk in r.iter_content(65536): f.write(chunk)
+            domains = _parse_tranco(tmp_path)
+            if domains:
+                logger.info("Successfully fetched Top-1M from Tranco.")
+                return domains
     except Exception as e:
-        logger.warning(f"Tranco download failed: {e}")
-        return []
-    return _parse_tranco(tmp_path)
+        logger.warning(f"Tranco fetch failed: {e}")
+
+    # 2. Attempt Cisco Umbrella
+    logger.info("Attempting download from Cisco Umbrella...")
+    umbrella_url = "http://s3-us-west-1.amazonaws.com/umbrella-static/top-1m.csv.zip"
+    try:
+        r = requests.get(umbrella_url, timeout=60,
+                         headers={"User-Agent": random.choice(USER_AGENTS)})
+        if r.status_code == 200:
+            with zipfile.ZipFile(io.BytesIO(r.content)) as z:
+                csv_name = z.namelist()[0]
+                with z.open(csv_name) as csv_in:
+                    with gzip.open(tmp_path, 'wt', encoding='utf-8') as gz_out:
+                        writer = csv.writer(gz_out)
+                        csv_reader = csv.reader(io.TextIOWrapper(csv_in, encoding='utf-8', errors='ignore'))
+                        for row in csv_reader:
+                            writer.writerow(row)
+            domains = _parse_tranco(tmp_path)
+            if domains:
+                logger.info("Successfully fetched Top-1M from Cisco Umbrella.")
+                return domains
+    except Exception as e:
+        logger.warning(f"Cisco Umbrella fetch failed: {e}")
+
+    # 3. Attempt Majestic Million
+    logger.info("Attempting download from Majestic Million...")
+    majestic_url = "https://majestic.com/reports/majestic-million.csv"
+    try:
+        r = requests.get(majestic_url, timeout=60, stream=True,
+                         headers={"User-Agent": random.choice(USER_AGENTS)})
+        if r.status_code == 200:
+            with gzip.open(tmp_path, 'wt', encoding='utf-8') as gz_out:
+                writer = csv.writer(gz_out)
+                lines = (line.decode('utf-8', errors='ignore') for line in r.iter_lines())
+                reader = csv.reader(lines)
+                next(reader, None)  # skip header
+                for row in reader:
+                    if len(row) >= 3:
+                        rank = row[0]
+                        domain = row[2]
+                        writer.writerow([rank, domain])
+            domains = _parse_tranco(tmp_path)
+            if domains:
+                logger.info("Successfully fetched Top-1M from Majestic Million.")
+                return domains
+    except Exception as e:
+        logger.warning(f"Majestic Million fetch failed: {e}")
+
+    logger.error("All Top-1M domain list providers failed!")
+    return []
 
 def _parse_tranco(path):
     domains = []
@@ -242,7 +296,7 @@ def _parse_tranco(path):
             break
         except Exception:
             continue
-    logger.info(f"Tranco: loaded {len(domains):,} domains.")
+    logger.info(f"Loaded {len(domains):,} domains from top-1m dataset.")
     return domains
 
 # ═══════════════════ Domain Source 2: crt.sh CT Logs ════════════════════════
@@ -253,45 +307,43 @@ def fetch_crtsh_domains(limit=5000, whitelist=set()):
     to discover fresh, real, registered domains across the internet.
     Each query returns up to ~100 domains — we run many queries.
     """
-    # Random query terms — gives broad internet coverage
+    # Specific query prefixes to hit index on crt.sh (e.g. login.something...)
+    # This prevents database sequential scans and returns fast.
     query_terms = [
-        "%.com", "%.net", "%.org", "%.io", "%.co",
-        "%.xyz", "%.online", "%.shop", "%.site", "%.info",
-        "%.de", "%.uk", "%.ru", "%.cn", "%.br",
-        "%.fr", "%.in", "%.jp", "%.au", "%.ca",
-        "%.club", "%.top", "%.app", "%.dev", "%.ai",
+        "login%", "verify%", "secure%", "update%", "account%",
+        "signin%", "support%", "billing%", "banking%", "service%",
+        "online%", "free%", "gift%", "win%", "claim%",
+        "portal%", "auth%", "webmail%", "office%", "admin%",
     ]
     found = set()
+    max_attempts = 3
     attempts = 0
 
     logger.info(f"Fetching random domains from crt.sh Certificate Transparency logs...")
+    
+    # Shuffle query terms to get random ones
+    random.shuffle(query_terms)
 
-    while len(found) < limit and attempts < len(query_terms):
-        q = random.choice(query_terms)
-        query_terms_copy = list(query_terms)
-        random.shuffle(query_terms_copy)
-
-        for term in query_terms_copy:
-            if len(found) >= limit:
-                break
-            try:
-                url = f"https://crt.sh/?q={term}&output=json"
-                r = requests.get(url, timeout=20,
-                                 headers={"User-Agent": random.choice(USER_AGENTS)})
-                if r.status_code != 200:
-                    continue
-                entries = r.json()
-                for entry in entries:
-                    name = entry.get("name_value", "").lower()
-                    for d in name.split('\n'):
-                        d = d.strip().lstrip('*.')
-                        if is_valid_domain(d) and not is_whitelisted(d, whitelist):
-                            found.add(d)
-            except Exception:
-                pass
+    for term in query_terms:
+        if len(found) >= limit or attempts >= max_attempts:
+            break
+        try:
+            url = f"https://crt.sh/?q={term}&output=json"
+            logger.info(f"Querying crt.sh for prefix: {term} (Attempt {attempts + 1}/{max_attempts})...")
+            r = requests.get(url, timeout=15,
+                             headers={"User-Agent": random.choice(USER_AGENTS)})
             attempts += 1
-
-        break
+            if r.status_code != 200:
+                continue
+            entries = r.json()
+            for entry in entries:
+                name = entry.get("name_value", "").lower()
+                for d in name.split('\n'):
+                    d = d.strip().lstrip('*.')
+                    if is_valid_domain(d) and not is_whitelisted(d, whitelist):
+                        found.add(d)
+        except Exception as e:
+            logger.warning(f"crt.sh query for {term} failed: {e}")
 
     result = list(found)[:limit]
     logger.info(f"crt.sh: discovered {len(result):,} fresh domains.")
