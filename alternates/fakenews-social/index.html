@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>blackList - Alternate: fakenews-social</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap');
+    
+    :root {
+      --font-sans: 'Plus Jakarta Sans', sans-serif;
+      --font-mono: 'JetBrains Mono', monospace;
+      --bg-primary: #08090d;
+      --bg-secondary: #0f111a;
+      --accent-primary: #4f46e5;
+      --accent-secondary: #06b6d4;
+      --success-color: #10b981;
+      --danger-color: #f43f5e;
+      --glass-bg: rgba(15, 17, 26, 0.55);
+      --glass-border: rgba(255, 255, 255, 0.06);
+      --glass-border-hover: rgba(255, 255, 255, 0.12);
+      --text-primary: #f8fafc;
+      --text-secondary: #94a3b8;
+      --text-muted: #64748b;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    
+    body {
+      background-color: var(--bg-primary);
+      color: var(--text-primary);
+      font-family: var(--font-sans);
+      min-height: 100vh;
+      line-height: 1.6;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 3rem 1.5rem;
+      overflow-x: hidden;
+    }
+
+    /* Glowing Backdrop */
+    .bg-glow {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      z-index: -1;
+      overflow: hidden;
+      pointer-events: none;
+    }
+
+    .blob {
+      position: absolute;
+      width: 500px;
+      height: 500px;
+      border-radius: 50%;
+      filter: blur(130px);
+      opacity: 0.1;
+    }
+
+    .blob-1 {
+      top: -10%;
+      right: 10%;
+      background: var(--accent-primary);
+    }
+
+    .blob-2 {
+      bottom: -10%;
+      left: 10%;
+      background: var(--accent-secondary);
+    }
+
+    .container {
+      max-width: 800px;
+      width: 100%;
+    }
+
+    /* Back link */
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: var(--text-secondary);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.9rem;
+      margin-bottom: 1.5rem;
+      transition: all 0.2s ease;
+    }
+
+    .back-link:hover {
+      color: var(--text-primary);
+      transform: translateX(-4px);
+    }
+
+    /* Glass Card layout */
+    .glass-card {
+      background: var(--glass-bg);
+      border: 1px solid var(--glass-border);
+      border-radius: 20px;
+      padding: 2.5rem;
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.35);
+      margin-bottom: 2rem;
+    }
+
+    h1 {
+      font-size: 2.25rem;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      margin-bottom: 0.5rem;
+      background: linear-gradient(135deg, var(--text-primary) 30%, var(--accent-secondary) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .meta-list {
+      list-style: none;
+      margin: 1.5rem 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .meta-list li {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: var(--text-secondary);
+      font-size: 0.95rem;
+    }
+
+    .meta-list strong {
+      color: var(--text-primary);
+    }
+
+    .badge {
+      background: rgba(16, 185, 129, 0.08);
+      border: 1px solid rgba(16, 185, 129, 0.28);
+      color: var(--success-color);
+      padding: 0.15rem 0.6rem;
+      border-radius: 20px;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+    }
+
+    .desc {
+      color: var(--text-secondary);
+      margin-bottom: 2rem;
+    }
+
+    h2 {
+      font-size: 1.4rem;
+      font-weight: 700;
+      margin: 2.5rem 0 1rem;
+      border-bottom: 1px solid var(--glass-border);
+      padding-bottom: 0.5rem;
+    }
+
+    /* Category lists */
+    .category-list {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1rem;
+      margin: 1.5rem 0;
+    }
+    @media (min-width: 600px) {
+      .category-list {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+    .category-item {
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid var(--glass-border);
+      border-radius: 12px;
+      padding: 1.1rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+      transition: all 0.3s ease;
+    }
+    .category-item:hover {
+      background: rgba(255, 255, 255, 0.04);
+      border-color: var(--accent-secondary);
+    }
+    .category-tag {
+      font-weight: 700;
+      color: var(--text-primary);
+      font-size: 0.95rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .category-desc {
+      color: var(--text-secondary);
+      font-size: 0.85rem;
+    }
+
+    /* Downloads Table */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1rem 0;
+      border: 1px solid var(--glass-border);
+      border-radius: 12px;
+      overflow: hidden;
+      background: rgba(10, 11, 16, 0.3);
+    }
+
+    th, td {
+      padding: 1rem;
+      text-align: left;
+      border-bottom: 1px solid var(--glass-border);
+    }
+
+    th {
+      background: rgba(0, 0, 0, 0.2);
+      color: var(--text-secondary);
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+    }
+
+    td {
+      font-size: 0.95rem;
+    }
+
+    .file-name {
+      font-weight: 700;
+      font-family: var(--font-mono);
+      color: var(--accent-secondary);
+    }
+
+    /* Copy Button & Icons */
+    .action-row {
+      display: flex;
+      gap: 0.5rem;
+    }
+
+    .btn-icon {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid var(--glass-border);
+      color: var(--text-secondary);
+      width: 34px;
+      height: 34px;
+      border-radius: 8px;
+      cursor: pointer;
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      transition: all 0.2s ease;
+      text-decoration: none;
+    }
+
+    .btn-icon:hover {
+      background: rgba(255, 255, 255, 0.08);
+      border-color: var(--glass-border-hover);
+      color: var(--text-primary);
+    }
+
+    .copy-success {
+      background: rgba(16, 185, 129, 0.08) !important;
+      color: var(--success-color) !important;
+      border-color: var(--success-color) !important;
+    }
+
+    /* Setup/Config Info */
+    .setup-desc {
+      color: var(--text-secondary);
+      font-size: 0.95rem;
+      margin-bottom: 1.5rem;
+    }
+
+    /* Instructions formatting */
+    ol {
+      margin: 1rem 0 1.5rem 1.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    li {
+      font-size: 0.95rem;
+      color: var(--text-secondary);
+    }
+
+    code {
+      font-family: var(--font-mono);
+      background: rgba(255, 255, 255, 0.05);
+      padding: 0.1rem 0.3rem;
+      border-radius: 4px;
+      font-size: 0.9rem;
+      color: var(--text-primary);
+    }
+
+    footer {
+      margin-top: 5rem;
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 0.85rem;
+      border-top: 1px solid var(--glass-border);
+      padding-top: 2rem;
+    }
+
+    footer a {
+      color: var(--accent-secondary);
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="bg-glow" aria-hidden="true">
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+  </div>
+
+  <div class="container">
+    
+    <a href="../../" class="back-link">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+      <span>Back to Registry</span>
+    </a>
+
+    <main class="glass-card">
+      <h1>🛡️ blackList - Alternate: fakenews-social</h1>
+      
+      <ul class="meta-list">
+        <li>Status: <span class="badge">ACTIVE</span></li>
+        <li>Blocked Domains: <strong>416,629</strong></li>
+      </ul>
+
+      <p class="desc">Alternate blocklist configuration. Combines the base security blocklist with: malware, phishing, cryptomining, ads, tracking, spam, social.</p>
+
+      <h2>📦 Blocked Categories & Domain Types</h2>
+      <div class="category-list">
+        
+        <div class="category-item">
+          <div style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
+            <span class="category-tag">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#f43f5e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="15" y1="9" x2="9" y2="15"></line></svg>
+              Malware Sites
+            </span>
+            <span style="font-family: var(--font-mono); font-size: 0.85rem; font-weight: 700; background: rgba(244, 63, 94, 0.15); color: var(--danger-color); padding: 0.15rem 0.5rem; border-radius: 6px;">100,000</span>
+          </div>
+          <span class="category-desc">Command & control servers, distribution endpoints, ransomware, and spyware platforms.</span>
+        </div>
+        <div class="category-item">
+          <div style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
+            <span class="category-tag">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#f43f5e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="15" y1="9" x2="9" y2="15"></line></svg>
+              Phishing Pages
+            </span>
+            <span style="font-family: var(--font-mono); font-size: 0.85rem; font-weight: 700; background: rgba(244, 63, 94, 0.15); color: var(--danger-color); padding: 0.15rem 0.5rem; border-radius: 6px;">100,000</span>
+          </div>
+          <span class="category-desc">Fraudulent login pages, credential harvesting forms, and identity spoofing sites.</span>
+        </div>
+        <div class="category-item">
+          <div style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
+            <span class="category-tag">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#f43f5e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="15" y1="9" x2="9" y2="15"></line></svg>
+              Cryptomining
+            </span>
+            <span style="font-family: var(--font-mono); font-size: 0.85rem; font-weight: 700; background: rgba(244, 63, 94, 0.15); color: var(--danger-color); padding: 0.15rem 0.5rem; border-radius: 6px;">297</span>
+          </div>
+          <span class="category-desc">Cryptojacking scripts, browser miners, and pool connection endpoints.</span>
+        </div>
+        <div class="category-item">
+          <div style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
+            <span class="category-tag">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#f43f5e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="15" y1="9" x2="9" y2="15"></line></svg>
+              Advertising Domains
+            </span>
+            <span style="font-family: var(--font-mono); font-size: 0.85rem; font-weight: 700; background: rgba(244, 63, 94, 0.15); color: var(--danger-color); padding: 0.15rem 0.5rem; border-radius: 6px;">100,000</span>
+          </div>
+          <span class="category-desc">Ad delivery networks, promotional servers, and banner scripting endpoints.</span>
+        </div>
+        <div class="category-item">
+          <div style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
+            <span class="category-tag">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#f43f5e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="15" y1="9" x2="9" y2="15"></line></svg>
+              Tracking & Telemetry
+            </span>
+            <span style="font-family: var(--font-mono); font-size: 0.85rem; font-weight: 700; background: rgba(244, 63, 94, 0.15); color: var(--danger-color); padding: 0.15rem 0.5rem; border-radius: 6px;">100,000</span>
+          </div>
+          <span class="category-desc">Analytics scripts, user profiling telemetry, and commercial data harvesting domains.</span>
+        </div>
+        <div class="category-item">
+          <div style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
+            <span class="category-tag">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#f43f5e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="15" y1="9" x2="9" y2="15"></line></svg>
+              Spam & Scam Domains
+            </span>
+            <span style="font-family: var(--font-mono); font-size: 0.85rem; font-weight: 700; background: rgba(244, 63, 94, 0.15); color: var(--danger-color); padding: 0.15rem 0.5rem; border-radius: 6px;">24,090</span>
+          </div>
+          <span class="category-desc">Malicious email redirectors, lottery scam landing pages, and deceptive bulk sites.</span>
+        </div>
+        <div class="category-item">
+          <div style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
+            <span class="category-tag">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#f43f5e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="15" y1="9" x2="9" y2="15"></line></svg>
+              Social Tracking
+            </span>
+            <span style="font-family: var(--font-mono); font-size: 0.85rem; font-weight: 700; background: rgba(244, 63, 94, 0.15); color: var(--danger-color); padding: 0.15rem 0.5rem; border-radius: 6px;">24,625</span>
+          </div>
+          <span class="category-desc">Social networking trackers, widgets, and domain collectors that profile user browsing.</span>
+        </div>
+      </div>
+
+      <h2>🚀 Compile Formats</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Format</th>
+            <th>Description</th>
+            <th style="width: 100px;">Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><span class="file-name">domains.txt</span></td>
+            <td style="color: var(--text-secondary);">Plaintext raw domains list</td>
+            <td>
+              <div class="action-row">
+                <button class="btn-icon" onclick="copyText('domains.txt')" title="Copy URL">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#64748b" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+                </button>
+                <a href="domains.txt" class="btn-icon" download title="Download">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#64748b" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+                </a>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td><span class="file-name">hosts.txt</span></td>
+            <td style="color: var(--text-secondary);">Hosts file mapping (0.0.0.0 target)</td>
+            <td>
+              <div class="action-row">
+                <button class="btn-icon" onclick="copyText('hosts.txt')" title="Copy URL">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#64748b" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+                </button>
+                <a href="hosts.txt" class="btn-icon" download title="Download">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#64748b" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+                </a>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td><span class="file-name">adblock.txt</span></td>
+            <td style="color: var(--text-secondary);">AdBlock syntax filter rules</td>
+            <td>
+              <div class="action-row">
+                <button class="btn-icon" onclick="copyText('adblock.txt')" title="Copy URL">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#64748b" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+                </button>
+                <a href="adblock.txt" class="btn-icon" download title="Download">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#64748b" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+                </a>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h2>⚙️ Setup Instructions</h2>
+
+      <h3>1. Pi-hole (DNS Resolver)</h3>
+      <ol>
+        <li>Click the copy button next to <code>domains.txt</code> above to copy the absolute link.</li>
+        <li>Go to your Pi-hole admin console.</li>
+        <li>Navigate to <strong>Group Management</strong> -> <strong>Adlists</strong>.</li>
+        <li>Paste the copied URL under Address and click <strong>Add</strong>.</li>
+      </ol>
+
+      <h3>2. AdGuard Home</h3>
+      <ol>
+        <li>Click the copy button next to <code>hosts.txt</code> above.</li>
+        <li>Open AdGuard Home dashboard and navigate to <strong>Filters</strong> -> <strong>DNS Blocklists</strong>.</li>
+        <li>Click <strong>Add Blocklist</strong> -> <strong>Add a custom list</strong>.</li>
+        <li>Paste the copied URL under list URL, give it a name, and save.</li>
+      </ol>
+
+      <h3>3. Browser Adblockers (uBlock Origin / AdGuard Extension)</h3>
+      <ol>
+        <li>Copy the link to <code>adblock.txt</code> above.</li>
+        <li>Open the extension settings and go to the <strong>Filter Lists</strong> (or My Filters) tab.</li>
+        <li>Scroll down, check <strong>Import</strong> under custom lists, paste the URL, and click <strong>Apply Changes</strong>.</li>
+      </ol>
+
+    </main>
+
+    <footer>
+      <p>Maintained and auto-updated daily by the <a href="https://github.com/dev3Masud/blackList" target="_blank">blackList pipeline</a>.</p>
+    </footer>
+
+  </div>
+
+  <script>
+    function copyText(subpath) {
+      const absoluteUrl = window.location.origin + window.location.pathname + subpath;
+      
+      navigator.clipboard.writeText(absoluteUrl).then(() => {
+        const btn = event.currentTarget;
+        const originalContent = btn.innerHTML;
+        
+        btn.innerHTML = `
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+        `;
+        btn.classList.add("copy-success");
+        
+        setTimeout(() => {
+          btn.innerHTML = originalContent;
+          btn.classList.remove("copy-success");
+        }, 1500);
+      }).catch(err => {
+        console.error("Could not copy URL:", err);
+      });
+    }
+  </script>
+</body>
+</html>
