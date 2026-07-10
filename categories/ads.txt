@@ -1,6 +1,6 @@
 # Category: ADS
 # Count: 100000
-# Last updated: 2026-07-10 10:57:22 UTC
+# Last updated: 2026-07-10 11:11:42 UTC
 # Filtered against whitelist to prevent false positives.
 
 0--0.info
@@ -23334,7 +23334,6 @@
 34wsdrtxrtzxgfxfg.pages.dev
 34xx7.s8lqzp.top
 34ys.com
-35-55.com
 35.c-ko.imedia.cz
 35.c-ng.imedia.cz
 35.c-oa.imedia.cz
@@ -77116,6 +77115,7 @@ advice-feedback.vercel.app
 advice.hit.gemius.pl
 advice.imho.net
 advice.pgs.io
+adviceaboutbreastreconstruction.com
 advicead.hit.gemius.pl
 adviceautoinsurancesaved.com
 advicebrown470.weebly.com
@@ -78422,6 +78422,7 @@ af-dbz.fit
 af-mark.jp
 af-market.com
 af-south-1.alb.pulse.perfmetrics.netflix.com
+af-supply.com
 af-system.net
 af-z.jp
 af.analytics.elx.cloud
@@ -81213,6 +81214,7 @@ ahtelecom.net
 ahtfmealpjtu.com
 ahthegha.cfd
 ahtjhe1bka.com
+ahtoscribemt.com
 ahtplqvbxkule.online
 ahu.clubkidscuritibaahu.com.br
 ahuedp.com
@@ -84998,6 +85000,7 @@ alejandrosanchezlirola.com
 alejatisthealth.com
 alekonta.pl
 aleksa-group.com
+aleksandramihajlovic.com
 aleksandrarsur050.weebly.com
 aleksejj.store
 aleksey52ai.ru
@@ -85574,6 +85577,7 @@ alienatecommit.com
 alienated-whole.com
 alienateditem.com
 alienateparadise.com
+alienbeing.com
 alieneal.irish
 alienhub.xyz
 alienkane.com
@@ -89693,6 +89697,7 @@ alpinelasopa731.weebly.com
 alpinello.shop
 alpineluxurylimo.com
 alpinemart.de
+alpinemobile.com
 alpinepulse.work
 alpiner-stil.com
 alpinestars-france.fr
@@ -89868,6 +89873,7 @@ altarsecreto.com
 altasaude.com
 altasformen.fr
 altaskifer.sbs
+altasmoving.com
 altastat.com
 altavo.shop
 altawczmu.in
@@ -91139,6 +91145,7 @@ american-dsign.com
 american-northman.com
 american-prize-center.com
 american-shoppers.com
+american-spirit-mustang.com
 american.edu.eu
 americana.gdom.org
 americanacademyoffamilyphysiciansproduction8y0talcv.analytics.org.coveo.com
@@ -99996,10 +100003,3 @@ angelcityfootgolf.com
 angeldiorbeautyspa.com
 angeldisastrouspersonify.com
 angeldonationblog.com
-angelebjennica.pages.dev
-angelebmarsha.pages.dev
-angelesfoldingpatsy.com
-angelferno.gitbook.io
-angelferrets12.weebly.com
-angelfish.dpya.com
-angelfish.grayscale.design
