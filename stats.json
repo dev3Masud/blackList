@@ -1,10 +1,10 @@
 {
-  "last_updated": "2026-07-10T01:49:18.557942+00:00",
+  "last_updated": "2026-07-10T02:01:30.555726+00:00",
   "total_domains": 451173,
   "categories": {
     "malware": 514,
-    "tracking": 3488,
     "ads": 100000,
+    "tracking": 3488,
     "spam": 8140,
     "dating": 1334,
     "social": 51491,
@@ -29,16 +29,16 @@
       "count": 514
     },
     {
-      "name": "AdGuard Tracking Filter",
-      "category": "tracking",
-      "success": true,
-      "count": 3511
-    },
-    {
       "name": "StevenBlack Adware & Malware",
       "category": "ads",
       "success": true,
       "count": 78450
+    },
+    {
+      "name": "AdGuard Tracking Filter",
+      "category": "tracking",
+      "success": true,
+      "count": 3511
     },
     {
       "name": "Spam404",
@@ -65,16 +65,16 @@
       "count": 3722
     },
     {
-      "name": "BlockList Project - Twitter",
-      "category": "social",
-      "success": true,
-      "count": 1193
-    },
-    {
       "name": "Phishing Army",
       "category": "phishing",
       "success": true,
       "count": 144937
+    },
+    {
+      "name": "BlockList Project - Twitter",
+      "category": "social",
+      "success": true,
+      "count": 1193
     },
     {
       "name": "BlockList Project - YouTube",
@@ -101,16 +101,16 @@
       "count": 292045
     },
     {
-      "name": "OISD Big Blocklist",
-      "category": "ads",
-      "success": true,
-      "count": 493500
-    },
-    {
       "name": "OISD NSFW Blocklist",
       "category": "nsfw",
       "success": true,
       "count": 371927
+    },
+    {
+      "name": "OISD Big Blocklist",
+      "category": "ads",
+      "success": true,
+      "count": 493500
     },
     {
       "name": "Crawler: phishstats.info",
