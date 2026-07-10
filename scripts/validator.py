@@ -153,8 +153,7 @@ def write_variant_readme(variant_name, count, categories_list, category_domains,
     for c in categories_list:
         title, d_desc = category_details.get(c, (c, ""))
         c_count = len(category_domains.get(c, []))
-        uncapped = category_uncapped_counts.get(c, c_count)
-        cat_rows += f"| 🔴 **{title}** | `{c_count:,}` | `{uncapped:,}` | {d_desc} |\n"
+        cat_rows += f"| 🔴 **{title}** | `{c_count:,}` | {d_desc} |\n"
 
     title_str = f"Alternate: {variant_name}" if base_path == "alternates" else f"{variant_name.capitalize()} Variant"
 
@@ -172,8 +171,8 @@ This directory contains the compiled **{variant_name}** blocklist.
 
 This configuration contains lists designed to block the following domain categories:
 
-| Category | Blocked Domains (Capped) | Total Discovered | Description |
-| -------- | ------------------------ | ---------------- | ----------- |
+| Category | Blocked Domains | Description |
+| -------- | --------------- | ----------- |
 {cat_rows}
 ---
 
@@ -232,7 +231,6 @@ def write_variant_html(variant_name, count, categories_list, category_domains, c
     for c in categories_list:
         title, d_desc = category_details.get(c, (c, ""))
         c_count = len(category_domains.get(c, []))
-        uncapped = category_uncapped_counts.get(c, c_count)
         cat_html += f"""
         <div class="category-item">
           <div style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
@@ -240,8 +238,8 @@ def write_variant_html(variant_name, count, categories_list, category_domains, c
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#f43f5e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="15" y1="9" x2="9" y2="15"></line></svg>
               {title}
             </span>
-            <span style="font-family: var(--font-mono); font-size: 0.85rem; font-weight: 700; background: rgba(244, 63, 94, 0.15); color: var(--danger-color); padding: 0.15rem 0.5rem; border-radius: 6px;" title="Blocked / Discovered">
-              {c_count:,} / {uncapped:,}
+            <span style="font-family: var(--font-mono); font-size: 0.85rem; font-weight: 700; background: rgba(244, 63, 94, 0.15); color: var(--danger-color); padding: 0.15rem 0.5rem; border-radius: 6px;">
+              {c_count:,}
             </span>
           </div>
           <span class="category-desc">{d_desc}</span>
