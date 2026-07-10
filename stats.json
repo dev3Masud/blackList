@@ -1,6 +1,6 @@
 {
-  "last_updated": "2026-07-10T10:41:16.321695+00:00",
-  "total_domains": 630558,
+  "last_updated": "2026-07-10T10:46:44.667392+00:00",
+  "total_domains": 630553,
   "categories": {
     "malware": 100000,
     "spam": 24651,
@@ -31,17 +31,17 @@
       "error": ""
     },
     {
-      "name": "StevenBlack Adware & Malware",
-      "category": "ads",
-      "success": true,
-      "count": 78462,
-      "error": ""
-    },
-    {
       "name": "Spam404",
       "category": "spam",
       "success": true,
       "count": 8140,
+      "error": ""
+    },
+    {
+      "name": "StevenBlack Adware & Malware",
+      "category": "ads",
+      "success": true,
+      "count": 78462,
       "error": ""
     },
     {
@@ -56,6 +56,13 @@
       "category": "dating",
       "success": true,
       "count": 1343,
+      "error": ""
+    },
+    {
+      "name": "Phishing Army",
+      "category": "phishing",
+      "success": true,
+      "count": 144841,
       "error": ""
     },
     {
@@ -84,13 +91,6 @@
       "category": "social",
       "success": true,
       "count": 24280,
-      "error": ""
-    },
-    {
-      "name": "Phishing Army",
-      "category": "phishing",
-      "success": true,
-      "count": 144845,
       "error": ""
     },
     {
@@ -153,7 +153,7 @@
       "name": "Polish Filters Team - KADhosts",
       "category": "ads",
       "success": true,
-      "count": 45681,
+      "count": 45403,
       "error": ""
     },
     {
@@ -171,17 +171,10 @@
       "error": ""
     },
     {
-      "name": "OISD Big Blocklist",
+      "name": "HaGeZi Multi PRO",
       "category": "ads",
       "success": true,
-      "count": 328448,
-      "error": ""
-    },
-    {
-      "name": "OISD NSFW Blocklist",
-      "category": "nsfw",
-      "success": true,
-      "count": 388413,
+      "count": 230471,
       "error": ""
     },
     {
@@ -189,6 +182,13 @@
       "category": "nsfw",
       "success": true,
       "count": 106730,
+      "error": ""
+    },
+    {
+      "name": "OISD NSFW Blocklist",
+      "category": "nsfw",
+      "success": true,
+      "count": 388413,
       "error": ""
     },
     {
@@ -206,6 +206,13 @@
       "error": ""
     },
     {
+      "name": "HaGeZi Gambling",
+      "category": "gambling",
+      "success": true,
+      "count": 296680,
+      "error": ""
+    },
+    {
       "name": "HaGeZi Fake (Scam/Spam)",
       "category": "spam",
       "success": true,
@@ -213,17 +220,17 @@
       "error": ""
     },
     {
-      "name": "HaGeZi Multi PRO",
+      "name": "OISD Big Blocklist",
       "category": "ads",
       "success": true,
-      "count": 230471,
+      "count": 328448,
       "error": ""
     },
     {
-      "name": "HaGeZi Gambling",
-      "category": "gambling",
+      "name": "HaGeZi Threat Intelligence (TIF)",
+      "category": "malware",
       "success": true,
-      "count": 296680,
+      "count": 1754029,
       "error": ""
     },
     {
@@ -238,13 +245,6 @@
       "category": "tracking",
       "success": true,
       "count": 1042968,
-      "error": ""
-    },
-    {
-      "name": "HaGeZi Threat Intelligence (TIF)",
-      "category": "malware",
-      "success": true,
-      "count": 1754029,
       "error": ""
     }
   ]

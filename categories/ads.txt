@@ -1,6 +1,6 @@
 # Category: ADS
 # Count: 100000
-# Last updated: 2026-07-10 10:41:17 UTC
+# Last updated: 2026-07-10 10:46:47 UTC
 # Filtered against whitelist to prevent false positives.
 
 0--0.info
@@ -12398,6 +12398,7 @@
 157a724fae6e06a352e009557fed2f16.safeframe.googlesyndication.com
 157aa5418ad7.xyz
 157b2dd98ab1140f.com
+158-158-48-230.cprapid.com
 158-158-74-174.cprapid.com
 158.sub-75-222-100.myvzw.com
 15816825.fls.doubleclick.net
@@ -86980,6 +86981,7 @@ allegro.nr-237433.click
 allegro.nr-238434.click
 allegro.nr-238438.cfd
 allegro.nr-23843jsdm23.click
+allegro.nr-2384smdf234.click
 allegro.nr-23943ids.click
 allegro.nr-327438.shop
 allegro.nr-3278.xyz
@@ -87105,6 +87107,7 @@ allegro.pl-4348352.sbs
 allegro.pl-43493892.sbs
 allegro.pl-43499352.sbs
 allegro.pl-4448382.sbs
+allegro.pl-4483882.sbs
 allegro.pl-4483982.sbs
 allegro.pl-478857818758322.sbs
 allegro.pl-484378755.click
@@ -87727,7 +87730,6 @@ allegrolokalnie.1023010h04.shop
 allegrolokalnie.1029h843h.shop
 allegrolokalnie.10384823475.xyz
 allegrolokalnie.1039837h53.shop
-allegrolokalnie.10960230.cfd
 allegrolokalnie.112932932398721112.lol
 allegrolokalnie.11544.click
 allegrolokalnie.120029hdf.xyz
@@ -87785,7 +87787,6 @@ allegrolokalnie.309238h75.shop
 allegrolokalnie.3092398s00.shop
 allegrolokalnie.30brvdkvd.sbs
 allegrolokalnie.320120998j52.baby
-allegrolokalnie.3241578.cfd
 allegrolokalnie.328129goi48.xyz
 allegrolokalnie.328238smart843.xyz
 allegrolokalnie.32844.click
@@ -88040,7 +88041,6 @@ allegrolokalnie.lokalna-3887012.sbs
 allegrolokalnie.lokalna-884456.sbs
 allegrolokalnie.lokalna-9188.sbs
 allegrolokalnie.lokalna-9253.sbs
-allegrolokalnie.lokalna-aukcja699021.shop
 allegrolokalnie.lokalna-ofera0120120292.shop
 allegrolokalnie.lokalna-ofera085352.sbs
 allegrolokalnie.lokalna-ofera0869853.lol
@@ -88155,6 +88155,7 @@ allegrolokalnie.nr-237433.click
 allegrolokalnie.nr-238434.click
 allegrolokalnie.nr-238438.cfd
 allegrolokalnie.nr-23843jsdm23.click
+allegrolokalnie.nr-2384smdf234.click
 allegrolokalnie.nr-23943ids.click
 allegrolokalnie.nr-327438.shop
 allegrolokalnie.nr-3278.xyz
@@ -88411,6 +88412,7 @@ allegrolokalnie.pl-4348352.sbs
 allegrolokalnie.pl-43493892.sbs
 allegrolokalnie.pl-43499352.sbs
 allegrolokalnie.pl-4448382.sbs
+allegrolokalnie.pl-4483882.sbs
 allegrolokalnie.pl-4483982.sbs
 allegrolokalnie.pl-471752.shop
 allegrolokalnie.pl-4729483.shop
@@ -88733,7 +88735,6 @@ allegrolokalnie.plm-93921.xyz
 allegrolokalnie.pls3jfrvgirf1xk.sbs
 allegrolokalnie.pls3kfrfdarf1xk.sbs
 allegrolokalnie.pls3oorffgj21xk.sbs
-allegrolokalnie.pls3oprffgj21xk.sbs
 allegrolokalnie.plx19592361.cfd
 allegrolokalnie.plx9106825478.cfd
 allegrolokalnie.plx9423665784.cfd
@@ -100002,4 +100003,3 @@ anewok.com
 anewpostcovidworld.com
 anews.cc
 anews.co.uk
-anews.ge
