@@ -4,353 +4,289 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>GitHub Domain Blacklist Registry</title>
-  <meta name="description" content="A community-driven threat intelligence domain blacklist with categorized segments. Auto-updated daily.">
+  
+  <!-- SEO & Optimization -->
+  <meta name="description" content="An automated daily-compiled domain blacklist threat registry for Pi-hole, AdGuard Home, and browser blockers. Filtered against whitelists to minimize false positives.">
+  <meta name="keywords" content="domain blacklist, pi-hole, adguard-home, adblock, malware protection, hosts file, security filters">
+  <meta name="author" content="dev3Masud">
+  
+  <!-- Main Stylesheet -->
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  
-  <!-- Sleek visual backdrop blobs -->
-  <div class="bg-blobs">
+
+  <!-- Sleek visual glowing backdrops -->
+  <div class="bg-blobs" aria-hidden="true">
     <div class="blob blob-1"></div>
     <div class="blob blob-2"></div>
   </div>
 
   <div class="container">
     
-    <!-- Top Header bar -->
+    <!-- Top Header section -->
     <header>
       <div class="logo-section">
         <h1>🛡️ Blacklist Registry</h1>
-        <p>Categorized, daily-compiled domain feeds for threat mitigation</p>
+        <p>Validated, daily-compiled domain blocklists for network-level threat mitigation</p>
       </div>
       <div class="badge-pulse">
-        <div class="pulse-dot"></div>
-        <span>Auto-Update Daily</span>
+        <span class="pulse-dot"></span>
+        <span>Auto-Updated Daily</span>
       </div>
     </header>
 
-    <!-- Dashboard layout grid -->
-    <div class="dashboard-grid">
-      
-      <!-- Search & Overview Column -->
-      <div style="display: flex; flex-direction: column; gap: 30px;">
+    <!-- Tab Navigation menu -->
+    <nav class="dashboard-tabs" aria-label="Dashboard sections">
+      <button class="tab-btn active" data-tab="overview">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg>
+        <span>Overview</span>
+      </button>
+      <button class="tab-btn" data-tab="lookup">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+        <span>Security Lookup</span>
+      </button>
+      <button class="tab-btn" data-tab="downloads">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+        <span>Downloads & Variants</span>
+      </button>
+      <button class="tab-btn" data-tab="feeds">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="4" y1="9" x2="20" y2="9"></line><line x1="4" y1="15" x2="20" y2="15"></line><line x1="10" y1="3" x2="8" y2="21"></line><line x1="16" y1="3" x2="14" y2="21"></line></svg>
+        <span>Upstream Sources</span>
+      </button>
+    </nav>
+
+    <!-- Tab View: Overview -->
+    <div class="tab-view active" id="view-overview">
+      <section class="glass-card">
+        <div class="stats-header">
+          <h2>Registry Analytics</h2>
+          <p id="update-timestamp" style="color: var(--text-secondary); font-size: 0.88rem; margin-top: 4px;">Loading timestamp...</p>
+        </div>
         
-        <!-- Search box section -->
-        <section class="glass-card search-card" id="search-section">
-          <h2>Domain Security Lookup</h2>
-          <p style="color: var(--text-secondary); margin-bottom: 15px; font-size: 0.95rem;">
-            Check if a specific domain is compiled within our blacklist database.
-          </p>
-          <div class="search-container">
-            <div class="search-input-wrapper">
-              <svg class="search-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <circle cx="11" cy="11" r="8"></circle>
-                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-              </svg>
-              <input type="text" id="domain-query" class="search-input" placeholder="e.g. malwaredomain.com" aria-label="Domain name search input">
-            </div>
-            <button class="search-btn" onclick="checkDomain()">
-              <span>Search</span>
-            </button>
+        <!-- Live Counters -->
+        <div class="stats-container">
+          <div class="stat-card">
+            <div class="stat-val" id="stat-total">0</div>
+            <div class="stat-label">Blocked Domains</div>
           </div>
-          <div id="search-result" class="search-result"></div>
+          <div class="stat-card">
+            <div class="stat-val" id="stat-categories">0</div>
+            <div class="stat-label">Categories</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-val" id="stat-feeds">0</div>
+            <div class="stat-label">Monitored Feeds</div>
+          </div>
+        </div>
+
+        <h3 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 0.5rem;">Download Categorized Segments</h3>
+        <p style="color: var(--text-secondary); font-size: 0.95rem; margin-bottom: 1.5rem;">Load individual threat feeds separately into your DNS blocklists:</p>
+        
+        <div class="categories-grid" id="categories-container">
+          <!-- Loaded by JS -->
+          <div style="grid-column: 1/-1; text-align: center; color: var(--text-secondary); padding: 2rem;">
+            <div class="spinner" style="margin: 0 auto 10px;"></div>
+            <span>Fetching category files...</span>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- Tab View: Security Lookup -->
+    <div class="tab-view" id="view-lookup">
+      <section class="glass-card">
+        <h2>Domain Security Lookup</h2>
+        <p style="color: var(--text-secondary); font-size: 0.95rem; margin-bottom: 1.5rem;">
+          Verify if a specific domain is currently blacklisted in our compiled intelligence registry. Supports full wildcard parent checks.
+        </p>
+        <div class="search-container">
+          <div class="search-input-wrapper">
+            <svg class="search-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+            </svg>
+            <input type="text" id="domain-query" class="search-input" placeholder="e.g. trackingdomain.com" aria-label="Search domains">
+          </div>
+          <button class="search-btn" onclick="checkDomain()">
+            <span>Check</span>
+          </button>
+        </div>
+        <div id="search-result" class="search-result"></div>
+      </section>
+    </div>
+
+    <!-- Tab View: Downloads & Variants -->
+    <div class="tab-view" id="view-downloads">
+      <div class="downloads-grid">
+        
+        <!-- Master Formats -->
+        <section class="glass-card">
+          <h2>Unified Blocklists</h2>
+          <p style="color: var(--text-secondary); font-size: 0.92rem; margin-bottom: 1.5rem;">
+            Combined threat feeds. All compiled domains excluding whitelisted exceptions:
+          </p>
+          <div class="download-list">
+            
+            <div class="download-item">
+              <div class="download-item-info">
+                <span class="download-name">domains.txt</span>
+                <span class="download-desc">Plaintext raw domains list</span>
+              </div>
+              <div class="action-row">
+                <button class="btn-icon" onclick="copyText('master/domains.txt')" title="Copy URL">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+                </button>
+                <a href="master/domains.txt" class="btn-icon" download title="Download">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+                </a>
+              </div>
+            </div>
+
+            <div class="download-item">
+              <div class="download-item-info">
+                <span class="download-name">hosts.txt</span>
+                <span class="download-desc">Hosts redirection (0.0.0.0 mapping)</span>
+              </div>
+              <div class="action-row">
+                <button class="btn-icon" onclick="copyText('master/hosts.txt')" title="Copy URL">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+                </button>
+                <a href="master/hosts.txt" class="btn-icon" download title="Download">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+                </a>
+              </div>
+            </div>
+
+            <div class="download-item">
+              <div class="download-item-info">
+                <span class="download-name">adblock.txt</span>
+                <span class="download-desc">Adblock extension filter rules</span>
+              </div>
+              <div class="action-row">
+                <button class="btn-icon" onclick="copyText('master/adblock.txt')" title="Copy URL">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+                </button>
+                <a href="master/adblock.txt" class="btn-icon" download title="Download">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+                </a>
+              </div>
+            </div>
+
+          </div>
         </section>
 
-        <!-- General stats indicators -->
+        <!-- Curated Variants -->
         <section class="glass-card">
-          <div class="stats-header" style="margin-bottom: 20px;">
-            <h2>Registry Analytics</h2>
-            <p id="update-timestamp" style="color: var(--text-secondary); font-size: 0.85rem; margin-top: 4px;">Loading statistics...</p>
-          </div>
-          
-          <div class="stats-container">
-            <div class="stat-card">
-              <div class="stat-val" id="stat-total">0</div>
-              <div class="stat-label">Total Unique Domains</div>
+          <h2>Blocklist Variants</h2>
+          <p style="color: var(--text-secondary); font-size: 0.92rem; margin-bottom: 1.5rem;">
+            Curated list tiers balanced for performance and protection needs:
+          </p>
+          <div class="download-list">
+            
+            <div class="download-item">
+              <div class="download-item-info">
+                <span class="download-name">Lite / Mini Variant</span>
+                <span class="download-desc">Security only (malware, phishing). Safer.</span>
+              </div>
+              <div class="action-row">
+                <button class="btn-icon" onclick="copyText('variants/lite/domains.txt')" title="Copy URL">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+                </button>
+                <a href="variants/lite/" class="btn-icon" title="View Directory">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>
+                </a>
+              </div>
             </div>
-            <div class="stat-card">
-              <div class="stat-val" id="stat-categories">0</div>
-              <div class="stat-label">Categories</div>
-            </div>
-            <div class="stat-card">
-              <div class="stat-val" id="stat-feeds">0</div>
-              <div class="stat-label">Sources Monitored</div>
-            </div>
-          </div>
 
-          <h3>Segmented Sub-Feeds</h3>
-          <div class="categories-grid" id="categories-container">
-            <!-- Dynamically populated category cards -->
+            <div class="download-item">
+              <div class="download-item-info">
+                <span class="download-name">Medium / Standard Variant</span>
+                <span class="download-desc">Standard Ads, trackers, spam. *Recommended*</span>
+              </div>
+              <div class="action-row">
+                <button class="btn-icon" onclick="copyText('variants/medium/domains.txt')" title="Copy URL">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+                </button>
+                <a href="variants/medium/" class="btn-icon" title="View Directory">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>
+                </a>
+              </div>
+            </div>
+
+            <div class="download-item">
+              <div class="download-item-info">
+                <span class="download-name">High / Pro Variant</span>
+                <span class="download-desc">Strict security + Torrent, social, gambling.</span>
+              </div>
+              <div class="action-row">
+                <button class="btn-icon" onclick="copyText('variants/high/domains.txt')" title="Copy URL">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+                </button>
+                <a href="variants/high/" class="btn-icon" title="View Directory">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>
+                </a>
+              </div>
+            </div>
+
+            <div class="download-item">
+              <div class="download-item-info">
+                <span class="download-name">NSFW (Adult) Filter</span>
+                <span class="download-desc">Dedicated parental blocks for age limits.</span>
+              </div>
+              <div class="action-row">
+                <button class="btn-icon" onclick="copyText('variants/nsfw/domains.txt')" title="Copy URL">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+                </button>
+                <a href="variants/nsfw/" class="btn-icon" title="View Directory">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>
+                </a>
+              </div>
+            </div>
+
           </div>
         </section>
 
       </div>
+    </div>
 
-      <!-- Master Downloads Column -->
-      <aside class="glass-card master-card">
-        <div>
-          <h2 class="master-title">Unified Blocklists</h2>
-          <p style="color: var(--text-secondary); font-size: 0.9rem;">
-            Compile all threat indicators into a single file formatted for various ad blockers, DNS servers, and firewall configurations.
-          </p>
-        </div>
-
-        <div class="download-list">
-          
-          <div class="download-item">
-            <div class="download-item-info">
-              <span class="download-name">domains.txt</span>
-              <span class="download-desc">Raw plaintext domains list</span>
-            </div>
-            <div class="action-row">
-              <button class="btn-icon" onclick="copyText('master/domains.txt')" title="Copy Link" aria-label="Copy Link to domains.txt">
-                🔗
-              </button>
-              <a href="master/domains.txt" class="btn-icon" download title="Download file" aria-label="Download domains.txt">
-                ⬇️
-              </a>
-            </div>
-          </div>
-
-          <div class="download-item">
-            <div class="download-item-info">
-              <span class="download-name">hosts.txt</span>
-              <span class="download-desc">Hosts file mapping (0.0.0.0 target)</span>
-            </div>
-            <div class="action-row">
-              <button class="btn-icon" onclick="copyText('master/hosts.txt')" title="Copy Link" aria-label="Copy Link to hosts.txt">
-                🔗
-              </button>
-              <a href="master/hosts.txt" class="btn-icon" download title="Download file" aria-label="Download hosts.txt">
-                ⬇️
-              </a>
-            </div>
-          </div>
-
-          <div class="download-item">
-            <div class="download-item-info">
-              <span class="download-name">adblock.txt</span>
-              <span class="download-desc">AdBlock syntax (||domain.com^)</span>
-            </div>
-            <div class="action-row">
-              <button class="btn-icon" onclick="copyText('master/adblock.txt')" title="Copy Link" aria-label="Copy Link to adblock.txt">
-                🔗
-              </button>
-              <a href="master/adblock.txt" class="btn-icon" download title="Download file" aria-label="Download adblock.txt">
-                ⬇️
-              </a>
-            </div>
-          </div>
-
-          <div class="download-item">
-            <div class="download-item-info">
-              <span class="download-name">domains.json</span>
-              <span class="download-desc">JSON mapping (domain: [categories])</span>
-            </div>
-            <div class="action-row">
-              <button class="btn-icon" onclick="copyText('master/domains.json')" title="Copy Link" aria-label="Copy Link to domains.json">
-                🔗
-              </button>
-              <a href="master/domains.json" class="btn-icon" download title="Download file" aria-label="Download domains.json">
-                ⬇️
-              </a>
-            </div>
-          </div>
-
-        </div>
-      </aside>
-
-      <!-- Threat Intelligence Feeds table -->
-      <section class="glass-card feeds-card">
-        <h2>Monitored Upstream Threat Feeds</h2>
-        <p style="color: var(--text-secondary); font-size: 0.95rem; margin-top: 4px;">
-          Direct intelligence sources scraped and aggregated by our validation engine daily.
+    <!-- Tab View: Upstream Feeds -->
+    <div class="tab-view" id="view-feeds">
+      <section class="glass-card table-card">
+        <h2>Monitored Upstream Feeds</h2>
+        <p style="color: var(--text-secondary); font-size: 0.95rem; margin-bottom: 1.5rem;">
+          Upstream open-source domain databases parsed, normalized, and updated hourly.
         </p>
         <div class="table-wrapper">
           <table>
             <thead>
               <tr>
-                <th>Feed Name</th>
-                <th>Target Category</th>
+                <th>Source Feed Name</th>
+                <th>Segment Category</th>
                 <th>Status</th>
-                <th>Domains Found</th>
+                <th style="text-align: right;">Unique Domains</th>
               </tr>
             </thead>
             <tbody id="feeds-table-body">
-              <!-- Dynamically populated feeds -->
+              <tr>
+                <td colspan="4" style="text-align: center; color: var(--text-secondary);">
+                  <div class="spinner" style="margin: 0 auto 10px;"></div>
+                  Fetching upstream metadata...
+                </td>
+              </tr>
             </tbody>
           </table>
         </div>
       </section>
-
     </div>
 
+    <!-- Footer -->
     <footer>
-      <p>Powered by GitHub Actions & Pages. Code licensed under MIT. Backlist project by <a href="https://github.com/dev3Masud" target="_blank" rel="noopener noreferrer">dev3Masud</a>.</p>
+      <p>Compiled and updated via GitHub Actions. Dashboard design by <a href="https://github.com/dev3Masud" target="_blank" rel="noopener noreferrer">dev3Masud</a>.</p>
     </footer>
 
   </div>
 
-  <script>
-    // State storage
-    let blacklistData = null;
-    let globalStats = null;
-
-    // Run initializer on load
-    document.addEventListener("DOMContentLoaded", () => {
-      // Fetch stats.json
-      fetch("stats.json")
-        .then(response => response.json())
-        .then(data => {
-          globalStats = data;
-          renderStats(data);
-        })
-        .catch(err => {
-          console.error("Error loading stats.json:", err);
-          document.getElementById("update-timestamp").innerText = "Error loading stats database.";
-        });
-    });
-
-    // Populate dynamic UI stats
-    function renderStats(stats) {
-      // 1. Timestamp formatting
-      const date = new Date(stats.last_updated);
-      document.getElementById("update-timestamp").innerText = `Last automated compilation: ${date.toLocaleString()} (${Intl.DateTimeFormat().resolvedOptions().timeZone})`;
-
-      // 2. Counters
-      document.getElementById("stat-total").innerText = stats.total_domains.toLocaleString();
-      document.getElementById("stat-categories").innerText = Object.keys(stats.categories).length;
-      document.getElementById("stat-feeds").innerText = stats.feeds.length;
-
-      // 3. Category grid cards
-      const categoryContainer = document.getElementById("categories-container");
-      categoryContainer.innerHTML = "";
-      Object.entries(stats.categories).forEach(([name, count]) => {
-        const card = document.createElement("div");
-        card.className = "category-card";
-        card.innerHTML = `
-          <div class="category-header">
-            <span class="category-title">${name}</span>
-            <span class="category-count">${count.toLocaleString()}</span>
-          </div>
-          <div class="category-download-actions">
-            <a href="categories/${name}.txt" class="btn-secondary" download>
-              ⬇️ Download list
-            </a>
-            <button class="btn-secondary" onclick="copyText('categories/${name}.txt')">
-              🔗 URL
-            </button>
-          </div>
-        `;
-        categoryContainer.appendChild(card);
-      });
-
-      // 4. Upstream feed table details
-      const tableBody = document.getElementById("feeds-table-body");
-      tableBody.innerHTML = "";
-      stats.feeds.forEach(feed => {
-        const row = document.createElement("tr");
-        const statusBadge = feed.success 
-          ? `<span class="badge-status status-online">🟢 Active</span>` 
-          : `<span class="badge-status status-offline" title="${feed.error || 'Unknown Error'}">🔴 Offline</span>`;
-        
-        row.innerHTML = `
-          <td style="font-weight: 600;">${feed.name}</td>
-          <td style="text-transform: capitalize; color: var(--text-secondary);">${feed.category}</td>
-          <td>${statusBadge}</td>
-          <td style="font-family: var(--font-mono);">${feed.count.toLocaleString()}</td>
-        `;
-        tableBody.appendChild(row);
-      });
-    }
-
-    // Lazy load the full blacklist JSON only when performing checks to avoid large payload bottlenecks
-    async function lazyLoadDatabase() {
-      if (blacklistData) return blacklistData;
-      
-      const searchResult = document.getElementById("search-result");
-      searchResult.style.display = "block";
-      searchResult.className = "search-result";
-      searchResult.innerText = "Loading database file...";
-
-      try {
-        const response = await fetch("master/domains.json");
-        if (!response.ok) throw new Error("Could not fetch domain map");
-        blacklistData = await response.json();
-        return blacklistData;
-      } catch (err) {
-        console.error(err);
-        searchResult.className = "search-result result-blocked";
-        searchResult.innerText = "Failed to load database. Check if master/domains.json exists.";
-        return null;
-      }
-    }
-
-    // Lookup function
-    async function checkDomain() {
-      const queryInput = document.getElementById("domain-query");
-      const searchResult = document.getElementById("search-result");
-      let query = queryInput.value.trim().toLowerCase();
-
-      if (!query) {
-        searchResult.style.display = "none";
-        return;
-      }
-
-      // If they input a URL, extract domain
-      try {
-        if (query.includes("://") || query.startsWith("www.")) {
-          let temp = query;
-          if (!temp.includes("://")) temp = "http://" + temp;
-          query = new URL(temp).hostname;
-        }
-      } catch(e) {}
-
-      // Strip potential leading/trailing points or path remnants
-      query = query.replace(/^www\./, "");
-      
-      const db = await lazyLoadDatabase();
-      if (!db) return;
-
-      searchResult.style.display = "block";
-
-      if (query in db) {
-        const categories = db[query];
-        searchResult.className = "search-result result-blocked";
-        searchResult.innerHTML = `⚠️ <strong>BLOCKED:</strong> "${query}" is blacklisted under categories: <strong>${categories.join(", ")}</strong>.`;
-      } else {
-        searchResult.className = "search-result result-safe";
-        searchResult.innerHTML = `✅ <strong>SAFE:</strong> "${query}" was not found in active blacklist registries.`;
-      }
-    }
-
-    // Helper: copy to clipboard
-    function copyText(subpath) {
-      // Get absolute URL base
-      const absoluteUrl = window.location.origin + window.location.pathname.replace("index.html", "") + subpath;
-      
-      navigator.clipboard.writeText(absoluteUrl).then(() => {
-        // Find triggering button and provide momentary success styling
-        const btn = event.currentTarget;
-        const originalText = btn.innerHTML;
-        btn.innerHTML = "✅";
-        btn.classList.add("copy-success");
-        
-        setTimeout(() => {
-          btn.innerHTML = originalText;
-          btn.classList.remove("copy-success");
-        }, 1500);
-      }).catch(err => {
-        console.error("Could not copy link:", err);
-      });
-    }
-
-    // Search query on Enter key press
-    document.getElementById("domain-query").addEventListener("keypress", (e) => {
-      if (e.key === 'Enter') {
-        checkDomain();
-      }
-    });
-  </script>
+  <!-- JS Controller -->
+  <script src="script.js"></script>
 </body>
 </html>
