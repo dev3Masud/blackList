@@ -51559,3 +51559,4 @@ zynga.facebook.com
 zz-tr.cinyour.facebook.com
 zzangfa.autodiscover.oculusvr.comstopforumspam.com
 urlhaus.abuse.ch
+stopforumspam.com
