@@ -75,7 +75,7 @@ def minimize_domains(domains):
         last_kept = t
     return minimized
 
-def save_variant(variant_name, categories_list, category_domains, base_path="variants"):
+def save_variant(variant_name, categories_list, category_domains, category_uncapped_counts, base_path="variants"):
     """Combines specified categories and saves them under base_path/variant_name/."""
     variant_domains = set()
     for cat in categories_list:
@@ -110,8 +110,8 @@ def save_variant(variant_name, categories_list, category_domains, base_path="var
         for d in domains_list:
             f.write(f"||{d}^\n")
             
-    write_variant_readme(variant_name, len(domains_list), categories_list, category_domains, base_path)
-    write_variant_html(variant_name, len(domains_list), categories_list, category_domains, base_path)
+    write_variant_readme(variant_name, len(domains_list), categories_list, category_domains, category_uncapped_counts, base_path)
+    write_variant_html(variant_name, len(domains_list), categories_list, category_domains, category_uncapped_counts, base_path)
     print(f"[+] Saved {base_path} variant '{variant_name}' ({len(domains_list)} domains) to {variant_dir}")
 
 category_details = {
@@ -137,7 +137,7 @@ variant_categories = {
     "adblock": ["malware", "phishing", "cryptomining", "ads", "tracking", "spam", "dating", "social", "gambling", "torrent", "crawled", "nsfw"]
 }
 
-def write_variant_readme(variant_name, count, categories_list, category_domains, base_path="variants"):
+def write_variant_readme(variant_name, count, categories_list, category_domains, category_uncapped_counts, base_path="variants"):
     """Writes a beautiful README.md for the specific variant/alternate folder detailing categories."""
     descriptions = {
         "lite": "Designed for maximum speed and stability. Targets high-severity security threats like malware, phishing, and cryptomining. Near-zero false positives.",
@@ -153,7 +153,8 @@ def write_variant_readme(variant_name, count, categories_list, category_domains,
     for c in categories_list:
         title, d_desc = category_details.get(c, (c, ""))
         c_count = len(category_domains.get(c, []))
-        cat_rows += f"| 🔴 **{title}** | `{c_count:,}` | {d_desc} |\n"
+        uncapped = category_uncapped_counts.get(c, c_count)
+        cat_rows += f"| 🔴 **{title}** | `{c_count:,}` | `{uncapped:,}` | {d_desc} |\n"
 
     title_str = f"Alternate: {variant_name}" if base_path == "alternates" else f"{variant_name.capitalize()} Variant"
 
@@ -171,8 +172,8 @@ This directory contains the compiled **{variant_name}** blocklist.
 
 This configuration contains lists designed to block the following domain categories:
 
-| Category | Blocked Domains | Description |
-| -------- | --------------- | ----------- |
+| Category | Blocked Domains (Capped) | Total Discovered | Description |
+| -------- | ------------------------ | ---------------- | ----------- |
 {cat_rows}
 ---
 
@@ -215,7 +216,7 @@ Select your preferred format below to load into your adblocker:
     with open(readme_path, "w") as f:
         f.write(readme_content)
 
-def write_variant_html(variant_name, count, categories_list, category_domains, base_path="variants"):
+def write_variant_html(variant_name, count, categories_list, category_domains, category_uncapped_counts, base_path="variants"):
     """Writes a beautiful, dark-mode self-contained index.html for each variant folder."""
     descriptions = {
         "lite": "Designed for maximum speed and stability. Targets high-severity security threats like malware, phishing, and cryptomining. Near-zero false positives.",
@@ -231,6 +232,7 @@ def write_variant_html(variant_name, count, categories_list, category_domains, b
     for c in categories_list:
         title, d_desc = category_details.get(c, (c, ""))
         c_count = len(category_domains.get(c, []))
+        uncapped = category_uncapped_counts.get(c, c_count)
         cat_html += f"""
         <div class="category-item">
           <div style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
@@ -238,7 +240,9 @@ def write_variant_html(variant_name, count, categories_list, category_domains, b
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#f43f5e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="15" y1="9" x2="9" y2="15"></line></svg>
               {title}
             </span>
-            <span style="font-family: var(--font-mono); font-size: 0.85rem; font-weight: 700; background: rgba(244, 63, 94, 0.15); color: var(--danger-color); padding: 0.15rem 0.5rem; border-radius: 6px;">{c_count:,}</span>
+            <span style="font-family: var(--font-mono); font-size: 0.85rem; font-weight: 700; background: rgba(244, 63, 94, 0.15); color: var(--danger-color); padding: 0.15rem 0.5rem; border-radius: 6px;" title="Blocked / Discovered">
+              {c_count:,} / {uncapped:,}
+            </span>
           </div>
           <span class="category-desc">{d_desc}</span>
         </div>"""
@@ -728,6 +732,7 @@ def main():
 
     # Dictionary to hold domain sets per category
     category_domains = {}
+    category_uncapped_counts = {}
     
     # Read raw files
     raw_files = [f for f in os.listdir(raw_dir) if f.endswith(".txt")]
@@ -759,6 +764,7 @@ def main():
         
         # Apply subdomain minimization to reduce file sizes
         minimized_list = minimize_domains(domains)
+        category_uncapped_counts[category] = len(minimized_list)
         if len(minimized_list) > max_per_cat:
             print(f"[!] Category '{category}' exceeds limit of {max_per_cat} ({len(minimized_list)} domains). Capping.")
             minimized_list = minimized_list[:max_per_cat]
@@ -864,11 +870,11 @@ def main():
 
     # Compile Variant Blocklists
     print("[*] Compiling variant blocklists...")
-    save_variant("lite", ["malware", "phishing", "cryptomining"], category_domains)
-    save_variant("medium", ["malware", "phishing", "cryptomining", "ads", "tracking", "spam"], category_domains)
-    save_variant("high", ["malware", "phishing", "cryptomining", "ads", "tracking", "spam", "dating", "social", "gambling", "torrent", "crawled"], category_domains)
-    save_variant("nsfw", ["nsfw"], category_domains)
-    save_variant("adblock", ["malware", "phishing", "cryptomining", "ads", "tracking", "spam", "dating", "social", "gambling", "torrent", "crawled", "nsfw"], category_domains)
+    save_variant("lite", ["malware", "phishing", "cryptomining"], category_domains, category_uncapped_counts)
+    save_variant("medium", ["malware", "phishing", "cryptomining", "ads", "tracking", "spam"], category_domains, category_uncapped_counts)
+    save_variant("high", ["malware", "phishing", "cryptomining", "ads", "tracking", "spam", "dating", "social", "gambling", "torrent", "crawled"], category_domains, category_uncapped_counts)
+    save_variant("nsfw", ["nsfw"], category_domains, category_uncapped_counts)
+    save_variant("adblock", ["malware", "phishing", "cryptomining", "ads", "tracking", "spam", "dating", "social", "gambling", "torrent", "crawled", "nsfw"], category_domains, category_uncapped_counts)
 
     # Compile StevenBlack-Style Alternates
     print("[*] Compiling StevenBlack-style alternates...")
@@ -892,7 +898,7 @@ def main():
                 comb_cats.extend(ext_map[key])
             
             # Save this alternate combination
-            save_variant(comb_name, comb_cats, category_domains, base_path="alternates")
+            save_variant(comb_name, comb_cats, category_domains, category_uncapped_counts, base_path="alternates")
 
     # 5. Write stats file
     with open(stats_file, "w") as f:
