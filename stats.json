@@ -1,6 +1,6 @@
 {
-  "last_updated": "2026-07-10T05:01:41.290084+00:00",
-  "total_domains": 446542,
+  "last_updated": "2026-07-10T07:58:15.756223+00:00",
+  "total_domains": 446484,
   "categories": {
     "malware": 514,
     "spam": 8140,
@@ -30,6 +30,13 @@
       "error": "HTTP 404"
     },
     {
+      "name": "URLHaus Malware Domains",
+      "category": "malware",
+      "success": true,
+      "count": 514,
+      "error": ""
+    },
+    {
       "name": "StevenBlack Adware & Malware",
       "category": "ads",
       "success": true,
@@ -41,13 +48,6 @@
       "category": "spam",
       "success": true,
       "count": 8140,
-      "error": ""
-    },
-    {
-      "name": "URLHaus Malware Domains",
-      "category": "malware",
-      "success": true,
-      "count": 514,
       "error": ""
     },
     {
@@ -79,10 +79,10 @@
       "error": ""
     },
     {
-      "name": "Phishing Army",
-      "category": "phishing",
+      "name": "BlockList Project - Porn (NSFW)",
+      "category": "nsfw",
       "success": true,
-      "count": 144845,
+      "count": 953397,
       "error": ""
     },
     {
@@ -90,6 +90,13 @@
       "category": "social",
       "success": true,
       "count": 24280,
+      "error": ""
+    },
+    {
+      "name": "Phishing Army",
+      "category": "phishing",
+      "success": true,
+      "count": 144845,
       "error": ""
     },
     {
@@ -107,24 +114,17 @@
       "error": ""
     },
     {
-      "name": "BlockList Project - Porn (NSFW)",
-      "category": "nsfw",
+      "name": "OISD Big Blocklist",
+      "category": "ads",
       "success": true,
-      "count": 953397,
+      "count": 328399,
       "error": ""
     },
     {
       "name": "OISD NSFW Blocklist",
       "category": "nsfw",
       "success": true,
-      "count": 372134,
-      "error": ""
-    },
-    {
-      "name": "OISD Big Blocklist",
-      "category": "ads",
-      "success": true,
-      "count": 328746,
+      "count": 372529,
       "error": ""
     }
   ]
