@@ -1,11 +1,11 @@
 {
-  "last_updated": "2026-07-11T12:56:57.060819+00:00",
-  "total_domains": 3902647,
+  "last_updated": "2026-07-11T13:56:39.934339+00:00",
+  "total_domains": 3902851,
   "categories": {
     "malware": 1809444,
     "spam": 24121,
     "tracking": 720751,
-    "nsfw": 1018284,
+    "nsfw": 1018493,
     "dating": 1333,
     "social": 24625,
     "phishing": 120624,
@@ -23,17 +23,17 @@
       "error": ""
     },
     {
-      "name": "StevenBlack Adware & Malware",
-      "category": "ads",
-      "success": true,
-      "count": 78462,
-      "error": ""
-    },
-    {
       "name": "AdGuard Tracking Filter",
       "category": "tracking",
       "success": true,
       "count": 3514,
+      "error": ""
+    },
+    {
+      "name": "StevenBlack Adware & Malware",
+      "category": "ads",
+      "success": true,
+      "count": 78462,
       "error": ""
     },
     {
@@ -47,7 +47,7 @@
       "name": "URLHaus Malware Domains",
       "category": "malware",
       "success": true,
-      "count": 464,
+      "count": 462,
       "error": ""
     },
     {
@@ -58,17 +58,17 @@
       "error": ""
     },
     {
-      "name": "BlockList Project - Porn (NSFW)",
-      "category": "nsfw",
-      "success": true,
-      "count": 953397,
-      "error": ""
-    },
-    {
       "name": "BlockList Project - Facebook",
       "category": "social",
       "success": true,
       "count": 22362,
+      "error": ""
+    },
+    {
+      "name": "Phishing Army",
+      "category": "phishing",
+      "success": true,
+      "count": 145353,
       "error": ""
     },
     {
@@ -86,10 +86,10 @@
       "error": ""
     },
     {
-      "name": "Phishing Army",
-      "category": "phishing",
+      "name": "BlockList Project - Porn (NSFW)",
+      "category": "nsfw",
       "success": true,
-      "count": 145353,
+      "count": 953397,
       "error": ""
     },
     {
@@ -135,31 +135,17 @@
       "error": ""
     },
     {
+      "name": "StevenBlack Gambling Alternate",
+      "category": "gambling",
+      "success": true,
+      "count": 84948,
+      "error": ""
+    },
+    {
       "name": "EasyPrivacy Tracking List",
       "category": "tracking",
       "success": true,
       "count": 42601,
-      "error": ""
-    },
-    {
-      "name": "AdGuard DNS Ads list",
-      "category": "ads",
-      "success": true,
-      "count": 154994,
-      "error": ""
-    },
-    {
-      "name": "OISD NSFW Blocklist",
-      "category": "nsfw",
-      "success": true,
-      "count": 394574,
-      "error": ""
-    },
-    {
-      "name": "DandelionSprout Anti-Malware",
-      "category": "malware",
-      "success": true,
-      "count": 12325,
       "error": ""
     },
     {
@@ -170,10 +156,17 @@
       "error": ""
     },
     {
-      "name": "HaGeZi NSFW (Adult)",
-      "category": "nsfw",
+      "name": "DandelionSprout Anti-Malware",
+      "category": "malware",
       "success": true,
-      "count": 107448,
+      "count": 12325,
+      "error": ""
+    },
+    {
+      "name": "AdGuard DNS Ads list",
+      "category": "ads",
+      "success": true,
+      "count": 154994,
       "error": ""
     },
     {
@@ -184,10 +177,24 @@
       "error": ""
     },
     {
+      "name": "OISD NSFW Blocklist",
+      "category": "nsfw",
+      "success": true,
+      "count": 394810,
+      "error": ""
+    },
+    {
+      "name": "HaGeZi NSFW (Adult)",
+      "category": "nsfw",
+      "success": true,
+      "count": 107448,
+      "error": ""
+    },
+    {
       "name": "OISD Big Blocklist",
       "category": "ads",
       "success": true,
-      "count": 328815,
+      "count": 328814,
       "error": ""
     },
     {
@@ -198,17 +205,17 @@
       "error": ""
     },
     {
-      "name": "HaGeZi Dynamic DNS",
-      "category": "malware",
-      "success": true,
-      "count": 1517,
-      "error": ""
-    },
-    {
       "name": "HaGeZi Fake (Scam/Spam)",
       "category": "spam",
       "success": true,
       "count": 16485,
+      "error": ""
+    },
+    {
+      "name": "HaGeZi Dynamic DNS",
+      "category": "malware",
+      "success": true,
+      "count": 1517,
       "error": ""
     },
     {
@@ -237,13 +244,6 @@
       "category": "tracking",
       "success": true,
       "count": 1050085,
-      "error": ""
-    },
-    {
-      "name": "StevenBlack Gambling Alternate",
-      "category": "gambling",
-      "success": true,
-      "count": 84948,
       "error": ""
     }
   ]

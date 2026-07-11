@@ -1,6 +1,6 @@
 # Category: CRYPTOMINING
 # Count: 297
-# Last updated: 2026-07-11 12:56:59 UTC
+# Last updated: 2026-07-11 13:56:42 UTC
 # Filtered against whitelist to prevent false positives.
 
 1q2w3.fun

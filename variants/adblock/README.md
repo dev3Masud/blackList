@@ -3,7 +3,7 @@
 This directory contains the compiled **adblock** blocklist.
 
 *   **Status**: Active
-*   **Total blocked domains**: `3,987,305`
+*   **Total blocked domains**: `3,987,509`
 *   **Target audience**: Optimized ruleset formatted for browser extensions (uBlock Origin, AdGuard). Supports cosmetic and network blocking.
 
 ---
@@ -25,7 +25,7 @@ This configuration contains lists designed to block the following domain categor
 | 🔴 **Gambling & Casinos** | `349,508` | Online betting sites, slot machines, lottery portals, and digital casinos. |
 | 🔴 **Torrent & P2P** | `34,117` | BitTorrent trackers, magnet index sites, piracy portals, and peer communication networks. |
 | 🔴 **Scrapers & Crawlers** | `0` | Suspicious automated scraper bots, web scanner networks, and scraping systems. |
-| 🔴 **NSFW (Adult) Content** | `1,018,284` | Pornography, adult video portals, online dating platforms, and age-restricted domains. |
+| 🔴 **NSFW (Adult) Content** | `1,018,493` | Pornography, adult video portals, online dating platforms, and age-restricted domains. |
 
 ---
 

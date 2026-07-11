@@ -3,7 +3,7 @@
 This directory contains the compiled **fakenews-gambling-porn-social** blocklist.
 
 *   **Status**: Active
-*   **Total blocked domains**: `3,954,454`
+*   **Total blocked domains**: `3,954,659`
 *   **Target audience**: Alternate blocklist configuration. Combines the base security blocklist with: malware, phishing, cryptomining, ads, tracking, spam, gambling, nsfw, social.
 
 ---
@@ -21,7 +21,7 @@ This configuration contains lists designed to block the following domain categor
 | 🔴 **Tracking & Telemetry** | `720,751` | Analytics scripts, user profiling telemetry, and commercial data harvesting domains. |
 | 🔴 **Spam & Scam Domains** | `24,121` | Malicious email redirectors, lottery scam landing pages, and deceptive bulk sites. |
 | 🔴 **Gambling & Casinos** | `349,508` | Online betting sites, slot machines, lottery portals, and digital casinos. |
-| 🔴 **NSFW (Adult) Content** | `1,018,284` | Pornography, adult video portals, online dating platforms, and age-restricted domains. |
+| 🔴 **NSFW (Adult) Content** | `1,018,493` | Pornography, adult video portals, online dating platforms, and age-restricted domains. |
 | 🔴 **Social Tracking** | `24,625` | Social networking trackers, widgets, and domain collectors that profile user browsing. |
 
 ---
