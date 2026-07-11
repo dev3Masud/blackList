@@ -1,6 +1,6 @@
 # Category: TORRENT
-# Count: 33925
-# Last updated: 2026-07-10 16:50:21 UTC
+# Count: 33933
+# Last updated: 2026-07-11 01:48:57 UTC
 # Filtered against whitelist to prevent false positives.
 
 00-torrnets.com
@@ -10611,6 +10611,7 @@ konstantiin-lordfilm.ru
 konstantin-lordfilm.ru
 konstantin-lordfilms.ru
 konstantinopol-serial-lordfilm.ru
+kooora-city.com
 koora-live.io
 koora-yallashoot.live
 koora365.io
@@ -10766,6 +10767,7 @@ lanouvelle.cc
 laola1.tv
 lapache.info
 lapak21.com
+lapakstreaming.live
 lapakstreaming.store
 lapakstreaming.xubi.org
 lapochkaa-lordfilm.ru
@@ -11063,6 +11065,7 @@ liteapks.mobi
 litebay.org
 litemodapk.com
 litenova.co.uk
+live-football.tv
 live-kooora-tv.com
 live-kooora-tv.net
 live-nfl.stream
@@ -11074,6 +11077,7 @@ liveday2day.com
 livehd7i.live
 livekooora.online
 livekoora.io
+livekooraa.online
 liveon4.zip
 liveon5.zip
 liveonscore.tv
@@ -11103,6 +11107,7 @@ livetv814.me
 livetv815.me
 livetv886.me
 livextv.live
+livextv.pro
 livingtorrents.com
 livingtorrents.org
 livnet.xyz
@@ -25760,6 +25765,7 @@ qeseh3sk.com
 qg.lorzl.gq
 qimanhwa.com
 qiq.ws
+qlzww.cc
 qmovies.net
 qoob.name
 qot.abiir.top
@@ -26635,6 +26641,7 @@ serial4download.com
 serialbay.com
 serialcoded.com
 serialfan.com
+serialflix.online
 serialgo.tv
 serialheaven.com
 serialkeyguru.blogspot.in
@@ -29480,7 +29487,6 @@ tjrksciow.pro
 tk.mabo.ltd
 tlgetin.cc
 tlt-torrent.ru
-tma-lordfilm.hair
 tma-serial-lordfilm.ru
 tmaxapp.site
 tmnsp.net
@@ -32837,6 +32843,7 @@ winitpro.ru
 winneritbd.com
 winning2day.com
 winobraz.net
+winsgoal.live
 wintorr.com
 wintorrents.ru
 wipfiles.net
@@ -33482,6 +33489,7 @@ yomoviesz.xyz
 yoouu-lordfilms.ru
 yosuga-no-sora-lordfilm.ru
 yotoshi.com
+youcineversoes.com
 youflixmovies.xyz
 youhaveavirus.com
 youmoviz.tv

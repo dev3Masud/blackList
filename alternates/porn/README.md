@@ -3,7 +3,7 @@
 This directory contains the compiled **porn** blocklist.
 
 *   **Status**: Active
-*   **Total blocked domains**: `3,652,486`
+*   **Total blocked domains**: `3,680,011`
 *   **Target audience**: Alternate blocklist configuration. Combines the base security blocklist with: malware, phishing, cryptomining, ads, tracking, nsfw.
 
 ---
@@ -12,14 +12,14 @@ This directory contains the compiled **porn** blocklist.
 
 This configuration contains lists designed to block the following domain categories:
 
-| Category | Blocked Domains (Capped) | Total Discovered | Description |
-| -------- | ------------------------ | ---------------- | ----------- |
-| 🔴 **Malware Sites** | `1,753,011` | `1,753,011` | Command & control servers, distribution endpoints, ransomware, and spyware platforms. |
-| 🔴 **Phishing Pages** | `120,121` | `120,121` | Fraudulent login pages, credential harvesting forms, and identity spoofing sites. |
-| 🔴 **Cryptomining** | `297` | `297` | Cryptojacking scripts, browser miners, and pool connection endpoints. |
-| 🔴 **Advertising Domains** | `722,678` | `722,678` | Ad delivery networks, promotional servers, and banner scripting endpoints. |
-| 🔴 **Tracking & Telemetry** | `718,193` | `718,193` | Analytics scripts, user profiling telemetry, and commercial data harvesting domains. |
-| 🔴 **NSFW (Adult) Content** | `1,014,142` | `1,014,142` | Pornography, adult video portals, online dating platforms, and age-restricted domains. |
+| Category | Blocked Domains | Description |
+| -------- | --------------- | ----------- |
+| 🔴 **Malware Sites** | `1,780,468` | Command & control servers, distribution endpoints, ransomware, and spyware platforms. |
+| 🔴 **Phishing Pages** | `120,582` | Fraudulent login pages, credential harvesting forms, and identity spoofing sites. |
+| 🔴 **Cryptomining** | `297` | Cryptojacking scripts, browser miners, and pool connection endpoints. |
+| 🔴 **Advertising Domains** | `722,788` | Ad delivery networks, promotional servers, and banner scripting endpoints. |
+| 🔴 **Tracking & Telemetry** | `718,193` | Analytics scripts, user profiling telemetry, and commercial data harvesting domains. |
+| 🔴 **NSFW (Adult) Content** | `1,016,402` | Pornography, adult video portals, online dating platforms, and age-restricted domains. |
 
 ---
 

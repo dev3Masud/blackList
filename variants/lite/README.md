@@ -3,7 +3,7 @@
 This directory contains the compiled **lite** blocklist.
 
 *   **Status**: Active
-*   **Total blocked domains**: `1,800,024`
+*   **Total blocked domains**: `1,827,456`
 *   **Target audience**: Designed for maximum speed and stability. Targets high-severity security threats like malware, phishing, and cryptomining. Near-zero false positives.
 
 ---
@@ -12,11 +12,11 @@ This directory contains the compiled **lite** blocklist.
 
 This configuration contains lists designed to block the following domain categories:
 
-| Category | Blocked Domains (Capped) | Total Discovered | Description |
-| -------- | ------------------------ | ---------------- | ----------- |
-| 🔴 **Malware Sites** | `1,753,011` | `1,753,011` | Command & control servers, distribution endpoints, ransomware, and spyware platforms. |
-| 🔴 **Phishing Pages** | `120,121` | `120,121` | Fraudulent login pages, credential harvesting forms, and identity spoofing sites. |
-| 🔴 **Cryptomining** | `297` | `297` | Cryptojacking scripts, browser miners, and pool connection endpoints. |
+| Category | Blocked Domains | Description |
+| -------- | --------------- | ----------- |
+| 🔴 **Malware Sites** | `1,780,468` | Command & control servers, distribution endpoints, ransomware, and spyware platforms. |
+| 🔴 **Phishing Pages** | `120,582` | Fraudulent login pages, credential harvesting forms, and identity spoofing sites. |
+| 🔴 **Cryptomining** | `297` | Cryptojacking scripts, browser miners, and pool connection endpoints. |
 
 ---
 

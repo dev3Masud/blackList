@@ -7,13 +7,6 @@
     "error": ""
   },
   {
-    "name": "StevenBlack Adware & Malware",
-    "category": "ads",
-    "success": true,
-    "count": 78462,
-    "error": ""
-  },
-  {
     "name": "AdGuard Tracking Filter",
     "category": "tracking",
     "success": true,
@@ -21,17 +14,24 @@
     "error": ""
   },
   {
+    "name": "URLHaus Malware Domains",
+    "category": "malware",
+    "success": true,
+    "count": 462,
+    "error": ""
+  },
+  {
+    "name": "StevenBlack Adware & Malware",
+    "category": "ads",
+    "success": true,
+    "count": 78462,
+    "error": ""
+  },
+  {
     "name": "Spam404",
     "category": "spam",
     "success": true,
     "count": 8140,
-    "error": ""
-  },
-  {
-    "name": "URLHaus Malware Domains",
-    "category": "malware",
-    "success": true,
-    "count": 507,
     "error": ""
   },
   {
@@ -56,6 +56,13 @@
     "error": ""
   },
   {
+    "name": "BlockList Project - Porn (NSFW)",
+    "category": "nsfw",
+    "success": true,
+    "count": 953397,
+    "error": ""
+  },
+  {
     "name": "BlockList Project - Twitter",
     "category": "social",
     "success": true,
@@ -66,7 +73,7 @@
     "name": "Phishing Army",
     "category": "phishing",
     "success": true,
-    "count": 144841,
+    "count": 145330,
     "error": ""
   },
   {
@@ -91,13 +98,6 @@
     "error": ""
   },
   {
-    "name": "BlockList Project - Gambling",
-    "category": "gambling",
-    "success": true,
-    "count": 292045,
-    "error": ""
-  },
-  {
     "name": "FadeMind Spam Hosts",
     "category": "spam",
     "success": true,
@@ -116,6 +116,13 @@
     "category": "torrent",
     "success": true,
     "count": 445,
+    "error": ""
+  },
+  {
+    "name": "BlockList Project - Gambling",
+    "category": "gambling",
+    "success": true,
+    "count": 292045,
     "error": ""
   },
   {
@@ -140,52 +147,45 @@
     "error": ""
   },
   {
-    "name": "BlockList Project - Porn (NSFW)",
-    "category": "nsfw",
-    "success": true,
-    "count": 953397,
-    "error": ""
-  },
-  {
     "name": "Polish Filters Team - KADhosts",
     "category": "ads",
     "success": true,
-    "count": 46075,
-    "error": ""
-  },
-  {
-    "name": "HaGeZi Multi PRO",
-    "category": "ads",
-    "success": true,
-    "count": 230471,
+    "count": 45969,
     "error": ""
   },
   {
     "name": "OISD NSFW Blocklist",
     "category": "nsfw",
     "success": true,
-    "count": 390466,
+    "count": 393000,
     "error": ""
   },
   {
     "name": "HaGeZi NSFW (Adult)",
     "category": "nsfw",
     "success": true,
-    "count": 106730,
+    "count": 107230,
+    "error": ""
+  },
+  {
+    "name": "HaGeZi Multi PRO",
+    "category": "ads",
+    "success": true,
+    "count": 230105,
     "error": ""
   },
   {
     "name": "HaGeZi Anti-Piracy (Torrent)",
     "category": "torrent",
     "success": true,
-    "count": 32791,
+    "count": 32799,
     "error": ""
   },
   {
     "name": "HaGeZi Fake (Scam/Spam)",
     "category": "spam",
     "success": true,
-    "count": 16454,
+    "count": 16458,
     "error": ""
   },
   {
@@ -196,17 +196,17 @@
     "error": ""
   },
   {
-    "name": "HaGeZi Gambling",
-    "category": "gambling",
-    "success": true,
-    "count": 296680,
-    "error": ""
-  },
-  {
     "name": "OISD Big Blocklist",
     "category": "ads",
     "success": true,
-    "count": 497599,
+    "count": 497628,
+    "error": ""
+  },
+  {
+    "name": "HaGeZi Gambling",
+    "category": "gambling",
+    "success": true,
+    "count": 298100,
     "error": ""
   },
   {
@@ -217,17 +217,17 @@
     "error": ""
   },
   {
-    "name": "HaGeZi Threat Intelligence (TIF)",
-    "category": "malware",
-    "success": true,
-    "count": 1754029,
-    "error": ""
-  },
-  {
     "name": "1Hosts Xtra",
     "category": "tracking",
     "success": true,
     "count": 1045459,
+    "error": ""
+  },
+  {
+    "name": "HaGeZi Threat Intelligence (TIF)",
+    "category": "malware",
+    "success": true,
+    "count": 1781473,
     "error": ""
   }
 ]

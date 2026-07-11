@@ -3,7 +3,7 @@
 This directory contains the compiled **social** blocklist.
 
 *   **Status**: Active
-*   **Total blocked domains**: `2,730,284`
+*   **Total blocked domains**: `2,756,114`
 *   **Target audience**: Alternate blocklist configuration. Combines the base security blocklist with: malware, phishing, cryptomining, ads, tracking, social.
 
 ---
@@ -12,14 +12,14 @@ This directory contains the compiled **social** blocklist.
 
 This configuration contains lists designed to block the following domain categories:
 
-| Category | Blocked Domains (Capped) | Total Discovered | Description |
-| -------- | ------------------------ | ---------------- | ----------- |
-| 🔴 **Malware Sites** | `1,753,011` | `1,753,011` | Command & control servers, distribution endpoints, ransomware, and spyware platforms. |
-| 🔴 **Phishing Pages** | `120,121` | `120,121` | Fraudulent login pages, credential harvesting forms, and identity spoofing sites. |
-| 🔴 **Cryptomining** | `297` | `297` | Cryptojacking scripts, browser miners, and pool connection endpoints. |
-| 🔴 **Advertising Domains** | `722,678` | `722,678` | Ad delivery networks, promotional servers, and banner scripting endpoints. |
-| 🔴 **Tracking & Telemetry** | `718,193` | `718,193` | Analytics scripts, user profiling telemetry, and commercial data harvesting domains. |
-| 🔴 **Social Tracking** | `24,625` | `24,625` | Social networking trackers, widgets, and domain collectors that profile user browsing. |
+| Category | Blocked Domains | Description |
+| -------- | --------------- | ----------- |
+| 🔴 **Malware Sites** | `1,780,468` | Command & control servers, distribution endpoints, ransomware, and spyware platforms. |
+| 🔴 **Phishing Pages** | `120,582` | Fraudulent login pages, credential harvesting forms, and identity spoofing sites. |
+| 🔴 **Cryptomining** | `297` | Cryptojacking scripts, browser miners, and pool connection endpoints. |
+| 🔴 **Advertising Domains** | `722,788` | Ad delivery networks, promotional servers, and banner scripting endpoints. |
+| 🔴 **Tracking & Telemetry** | `718,193` | Analytics scripts, user profiling telemetry, and commercial data harvesting domains. |
+| 🔴 **Social Tracking** | `24,625` | Social networking trackers, widgets, and domain collectors that profile user browsing. |
 
 ---
 
