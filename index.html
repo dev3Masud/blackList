@@ -21,29 +21,31 @@
     <div class="blob blob-2"></div>
   </div>
 
-  <div class="container">
-    
-    <!-- Top Header section -->
+  <!-- Header Wrapper -->
+  <div class="header-wrapper">
     <header>
       <div class="logo-section">
         <h1>🛡️ Blacklist Registry</h1>
         <p>Validated, daily-compiled domain blocklists for network-level threat mitigation</p>
       </div>
-      <div style="display: flex; gap: 0.75rem; align-items: center; flex-wrap: wrap;">
+      <div class="header-actions">
         <div class="badge-pulse">
           <span class="pulse-dot"></span>
           <span>Auto-Updated Daily</span>
         </div>
-        <a href="#" class="gh-star-btn" style="background: transparent;" onclick="event.preventDefault(); openDisclaimer();">
-          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 6px;"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
+        <a href="#" class="gh-star-btn gh-star-btn--transparent" onclick="event.preventDefault(); openDisclaimer();">
+          <svg class="icon-left" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
           <span>Disclaimer</span>
         </a>
         <a href="https://github.com/dev3Masud/blackList" target="_blank" rel="noopener noreferrer" class="gh-star-btn">
-          <svg viewBox="0 0 16 16" width="14" height="14" fill="currentColor" aria-hidden="true" style="margin-right: 6px;"><path d="M8 .25a.75.75 0 0 1 .673.418l1.882 3.815 4.21.612a.75.75 0 0 1 .416 1.279l-3.046 2.97.719 4.192a.75.75 0 0 1-1.088.791L8 12.347l-3.766 1.98a.75.75 0 0 1-1.088-.79l.72-4.194L.818 6.374a.75.75 0 0 1 .416-1.28l4.21-.611L7.327.668A.75.75 0 0 1 8 .25Z"></path></svg>
+          <svg class="icon-left" viewBox="0 0 16 16" width="14" height="14" fill="currentColor" aria-hidden="true"><path d="M8 .25a.75.75 0 0 1 .673.418l1.882 3.815 4.21.612a.75.75 0 0 1 .416 1.279l-3.046 2.97.719 4.192a.75.75 0 0 1-1.088.791L8 12.347l-3.766 1.98a.75.75 0 0 1-1.088-.79l.72-4.194L.818 6.374a.75.75 0 0 1 .416-1.28l4.21-.611L7.327.668A.75.75 0 0 1 8 .25Z"></path></svg>
           <span>Star on GitHub</span>
         </a>
       </div>
     </header>
+  </div>
+
+  <div class="container">
 
     <!-- Tab Navigation menu -->
     <nav class="dashboard-tabs" aria-label="Dashboard sections">
@@ -67,77 +69,82 @@
 
     <!-- Tab View: Overview -->
     <div class="tab-view active" id="view-overview">
-      <section class="glass-card">
-        <div class="stats-header">
-          <h2>Registry Analytics</h2>
-          <p id="update-timestamp" style="color: var(--text-secondary); font-size: 0.88rem; margin-top: 4px;">Loading timestamp...</p>
-        </div>
-        
-        <!-- Live Counters -->
-        <div class="stats-container">
-          <div class="stat-card">
-            <div class="stat-val" id="stat-total">0</div>
-            <div class="stat-label">Blocked Domains</div>
+      <div class="dashboard-card">
+        <section class="card">
+          <div class="stats-header">
+            <h2>Registry Analytics</h2>
+            <p id="update-timestamp" class="text-secondary text-small mt-xs">Loading timestamp...</p>
           </div>
-          <div class="stat-card">
-            <div class="stat-val" id="stat-categories">0</div>
-            <div class="stat-label">Categories</div>
-          </div>
-          <div class="stat-card">
-            <div class="stat-val" id="stat-feeds">0</div>
-            <div class="stat-label">Monitored Feeds</div>
-          </div>
-        </div>
 
-        <h3 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 0.5rem;">Download Categorized Segments</h3>
-        <p style="color: var(--text-secondary); font-size: 0.95rem; margin-bottom: 1.5rem;">Load individual threat feeds separately into your DNS blocklists:</p>
-        
-        <div class="categories-grid" id="categories-container">
-          <!-- Loaded by JS -->
-          <div style="grid-column: 1/-1; text-align: center; color: var(--text-secondary); padding: 2rem;">
-            <div class="spinner" style="margin: 0 auto 10px;"></div>
-            <span>Fetching category files...</span>
+          <!-- Live Counters -->
+          <div class="stats-container">
+            <div class="card card--stat">
+              <div class="stat-val" id="stat-total">0</div>
+              <div class="stat-label">Blocked Domains</div>
+            </div>
+            <div class="card card--stat">
+              <div class="stat-val" id="stat-categories">0</div>
+              <div class="stat-label">Categories</div>
+            </div>
+            <div class="card card--stat">
+              <div class="stat-val" id="stat-feeds">0</div>
+              <div class="stat-label">Monitored Feeds</div>
+            </div>
           </div>
-        </div>
-      </section>
+
+          <h3 class="section-title">Download Categorized Segments</h3>
+          <p class="text-secondary text-meta mb-md">Load individual threat feeds separately into your DNS blocklists:</p>
+
+          <div class="categories-grid" id="categories-container">
+            <!-- Loaded by JS -->
+            <div class="grid-full text-center text-secondary p-lg">
+              <div class="spinner spinner--centered"></div>
+              <span>Fetching category files...</span>
+            </div>
+          </div>
+        </section>
+      </div>
     </div>
 
     <!-- Tab View: Security Lookup -->
     <div class="tab-view" id="view-lookup">
-      <section class="glass-card">
-        <h2>Domain Security Lookup</h2>
-        <p style="color: var(--text-secondary); font-size: 0.95rem; margin-bottom: 1.5rem;">
-          Verify if a specific domain is currently blacklisted in our compiled intelligence registry. Supports full wildcard parent checks.
-        </p>
-        <div class="search-container">
-          <div class="search-input-wrapper">
-            <svg class="search-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-              <circle cx="11" cy="11" r="8"></circle>
-              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-            </svg>
-            <input type="text" id="domain-query" class="search-input" placeholder="e.g. trackingdomain.com" aria-label="Search domains">
+      <div class="dashboard-card">
+        <section class="card">
+          <h2>Domain Security Lookup</h2>
+          <p class="text-secondary text-meta mb-md">
+            Verify if a specific domain is currently blacklisted in our compiled intelligence registry. Supports full wildcard parent checks.
+          </p>
+          <div class="search-container">
+            <div class="search-input-wrapper">
+              <svg class="search-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="11" cy="11" r="8"></circle>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+              </svg>
+              <input type="text" id="domain-query" class="search-input" placeholder="e.g. trackingdomain.com" aria-label="Search domains">
+            </div>
+            <button class="search-btn" onclick="checkDomain()">
+              <span>Check</span>
+            </button>
           </div>
-          <button class="search-btn" onclick="checkDomain()">
-            <span>Check</span>
-          </button>
-        </div>
-        <div id="search-result" class="search-result"></div>
-      </section>
+          <div id="search-result" class="search-result"></div>
+        </section>
+      </div>
     </div>
 
     <!-- Tab View: Downloads & Variants -->
     <div class="tab-view" id="view-downloads">
-      <div class="downloads-grid">
+      <div class="dashboard-card">
+        <div class="downloads-grid">
         
         <!-- Master Formats -->
-        <section class="glass-card">
+        <section class="card">
           <h2>Unified Blocklists</h2>
-          <p style="color: var(--text-secondary); font-size: 0.92rem; margin-bottom: 1.5rem;">
+          <p class="text-secondary text-meta mb-md">
             Combined threat feeds. All compiled domains excluding whitelisted exceptions:
           </p>
           <div class="download-list">
             
-            <div class="download-item">
+            <div class="card card--download">
               <div class="download-item-info">
                 <span class="download-name">domains.txt</span>
                 <span class="download-desc">Plaintext raw domains list</span>
@@ -152,7 +159,7 @@
               </div>
             </div>
 
-            <div class="download-item">
+            <div class="card card--download">
               <div class="download-item-info">
                 <span class="download-name">hosts.txt</span>
                 <span class="download-desc">Hosts redirection (0.0.0.0 mapping)</span>
@@ -167,7 +174,7 @@
               </div>
             </div>
 
-            <div class="download-item">
+            <div class="card card--download">
               <div class="download-item-info">
                 <span class="download-name">adblock.txt</span>
                 <span class="download-desc">Adblock extension filter rules</span>
@@ -186,14 +193,14 @@
         </section>
 
         <!-- Curated Variants -->
-        <section class="glass-card">
+        <section class="card">
           <h2>Blocklist Variants</h2>
-          <p style="color: var(--text-secondary); font-size: 0.92rem; margin-bottom: 1.5rem;">
+          <p class="text-secondary text-meta mb-md">
             Curated list tiers balanced for performance and protection needs:
           </p>
           <div class="download-list">
             
-            <div class="download-item">
+            <div class="card card--download">
               <div class="download-item-info">
                 <span class="download-name">Lite / Mini Variant</span>
                 <span class="download-desc">Security only (malware, phishing). Safer.</span>
@@ -208,7 +215,7 @@
               </div>
             </div>
 
-            <div class="download-item">
+            <div class="card card--download">
               <div class="download-item-info">
                 <span class="download-name">Medium / Standard Variant</span>
                 <span class="download-desc">Standard Ads, trackers, spam. *Recommended*</span>
@@ -223,7 +230,7 @@
               </div>
             </div>
 
-            <div class="download-item">
+            <div class="card card--download">
               <div class="download-item-info">
                 <span class="download-name">High / Pro Variant</span>
                 <span class="download-desc">Strict security + Torrent, social, gambling.</span>
@@ -238,7 +245,7 @@
               </div>
             </div>
 
-            <div class="download-item">
+            <div class="card card--download">
               <div class="download-item-info">
                 <span class="download-name">NSFW (Adult) Filter</span>
                 <span class="download-desc">Dedicated parental blocks for age limits.</span>
@@ -257,233 +264,233 @@
         </div>
 
         <!-- StevenBlack-Style Alternates -->
-        <section class="glass-card" style="margin-top: 2rem;">
+        <section class="card mt-lg">
           <h2>StevenBlack-Style Alternates</h2>
-          <p style="color: var(--text-secondary); font-size: 0.92rem; margin-bottom: 1.5rem;">
+          <p class="text-secondary text-meta mb-md">
             Pre-compiled alternates combining the base blocklist (ads, tracking, malware, phishing, cryptomining) with specific optional extensions. Select the combination you need:
           </p>
-          <div class="downloads-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 1rem;">
+          <div class="downloads-grid downloads-grid--compact">
             
-            <div class="download-item" style="padding: 1rem;">
+            <div class="card card--download card--compact">
               <div class="download-item-info">
-                <span class="download-name" style="font-size: 0.95rem;">fakenews</span>
-                <span class="download-desc" style="font-size: 0.78rem;">Base + Spam blocking</span>
+                <span class="download-name download-name--small">fakenews</span>
+                <span class="download-desc download-desc--small">Base + Spam blocking</span>
               </div>
               <div class="action-row">
-                <button class="btn-icon" onclick="copyText('alternates/fakenews/domains.txt')" title="Copy URL" style="width: 32px; height: 32px;">
+                <button class="btn-icon btn-icon--sm" onclick="copyText('alternates/fakenews/domains.txt')" title="Copy URL">
                   <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
                 </button>
-                <a href="alternates/fakenews/" class="btn-icon" title="View Directory" style="width: 32px; height: 32px;">
+                <a href="alternates/fakenews/" class="btn-icon btn-icon--sm" title="View Directory">
                   <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>
                 </a>
               </div>
             </div>
 
-            <div class="download-item" style="padding: 1rem;">
+            <div class="card card--download card--compact">
               <div class="download-item-info">
-                <span class="download-name" style="font-size: 0.95rem;">gambling</span>
-                <span class="download-desc" style="font-size: 0.78rem;">Base + Gambling blocking</span>
+                <span class="download-name download-name--small">gambling</span>
+                <span class="download-desc download-desc--small">Base + Gambling blocking</span>
               </div>
               <div class="action-row">
-                <button class="btn-icon" onclick="copyText('alternates/gambling/domains.txt')" title="Copy URL" style="width: 32px; height: 32px;">
+                <button class="btn-icon btn-icon--sm" onclick="copyText('alternates/gambling/domains.txt')" title="Copy URL">
                   <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
                 </button>
-                <a href="alternates/gambling/" class="btn-icon" title="View Directory" style="width: 32px; height: 32px;">
+                <a href="alternates/gambling/" class="btn-icon btn-icon--sm" title="View Directory">
                   <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>
                 </a>
               </div>
             </div>
 
-            <div class="download-item" style="padding: 1rem;">
+            <div class="card card--download card--compact">
               <div class="download-item-info">
-                <span class="download-name" style="font-size: 0.95rem;">porn</span>
-                <span class="download-desc" style="font-size: 0.78rem;">Base + Adult blocklist</span>
+                <span class="download-name download-name--small">porn</span>
+                <span class="download-desc download-desc--small">Base + Adult blocklist</span>
               </div>
               <div class="action-row">
-                <button class="btn-icon" onclick="copyText('alternates/porn/domains.txt')" title="Copy URL" style="width: 32px; height: 32px;">
+                <button class="btn-icon btn-icon--sm" onclick="copyText('alternates/porn/domains.txt')" title="Copy URL">
                   <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
                 </button>
-                <a href="alternates/porn/" class="btn-icon" title="View Directory" style="width: 32px; height: 32px;">
+                <a href="alternates/porn/" class="btn-icon btn-icon--sm" title="View Directory">
                   <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>
                 </a>
               </div>
             </div>
 
-            <div class="download-item" style="padding: 1rem;">
+            <div class="card card--download card--compact">
               <div class="download-item-info">
-                <span class="download-name" style="font-size: 0.95rem;">social</span>
-                <span class="download-desc" style="font-size: 0.78rem;">Base + Social networks</span>
+                <span class="download-name download-name--small">social</span>
+                <span class="download-desc download-desc--small">Base + Social networks</span>
               </div>
               <div class="action-row">
-                <button class="btn-icon" onclick="copyText('alternates/social/domains.txt')" title="Copy URL" style="width: 32px; height: 32px;">
+                <button class="btn-icon btn-icon--sm" onclick="copyText('alternates/social/domains.txt')" title="Copy URL">
                   <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
                 </button>
-                <a href="alternates/social/" class="btn-icon" title="View Directory" style="width: 32px; height: 32px;">
+                <a href="alternates/social/" class="btn-icon btn-icon--sm" title="View Directory">
                   <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>
                 </a>
               </div>
             </div>
 
-            <div class="download-item" style="padding: 1rem;">
+            <div class="card card--download card--compact">
               <div class="download-item-info">
-                <span class="download-name" style="font-size: 0.95rem;">fakenews-gambling</span>
-                <span class="download-desc" style="font-size: 0.78rem;">Base + Spam + Gambling</span>
+                <span class="download-name download-name--small">fakenews-gambling</span>
+                <span class="download-desc download-desc--small">Base + Spam + Gambling</span>
               </div>
               <div class="action-row">
-                <button class="btn-icon" onclick="copyText('alternates/fakenews-gambling/domains.txt')" title="Copy URL" style="width: 32px; height: 32px;">
+                <button class="btn-icon btn-icon--sm" onclick="copyText('alternates/fakenews-gambling/domains.txt')" title="Copy URL">
                   <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
                 </button>
-                <a href="alternates/fakenews-gambling/" class="btn-icon" title="View Directory" style="width: 32px; height: 32px;">
+                <a href="alternates/fakenews-gambling/" class="btn-icon btn-icon--sm" title="View Directory">
                   <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>
                 </a>
               </div>
             </div>
 
-            <div class="download-item" style="padding: 1rem;">
+            <div class="card card--download card--compact">
               <div class="download-item-info">
-                <span class="download-name" style="font-size: 0.95rem;">fakenews-porn</span>
-                <span class="download-desc" style="font-size: 0.78rem;">Base + Spam + Porn</span>
+                <span class="download-name download-name--small">fakenews-porn</span>
+                <span class="download-desc download-desc--small">Base + Spam + Porn</span>
               </div>
               <div class="action-row">
-                <button class="btn-icon" onclick="copyText('alternates/fakenews-porn/domains.txt')" title="Copy URL" style="width: 32px; height: 32px;">
+                <button class="btn-icon btn-icon--sm" onclick="copyText('alternates/fakenews-porn/domains.txt')" title="Copy URL">
                   <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
                 </button>
-                <a href="alternates/fakenews-porn/" class="btn-icon" title="View Directory" style="width: 32px; height: 32px;">
+                <a href="alternates/fakenews-porn/" class="btn-icon btn-icon--sm" title="View Directory">
                   <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>
                 </a>
               </div>
             </div>
 
-            <div class="download-item" style="padding: 1rem;">
+            <div class="card card--download card--compact">
               <div class="download-item-info">
-                <span class="download-name" style="font-size: 0.95rem;">fakenews-social</span>
-                <span class="download-desc" style="font-size: 0.78rem;">Base + Spam + Social</span>
+                <span class="download-name download-name--small">fakenews-social</span>
+                <span class="download-desc download-desc--small">Base + Spam + Social</span>
               </div>
               <div class="action-row">
-                <button class="btn-icon" onclick="copyText('alternates/fakenews-social/domains.txt')" title="Copy URL" style="width: 32px; height: 32px;">
+                <button class="btn-icon btn-icon--sm" onclick="copyText('alternates/fakenews-social/domains.txt')" title="Copy URL">
                   <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
                 </button>
-                <a href="alternates/fakenews-social/" class="btn-icon" title="View Directory" style="width: 32px; height: 32px;">
+                <a href="alternates/fakenews-social/" class="btn-icon btn-icon--sm" title="View Directory">
                   <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>
                 </a>
               </div>
             </div>
 
-            <div class="download-item" style="padding: 1rem;">
+            <div class="card card--download card--compact">
               <div class="download-item-info">
-                <span class="download-name" style="font-size: 0.95rem;">gambling-porn</span>
-                <span class="download-desc" style="font-size: 0.78rem;">Base + Gambling + Porn</span>
+                <span class="download-name download-name--small">gambling-porn</span>
+                <span class="download-desc download-desc--small">Base + Gambling + Porn</span>
               </div>
               <div class="action-row">
-                <button class="btn-icon" onclick="copyText('alternates/gambling-porn/domains.txt')" title="Copy URL" style="width: 32px; height: 32px;">
+                <button class="btn-icon btn-icon--sm" onclick="copyText('alternates/gambling-porn/domains.txt')" title="Copy URL">
                   <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
                 </button>
-                <a href="alternates/gambling-porn/" class="btn-icon" title="View Directory" style="width: 32px; height: 32px;">
+                <a href="alternates/gambling-porn/" class="btn-icon btn-icon--sm" title="View Directory">
                   <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>
                 </a>
               </div>
             </div>
 
-            <div class="download-item" style="padding: 1rem;">
+            <div class="card card--download card--compact">
               <div class="download-item-info">
-                <span class="download-name" style="font-size: 0.95rem;">gambling-social</span>
-                <span class="download-desc" style="font-size: 0.78rem;">Base + Gambling + Social</span>
+                <span class="download-name download-name--small">gambling-social</span>
+                <span class="download-desc download-desc--small">Base + Gambling + Social</span>
               </div>
               <div class="action-row">
-                <button class="btn-icon" onclick="copyText('alternates/gambling-social/domains.txt')" title="Copy URL" style="width: 32px; height: 32px;">
+                <button class="btn-icon btn-icon--sm" onclick="copyText('alternates/gambling-social/domains.txt')" title="Copy URL">
                   <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
                 </button>
-                <a href="alternates/gambling-social/" class="btn-icon" title="View Directory" style="width: 32px; height: 32px;">
+                <a href="alternates/gambling-social/" class="btn-icon btn-icon--sm" title="View Directory">
                   <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>
                 </a>
               </div>
             </div>
 
-            <div class="download-item" style="padding: 1rem;">
+            <div class="card card--download card--compact">
               <div class="download-item-info">
-                <span class="download-name" style="font-size: 0.95rem;">porn-social</span>
-                <span class="download-desc" style="font-size: 0.78rem;">Base + Porn + Social</span>
+                <span class="download-name download-name--small">porn-social</span>
+                <span class="download-desc download-desc--small">Base + Porn + Social</span>
               </div>
               <div class="action-row">
-                <button class="btn-icon" onclick="copyText('alternates/porn-social/domains.txt')" title="Copy URL" style="width: 32px; height: 32px;">
+                <button class="btn-icon btn-icon--sm" onclick="copyText('alternates/porn-social/domains.txt')" title="Copy URL">
                   <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
                 </button>
-                <a href="alternates/porn-social/" class="btn-icon" title="View Directory" style="width: 32px; height: 32px;">
+                <a href="alternates/porn-social/" class="btn-icon btn-icon--sm" title="View Directory">
                   <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>
                 </a>
               </div>
             </div>
 
-            <div class="download-item" style="padding: 1rem;">
+            <div class="card card--download card--compact">
               <div class="download-item-info">
-                <span class="download-name" style="font-size: 0.95rem;">fakenews-gambling-porn</span>
-                <span class="download-desc" style="font-size: 0.78rem;">Base + Spam + Gambling + Porn</span>
+                <span class="download-name download-name--small">fakenews-gambling-porn</span>
+                <span class="download-desc download-desc--small">Base + Spam + Gambling + Porn</span>
               </div>
               <div class="action-row">
-                <button class="btn-icon" onclick="copyText('alternates/fakenews-gambling-porn/domains.txt')" title="Copy URL" style="width: 32px; height: 32px;">
+                <button class="btn-icon btn-icon--sm" onclick="copyText('alternates/fakenews-gambling-porn/domains.txt')" title="Copy URL">
                   <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
                 </button>
-                <a href="alternates/fakenews-gambling-porn/" class="btn-icon" title="View Directory" style="width: 32px; height: 32px;">
+                <a href="alternates/fakenews-gambling-porn/" class="btn-icon btn-icon--sm" title="View Directory">
                   <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>
                 </a>
               </div>
             </div>
 
-            <div class="download-item" style="padding: 1rem;">
+            <div class="card card--download card--compact">
               <div class="download-item-info">
-                <span class="download-name" style="font-size: 0.95rem;">fakenews-gambling-social</span>
-                <span class="download-desc" style="font-size: 0.78rem;">Base + Spam + Gambling + Social</span>
+                <span class="download-name download-name--small">fakenews-gambling-social</span>
+                <span class="download-desc download-desc--small">Base + Spam + Gambling + Social</span>
               </div>
               <div class="action-row">
-                <button class="btn-icon" onclick="copyText('alternates/fakenews-gambling-social/domains.txt')" title="Copy URL" style="width: 32px; height: 32px;">
+                <button class="btn-icon btn-icon--sm" onclick="copyText('alternates/fakenews-gambling-social/domains.txt')" title="Copy URL">
                   <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
                 </button>
-                <a href="alternates/fakenews-gambling-social/" class="btn-icon" title="View Directory" style="width: 32px; height: 32px;">
+                <a href="alternates/fakenews-gambling-social/" class="btn-icon btn-icon--sm" title="View Directory">
                   <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>
                 </a>
               </div>
             </div>
 
-            <div class="download-item" style="padding: 1rem;">
+            <div class="card card--download card--compact">
               <div class="download-item-info">
-                <span class="download-name" style="font-size: 0.95rem;">fakenews-porn-social</span>
-                <span class="download-desc" style="font-size: 0.78rem;">Base + Spam + Porn + Social</span>
+                <span class="download-name download-name--small">fakenews-porn-social</span>
+                <span class="download-desc download-desc--small">Base + Spam + Porn + Social</span>
               </div>
               <div class="action-row">
-                <button class="btn-icon" onclick="copyText('alternates/fakenews-porn-social/domains.txt')" title="Copy URL" style="width: 32px; height: 32px;">
+                <button class="btn-icon btn-icon--sm" onclick="copyText('alternates/fakenews-porn-social/domains.txt')" title="Copy URL">
                   <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
                 </button>
-                <a href="alternates/fakenews-porn-social/" class="btn-icon" title="View Directory" style="width: 32px; height: 32px;">
+                <a href="alternates/fakenews-porn-social/" class="btn-icon btn-icon--sm" title="View Directory">
                   <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>
                 </a>
               </div>
             </div>
 
-            <div class="download-item" style="padding: 1rem;">
+            <div class="card card--download card--compact">
               <div class="download-item-info">
-                <span class="download-name" style="font-size: 0.95rem;">gambling-porn-social</span>
-                <span class="download-desc" style="font-size: 0.78rem;">Base + Gambling + Porn + Social</span>
+                <span class="download-name download-name--small">gambling-porn-social</span>
+                <span class="download-desc download-desc--small">Base + Gambling + Porn + Social</span>
               </div>
               <div class="action-row">
-                <button class="btn-icon" onclick="copyText('alternates/gambling-porn-social/domains.txt')" title="Copy URL" style="width: 32px; height: 32px;">
+                <button class="btn-icon btn-icon--sm" onclick="copyText('alternates/gambling-porn-social/domains.txt')" title="Copy URL">
                   <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
                 </button>
-                <a href="alternates/gambling-porn-social/" class="btn-icon" title="View Directory" style="width: 32px; height: 32px;">
+                <a href="alternates/gambling-porn-social/" class="btn-icon btn-icon--sm" title="View Directory">
                   <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>
                 </a>
               </div>
             </div>
 
-            <div class="download-item" style="padding: 1rem;">
+            <div class="card card--download card--compact">
               <div class="download-item-info">
-                <span class="download-name" style="font-size: 0.95rem;">fakenews-gambling-porn-social</span>
-                <span class="download-desc" style="font-size: 0.78rem;">Unified Base + All Extensions</span>
+                <span class="download-name download-name--small">fakenews-gambling-porn-social</span>
+                <span class="download-desc download-desc--small">Unified Base + All Extensions</span>
               </div>
               <div class="action-row">
-                <button class="btn-icon" onclick="copyText('alternates/fakenews-gambling-porn-social/domains.txt')" title="Copy URL" style="width: 32px; height: 32px;">
+                <button class="btn-icon btn-icon--sm" onclick="copyText('alternates/fakenews-gambling-porn-social/domains.txt')" title="Copy URL">
                   <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
                 </button>
-                <a href="alternates/fakenews-gambling-porn-social/" class="btn-icon" title="View Directory" style="width: 32px; height: 32px;">
+                <a href="alternates/fakenews-gambling-porn-social/" class="btn-icon btn-icon--sm" title="View Directory">
                   <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>
                 </a>
               </div>
@@ -493,38 +500,45 @@
         </section>
 
       </div>
+      </div>
     </div>
 
     <!-- Tab View: Upstream Feeds -->
     <div class="tab-view" id="view-feeds">
-      <section class="glass-card table-card">
-        <h2>Monitored Upstream Feeds</h2>
-        <p style="color: var(--text-secondary); font-size: 0.95rem; margin-bottom: 1.5rem;">
-          Upstream open-source domain databases parsed, normalized, and updated hourly.
-        </p>
-        <div class="table-wrapper">
-          <table>
-            <thead>
-              <tr>
-                <th>Source Feed Name</th>
-                <th>Segment Category</th>
-                <th>Status</th>
-                <th style="text-align: right;">Unique Domains</th>
-              </tr>
-            </thead>
-            <tbody id="feeds-table-body">
-              <tr>
-                <td colspan="4" style="text-align: center; color: var(--text-secondary);">
-                  <div class="spinner" style="margin: 0 auto 10px;"></div>
-                  Fetching upstream metadata...
-                </td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </section>
+      <div class="dashboard-card">
+        <section class="card">
+          <h2>Monitored Upstream Feeds</h2>
+          <p class="text-secondary text-meta mb-md">
+            Upstream open-source domain databases parsed, normalized, and updated hourly.
+          </p>
+          <div class="table-wrapper">
+            <table>
+              <thead>
+                <tr>
+                  <th>Source Feed Name</th>
+                  <th>Segment Category</th>
+                  <th>Status</th>
+                  <th class="text-right">Unique Domains</th>
+                </tr>
+              </thead>
+              <tbody id="feeds-table-body">
+                <tr>
+                  <td colspan="4" class="table-empty">
+                    <div class="spinner spinner--centered"></div>
+                    Fetching upstream metadata...
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+      </div>
     </div>
 
+  </div>
+
+  <!-- Footer Wrapper -->
+  <div class="footer-wrapper">
     <!-- Footer -->
     <footer>
       <div class="footer-content">
@@ -547,13 +561,12 @@
         </div>
       </div>
     </footer>
-
   </div>
 
   <!-- Disclaimer Modal -->
   <div id="disclaimer-modal" class="modal" aria-hidden="true">
     <div class="modal-overlay"></div>
-    <div class="modal-content glass-card">
+    <div class="modal-content card">
       <button class="modal-close-btn" aria-label="Close disclaimer modal">&times;</button>
       <h3>⚖️ Terms & Disclaimer</h3>
       <div class="modal-body">

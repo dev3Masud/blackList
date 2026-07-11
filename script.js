@@ -54,7 +54,7 @@ function renderAnalytics(stats) {
     categoryContainer.innerHTML = "";
     Object.entries(stats.categories).forEach(([name, count]) => {
       const card = document.createElement("div");
-      card.className = "category-card";
+      card.className = "card card--category";
       card.innerHTML = `
         <div class="category-header">
           <span class="category-title">${name}</span>
@@ -93,10 +93,10 @@ function renderAnalytics(stats) {
         : `<span class="badge-status status-offline" title="${feed.error || 'Unknown Connection Failure'}"><span class="badge-status-dot"></span>Offline</span>`;
       
       row.innerHTML = `
-        <td style="font-weight: 600; color: var(--text-primary);">${feed.name}</td>
-        <td style="text-transform: capitalize; color: var(--text-secondary);">${feed.category}</td>
+        <td class="table-primary">${feed.name}</td>
+        <td class="table-secondary">${feed.category}</td>
         <td>${statusBadge}</td>
-        <td style="font-family: var(--font-mono); text-align: right; color: var(--text-primary);">${feed.count.toLocaleString()}</td>
+        <td class="table-mono-right">${feed.count.toLocaleString()}</td>
       `;
       tableBody.appendChild(row);
     });
@@ -227,7 +227,7 @@ async function checkDomain() {
   // Safe result
   searchResult.className = "search-result result-safe";
   searchResult.innerHTML = `
-    <div style="display:flex; align-items:center; gap: 10px;">
+    <div class="result-row">
       <svg class="check-icon" xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
       <div>
         <strong>Domain is Safe:</strong> "${query}" is not found in active blacklist registries.
@@ -243,16 +243,16 @@ function renderMatchResult(queriedDomain, categories, blockedParent = null) {
   
   let matchedMessage = `Blocked under: ${categoryBadges}`;
   if (blockedParent) {
-    matchedMessage = `Blocked by wildcard parent domain: <strong>${blockedParent}</strong><br><div style="margin-top: 8px;">Categories: ${categoryBadges}</div>`;
+    matchedMessage = `Blocked by wildcard parent domain: <strong>${blockedParent}</strong><br><div class="result-meta">Categories: ${categoryBadges}</div>`;
   }
 
   searchResult.className = "search-result result-blocked";
   searchResult.innerHTML = `
-    <div style="display:flex; align-items:flex-start; gap: 10px;">
+    <div class="result-row result-row--top">
       <svg class="alert-icon" xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
       <div>
         <strong>⚠️ Security Threat Blocked:</strong> "${queriedDomain}" is blacklisted.
-        <div style="margin-top: 10px; font-size: 0.9rem;">${matchedMessage}</div>
+        <div class="result-meta">${matchedMessage}</div>
       </div>
     </div>
   `;
