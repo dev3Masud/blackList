@@ -1,0 +1,10 @@
+# Custom whitelist domains to bypass filters
+eventapi.capp.bka.sh
+images.capp.bka.sh
+cmsimages.capp.bka.sh
+api.cde.capp.bka.sh
+management.azure.com
+modal.com
+repo.waydro.id
+click.discord.com
+pl-bolts-doc-images.s3.us-east-2.amazonaws.com
