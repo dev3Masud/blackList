@@ -106,6 +106,9 @@ body {
   max-width: 1200px;
   margin: 0 auto;
   padding: 3rem 1.5rem;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 /* Top Navigation Bar Header */
@@ -209,6 +212,7 @@ header {
 .tab-view {
   display: none;
   animation: fadeIn 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  padding-bottom: 3rem;
 }
 
 .tab-view.active {
@@ -677,17 +681,17 @@ tr:hover td {
 
 /* Footer layout */
 footer {
-  margin-top: 6rem;
+  margin-top: auto;
   border-top: 1px solid var(--glass-border);
-  padding: 3rem 1.5rem 2.5rem; /* Add padding left and right also */
+  padding: 3rem 4rem 2.5rem;
 }
 
 .footer-content {
   display: flex;
-  justify-content: flex-start;
+  justify-content: space-between;
   align-items: flex-start;
   flex-wrap: wrap;
-  gap: 4rem;
+  gap: 2rem;
 }
 
 .footer-info h4 {
@@ -896,5 +900,32 @@ footer {
 .modal-footer {
   display: flex;
   justify-content: flex-end;
+}
+
+/* Custom Sleek Scrollbar Styles */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-primary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: 5px;
+  border: 2px solid var(--bg-primary);
+  transition: var(--transition-fast);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-secondary);
+}
+
+/* Firefox scrollbar support */
+html {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255, 255, 255, 0.12) var(--bg-primary);
 }
 
