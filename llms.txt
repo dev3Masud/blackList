@@ -1,0 +1,23 @@
+# blackList
+
+Daily-compiled domain blacklist threat registry for Pi-hole, AdGuard Home, and browser blockers. Filtered against whitelists to minimize false positives.
+
+## Core Features
+- Excludes the `"social"` category from the master list and core variants (lite, medium, high, adblock, nsfw).
+- Pre-compiled alternates combine base filters with optional extensions (StevenBlack-style).
+- Interactive dashboard displays lookup validation, categorizations, and monitoring feed statuses.
+
+## Repository Structure
+- [config.yaml](file:///home/who/Documents/AI-Coding/Github/blackList/config.yaml): Upstream blocklist feed sources.
+- [whitelist.txt](file:///home/who/Documents/AI-Coding/Github/blackList/whitelist.txt): List of whitelisted domains to prevent false positives.
+- [scripts/crawler.py](file:///home/who/Documents/AI-Coding/Github/blackList/scripts/crawler.py): Crawler that concurrently downloads blocklist feeds and consolidates domains.
+- [scripts/validator.py](file:///home/who/Documents/AI-Coding/Github/blackList/scripts/validator.py): Validator that filters domains against syntax rules and whitelist, compiles lookup databases, and writes HTML variants.
+- [index.html](file:///home/who/Documents/AI-Coding/Github/blackList/index.html): Main web dashboard GUI.
+- [script.js](file:///home/who/Documents/AI-Coding/Github/blackList/script.js): Dynamic client-side dashboard controller.
+- [style.css](file:///home/who/Documents/AI-Coding/Github/blackList/style.css): Glassmorphism stylesheet for the dashboard site.
+- [master/](file:///home/who/Documents/AI-Coding/Github/blackList/master/): Consolidated clean domains list (domains.txt, hosts.txt, adblock.txt).
+- [categories/](file:///home/who/Documents/AI-Coding/Github/blackList/categories/): Clean domain lists separated by category.
+- [variants/](file:///home/who/Documents/AI-Coding/Github/blackList/variants/): Curated blocklist tiers.
+- [alternates/](file:///home/who/Documents/AI-Coding/Github/blackList/alternates/): StevenBlack-style alternate blocklists.
+- [lookup/](file:///home/who/Documents/AI-Coding/Github/blackList/lookup/): Sharded hex JSON database files for rapid lookup on the web dashboard.
+- [stats.json](file:///home/who/Documents/AI-Coding/Github/blackList/stats.json): Compiled database and pipeline run statistics.
