@@ -3,7 +3,7 @@
 This directory contains the compiled **medium** blocklist.
 
 *   **Status**: Active
-*   **Total blocked domains**: `2,737,593`
+*   **Total blocked domains**: `2,730,621`
 *   **Target audience**: Balanced protection and usability. Blocks security threats, ads, trackers, and spam domains. Recommended for standard home networks.
 
 ---
@@ -17,7 +17,7 @@ This configuration contains lists designed to block the following domain categor
 | 🔴 **Malware Sites** | `1,780,468` | Command & control servers, distribution endpoints, ransomware, and spyware platforms. |
 | 🔴 **Phishing Pages** | `120,582` | Fraudulent login pages, credential harvesting forms, and identity spoofing sites. |
 | 🔴 **Cryptomining** | `297` | Cryptojacking scripts, browser miners, and pool connection endpoints. |
-| 🔴 **Advertising Domains** | `722,788` | Ad delivery networks, promotional servers, and banner scripting endpoints. |
+| 🔴 **Advertising Domains** | `564,338` | Ad delivery networks, promotional servers, and banner scripting endpoints. |
 | 🔴 **Tracking & Telemetry** | `718,193` | Analytics scripts, user profiling telemetry, and commercial data harvesting domains. |
 | 🔴 **Spam & Scam Domains** | `24,094` | Malicious email redirectors, lottery scam landing pages, and deceptive bulk sites. |
 

@@ -3,7 +3,7 @@
 This directory contains the compiled **fakenews-gambling-porn** blocklist.
 
 *   **Status**: Active
-*   **Total blocked domains**: `3,900,822`
+*   **Total blocked domains**: `3,894,125`
 *   **Target audience**: Alternate blocklist configuration. Combines the base security blocklist with: malware, phishing, cryptomining, ads, tracking, spam, gambling, nsfw.
 
 ---
@@ -17,11 +17,11 @@ This configuration contains lists designed to block the following domain categor
 | 🔴 **Malware Sites** | `1,780,468` | Command & control servers, distribution endpoints, ransomware, and spyware platforms. |
 | 🔴 **Phishing Pages** | `120,582` | Fraudulent login pages, credential harvesting forms, and identity spoofing sites. |
 | 🔴 **Cryptomining** | `297` | Cryptojacking scripts, browser miners, and pool connection endpoints. |
-| 🔴 **Advertising Domains** | `722,788` | Ad delivery networks, promotional servers, and banner scripting endpoints. |
+| 🔴 **Advertising Domains** | `564,338` | Ad delivery networks, promotional servers, and banner scripting endpoints. |
 | 🔴 **Tracking & Telemetry** | `718,193` | Analytics scripts, user profiling telemetry, and commercial data harvesting domains. |
 | 🔴 **Spam & Scam Domains** | `24,094` | Malicious email redirectors, lottery scam landing pages, and deceptive bulk sites. |
 | 🔴 **Gambling & Casinos** | `346,718` | Online betting sites, slot machines, lottery portals, and digital casinos. |
-| 🔴 **NSFW (Adult) Content** | `1,016,402` | Pornography, adult video portals, online dating platforms, and age-restricted domains. |
+| 🔴 **NSFW (Adult) Content** | `1,016,698` | Pornography, adult video portals, online dating platforms, and age-restricted domains. |
 
 ---
 

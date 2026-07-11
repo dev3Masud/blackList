@@ -3,7 +3,7 @@
 This directory contains the compiled **gambling** blocklist.
 
 *   **Status**: Active
-*   **Total blocked domains**: `2,950,631`
+*   **Total blocked domains**: `2,943,623`
 *   **Target audience**: Alternate blocklist configuration. Combines the base security blocklist with: malware, phishing, cryptomining, ads, tracking, gambling.
 
 ---
@@ -17,7 +17,7 @@ This configuration contains lists designed to block the following domain categor
 | 🔴 **Malware Sites** | `1,780,468` | Command & control servers, distribution endpoints, ransomware, and spyware platforms. |
 | 🔴 **Phishing Pages** | `120,582` | Fraudulent login pages, credential harvesting forms, and identity spoofing sites. |
 | 🔴 **Cryptomining** | `297` | Cryptojacking scripts, browser miners, and pool connection endpoints. |
-| 🔴 **Advertising Domains** | `722,788` | Ad delivery networks, promotional servers, and banner scripting endpoints. |
+| 🔴 **Advertising Domains** | `564,338` | Ad delivery networks, promotional servers, and banner scripting endpoints. |
 | 🔴 **Tracking & Telemetry** | `718,193` | Analytics scripts, user profiling telemetry, and commercial data harvesting domains. |
 | 🔴 **Gambling & Casinos** | `346,718` | Online betting sites, slot machines, lottery portals, and digital casinos. |
 

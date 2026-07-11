@@ -9881,6 +9881,7 @@ justpaid.co.nr
 juststream.mom
 jutone.com
 juzt-tv.vercel.app
+jvavav.com
 k-9-lordfilms.ru
 k-streaming.tv
 k.avc.cx
@@ -28650,6 +28651,7 @@ supertela.live
 supertorent.net
 supertorrents.net
 supertorrents.org
+supertracker.cc.cd
 supertvaovivo.live
 supertvaovivo.tv
 supervideo.cc
@@ -29753,6 +29755,7 @@ torrent.fedoraproject.org
 torrent.fit
 torrent.genesis-movement.org
 torrent.health
+torrent.hificode.in
 torrent.iq24.pl
 torrent.ir
 torrent.janemusic.org
@@ -30737,6 +30740,7 @@ tracker.fixr.pro
 tracker.flashtorrents.org
 tracker.flatuslifir.is
 tracker.fnix.net
+tracker.foreverpirates.co
 tracker.fortu.io
 tracker.frontalweb.com.ar
 tracker.frozen-layer.net
@@ -33194,6 +33198,7 @@ www.fullcontactzone.tv
 www.funfile.org
 www.funkytorrents.com
 www.gamestorrents.com
+www.genesis-sp.org
 www.gettorrents.org
 www.gm-realm.net
 www.grabthe.info
@@ -33420,6 +33425,7 @@ www.torrents2hell.com
 www.torrentseed.org
 www.torrentsgate.com
 www.torrentsmd.com
+www.torrentsnipe.info
 www.torrentsrmine.org
 www.torrenturkey.com
 www.torrentvault.org

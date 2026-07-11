@@ -1,6 +1,6 @@
 # Category: TORRENT
-# Count: 33933
-# Last updated: 2026-07-11 01:48:57 UTC
+# Count: 33937
+# Last updated: 2026-07-11 03:34:09 UTC
 # Filtered against whitelist to prevent false positives.
 
 00-torrnets.com
@@ -9847,6 +9847,7 @@ justpaid.co.nr
 juststream.mom
 jutone.com
 juzt-tv.vercel.app
+jvavav.com
 k-9-lordfilms.ru
 k-streaming.tv
 k.avc.cx
@@ -28597,6 +28598,7 @@ supertela.live
 supertorent.net
 supertorrents.net
 supertorrents.org
+supertracker.cc.cd
 supertvaovivo.live
 supertvaovivo.tv
 supervideo.cc
@@ -29696,6 +29698,7 @@ torrent.fedoraproject.org
 torrent.fit
 torrent.genesis-movement.org
 torrent.health
+torrent.hificode.in
 torrent.iq24.pl
 torrent.ir
 torrent.janemusic.org
@@ -30657,6 +30660,7 @@ tracker.fixr.pro
 tracker.flashtorrents.org
 tracker.flatuslifir.is
 tracker.fnix.net
+tracker.foreverpirates.co
 tracker.fortu.io
 tracker.frontalweb.com.ar
 tracker.frozen-layer.net
