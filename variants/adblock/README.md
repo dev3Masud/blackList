@@ -3,7 +3,7 @@
 This directory contains the compiled **adblock** blocklist.
 
 *   **Status**: Active
-*   **Total blocked domains**: `3,987,112`
+*   **Total blocked domains**: `3,987,305`
 *   **Target audience**: Optimized ruleset formatted for browser extensions (uBlock Origin, AdGuard). Supports cosmetic and network blocking.
 
 ---
@@ -17,15 +17,15 @@ This configuration contains lists designed to block the following domain categor
 | 🔴 **Malware Sites** | `1,809,444` | Command & control servers, distribution endpoints, ransomware, and spyware platforms. |
 | 🔴 **Phishing Pages** | `120,624` | Fraudulent login pages, credential harvesting forms, and identity spoofing sites. |
 | 🔴 **Cryptomining** | `297` | Cryptojacking scripts, browser miners, and pool connection endpoints. |
-| 🔴 **Advertising Domains** | `565,333` | Ad delivery networks, promotional servers, and banner scripting endpoints. |
-| 🔴 **Tracking & Telemetry** | `720,754` | Analytics scripts, user profiling telemetry, and commercial data harvesting domains. |
+| 🔴 **Advertising Domains** | `565,382` | Ad delivery networks, promotional servers, and banner scripting endpoints. |
+| 🔴 **Tracking & Telemetry** | `720,751` | Analytics scripts, user profiling telemetry, and commercial data harvesting domains. |
 | 🔴 **Spam & Scam Domains** | `24,121` | Malicious email redirectors, lottery scam landing pages, and deceptive bulk sites. |
 | 🔴 **Dating Portals** | `1,333` | Matchmaking platforms, hookup sites, and related relationship portals. |
 | 🔴 **Social Tracking** | `24,625` | Social networking trackers, widgets, and domain collectors that profile user browsing. |
-| 🔴 **Gambling & Casinos** | `349,509` | Online betting sites, slot machines, lottery portals, and digital casinos. |
+| 🔴 **Gambling & Casinos** | `349,508` | Online betting sites, slot machines, lottery portals, and digital casinos. |
 | 🔴 **Torrent & P2P** | `34,117` | BitTorrent trackers, magnet index sites, piracy portals, and peer communication networks. |
 | 🔴 **Scrapers & Crawlers** | `0` | Suspicious automated scraper bots, web scanner networks, and scraping systems. |
-| 🔴 **NSFW (Adult) Content** | `1,018,138` | Pornography, adult video portals, online dating platforms, and age-restricted domains. |
+| 🔴 **NSFW (Adult) Content** | `1,018,284` | Pornography, adult video portals, online dating platforms, and age-restricted domains. |
 
 ---
 

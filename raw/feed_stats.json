@@ -1,12 +1,5 @@
 [
   {
-    "name": "AdGuard Tracking Filter",
-    "category": "tracking",
-    "success": true,
-    "count": 3514,
-    "error": ""
-  },
-  {
     "name": "NoCoin Cryptomining List",
     "category": "cryptomining",
     "success": true,
@@ -21,6 +14,13 @@
     "error": ""
   },
   {
+    "name": "AdGuard Tracking Filter",
+    "category": "tracking",
+    "success": true,
+    "count": 3514,
+    "error": ""
+  },
+  {
     "name": "Spam404",
     "category": "spam",
     "success": true,
@@ -31,7 +31,7 @@
     "name": "URLHaus Malware Domains",
     "category": "malware",
     "success": true,
-    "count": 467,
+    "count": 464,
     "error": ""
   },
   {
@@ -42,17 +42,17 @@
     "error": ""
   },
   {
+    "name": "BlockList Project - Porn (NSFW)",
+    "category": "nsfw",
+    "success": true,
+    "count": 953397,
+    "error": ""
+  },
+  {
     "name": "BlockList Project - Facebook",
     "category": "social",
     "success": true,
     "count": 22362,
-    "error": ""
-  },
-  {
-    "name": "Phishing Army",
-    "category": "phishing",
-    "success": true,
-    "count": 145353,
     "error": ""
   },
   {
@@ -67,6 +67,13 @@
     "category": "social",
     "success": true,
     "count": 1193,
+    "error": ""
+  },
+  {
+    "name": "Phishing Army",
+    "category": "phishing",
+    "success": true,
+    "count": 145353,
     "error": ""
   },
   {
@@ -91,17 +98,17 @@
     "error": ""
   },
   {
-    "name": "StevenBlack NSFW Alternate",
-    "category": "nsfw",
-    "success": true,
-    "count": 154663,
-    "error": ""
-  },
-  {
     "name": "FadeMind Spam Hosts",
     "category": "spam",
     "success": true,
     "count": 57,
+    "error": ""
+  },
+  {
+    "name": "StevenBlack NSFW Alternate",
+    "category": "nsfw",
+    "success": true,
+    "count": 154663,
     "error": ""
   },
   {
@@ -112,13 +119,6 @@
     "error": ""
   },
   {
-    "name": "BlockList Project - Porn (NSFW)",
-    "category": "nsfw",
-    "success": true,
-    "count": 953397,
-    "error": ""
-  },
-  {
     "name": "EasyPrivacy Tracking List",
     "category": "tracking",
     "success": true,
@@ -126,10 +126,17 @@
     "error": ""
   },
   {
-    "name": "StevenBlack Gambling Alternate",
-    "category": "gambling",
+    "name": "AdGuard DNS Ads list",
+    "category": "ads",
     "success": true,
-    "count": 84948,
+    "count": 154994,
+    "error": ""
+  },
+  {
+    "name": "OISD NSFW Blocklist",
+    "category": "nsfw",
+    "success": true,
+    "count": 394574,
     "error": ""
   },
   {
@@ -143,21 +150,7 @@
     "name": "Polish Filters Team - KADhosts",
     "category": "ads",
     "success": true,
-    "count": 45984,
-    "error": ""
-  },
-  {
-    "name": "AdGuard DNS Ads list",
-    "category": "ads",
-    "success": true,
-    "count": 154994,
-    "error": ""
-  },
-  {
-    "name": "OISD Big Blocklist",
-    "category": "ads",
-    "success": true,
-    "count": 328786,
+    "count": 45854,
     "error": ""
   },
   {
@@ -168,17 +161,17 @@
     "error": ""
   },
   {
-    "name": "OISD NSFW Blocklist",
-    "category": "nsfw",
-    "success": true,
-    "count": 394404,
-    "error": ""
-  },
-  {
     "name": "HaGeZi Multi PRO",
     "category": "ads",
     "success": true,
     "count": 231191,
+    "error": ""
+  },
+  {
+    "name": "OISD Big Blocklist",
+    "category": "ads",
+    "success": true,
+    "count": 328815,
     "error": ""
   },
   {
@@ -228,6 +221,13 @@
     "category": "tracking",
     "success": true,
     "count": 1050085,
+    "error": ""
+  },
+  {
+    "name": "StevenBlack Gambling Alternate",
+    "category": "gambling",
+    "success": true,
+    "count": 84948,
     "error": ""
   }
 ]
