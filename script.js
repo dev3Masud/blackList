@@ -280,3 +280,36 @@ function copyText(subpath) {
     console.error("Could not copy URL:", err);
   });
 }
+
+// Disclaimer Modal Controller
+function openDisclaimer() {
+  const modal = document.getElementById("disclaimer-modal");
+  if (modal) {
+    modal.classList.add("active");
+    modal.setAttribute("aria-hidden", "false");
+    
+    // Add event listeners to close elements
+    const closeElements = modal.querySelectorAll(".modal-close-btn, .modal-overlay, .modal-close-btn-action");
+    closeElements.forEach(el => {
+      el.addEventListener("click", closeDisclaimer);
+    });
+
+    // Close on Escape key press
+    document.addEventListener("keydown", handleEscapeKey);
+  }
+}
+
+function closeDisclaimer() {
+  const modal = document.getElementById("disclaimer-modal");
+  if (modal) {
+    modal.classList.remove("active");
+    modal.setAttribute("aria-hidden", "true");
+    document.removeEventListener("keydown", handleEscapeKey);
+  }
+}
+
+function handleEscapeKey(e) {
+  if (e.key === "Escape") {
+    closeDisclaimer();
+  }
+}

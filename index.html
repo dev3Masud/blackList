@@ -544,18 +544,29 @@
         </div>
       </div>
       <div class="footer-bottom">
-        <p class="footer-disclaimer">
-          <strong>Disclaimer:</strong> This threat intelligence feed is compiled automatically from multiple open-source blocklist providers. 
-          While extreme care and whitelisting protocols are applied to minimize false positives, it is provided "as-is" without warranty. 
-          Users should verify and test filter sets in a staging environment prior to network-wide deployment.
-        </p>
         <div class="footer-copyright">
-          <span>&copy; 2026 Blacklist Registry. All rights reserved.</span>
+          <span>&copy; 2026 Blacklist Registry. All rights reserved. &bull; <a href="#" id="disclaimer-trigger" style="color: var(--text-muted); text-decoration: none; font-weight: 600; border-bottom: 1px dashed var(--text-muted);" onclick="event.preventDefault(); openDisclaimer();">Disclaimer</a></span>
           <span>Pipeline execution by GitHub Actions &bull; Designed by <a href="https://github.com/dev3Masud" target="_blank" rel="noopener noreferrer" style="color: var(--accent-secondary); text-decoration: none; font-weight: 600;">dev3Masud</a></span>
         </div>
       </div>
     </footer>
 
+  </div>
+
+  <!-- Disclaimer Modal -->
+  <div id="disclaimer-modal" class="modal" aria-hidden="true">
+    <div class="modal-overlay"></div>
+    <div class="modal-content glass-card">
+      <button class="modal-close-btn" aria-label="Close disclaimer modal">&times;</button>
+      <h3>⚖️ Terms & Disclaimer</h3>
+      <div class="modal-body">
+        <p>This threat intelligence feed is compiled automatically from multiple open-source blocklist providers. While extreme care and whitelisting protocols are applied to minimize false positives, it is provided "as-is" without warranty.</p>
+        <p>Users should verify and test filter sets in a staging environment prior to network-wide deployment.</p>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-secondary btn-sm modal-close-btn-action">I Understand</button>
+      </div>
+    </div>
   </div>
 
   <!-- JS Controller -->
