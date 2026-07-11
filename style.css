@@ -603,6 +603,8 @@ header {
 
 .table-wrapper {
   overflow-x: auto;
+  max-height: 550px;
+  overflow-y: auto;
   margin-top: 1.5rem;
   border: 1px solid var(--glass-border);
   border-radius: var(--radius-md);
@@ -626,7 +628,11 @@ th {
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.5px;
-  background: rgba(0, 0, 0, 0.2);
+  background: #0f111a;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  box-shadow: inset 0 -1px 0 var(--glass-border);
 }
 
 td {
