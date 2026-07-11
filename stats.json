@@ -1,18 +1,18 @@
 {
-  "last_updated": "2026-07-11T13:56:39.934339+00:00",
-  "total_domains": 3902851,
+  "last_updated": "2026-07-11T16:56:57.437227+00:00",
+  "total_domains": 3903494,
   "categories": {
-    "malware": 1809444,
+    "malware": 1809446,
     "spam": 24121,
     "tracking": 720751,
-    "nsfw": 1018493,
+    "nsfw": 1019020,
     "dating": 1333,
     "social": 24625,
-    "phishing": 120624,
+    "phishing": 120674,
     "torrent": 34117,
     "cryptomining": 297,
     "gambling": 349508,
-    "ads": 565382
+    "ads": 739364
   },
   "feeds": [
     {
@@ -26,7 +26,7 @@
       "name": "AdGuard Tracking Filter",
       "category": "tracking",
       "success": true,
-      "count": 3514,
+      "count": 3515,
       "error": ""
     },
     {
@@ -47,7 +47,7 @@
       "name": "URLHaus Malware Domains",
       "category": "malware",
       "success": true,
-      "count": 462,
+      "count": 463,
       "error": ""
     },
     {
@@ -58,17 +58,17 @@
       "error": ""
     },
     {
+      "name": "Phishing Army",
+      "category": "phishing",
+      "success": true,
+      "count": 145395,
+      "error": ""
+    },
+    {
       "name": "BlockList Project - Facebook",
       "category": "social",
       "success": true,
       "count": 22362,
-      "error": ""
-    },
-    {
-      "name": "Phishing Army",
-      "category": "phishing",
-      "success": true,
-      "count": 145353,
       "error": ""
     },
     {
@@ -83,13 +83,6 @@
       "category": "social",
       "success": true,
       "count": 1193,
-      "error": ""
-    },
-    {
-      "name": "BlockList Project - Porn (NSFW)",
-      "category": "nsfw",
-      "success": true,
-      "count": 953397,
       "error": ""
     },
     {
@@ -114,13 +107,6 @@
       "error": ""
     },
     {
-      "name": "FadeMind Spam Hosts",
-      "category": "spam",
-      "success": true,
-      "count": 57,
-      "error": ""
-    },
-    {
       "name": "StevenBlack NSFW Alternate",
       "category": "nsfw",
       "success": true,
@@ -128,10 +114,10 @@
       "error": ""
     },
     {
-      "name": "Sakib-m Torrent Trackers List",
-      "category": "torrent",
+      "name": "FadeMind Spam Hosts",
+      "category": "spam",
       "success": true,
-      "count": 461,
+      "count": 57,
       "error": ""
     },
     {
@@ -142,6 +128,20 @@
       "error": ""
     },
     {
+      "name": "Sakib-m Torrent Trackers List",
+      "category": "torrent",
+      "success": true,
+      "count": 461,
+      "error": ""
+    },
+    {
+      "name": "BlockList Project - Porn (NSFW)",
+      "category": "nsfw",
+      "success": true,
+      "count": 953397,
+      "error": ""
+    },
+    {
       "name": "EasyPrivacy Tracking List",
       "category": "tracking",
       "success": true,
@@ -149,17 +149,17 @@
       "error": ""
     },
     {
-      "name": "Polish Filters Team - KADhosts",
-      "category": "ads",
-      "success": true,
-      "count": 45854,
-      "error": ""
-    },
-    {
       "name": "DandelionSprout Anti-Malware",
       "category": "malware",
       "success": true,
       "count": 12325,
+      "error": ""
+    },
+    {
+      "name": "Polish Filters Team - KADhosts",
+      "category": "ads",
+      "success": true,
+      "count": 45652,
       "error": ""
     },
     {
@@ -177,13 +177,6 @@
       "error": ""
     },
     {
-      "name": "OISD NSFW Blocklist",
-      "category": "nsfw",
-      "success": true,
-      "count": 394810,
-      "error": ""
-    },
-    {
       "name": "HaGeZi NSFW (Adult)",
       "category": "nsfw",
       "success": true,
@@ -194,7 +187,14 @@
       "name": "OISD Big Blocklist",
       "category": "ads",
       "success": true,
-      "count": 328814,
+      "count": 513902,
+      "error": ""
+    },
+    {
+      "name": "OISD NSFW Blocklist",
+      "category": "nsfw",
+      "success": true,
+      "count": 395455,
       "error": ""
     },
     {
