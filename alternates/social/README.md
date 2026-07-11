@@ -3,7 +3,7 @@
 This directory contains the compiled **social** blocklist.
 
 *   **Status**: Active
-*   **Total blocked domains**: `2,780,559`
+*   **Total blocked domains**: `2,780,639`
 *   **Target audience**: Alternate blocklist configuration. Combines the base security blocklist with: malware, phishing, cryptomining, ads, tracking, social.
 
 ---
@@ -14,10 +14,10 @@ This configuration contains lists designed to block the following domain categor
 
 | Category | Blocked Domains | Description |
 | -------- | --------------- | ----------- |
-| 🔴 **Malware Sites** | `1,809,443` | Command & control servers, distribution endpoints, ransomware, and spyware platforms. |
-| 🔴 **Phishing Pages** | `120,538` | Fraudulent login pages, credential harvesting forms, and identity spoofing sites. |
+| 🔴 **Malware Sites** | `1,809,444` | Command & control servers, distribution endpoints, ransomware, and spyware platforms. |
+| 🔴 **Phishing Pages** | `120,624` | Fraudulent login pages, credential harvesting forms, and identity spoofing sites. |
 | 🔴 **Cryptomining** | `297` | Cryptojacking scripts, browser miners, and pool connection endpoints. |
-| 🔴 **Advertising Domains** | `565,251` | Ad delivery networks, promotional servers, and banner scripting endpoints. |
+| 🔴 **Advertising Domains** | `565,333` | Ad delivery networks, promotional servers, and banner scripting endpoints. |
 | 🔴 **Tracking & Telemetry** | `720,754` | Analytics scripts, user profiling telemetry, and commercial data harvesting domains. |
 | 🔴 **Social Tracking** | `24,625` | Social networking trackers, widgets, and domain collectors that profile user browsing. |
 

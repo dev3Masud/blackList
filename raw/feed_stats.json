@@ -7,10 +7,10 @@
     "error": ""
   },
   {
-    "name": "URLHaus Malware Domains",
-    "category": "malware",
+    "name": "NoCoin Cryptomining List",
+    "category": "cryptomining",
     "success": true,
-    "count": 467,
+    "count": 313,
     "error": ""
   },
   {
@@ -21,17 +21,17 @@
     "error": ""
   },
   {
-    "name": "NoCoin Cryptomining List",
-    "category": "cryptomining",
-    "success": true,
-    "count": 313,
-    "error": ""
-  },
-  {
     "name": "Spam404",
     "category": "spam",
     "success": true,
     "count": 8140,
+    "error": ""
+  },
+  {
+    "name": "URLHaus Malware Domains",
+    "category": "malware",
+    "success": true,
+    "count": 467,
     "error": ""
   },
   {
@@ -49,17 +49,17 @@
     "error": ""
   },
   {
+    "name": "Phishing Army",
+    "category": "phishing",
+    "success": true,
+    "count": 145353,
+    "error": ""
+  },
+  {
     "name": "BlockList Project - TikTok",
     "category": "social",
     "success": true,
     "count": 3725,
-    "error": ""
-  },
-  {
-    "name": "Phishing Army",
-    "category": "phishing",
-    "success": true,
-    "count": 145265,
     "error": ""
   },
   {
@@ -105,45 +105,10 @@
     "error": ""
   },
   {
-    "name": "StevenBlack Gambling Alternate",
-    "category": "gambling",
-    "success": true,
-    "count": 84948,
-    "error": ""
-  },
-  {
-    "name": "EasyPrivacy Tracking List",
-    "category": "tracking",
-    "success": true,
-    "count": 42601,
-    "error": ""
-  },
-  {
     "name": "Sakib-m Torrent Trackers List",
     "category": "torrent",
     "success": true,
     "count": 461,
-    "error": ""
-  },
-  {
-    "name": "AdGuard DNS Ads list",
-    "category": "ads",
-    "success": true,
-    "count": 154994,
-    "error": ""
-  },
-  {
-    "name": "Polish Filters Team - KADhosts",
-    "category": "ads",
-    "success": true,
-    "count": 45984,
-    "error": ""
-  },
-  {
-    "name": "DandelionSprout Anti-Malware",
-    "category": "malware",
-    "success": true,
-    "count": 12325,
     "error": ""
   },
   {
@@ -154,10 +119,45 @@
     "error": ""
   },
   {
-    "name": "HaGeZi Multi PRO",
+    "name": "EasyPrivacy Tracking List",
+    "category": "tracking",
+    "success": true,
+    "count": 42601,
+    "error": ""
+  },
+  {
+    "name": "StevenBlack Gambling Alternate",
+    "category": "gambling",
+    "success": true,
+    "count": 84948,
+    "error": ""
+  },
+  {
+    "name": "DandelionSprout Anti-Malware",
+    "category": "malware",
+    "success": true,
+    "count": 12325,
+    "error": ""
+  },
+  {
+    "name": "Polish Filters Team - KADhosts",
     "category": "ads",
     "success": true,
-    "count": 231191,
+    "count": 45984,
+    "error": ""
+  },
+  {
+    "name": "AdGuard DNS Ads list",
+    "category": "ads",
+    "success": true,
+    "count": 154994,
+    "error": ""
+  },
+  {
+    "name": "OISD Big Blocklist",
+    "category": "ads",
+    "success": true,
+    "count": 328786,
     "error": ""
   },
   {
@@ -168,24 +168,17 @@
     "error": ""
   },
   {
-    "name": "OISD Big Blocklist",
-    "category": "ads",
-    "success": true,
-    "count": 328689,
-    "error": ""
-  },
-  {
     "name": "OISD NSFW Blocklist",
     "category": "nsfw",
     "success": true,
-    "count": 393922,
+    "count": 394404,
     "error": ""
   },
   {
-    "name": "HaGeZi Fake (Scam/Spam)",
-    "category": "spam",
+    "name": "HaGeZi Multi PRO",
+    "category": "ads",
     "success": true,
-    "count": 16485,
+    "count": 231191,
     "error": ""
   },
   {
@@ -200,6 +193,13 @@
     "category": "malware",
     "success": true,
     "count": 1517,
+    "error": ""
+  },
+  {
+    "name": "HaGeZi Fake (Scam/Spam)",
+    "category": "spam",
+    "success": true,
+    "count": 16485,
     "error": ""
   },
   {
