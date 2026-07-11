@@ -25,19 +25,32 @@ def load_config(config_path="config.yaml"):
         sys.exit(1)
 
 def load_whitelist(whitelist_path="whitelist.txt"):
-    """Loads whitelist.txt, ignoring comments and empty lines."""
+    """Loads whitelist.txt and any .txt files inside the whitelist/ folder, ignoring comments and empty lines."""
     whitelist = set()
-    if not os.path.exists(whitelist_path):
-        print(f"[!] Whitelist file {whitelist_path} not found. Proceeding with empty whitelist.")
-        return whitelist
+    
+    # 1. Load primary whitelist file
+    if os.path.exists(whitelist_path):
+        with open(whitelist_path, 'r') as f:
+            for line in f:
+                line = line.strip()
+                if not line or line.startswith('#'):
+                    continue
+                whitelist.add(line.lower())
 
-    with open(whitelist_path, 'r') as f:
-        for line in f:
-            line = line.strip()
-            if not line or line.startswith('#'):
-                continue
-            whitelist.add(line.lower())
-    print(f"[+] Loaded {len(whitelist)} whitelisted domains/rules.")
+    # 2. Load any extra whitelist files inside the whitelist/ folder
+    whitelist_dir = "whitelist"
+    if os.path.exists(whitelist_dir) and os.path.isdir(whitelist_dir):
+        for filename in os.listdir(whitelist_dir):
+            file_path = os.path.join(whitelist_dir, filename)
+            if os.path.isfile(file_path) and filename.endswith('.txt'):
+                with open(file_path, 'r') as f:
+                    for line in f:
+                        line = line.strip()
+                        if not line or line.startswith('#'):
+                            continue
+                        whitelist.add(line.lower())
+                        
+    print(f"[+] Loaded {len(whitelist)} whitelisted domains/rules from {whitelist_path} and '{whitelist_dir}/' folder.")
     return whitelist
 
 def is_whitelisted(domain, whitelist):
