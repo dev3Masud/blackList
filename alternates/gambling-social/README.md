@@ -3,7 +3,7 @@
 This directory contains the compiled **gambling-social** blocklist.
 
 *   **Status**: Active
-*   **Total blocked domains**: `2,968,174`
+*   **Total blocked domains**: `3,002,358`
 *   **Target audience**: Alternate blocklist configuration. Combines the base security blocklist with: malware, phishing, cryptomining, ads, tracking, gambling, social.
 
 ---
@@ -14,12 +14,12 @@ This configuration contains lists designed to block the following domain categor
 
 | Category | Blocked Domains | Description |
 | -------- | --------------- | ----------- |
-| 🔴 **Malware Sites** | `1,780,468` | Command & control servers, distribution endpoints, ransomware, and spyware platforms. |
-| 🔴 **Phishing Pages** | `120,582` | Fraudulent login pages, credential harvesting forms, and identity spoofing sites. |
+| 🔴 **Malware Sites** | `1,809,443` | Command & control servers, distribution endpoints, ransomware, and spyware platforms. |
+| 🔴 **Phishing Pages** | `120,538` | Fraudulent login pages, credential harvesting forms, and identity spoofing sites. |
 | 🔴 **Cryptomining** | `297` | Cryptojacking scripts, browser miners, and pool connection endpoints. |
-| 🔴 **Advertising Domains** | `564,338` | Ad delivery networks, promotional servers, and banner scripting endpoints. |
-| 🔴 **Tracking & Telemetry** | `718,193` | Analytics scripts, user profiling telemetry, and commercial data harvesting domains. |
-| 🔴 **Gambling & Casinos** | `346,718` | Online betting sites, slot machines, lottery portals, and digital casinos. |
+| 🔴 **Advertising Domains** | `565,251` | Ad delivery networks, promotional servers, and banner scripting endpoints. |
+| 🔴 **Tracking & Telemetry** | `720,754` | Analytics scripts, user profiling telemetry, and commercial data harvesting domains. |
+| 🔴 **Gambling & Casinos** | `349,509` | Online betting sites, slot machines, lottery portals, and digital casinos. |
 | 🔴 **Social Tracking** | `24,625` | Social networking trackers, widgets, and domain collectors that profile user browsing. |
 
 ---

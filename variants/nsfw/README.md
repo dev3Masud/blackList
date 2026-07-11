@@ -3,7 +3,7 @@
 This directory contains the compiled **nsfw** blocklist.
 
 *   **Status**: Active
-*   **Total blocked domains**: `1,016,698`
+*   **Total blocked domains**: `1,017,774`
 *   **Target audience**: Dedicated blocklist for filtering adult content, pornography, and age-restricted domains. Ideal for parental controls.
 
 ---
@@ -14,7 +14,7 @@ This configuration contains lists designed to block the following domain categor
 
 | Category | Blocked Domains | Description |
 | -------- | --------------- | ----------- |
-| 🔴 **NSFW (Adult) Content** | `1,016,698` | Pornography, adult video portals, online dating platforms, and age-restricted domains. |
+| 🔴 **NSFW (Adult) Content** | `1,017,774` | Pornography, adult video portals, online dating platforms, and age-restricted domains. |
 
 ---
 

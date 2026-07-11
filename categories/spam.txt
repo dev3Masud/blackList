@@ -1,6 +1,6 @@
 # Category: SPAM
-# Count: 24094
-# Last updated: 2026-07-11 03:34:08 UTC
+# Count: 24121
+# Last updated: 2026-07-11 09:28:09 UTC
 # Filtered against whitelist to prevent false positives.
 
 001www.com
@@ -219,6 +219,7 @@ abilment.com
 abipartyxxl.de
 abl-finance.com
 abm-industrie.com
+abmdistrib.com
 abodeare.com
 abodeena.com
 abodespot.com
@@ -735,6 +736,7 @@ alturarituals.shop
 aluhsda.com
 alunaclo.de
 aluvea.de
+alverogmbh.myshopify.com
 alvexo-data.com
 alvexo.io
 alwansolarhq.shop
@@ -1384,6 +1386,7 @@ austrittausderkirche.de
 auszeit-seminar.de
 authilama.com
 auto-bund.com
+auto-export-augsburg.de
 auto-handel.org
 auto-logik.de
 auto-partshome.com
@@ -1402,6 +1405,7 @@ autoforum-schoenau.de
 autoforumoberursel.de
 autogalerie29.de
 autogearlabflow.com
+autohaus-ferkl.de
 autohausberg-gmbh.de
 autohausbismuth.de
 autohauselsdorf.de
@@ -1786,6 +1790,7 @@ bdscoffee.com
 be-aetlcnshop.com
 beaccustomed.com
 beachitem.com
+beachwalkbali.com
 beambead.com
 beamdeals.de
 beasthacks.com
@@ -2351,6 +2356,7 @@ bitcoin-lightning.info
 bitcoin-pharmacy.com
 bitcoin-rv.com
 bitcoin-trader.net
+bitcoin-up.io
 bitcoin-xact.fr
 bitcoinarchon.com
 bitcoindecode.io
@@ -2686,6 +2692,7 @@ brasstrack.shop
 braucheschnell.com
 braunboutique.com
 brauneagrar.com
+braunsale.de
 brave-frontier-hack.com
 bravedrawer.com
 bravefrontiercheats.com
@@ -4931,6 +4938,7 @@ deckcalmn.com
 decoderactive.com
 decohousely.com
 decokento.com
+deconestprolab.com
 decookware.com
 decoopy.com
 decor-muse.com
@@ -6086,6 +6094,7 @@ electriz.club
 electro-market-store.com
 electro-redeker.de
 electrokaufen.de
+electrolager.de
 electronia24.de
 electronicade.com
 electronicgood.com
@@ -6526,6 +6535,7 @@ eugeneoutlet.com
 eulfa.com
 eumarketstores.com
 eumeds24.com
+eumedz.com
 eunits.de
 euonlinedeal.shop
 euortovox.shop
@@ -6678,6 +6688,7 @@ exigul.ru
 exivara24.com
 exklusiv-online.de
 exklusivendesign.com
+exklusivrad.de
 exmovie.xyz
 exo-marketing.com
 exodermin.com
@@ -6728,6 +6739,7 @@ extragamebox.com
 extrahacks.net
 extrahacks.org
 extrajeux.fr
+extralangrotary.com
 extraordiny.com
 extrapassion.club
 extrasdownload.com
@@ -6865,6 +6877,7 @@ fahrradkurier.de
 fahrradladen-brand.de
 fahrradladen-gronau.de
 fahrradladen-hoffmann.de
+fahrradladen-klasen.de
 fahrradladen-neu.com
 fahrradladenbrand.de
 fahrradladende.com
@@ -7192,7 +7205,6 @@ festgeldsicher.at
 festivaldefrente.com
 festoolz.shop
 fetemaf.ru
-fetishmegastore.com
 fettabsaugung-in-koeln.de
 fettverbrenneronline.com
 fetuh.ru
@@ -8532,7 +8544,6 @@ galerie-kaufhaus.de
 galeriemodehaus.com
 galerieoswald.de
 galeryfile.com
-galileofx.com
 galleria-kaufhof.de
 gamble-garden.fun
 gamble.wtf
@@ -11689,10 +11700,12 @@ interactionm.com
 interactivecoins.com
 interactiveoption.com
 interactp.com
+interholz-de.com
 interiordesignusa.com
 interiordome.com
 interiorene.com
 interiorlightingshop.com
+interlux-zentrum.com
 intermaschineauktion.com
 interpellet.at
 intersport-at.myshoplaza.com
@@ -11986,6 +11999,7 @@ jessena.com
 jetpackjoyride.newzgames.com
 jetplayz.com
 jetprofund.net
+jette-handel.de
 jeufax.com
 jeuhack.com
 jeulia.de
@@ -12117,6 +12131,7 @@ jss-investment.com
 jssolution.com
 jtgmarket.com
 jtshoponline.com
+jubin-bicycle.com
 juegos-hack.info
 juegoshackeados.info
 juergen-runge.de
@@ -12157,6 +12172,7 @@ jyskonlinemall.sa.com
 jyxliness.com
 k-apotheke.de
 k-cheats.com
+k-ebikegmbh.de
 k-elite-shop.com
 k4-kulturgarten.de
 k4movie.com
@@ -12171,6 +12187,7 @@ kaddafi.hk
 kadiwo.de
 kadonimo.de
 kadoshops.de
+kaelte-bringer.de
 kaelte-held.com
 kaffee-burg.de
 kaffee-de.com
@@ -12663,6 +12680,8 @@ kleinztransaktion.de
 klempnerwerkzeug.com
 kleversholz.com
 klimabonus2026.at
+klimacare24.de
+klimag.myshopify.com
 klimahaus.myshopify.com
 klimmotorrad.com
 klingerdirndl.com
@@ -13500,6 +13519,7 @@ locomotivey.com
 lodiac.com
 lodischuhedeutschland.com
 lodischuheonlineshop.de
+loewe-osterreich.com
 loewe.co.at
 loewedeutschland.de
 loftmyhub.com
@@ -14512,10 +14532,12 @@ microsoftpointsgeneratordownload.com
 microsotfsstore.com
 microuploaded.com
 midasmarkt.com
+midea-deutschland.de
 midea-europa.de
 midea-europe.de
 midea-germany.de
 midea-klima.de
+midea-portasplit.com
 mideadeutschland.de
 mideaklima.de
 midikleider.com
@@ -15501,6 +15523,7 @@ nestyheim.de
 net-investissement.net
 net4hack.com
 netani.ru
+netatmo.com.de
 netballgame.com
 netcfd.com
 netelektro.com
@@ -16942,7 +16965,6 @@ pharmaplax.com
 pharmaracapital.com
 pharmaright.vu
 pharmaris.net
-pharmaserve.com
 pharmatheke-europe.com
 pharmedio.de
 pharmrx-1.com
@@ -18588,6 +18610,7 @@ rpgenerator.net
 rpgmerchstore.com
 rpgratuit.com
 rprewards.com
+rqhtyztv.shop
 rrsstore.com
 rs-remorque.com
 rtieej.buzz
@@ -19855,6 +19878,7 @@ soft-handel.de
 soft4cash.net
 softdays-shop.de
 softedoo.com
+softelektro.com
 softholics.com
 softkeygens.com
 softritualsco.shop
@@ -20025,7 +20049,6 @@ sourceforsport.com
 southvalley.com.br
 sovectoron-1-naatlasix-losolara.com
 sovkonc.ept.se
-sowaswillichauch.de
 soxfinancial.com
 sozuv.ru
 space-skins.net
@@ -22505,6 +22528,7 @@ veralo.de
 veramodehaus.de
 veranoclothing.de
 veraziahgroup.com
+verbraucherfokus-test.de
 vercc.com.br
 vereinsregisterauszug.at
 verified-download.com
@@ -22531,6 +22555,7 @@ vermontco.com.br
 veroniatno.ru
 veroshell.com
 versand-fuxx-ug.myshopify.com
+versand-kaufhaus.de
 versandhaus-herrmann.de
 versandoase.de
 versandpharma.com
@@ -22734,6 +22759,7 @@ vivagopro.com
 vivahacks.com
 vivaharmoni.com
 vivaia-schuhe.de
+vivaiacollection.com
 vivaiaschuhe.at
 vivaiaschuhe.com
 vivaiaschuhe.de
@@ -22889,6 +22915,7 @@ wachstumsworkshop.de
 waco-logistics.com
 wacoo.de
 wacooball.com
+waerme-pumpen24.de
 waermepumpe-solar.de
 waermewald.de
 waermewelt.com
@@ -23219,6 +23246,7 @@ wernerzapp.de
 wertalmpro.at
 wertexmarkt.de
 wertglanzedelmetall.de
+wertlebenshop.com
 wertovia.com
 wertpuls.de
 weserstore.de
@@ -23936,7 +23964,6 @@ zebracheats.com
 zebrainvest.com
 zedplays.com
 zegnakaufen.de
-zeigdeinbein.de
 zeigebericht.de
 zeigstil.com
 zeit-modehaus.com
