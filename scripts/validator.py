@@ -675,7 +675,11 @@ def write_variant_html(variant_name, count, categories_list, category_domains, c
     </main>
 
     <footer>
-      <p>Maintained and auto-updated daily by the <a href="https://github.com/dev3Masud/blackList" target="_blank">blackList pipeline</a>.</p>
+      <p>Pipeline compiled and auto-updated daily via GitHub Actions.</p>
+      <p style="margin-top: 6px; font-size: 0.8rem; color: var(--text-muted);">
+        Maintained by <a href="https://github.com/dev3Masud" target="_blank">dev3Masud</a> &bull; 
+        <a href="https://github.com/dev3Masud/blackList" target="_blank">GitHub Repository</a>
+      </p>
     </footer>
 
   </div>
