@@ -3,7 +3,7 @@
 This directory contains the compiled **high** blocklist.
 
 *   **Status**: Active
-*   **Total blocked domains**: `3,070,723`
+*   **Total blocked domains**: `3,070,804`
 *   **Target audience**: Maximum security ruleset. Blocks ads, trackers, malware, spam, dating, social tracking, gambling, and torrent networks. May block some web features.
 
 ---
@@ -14,10 +14,10 @@ This configuration contains lists designed to block the following domain categor
 
 | Category | Blocked Domains | Description |
 | -------- | --------------- | ----------- |
-| 🔴 **Malware Sites** | `1,841,096` | Command & control servers, distribution endpoints, ransomware, and spyware platforms. |
-| 🔴 **Phishing Pages** | `120,620` | Fraudulent login pages, credential harvesting forms, and identity spoofing sites. |
+| 🔴 **Malware Sites** | `1,841,098` | Command & control servers, distribution endpoints, ransomware, and spyware platforms. |
+| 🔴 **Phishing Pages** | `120,404` | Fraudulent login pages, credential harvesting forms, and identity spoofing sites. |
 | 🔴 **Cryptomining** | `297` | Cryptojacking scripts, browser miners, and pool connection endpoints. |
-| 🔴 **Advertising Domains** | `565,997` | Ad delivery networks, promotional servers, and banner scripting endpoints. |
+| 🔴 **Advertising Domains** | `566,102` | Ad delivery networks, promotional servers, and banner scripting endpoints. |
 | 🔴 **Tracking & Telemetry** | `714,857` | Analytics scripts, user profiling telemetry, and commercial data harvesting domains. |
 | 🔴 **Spam & Scam Domains** | `24,114` | Malicious email redirectors, lottery scam landing pages, and deceptive bulk sites. |
 | 🔴 **Dating Portals** | `1,333` | Matchmaking platforms, hookup sites, and related relationship portals. |

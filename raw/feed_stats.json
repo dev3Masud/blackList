@@ -7,13 +7,6 @@
     "error": ""
   },
   {
-    "name": "StevenBlack Adware & Malware",
-    "category": "ads",
-    "success": true,
-    "count": 78462,
-    "error": ""
-  },
-  {
     "name": "AdGuard Tracking Filter",
     "category": "tracking",
     "success": true,
@@ -35,6 +28,13 @@
     "error": ""
   },
   {
+    "name": "StevenBlack Adware & Malware",
+    "category": "ads",
+    "success": true,
+    "count": 78462,
+    "error": ""
+  },
+  {
     "name": "ShadowWhisperer - Dating",
     "category": "dating",
     "success": true,
@@ -42,17 +42,17 @@
     "error": ""
   },
   {
-    "name": "BlockList Project - Porn (NSFW)",
-    "category": "nsfw",
-    "success": true,
-    "count": 953397,
-    "error": ""
-  },
-  {
     "name": "BlockList Project - Facebook",
     "category": "social",
     "success": true,
     "count": 22362,
+    "error": ""
+  },
+  {
+    "name": "Phishing Army",
+    "category": "phishing",
+    "success": true,
+    "count": 145212,
     "error": ""
   },
   {
@@ -67,13 +67,6 @@
     "category": "social",
     "success": true,
     "count": 1193,
-    "error": ""
-  },
-  {
-    "name": "Phishing Army",
-    "category": "phishing",
-    "success": true,
-    "count": 145407,
     "error": ""
   },
   {
@@ -98,6 +91,13 @@
     "error": ""
   },
   {
+    "name": "BlockList Project - Gambling",
+    "category": "gambling",
+    "success": true,
+    "count": 292045,
+    "error": ""
+  },
+  {
     "name": "FadeMind Spam Hosts",
     "category": "spam",
     "success": true,
@@ -119,13 +119,6 @@
     "error": ""
   },
   {
-    "name": "BlockList Project - Gambling",
-    "category": "gambling",
-    "success": true,
-    "count": 292045,
-    "error": ""
-  },
-  {
     "name": "EasyPrivacy Tracking List",
     "category": "tracking",
     "success": true,
@@ -140,6 +133,13 @@
     "error": ""
   },
   {
+    "name": "Polish Filters Team - KADhosts",
+    "category": "ads",
+    "success": true,
+    "count": 43458,
+    "error": ""
+  },
+  {
     "name": "DandelionSprout Anti-Malware",
     "category": "malware",
     "success": true,
@@ -147,17 +147,17 @@
     "error": ""
   },
   {
-    "name": "Polish Filters Team - KADhosts",
+    "name": "HaGeZi Multi PRO",
     "category": "ads",
     "success": true,
-    "count": 45450,
+    "count": 232483,
     "error": ""
   },
   {
-    "name": "OISD NSFW Blocklist",
-    "category": "nsfw",
+    "name": "OISD Big Blocklist",
+    "category": "ads",
     "success": true,
-    "count": 401863,
+    "count": 328500,
     "error": ""
   },
   {
@@ -168,10 +168,17 @@
     "error": ""
   },
   {
-    "name": "OISD Big Blocklist",
-    "category": "ads",
+    "name": "HaGeZi Gambling",
+    "category": "gambling",
     "success": true,
-    "count": 328377,
+    "count": 304752,
+    "error": ""
+  },
+  {
+    "name": "OISD NSFW Blocklist",
+    "category": "nsfw",
+    "success": true,
+    "count": 404637,
     "error": ""
   },
   {
@@ -196,17 +203,10 @@
     "error": ""
   },
   {
-    "name": "HaGeZi Multi PRO",
-    "category": "ads",
+    "name": "HaGeZi Threat Intelligence (TIF)",
+    "category": "malware",
     "success": true,
-    "count": 232483,
-    "error": ""
-  },
-  {
-    "name": "HaGeZi Gambling",
-    "category": "gambling",
-    "success": true,
-    "count": 304752,
+    "count": 1842169,
     "error": ""
   },
   {
@@ -217,17 +217,17 @@
     "error": ""
   },
   {
-    "name": "HaGeZi Threat Intelligence (TIF)",
-    "category": "malware",
-    "success": true,
-    "count": 1842169,
-    "error": ""
-  },
-  {
     "name": "1Hosts Xtra",
     "category": "tracking",
     "success": true,
     "count": 1055169,
+    "error": ""
+  },
+  {
+    "name": "BlockList Project - Porn (NSFW)",
+    "category": "nsfw",
+    "success": true,
+    "count": 953397,
     "error": ""
   }
 ]

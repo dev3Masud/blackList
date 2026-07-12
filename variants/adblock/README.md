@@ -3,7 +3,7 @@
 This directory contains the compiled **adblock** blocklist.
 
 *   **Status**: Active
-*   **Total blocked domains**: `4,022,573`
+*   **Total blocked domains**: `4,024,946`
 *   **Target audience**: Optimized ruleset formatted for browser extensions (uBlock Origin, AdGuard). Supports cosmetic and network blocking.
 
 ---
@@ -14,10 +14,10 @@ This configuration contains lists designed to block the following domain categor
 
 | Category | Blocked Domains | Description |
 | -------- | --------------- | ----------- |
-| 🔴 **Malware Sites** | `1,841,096` | Command & control servers, distribution endpoints, ransomware, and spyware platforms. |
-| 🔴 **Phishing Pages** | `120,620` | Fraudulent login pages, credential harvesting forms, and identity spoofing sites. |
+| 🔴 **Malware Sites** | `1,841,098` | Command & control servers, distribution endpoints, ransomware, and spyware platforms. |
+| 🔴 **Phishing Pages** | `120,404` | Fraudulent login pages, credential harvesting forms, and identity spoofing sites. |
 | 🔴 **Cryptomining** | `297` | Cryptojacking scripts, browser miners, and pool connection endpoints. |
-| 🔴 **Advertising Domains** | `565,997` | Ad delivery networks, promotional servers, and banner scripting endpoints. |
+| 🔴 **Advertising Domains** | `566,102` | Ad delivery networks, promotional servers, and banner scripting endpoints. |
 | 🔴 **Tracking & Telemetry** | `714,857` | Analytics scripts, user profiling telemetry, and commercial data harvesting domains. |
 | 🔴 **Spam & Scam Domains** | `24,114` | Malicious email redirectors, lottery scam landing pages, and deceptive bulk sites. |
 | 🔴 **Dating Portals** | `1,333` | Matchmaking platforms, hookup sites, and related relationship portals. |
@@ -25,7 +25,7 @@ This configuration contains lists designed to block the following domain categor
 | 🔴 **Gambling & Casinos** | `353,368` | Online betting sites, slot machines, lottery portals, and digital casinos. |
 | 🔴 **Torrent & P2P** | `34,528` | BitTorrent trackers, magnet index sites, piracy portals, and peer communication networks. |
 | 🔴 **Scrapers & Crawlers** | `0` | Suspicious automated scraper bots, web scanner networks, and scraping systems. |
-| 🔴 **NSFW (Adult) Content** | `1,025,290` | Pornography, adult video portals, online dating platforms, and age-restricted domains. |
+| 🔴 **NSFW (Adult) Content** | `1,027,649` | Pornography, adult video portals, online dating platforms, and age-restricted domains. |
 
 ---
 

@@ -3,7 +3,7 @@
 This directory contains the compiled **fakenews-gambling** blocklist.
 
 *   **Status**: Active
-*   **Total blocked domains**: `3,012,386`
+*   **Total blocked domains**: `3,012,467`
 *   **Target audience**: Alternate blocklist configuration. Combines the base security blocklist with: malware, phishing, cryptomining, ads, tracking, spam, gambling.
 
 ---
@@ -14,10 +14,10 @@ This configuration contains lists designed to block the following domain categor
 
 | Category | Blocked Domains | Description |
 | -------- | --------------- | ----------- |
-| 🔴 **Malware Sites** | `1,841,096` | Command & control servers, distribution endpoints, ransomware, and spyware platforms. |
-| 🔴 **Phishing Pages** | `120,620` | Fraudulent login pages, credential harvesting forms, and identity spoofing sites. |
+| 🔴 **Malware Sites** | `1,841,098` | Command & control servers, distribution endpoints, ransomware, and spyware platforms. |
+| 🔴 **Phishing Pages** | `120,404` | Fraudulent login pages, credential harvesting forms, and identity spoofing sites. |
 | 🔴 **Cryptomining** | `297` | Cryptojacking scripts, browser miners, and pool connection endpoints. |
-| 🔴 **Advertising Domains** | `565,997` | Ad delivery networks, promotional servers, and banner scripting endpoints. |
+| 🔴 **Advertising Domains** | `566,102` | Ad delivery networks, promotional servers, and banner scripting endpoints. |
 | 🔴 **Tracking & Telemetry** | `714,857` | Analytics scripts, user profiling telemetry, and commercial data harvesting domains. |
 | 🔴 **Spam & Scam Domains** | `24,114` | Malicious email redirectors, lottery scam landing pages, and deceptive bulk sites. |
 | 🔴 **Gambling & Casinos** | `353,368` | Online betting sites, slot machines, lottery portals, and digital casinos. |
