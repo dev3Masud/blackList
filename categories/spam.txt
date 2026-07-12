@@ -1,6 +1,6 @@
 # Category: SPAM
-# Count: 24121
-# Last updated: 2026-07-12 02:27:49 UTC
+# Count: 24114
+# Last updated: 2026-07-12 09:51:03 UTC
 # Filtered against whitelist to prevent false positives.
 
 001www.com
@@ -1790,7 +1790,6 @@ bdscoffee.com
 be-aetlcnshop.com
 beaccustomed.com
 beachitem.com
-beachwalkbali.com
 beambead.com
 beamdeals.de
 beasthacks.com
@@ -2413,7 +2412,6 @@ bksfr.com
 bl-heizoel.de
 black-files.com
 black-shepp-gastroservice.com
-blackfridaymegastore.com
 blackgameworld.com
 blackgamezone.com
 blackgurlzsmagickloset.com
@@ -3985,7 +3983,6 @@ containerslager.com
 containersparks.com
 containerwelt24.com
 containerworldapp.com
-conteneursducoin.com
 contiflexv.com
 continuumdownload.com
 controllerkunst.com
@@ -5798,7 +5795,6 @@ duvuku.ru
 duzeces.com
 dvdrecorders4free.com
 dvdsblurays.com
-dvepare.com
 dvrlists.com
 dw-energieholz.de
 dwelldome.com
@@ -11129,7 +11125,6 @@ hotelladen.com
 hotels-colombo.com
 hotels-inform4281.com
 hotelsinperm.ru
-hotelsinvienna.org
 hotelsofmenorca.com
 hotelwareus.com
 hotelwhales.com
@@ -12258,7 +12253,6 @@ kamagra-original.sk
 kamagra-premium.net
 kamagra-pro.com
 kamagra-pro.net
-kamagra-pro.online
 kamagra-prodej-online.eu
 kamagra-prodej.cz
 kamagra-prodej.online
@@ -16420,7 +16414,6 @@ orderbuycheap.com
 ordergunmagazinesonline.com
 ordermedonline.com
 ordernow24.de
-orderrxstore.com
 ordersurfsite.com
 orderumbrella.com
 ordinarlim.com
@@ -19879,7 +19872,6 @@ soft-handel.de
 soft4cash.net
 softdays-shop.de
 softedoo.com
-softelektro.com
 softholics.com
 softkeygens.com
 softritualsco.shop
@@ -23778,6 +23770,7 @@ yalovakameragunespaneli.com
 yangibeauty.com
 yangzhi.de
 yanjushop.com
+yannelli.net
 yardigen.store
 yashigeoutlet.com
 yavteam.com
