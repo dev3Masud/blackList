@@ -3,7 +3,7 @@
 This directory contains the compiled **porn-social** blocklist.
 
 *   **Status**: Active
-*   **Total blocked domains**: `3,739,270`
+*   **Total blocked domains**: `3,755,967`
 *   **Target audience**: Alternate blocklist configuration. Combines the base security blocklist with: malware, phishing, cryptomining, ads, tracking, nsfw, social.
 
 ---
@@ -14,12 +14,12 @@ This configuration contains lists designed to block the following domain categor
 
 | Category | Blocked Domains | Description |
 | -------- | --------------- | ----------- |
-| 🔴 **Malware Sites** | `1,809,446` | Command & control servers, distribution endpoints, ransomware, and spyware platforms. |
+| 🔴 **Malware Sites** | `1,822,420` | Command & control servers, distribution endpoints, ransomware, and spyware platforms. |
 | 🔴 **Phishing Pages** | `120,674` | Fraudulent login pages, credential harvesting forms, and identity spoofing sites. |
 | 🔴 **Cryptomining** | `297` | Cryptojacking scripts, browser miners, and pool connection endpoints. |
-| 🔴 **Advertising Domains** | `739,364` | Ad delivery networks, promotional servers, and banner scripting endpoints. |
+| 🔴 **Advertising Domains** | `729,846` | Ad delivery networks, promotional servers, and banner scripting endpoints. |
 | 🔴 **Tracking & Telemetry** | `720,751` | Analytics scripts, user profiling telemetry, and commercial data harvesting domains. |
-| 🔴 **NSFW (Adult) Content** | `1,019,020` | Pornography, adult video portals, online dating platforms, and age-restricted domains. |
+| 🔴 **NSFW (Adult) Content** | `1,023,383` | Pornography, adult video portals, online dating platforms, and age-restricted domains. |
 | 🔴 **Social Tracking** | `24,625` | Social networking trackers, widgets, and domain collectors that profile user browsing. |
 
 ---

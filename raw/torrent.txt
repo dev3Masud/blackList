@@ -3088,6 +3088,7 @@ bt.zlofenix.org
 bt02.nnm-club.cc
 bt1.archive.org
 bt1.the9.com
+bt1.xxxxbt.cc
 bt2.54new.com
 bt2.archive.org
 bt2.edwardk.info
@@ -26769,6 +26770,7 @@ seedoff.net
 seedpeer.com
 seedpeer.eu
 seedpeer.me
+seedpeer.net
 seedpeer.unblocked.llc
 seedr.cc
 seeds-zone.com
@@ -30152,7 +30154,6 @@ torrentfarm.com
 torrentfeed.xyz
 torrentfile.net
 torrentfilmes.net
-torrentfilmesagora.net
 torrentfilmeshd.com
 torrentfilmindir.com
 torrentfinder.ru
@@ -31734,7 +31735,6 @@ unblockedgames1024.com
 unblockedgames66.info
 unblockedgames67.xyz
 unblockedgames6969.us
-unblockedgames6x.top
 unblockedgames6x.xyz
 unblockedgames76.biz
 unblockedgames76.website

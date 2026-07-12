@@ -1,6 +1,6 @@
 # Category: SPAM
 # Count: 24121
-# Last updated: 2026-07-11 16:56:58 UTC
+# Last updated: 2026-07-12 02:27:49 UTC
 # Filtered against whitelist to prevent false positives.
 
 001www.com
@@ -13283,6 +13283,7 @@ levitraeurope.com
 levne-kamagra.online
 levoit.co.at
 levonis.de
+levorelio.net
 levtexhomebedsetssale.com
 levuna.ch
 leworkshops.com
@@ -23777,7 +23778,6 @@ yalovakameragunespaneli.com
 yangibeauty.com
 yangzhi.de
 yanjushop.com
-yannelli.net
 yardigen.store
 yashigeoutlet.com
 yavteam.com

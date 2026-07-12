@@ -1,6 +1,6 @@
 # Category: TORRENT
-# Count: 34117
-# Last updated: 2026-07-11 16:56:59 UTC
+# Count: 34116
+# Last updated: 2026-07-12 02:27:50 UTC
 # Filtered against whitelist to prevent false positives.
 
 00-torrnets.com
@@ -26718,6 +26718,7 @@ seedoff.net
 seedpeer.com
 seedpeer.eu
 seedpeer.me
+seedpeer.net
 seedpeer.unblocked.llc
 seedr.cc
 seeds-zone.com
@@ -30095,7 +30096,6 @@ torrentfarm.com
 torrentfeed.xyz
 torrentfile.net
 torrentfilmes.net
-torrentfilmesagora.net
 torrentfilmeshd.com
 torrentfilmindir.com
 torrentfinder.ru
@@ -31613,7 +31613,6 @@ unblockedgames1024.com
 unblockedgames66.info
 unblockedgames67.xyz
 unblockedgames6969.us
-unblockedgames6x.top
 unblockedgames6x.xyz
 unblockedgames76.biz
 unblockedgames76.website
