@@ -3,7 +3,7 @@ name: Cleanup Workflow Run History
 on:
   schedule:
     - cron: '0 0 */4 * *' # Every 4 days at midnight UTC
-  workflow_dispatch: # Allow manual trigger
+  workflow_dispatch:
 
 permissions:
   actions: write
@@ -14,23 +14,24 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
       - name: Delete failed/cancelled runs
         run: |
-          echo "Cleaning up failed and cancelled workflow runs..."
-          gh run list --status failure --limit 100 --json databaseId -q '.[].databaseId' | xargs -r gh run delete --yes || true
-          gh run list --status cancelled --limit 100 --json databaseId -q '.[].databaseId' | xargs -r gh run delete --yes || true
+          gh run list --repo ${{ github.repository }} --status failure --limit 100 --json databaseId -q '.[].databaseId' | xargs -r gh run delete --repo ${{ github.repository }} --yes || true
+          gh run list --repo ${{ github.repository }} --status cancelled --limit 100 --json databaseId -q '.[].databaseId' | xargs -r gh run delete --repo ${{ github.repository }} --yes || true
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Delete old successful runs (older than 7 days)
         run: |
-          echo "Cleaning up old successful runs..."
           cutoff=$(date -u -d '7 days ago' +%Y-%m-%dT%H:%M:%SZ)
-          gh run list --status completed --limit 500 --json databaseId,createdAt -q \
+          gh run list --repo ${{ github.repository }} --status completed --limit 500 --json databaseId,createdAt -q \
             ".[] | select(.createdAt < \"$cutoff\") | .databaseId" | \
-            xargs -r gh run delete --yes || true
-          gh run list --status success --limit 500 --json databaseId,createdAt -q \
+            xargs -r gh run delete --repo ${{ github.repository }} --yes || true
+          gh run list --repo ${{ github.repository }} --status success --limit 500 --json databaseId,createdAt -q \
             ".[] | select(.createdAt < \"$cutoff\") | .databaseId" | \
-            xargs -r gh run delete --yes || true
+            xargs -r gh run delete --repo ${{ github.repository }} --yes || true
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
