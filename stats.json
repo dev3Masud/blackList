@@ -1,27 +1,20 @@
 {
-  "last_updated": "2026-07-21T10:26:21.010331+00:00",
-  "total_domains": 4224830,
+  "last_updated": "2026-07-21T17:17:42.158780+00:00",
+  "total_domains": 4227140,
   "categories": {
     "social": 24625,
     "tracking": 725813,
     "dating": 1343,
-    "malware": 2244834,
+    "malware": 2244835,
     "spam": 24673,
     "cryptomining": 297,
-    "torrent": 36997,
+    "torrent": 36998,
     "gambling": 392778,
-    "phishing": 125658,
-    "ads": 592788,
-    "nsfw": 1097962
+    "phishing": 127189,
+    "ads": 594686,
+    "nsfw": 1099031
   },
   "feeds": [
-    {
-      "name": "StevenBlack Adware & Malware",
-      "category": "ads",
-      "success": true,
-      "count": 80885,
-      "error": ""
-    },
     {
       "name": "AdGuard Tracking Filter",
       "category": "tracking",
@@ -30,10 +23,17 @@
       "error": ""
     },
     {
-      "name": "Spam404",
-      "category": "spam",
+      "name": "StevenBlack Adware & Malware",
+      "category": "ads",
       "success": true,
-      "count": 8140,
+      "count": 80885,
+      "error": ""
+    },
+    {
+      "name": "NoCoin Cryptomining List",
+      "category": "cryptomining",
+      "success": true,
+      "count": 313,
       "error": ""
     },
     {
@@ -44,10 +44,10 @@
       "error": ""
     },
     {
-      "name": "NoCoin Cryptomining List",
-      "category": "cryptomining",
+      "name": "Spam404",
+      "category": "spam",
       "success": true,
-      "count": 313,
+      "count": 8140,
       "error": ""
     },
     {
@@ -62,6 +62,13 @@
       "category": "social",
       "success": true,
       "count": 22362,
+      "error": ""
+    },
+    {
+      "name": "Phishing Army",
+      "category": "phishing",
+      "success": true,
+      "count": 152073,
       "error": ""
     },
     {
@@ -86,17 +93,17 @@
       "error": ""
     },
     {
-      "name": "Phishing Army",
-      "category": "phishing",
-      "success": true,
-      "count": 150603,
-      "error": ""
-    },
-    {
       "name": "BlockList Project - Torrent & Piracy",
       "category": "torrent",
       "success": true,
       "count": 2620,
+      "error": ""
+    },
+    {
+      "name": "StevenBlack NSFW Alternate",
+      "category": "nsfw",
+      "success": true,
+      "count": 157090,
       "error": ""
     },
     {
@@ -107,10 +114,10 @@
       "error": ""
     },
     {
-      "name": "StevenBlack NSFW Alternate",
-      "category": "nsfw",
+      "name": "StevenBlack Gambling Alternate",
+      "category": "gambling",
       "success": true,
-      "count": 157090,
+      "count": 87411,
       "error": ""
     },
     {
@@ -128,20 +135,6 @@
       "error": ""
     },
     {
-      "name": "StevenBlack Gambling Alternate",
-      "category": "gambling",
-      "success": true,
-      "count": 87411,
-      "error": ""
-    },
-    {
-      "name": "Sakib-m Torrent Trackers List",
-      "category": "torrent",
-      "success": true,
-      "count": 475,
-      "error": ""
-    },
-    {
       "name": "EasyPrivacy Tracking List",
       "category": "tracking",
       "success": true,
@@ -149,10 +142,10 @@
       "error": ""
     },
     {
-      "name": "AdGuard DNS Ads list",
+      "name": "Polish Filters Team - KADhosts",
       "category": "ads",
       "success": true,
-      "count": 157648,
+      "count": 56522,
       "error": ""
     },
     {
@@ -163,24 +156,31 @@
       "error": ""
     },
     {
+      "name": "AdGuard DNS Ads list",
+      "category": "ads",
+      "success": true,
+      "count": 157648,
+      "error": ""
+    },
+    {
+      "name": "HaGeZi Multi PRO",
+      "category": "ads",
+      "success": true,
+      "count": 257132,
+      "error": ""
+    },
+    {
       "name": "OISD Big Blocklist",
       "category": "ads",
       "success": true,
-      "count": 328018,
+      "count": 329947,
       "error": ""
     },
     {
       "name": "OISD NSFW Blocklist",
       "category": "nsfw",
       "success": true,
-      "count": 467265,
-      "error": ""
-    },
-    {
-      "name": "Polish Filters Team - KADhosts",
-      "category": "ads",
-      "success": true,
-      "count": 53192,
+      "count": 468377,
       "error": ""
     },
     {
@@ -191,24 +191,17 @@
       "error": ""
     },
     {
-      "name": "HaGeZi Fake (Scam/Spam)",
-      "category": "spam",
-      "success": true,
-      "count": 17037,
-      "error": ""
-    },
-    {
-      "name": "HaGeZi Gambling",
-      "category": "gambling",
-      "success": true,
-      "count": 342499,
-      "error": ""
-    },
-    {
       "name": "HaGeZi Anti-Piracy (Torrent)",
       "category": "torrent",
       "success": true,
       "count": 35897,
+      "error": ""
+    },
+    {
+      "name": "HaGeZi Fake (Scam/Spam)",
+      "category": "spam",
+      "success": true,
+      "count": 17037,
       "error": ""
     },
     {
@@ -219,10 +212,10 @@
       "error": ""
     },
     {
-      "name": "HaGeZi Multi PRO",
-      "category": "ads",
+      "name": "HaGeZi Gambling",
+      "category": "gambling",
       "success": true,
-      "count": 257132,
+      "count": 342499,
       "error": ""
     },
     {
@@ -244,6 +237,13 @@
       "category": "malware",
       "success": true,
       "count": 2246045,
+      "error": ""
+    },
+    {
+      "name": "Sakib-m Torrent Trackers List",
+      "category": "torrent",
+      "success": true,
+      "count": 476,
       "error": ""
     }
   ]
