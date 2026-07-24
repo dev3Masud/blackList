@@ -1,18 +1,18 @@
 {
-  "last_updated": "2026-07-24T10:17:14.653842+00:00",
-  "total_domains": 4277985,
+  "last_updated": "2026-07-24T17:29:54.962695+00:00",
+  "total_domains": 4294497,
   "categories": {
-    "gambling": 410299,
+    "gambling": 411650,
     "dating": 1343,
     "cryptomining": 297,
-    "malware": 2058816,
-    "tracking": 730681,
+    "malware": 2074410,
+    "tracking": 730678,
     "social": 24625,
     "spam": 24702,
-    "torrent": 37576,
-    "ads": 591958,
-    "phishing": 128654,
-    "nsfw": 1102698
+    "torrent": 37574,
+    "ads": 560297,
+    "phishing": 129268,
+    "nsfw": 1103528
   },
   "feeds": [
     {
@@ -23,24 +23,17 @@
       "error": ""
     },
     {
-      "name": "AdGuard Tracking Filter",
-      "category": "tracking",
-      "success": true,
-      "count": 3514,
-      "error": ""
-    },
-    {
       "name": "URLHaus Malware Domains",
       "category": "malware",
       "success": true,
-      "count": 611,
+      "count": 612,
       "error": ""
     },
     {
-      "name": "StevenBlack Adware & Malware",
-      "category": "ads",
+      "name": "AdGuard Tracking Filter",
+      "category": "tracking",
       "success": true,
-      "count": 93167,
+      "count": 3508,
       "error": ""
     },
     {
@@ -48,6 +41,13 @@
       "category": "spam",
       "success": true,
       "count": 8140,
+      "error": ""
+    },
+    {
+      "name": "StevenBlack Adware & Malware",
+      "category": "ads",
+      "success": true,
+      "count": 93167,
       "error": ""
     },
     {
@@ -65,20 +65,6 @@
       "error": ""
     },
     {
-      "name": "BlockList Project - Porn (NSFW)",
-      "category": "nsfw",
-      "success": true,
-      "count": 953393,
-      "error": ""
-    },
-    {
-      "name": "BlockList Project - Twitter",
-      "category": "social",
-      "success": true,
-      "count": 1193,
-      "error": ""
-    },
-    {
       "name": "BlockList Project - TikTok",
       "category": "social",
       "success": true,
@@ -89,7 +75,14 @@
       "name": "Phishing Army",
       "category": "phishing",
       "success": true,
-      "count": 153340,
+      "count": 153977,
+      "error": ""
+    },
+    {
+      "name": "BlockList Project - Twitter",
+      "category": "social",
+      "success": true,
+      "count": 1193,
       "error": ""
     },
     {
@@ -114,17 +107,17 @@
       "error": ""
     },
     {
+      "name": "BlockList Project - Gambling",
+      "category": "gambling",
+      "success": true,
+      "count": 342623,
+      "error": ""
+    },
+    {
       "name": "FadeMind Spam Hosts",
       "category": "spam",
       "success": true,
       "count": 57,
-      "error": ""
-    },
-    {
-      "name": "StevenBlack Gambling Alternate",
-      "category": "gambling",
-      "success": true,
-      "count": 99664,
       "error": ""
     },
     {
@@ -135,31 +128,38 @@
       "error": ""
     },
     {
+      "name": "BlockList Project - Porn (NSFW)",
+      "category": "nsfw",
+      "success": true,
+      "count": 953393,
+      "error": ""
+    },
+    {
       "name": "EasyPrivacy Tracking List",
       "category": "tracking",
       "success": true,
-      "count": 42648,
+      "count": 42655,
+      "error": ""
+    },
+    {
+      "name": "StevenBlack Gambling Alternate",
+      "category": "gambling",
+      "success": true,
+      "count": 99664,
+      "error": ""
+    },
+    {
+      "name": "Polish Filters Team - KADhosts",
+      "category": "ads",
+      "success": true,
+      "count": 60665,
       "error": ""
     },
     {
       "name": "AdGuard DNS Ads list",
       "category": "ads",
       "success": true,
-      "count": 158274,
-      "error": ""
-    },
-    {
-      "name": "BlockList Project - Gambling",
-      "category": "gambling",
-      "success": true,
-      "count": 342623,
-      "error": ""
-    },
-    {
-      "name": "OISD NSFW Blocklist",
-      "category": "nsfw",
-      "success": true,
-      "count": 463174,
+      "count": 158861,
       "error": ""
     },
     {
@@ -170,45 +170,38 @@
       "error": ""
     },
     {
-      "name": "Polish Filters Team - KADhosts",
+      "name": "HaGeZi Multi PRO",
       "category": "ads",
       "success": true,
-      "count": 60638,
+      "count": 221918,
       "error": ""
     },
     {
-      "name": "OISD Big Blocklist",
-      "category": "ads",
+      "name": "OISD NSFW Blocklist",
+      "category": "nsfw",
       "success": true,
-      "count": 332729,
+      "count": 463846,
       "error": ""
     },
     {
       "name": "HaGeZi NSFW (Adult)",
       "category": "nsfw",
       "success": true,
-      "count": 110770,
+      "count": 111055,
+      "error": ""
+    },
+    {
+      "name": "OISD Big Blocklist",
+      "category": "ads",
+      "success": true,
+      "count": 333292,
       "error": ""
     },
     {
       "name": "HaGeZi Anti-Piracy (Torrent)",
       "category": "torrent",
       "success": true,
-      "count": 36475,
-      "error": ""
-    },
-    {
-      "name": "HaGeZi Dynamic DNS",
-      "category": "malware",
-      "success": true,
-      "count": 1524,
-      "error": ""
-    },
-    {
-      "name": "HaGeZi Multi PRO",
-      "category": "ads",
-      "success": true,
-      "count": 253748,
+      "count": 36473,
       "error": ""
     },
     {
@@ -219,17 +212,17 @@
       "error": ""
     },
     {
-      "name": "HaGeZi Gambling",
-      "category": "gambling",
+      "name": "HaGeZi Dynamic DNS",
+      "category": "malware",
       "success": true,
-      "count": 353674,
+      "count": 1524,
       "error": ""
     },
     {
-      "name": "HaGeZi Threat Intelligence (TIF)",
-      "category": "malware",
+      "name": "HaGeZi Gambling",
+      "category": "gambling",
       "success": true,
-      "count": 2059949,
+      "count": 355025,
       "error": ""
     },
     {
@@ -244,6 +237,13 @@
       "category": "tracking",
       "success": true,
       "count": 1062226,
+      "error": ""
+    },
+    {
+      "name": "HaGeZi Threat Intelligence (TIF)",
+      "category": "malware",
+      "success": true,
+      "count": 2075541,
       "error": ""
     }
   ]
