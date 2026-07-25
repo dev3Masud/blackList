@@ -1,20 +1,27 @@
 {
-  "last_updated": "2026-07-24T17:29:54.962695+00:00",
-  "total_domains": 4294497,
+  "last_updated": "2026-07-25T02:21:58.986329+00:00",
+  "total_domains": 4278681,
   "categories": {
-    "gambling": 411650,
+    "gambling": 412329,
     "dating": 1343,
     "cryptomining": 297,
-    "malware": 2074410,
+    "malware": 2078920,
     "tracking": 730678,
     "social": 24625,
     "spam": 24702,
-    "torrent": 37574,
-    "ads": 560297,
-    "phishing": 129268,
-    "nsfw": 1103528
+    "torrent": 37579,
+    "ads": 560565,
+    "phishing": 129485,
+    "nsfw": 1080333
   },
   "feeds": [
+    {
+      "name": "AdGuard Tracking Filter",
+      "category": "tracking",
+      "success": true,
+      "count": 3508,
+      "error": ""
+    },
     {
       "name": "NoCoin Cryptomining List",
       "category": "cryptomining",
@@ -26,21 +33,7 @@
       "name": "URLHaus Malware Domains",
       "category": "malware",
       "success": true,
-      "count": 612,
-      "error": ""
-    },
-    {
-      "name": "AdGuard Tracking Filter",
-      "category": "tracking",
-      "success": true,
-      "count": 3508,
-      "error": ""
-    },
-    {
-      "name": "Spam404",
-      "category": "spam",
-      "success": true,
-      "count": 8140,
+      "count": 604,
       "error": ""
     },
     {
@@ -48,6 +41,13 @@
       "category": "ads",
       "success": true,
       "count": 93167,
+      "error": ""
+    },
+    {
+      "name": "Spam404",
+      "category": "spam",
+      "success": true,
+      "count": 8140,
       "error": ""
     },
     {
@@ -65,17 +65,10 @@
       "error": ""
     },
     {
-      "name": "BlockList Project - TikTok",
-      "category": "social",
-      "success": true,
-      "count": 3725,
-      "error": ""
-    },
-    {
       "name": "Phishing Army",
       "category": "phishing",
       "success": true,
-      "count": 153977,
+      "count": 154131,
       "error": ""
     },
     {
@@ -83,6 +76,13 @@
       "category": "social",
       "success": true,
       "count": 1193,
+      "error": ""
+    },
+    {
+      "name": "BlockList Project - TikTok",
+      "category": "social",
+      "success": true,
+      "count": 3725,
       "error": ""
     },
     {
@@ -121,17 +121,17 @@
       "error": ""
     },
     {
-      "name": "Sakib-m Torrent Trackers List",
-      "category": "torrent",
+      "name": "StevenBlack Gambling Alternate",
+      "category": "gambling",
       "success": true,
-      "count": 478,
+      "count": 99664,
       "error": ""
     },
     {
-      "name": "BlockList Project - Porn (NSFW)",
-      "category": "nsfw",
+      "name": "Sakib-m Torrent Trackers List",
+      "category": "torrent",
       "success": true,
-      "count": 953393,
+      "count": 479,
       "error": ""
     },
     {
@@ -142,24 +142,17 @@
       "error": ""
     },
     {
-      "name": "StevenBlack Gambling Alternate",
-      "category": "gambling",
+      "name": "BlockList Project - Porn (NSFW)",
+      "category": "nsfw",
       "success": true,
-      "count": 99664,
+      "count": 953393,
       "error": ""
     },
     {
-      "name": "Polish Filters Team - KADhosts",
+      "name": "OISD Big Blocklist",
       "category": "ads",
       "success": true,
-      "count": 60665,
-      "error": ""
-    },
-    {
-      "name": "AdGuard DNS Ads list",
-      "category": "ads",
-      "success": true,
-      "count": 158861,
+      "count": 333495,
       "error": ""
     },
     {
@@ -170,38 +163,38 @@
       "error": ""
     },
     {
-      "name": "HaGeZi Multi PRO",
+      "name": "Polish Filters Team - KADhosts",
       "category": "ads",
       "success": true,
-      "count": 221918,
+      "count": 60679,
       "error": ""
     },
     {
-      "name": "OISD NSFW Blocklist",
-      "category": "nsfw",
+      "name": "AdGuard DNS Ads list",
+      "category": "ads",
       "success": true,
-      "count": 463846,
+      "count": 158861,
       "error": ""
     },
     {
       "name": "HaGeZi NSFW (Adult)",
       "category": "nsfw",
       "success": true,
-      "count": 111055,
+      "count": 111222,
       "error": ""
     },
     {
-      "name": "OISD Big Blocklist",
+      "name": "HaGeZi Multi PRO",
       "category": "ads",
       "success": true,
-      "count": 333292,
+      "count": 222217,
       "error": ""
     },
     {
       "name": "HaGeZi Anti-Piracy (Torrent)",
       "category": "torrent",
       "success": true,
-      "count": 36473,
+      "count": 36477,
       "error": ""
     },
     {
@@ -222,7 +215,14 @@
       "name": "HaGeZi Gambling",
       "category": "gambling",
       "success": true,
-      "count": 355025,
+      "count": 355704,
+      "error": ""
+    },
+    {
+      "name": "OISD NSFW Blocklist",
+      "category": "nsfw",
+      "success": true,
+      "count": 436459,
       "error": ""
     },
     {
@@ -233,17 +233,17 @@
       "error": ""
     },
     {
+      "name": "HaGeZi Threat Intelligence (TIF)",
+      "category": "malware",
+      "success": true,
+      "count": 2080051,
+      "error": ""
+    },
+    {
       "name": "1Hosts Xtra",
       "category": "tracking",
       "success": true,
       "count": 1062226,
-      "error": ""
-    },
-    {
-      "name": "HaGeZi Threat Intelligence (TIF)",
-      "category": "malware",
-      "success": true,
-      "count": 2075541,
       "error": ""
     }
   ]
