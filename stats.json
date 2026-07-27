@@ -1,18 +1,18 @@
 {
-  "last_updated": "2026-07-27T11:19:44.178519+00:00",
-  "total_domains": 4338021,
+  "last_updated": "2026-07-27T17:42:42.032741+00:00",
+  "total_domains": 4338870,
   "categories": {
     "gambling": 420263,
     "dating": 1343,
     "cryptomining": 297,
-    "malware": 2115530,
-    "tracking": 742821,
+    "malware": 2115531,
+    "tracking": 742823,
     "social": 24625,
     "spam": 24750,
     "torrent": 38548,
-    "ads": 562576,
-    "phishing": 129046,
-    "nsfw": 1084158
+    "ads": 563015,
+    "phishing": 130056,
+    "nsfw": 1084507
   },
   "feeds": [
     {
@@ -20,6 +20,13 @@
       "category": "cryptomining",
       "success": true,
       "count": 313,
+      "error": ""
+    },
+    {
+      "name": "StevenBlack Adware & Malware",
+      "category": "ads",
+      "success": true,
+      "count": 93167,
       "error": ""
     },
     {
@@ -33,14 +40,7 @@
       "name": "URLHaus Malware Domains",
       "category": "malware",
       "success": true,
-      "count": 361,
-      "error": ""
-    },
-    {
-      "name": "StevenBlack Adware & Malware",
-      "category": "ads",
-      "success": true,
-      "count": 93167,
+      "count": 366,
       "error": ""
     },
     {
@@ -58,13 +58,6 @@
       "error": ""
     },
     {
-      "name": "BlockList Project - Porn (NSFW)",
-      "category": "nsfw",
-      "success": true,
-      "count": 953393,
-      "error": ""
-    },
-    {
       "name": "BlockList Project - Facebook",
       "category": "social",
       "success": true,
@@ -72,10 +65,10 @@
       "error": ""
     },
     {
-      "name": "BlockList Project - Twitter",
-      "category": "social",
+      "name": "BlockList Project - Porn (NSFW)",
+      "category": "nsfw",
       "success": true,
-      "count": 1193,
+      "count": 953393,
       "error": ""
     },
     {
@@ -86,10 +79,17 @@
       "error": ""
     },
     {
+      "name": "BlockList Project - Twitter",
+      "category": "social",
+      "success": true,
+      "count": 1193,
+      "error": ""
+    },
+    {
       "name": "Phishing Army",
       "category": "phishing",
       "success": true,
-      "count": 153571,
+      "count": 154569,
       "error": ""
     },
     {
@@ -145,21 +145,14 @@
       "name": "EasyPrivacy Tracking List",
       "category": "tracking",
       "success": true,
-      "count": 42655,
-      "error": ""
-    },
-    {
-      "name": "Polish Filters Team - KADhosts",
-      "category": "ads",
-      "success": true,
-      "count": 60706,
+      "count": 42667,
       "error": ""
     },
     {
       "name": "AdGuard DNS Ads list",
       "category": "ads",
       "success": true,
-      "count": 158861,
+      "count": 159688,
       "error": ""
     },
     {
@@ -170,31 +163,24 @@
       "error": ""
     },
     {
-      "name": "OISD Big Blocklist",
+      "name": "Polish Filters Team - KADhosts",
       "category": "ads",
       "success": true,
-      "count": 334939,
-      "error": ""
-    },
-    {
-      "name": "HaGeZi Multi PRO",
-      "category": "ads",
-      "success": true,
-      "count": 222601,
+      "count": 62006,
       "error": ""
     },
     {
       "name": "OISD NSFW Blocklist",
       "category": "nsfw",
       "success": true,
-      "count": 439215,
+      "count": 439615,
       "error": ""
     },
     {
-      "name": "HaGeZi Anti-Piracy (Torrent)",
-      "category": "torrent",
+      "name": "OISD Big Blocklist",
+      "category": "ads",
       "success": true,
-      "count": 37447,
+      "count": 335312,
       "error": ""
     },
     {
@@ -205,10 +191,17 @@
       "error": ""
     },
     {
-      "name": "HaGeZi Dynamic DNS",
-      "category": "malware",
+      "name": "HaGeZi Anti-Piracy (Torrent)",
+      "category": "torrent",
       "success": true,
-      "count": 1524,
+      "count": 37447,
+      "error": ""
+    },
+    {
+      "name": "HaGeZi Multi PRO",
+      "category": "ads",
+      "success": true,
+      "count": 222601,
       "error": ""
     },
     {
@@ -216,6 +209,13 @@
       "category": "spam",
       "success": true,
       "count": 17114,
+      "error": ""
+    },
+    {
+      "name": "HaGeZi Dynamic DNS",
+      "category": "malware",
+      "success": true,
+      "count": 1524,
       "error": ""
     },
     {
