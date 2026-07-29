@@ -1,18 +1,18 @@
 {
-  "last_updated": "2026-07-28T17:27:15.150811+00:00",
-  "total_domains": 4370682,
+  "last_updated": "2026-07-29T02:15:52.596846+00:00",
+  "total_domains": 4376146,
   "categories": {
-    "gambling": 425668,
+    "gambling": 425672,
     "dating": 1343,
     "cryptomining": 297,
-    "malware": 2144624,
+    "malware": 2150031,
     "tracking": 741967,
     "social": 24625,
     "spam": 24764,
-    "torrent": 38899,
-    "ads": 564318,
-    "phishing": 130213,
-    "nsfw": 1087856
+    "torrent": 38898,
+    "ads": 564098,
+    "phishing": 130171,
+    "nsfw": 1088457
   },
   "feeds": [
     {
@@ -30,10 +30,10 @@
       "error": ""
     },
     {
-      "name": "URLHaus Malware Domains",
-      "category": "malware",
+      "name": "StevenBlack Adware & Malware",
+      "category": "ads",
       "success": true,
-      "count": 369,
+      "count": 96778,
       "error": ""
     },
     {
@@ -44,10 +44,10 @@
       "error": ""
     },
     {
-      "name": "StevenBlack Adware & Malware",
-      "category": "ads",
+      "name": "URLHaus Malware Domains",
+      "category": "malware",
       "success": true,
-      "count": 96778,
+      "count": 365,
       "error": ""
     },
     {
@@ -58,24 +58,10 @@
       "error": ""
     },
     {
-      "name": "BlockList Project - Porn (NSFW)",
-      "category": "nsfw",
-      "success": true,
-      "count": 953393,
-      "error": ""
-    },
-    {
       "name": "BlockList Project - Facebook",
       "category": "social",
       "success": true,
       "count": 22362,
-      "error": ""
-    },
-    {
-      "name": "BlockList Project - Twitter",
-      "category": "social",
-      "success": true,
-      "count": 1193,
       "error": ""
     },
     {
@@ -86,10 +72,17 @@
       "error": ""
     },
     {
-      "name": "Phishing Army",
-      "category": "phishing",
+      "name": "BlockList Project - Twitter",
+      "category": "social",
       "success": true,
-      "count": 154806,
+      "count": 1193,
+      "error": ""
+    },
+    {
+      "name": "BlockList Project - Porn (NSFW)",
+      "category": "nsfw",
+      "success": true,
+      "count": 953393,
       "error": ""
     },
     {
@@ -100,24 +93,17 @@
       "error": ""
     },
     {
+      "name": "Phishing Army",
+      "category": "phishing",
+      "success": true,
+      "count": 154786,
+      "error": ""
+    },
+    {
       "name": "BlockList Project - Torrent & Piracy",
       "category": "torrent",
       "success": true,
       "count": 2620,
-      "error": ""
-    },
-    {
-      "name": "BlockList Project - Gambling",
-      "category": "gambling",
-      "success": true,
-      "count": 342623,
-      "error": ""
-    },
-    {
-      "name": "FadeMind Spam Hosts",
-      "category": "spam",
-      "success": true,
-      "count": 57,
       "error": ""
     },
     {
@@ -128,17 +114,17 @@
       "error": ""
     },
     {
-      "name": "Sakib-m Torrent Trackers List",
-      "category": "torrent",
-      "success": true,
-      "count": 479,
-      "error": ""
-    },
-    {
       "name": "StevenBlack Gambling Alternate",
       "category": "gambling",
       "success": true,
       "count": 103277,
+      "error": ""
+    },
+    {
+      "name": "FadeMind Spam Hosts",
+      "category": "spam",
+      "success": true,
+      "count": 57,
       "error": ""
     },
     {
@@ -149,24 +135,31 @@
       "error": ""
     },
     {
-      "name": "DandelionSprout Anti-Malware",
-      "category": "malware",
+      "name": "Sakib-m Torrent Trackers List",
+      "category": "torrent",
       "success": true,
-      "count": 12325,
+      "count": 482,
       "error": ""
     },
     {
-      "name": "OISD NSFW Blocklist",
-      "category": "nsfw",
+      "name": "BlockList Project - Gambling",
+      "category": "gambling",
       "success": true,
-      "count": 440865,
+      "count": 342623,
       "error": ""
     },
     {
       "name": "Polish Filters Team - KADhosts",
       "category": "ads",
       "success": true,
-      "count": 62802,
+      "count": 62742,
+      "error": ""
+    },
+    {
+      "name": "DandelionSprout Anti-Malware",
+      "category": "malware",
+      "success": true,
+      "count": 12325,
       "error": ""
     },
     {
@@ -177,38 +170,31 @@
       "error": ""
     },
     {
+      "name": "HaGeZi Multi PRO",
+      "category": "ads",
+      "success": true,
+      "count": 224065,
+      "error": ""
+    },
+    {
       "name": "OISD Big Blocklist",
       "category": "ads",
       "success": true,
-      "count": 337065,
+      "count": 337260,
+      "error": ""
+    },
+    {
+      "name": "OISD NSFW Blocklist",
+      "category": "nsfw",
+      "success": true,
+      "count": 441620,
       "error": ""
     },
     {
       "name": "HaGeZi NSFW (Adult)",
       "category": "nsfw",
       "success": true,
-      "count": 109008,
-      "error": ""
-    },
-    {
-      "name": "HaGeZi Anti-Piracy (Torrent)",
-      "category": "torrent",
-      "success": true,
-      "count": 37798,
-      "error": ""
-    },
-    {
-      "name": "HaGeZi Dynamic DNS",
-      "category": "malware",
-      "success": true,
-      "count": 1524,
-      "error": ""
-    },
-    {
-      "name": "HaGeZi Multi PRO",
-      "category": "ads",
-      "success": true,
-      "count": 225103,
+      "count": 109028,
       "error": ""
     },
     {
@@ -219,10 +205,24 @@
       "error": ""
     },
     {
+      "name": "HaGeZi Anti-Piracy (Torrent)",
+      "category": "torrent",
+      "success": true,
+      "count": 37797,
+      "error": ""
+    },
+    {
+      "name": "HaGeZi Dynamic DNS",
+      "category": "malware",
+      "success": true,
+      "count": 1524,
+      "error": ""
+    },
+    {
       "name": "HaGeZi Gambling",
       "category": "gambling",
       "success": true,
-      "count": 367130,
+      "count": 367134,
       "error": ""
     },
     {
@@ -236,7 +236,7 @@
       "name": "HaGeZi Threat Intelligence (TIF)",
       "category": "malware",
       "success": true,
-      "count": 2146021,
+      "count": 2151430,
       "error": ""
     },
     {
