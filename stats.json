@@ -1,18 +1,18 @@
 {
-  "last_updated": "2026-08-02T09:56:17.175482+00:00",
-  "total_domains": 4504683,
+  "last_updated": "2026-08-02T16:58:14.608638+00:00",
+  "total_domains": 4505413,
   "categories": {
     "gambling": 444461,
     "dating": 1343,
     "cryptomining": 297,
-    "malware": 2157568,
+    "malware": 2157572,
     "tracking": 761861,
     "social": 24625,
     "spam": 24448,
     "torrent": 39631,
-    "ads": 649788,
-    "phishing": 131439,
-    "nsfw": 1147575
+    "ads": 649836,
+    "phishing": 131417,
+    "nsfw": 1148282
   },
   "feeds": [
     {
@@ -23,17 +23,17 @@
       "error": ""
     },
     {
-      "name": "URLHaus Malware Domains",
-      "category": "malware",
-      "success": true,
-      "count": 359,
-      "error": ""
-    },
-    {
       "name": "AdGuard Tracking Filter",
       "category": "tracking",
       "success": true,
       "count": 3509,
+      "error": ""
+    },
+    {
+      "name": "URLHaus Malware Domains",
+      "category": "malware",
+      "success": true,
+      "count": 364,
       "error": ""
     },
     {
@@ -72,13 +72,6 @@
       "error": ""
     },
     {
-      "name": "BlockList Project - Porn (NSFW)",
-      "category": "nsfw",
-      "success": true,
-      "count": 953393,
-      "error": ""
-    },
-    {
       "name": "BlockList Project - Twitter",
       "category": "social",
       "success": true,
@@ -86,10 +79,10 @@
       "error": ""
     },
     {
-      "name": "Phishing Army",
-      "category": "phishing",
+      "name": "BlockList Project - Porn (NSFW)",
+      "category": "nsfw",
       "success": true,
-      "count": 156249,
+      "count": 953393,
       "error": ""
     },
     {
@@ -107,10 +100,17 @@
       "error": ""
     },
     {
-      "name": "StevenBlack NSFW Alternate",
-      "category": "nsfw",
+      "name": "Phishing Army",
+      "category": "phishing",
       "success": true,
-      "count": 175419,
+      "count": 156227,
+      "error": ""
+    },
+    {
+      "name": "BlockList Project - Gambling",
+      "category": "gambling",
+      "success": true,
+      "count": 342623,
       "error": ""
     },
     {
@@ -135,10 +135,10 @@
       "error": ""
     },
     {
-      "name": "BlockList Project - Gambling",
-      "category": "gambling",
+      "name": "StevenBlack NSFW Alternate",
+      "category": "nsfw",
       "success": true,
-      "count": 342623,
+      "count": 175419,
       "error": ""
     },
     {
@@ -166,7 +166,7 @@
       "name": "Polish Filters Team - KADhosts",
       "category": "ads",
       "success": true,
-      "count": 63800,
+      "count": 63358,
       "error": ""
     },
     {
@@ -184,17 +184,10 @@
       "error": ""
     },
     {
-      "name": "OISD Big Blocklist",
-      "category": "ads",
+      "name": "OISD NSFW Blocklist",
+      "category": "nsfw",
       "success": true,
-      "count": 430047,
-      "error": ""
-    },
-    {
-      "name": "HaGeZi Fake (Scam/Spam)",
-      "category": "spam",
-      "success": true,
-      "count": 16812,
+      "count": 515596,
       "error": ""
     },
     {
@@ -212,10 +205,17 @@
       "error": ""
     },
     {
-      "name": "OISD NSFW Blocklist",
-      "category": "nsfw",
+      "name": "HaGeZi Fake (Scam/Spam)",
+      "category": "spam",
       "success": true,
-      "count": 514822,
+      "count": 16812,
+      "error": ""
+    },
+    {
+      "name": "OISD Big Blocklist",
+      "category": "ads",
+      "success": true,
+      "count": 430063,
       "error": ""
     },
     {
