@@ -1,18 +1,18 @@
 {
-  "last_updated": "2026-08-08T16:31:16.874047+00:00",
-  "total_domains": 4489857,
+  "last_updated": "2026-08-09T01:24:34.395018+00:00",
+  "total_domains": 4490131,
   "categories": {
     "gambling": 474193,
     "dating": 1343,
     "cryptomining": 297,
-    "malware": 2192949,
+    "malware": 2192950,
     "tracking": 773775,
     "social": 24625,
     "spam": 24423,
     "torrent": 40801,
-    "ads": 479012,
-    "phishing": 131192,
-    "nsfw": 1132942
+    "ads": 479228,
+    "phishing": 131191,
+    "nsfw": 1133139
   },
   "feeds": [
     {
@@ -26,7 +26,7 @@
       "name": "URLHaus Malware Domains",
       "category": "malware",
       "success": true,
-      "count": 390,
+      "count": 384,
       "error": ""
     },
     {
@@ -58,17 +58,17 @@
       "error": ""
     },
     {
+      "name": "Phishing Army",
+      "category": "phishing",
+      "success": true,
+      "count": 156142,
+      "error": ""
+    },
+    {
       "name": "BlockList Project - Facebook",
       "category": "social",
       "success": true,
       "count": 22362,
-      "error": ""
-    },
-    {
-      "name": "BlockList Project - Porn (NSFW)",
-      "category": "nsfw",
-      "success": true,
-      "count": 953393,
       "error": ""
     },
     {
@@ -83,13 +83,6 @@
       "category": "social",
       "success": true,
       "count": 1193,
-      "error": ""
-    },
-    {
-      "name": "Phishing Army",
-      "category": "phishing",
-      "success": true,
-      "count": 156108,
       "error": ""
     },
     {
@@ -114,6 +107,13 @@
       "error": ""
     },
     {
+      "name": "StevenBlack Gambling Alternate",
+      "category": "gambling",
+      "success": true,
+      "count": 106126,
+      "error": ""
+    },
+    {
       "name": "FadeMind Spam Hosts",
       "category": "spam",
       "success": true,
@@ -121,10 +121,10 @@
       "error": ""
     },
     {
-      "name": "StevenBlack Gambling Alternate",
+      "name": "BlockList Project - Gambling",
       "category": "gambling",
       "success": true,
-      "count": 106126,
+      "count": 342623,
       "error": ""
     },
     {
@@ -142,17 +142,17 @@
       "error": ""
     },
     {
-      "name": "BlockList Project - Gambling",
-      "category": "gambling",
+      "name": "AdGuard DNS Ads list",
+      "category": "ads",
       "success": true,
-      "count": 342623,
+      "count": 162649,
       "error": ""
     },
     {
       "name": "Polish Filters Team - KADhosts",
       "category": "ads",
       "success": true,
-      "count": 62650,
+      "count": 62446,
       "error": ""
     },
     {
@@ -163,24 +163,10 @@
       "error": ""
     },
     {
-      "name": "AdGuard DNS Ads list",
-      "category": "ads",
-      "success": true,
-      "count": 162649,
-      "error": ""
-    },
-    {
-      "name": "OISD Big Blocklist",
-      "category": "ads",
-      "success": true,
-      "count": 253042,
-      "error": ""
-    },
-    {
-      "name": "HaGeZi NSFW (Adult)",
+      "name": "BlockList Project - Porn (NSFW)",
       "category": "nsfw",
       "success": true,
-      "count": 109246,
+      "count": 953393,
       "error": ""
     },
     {
@@ -191,17 +177,24 @@
       "error": ""
     },
     {
+      "name": "HaGeZi NSFW (Adult)",
+      "category": "nsfw",
+      "success": true,
+      "count": 109246,
+      "error": ""
+    },
+    {
+      "name": "OISD Big Blocklist",
+      "category": "ads",
+      "success": true,
+      "count": 253281,
+      "error": ""
+    },
+    {
       "name": "HaGeZi Anti-Piracy (Torrent)",
       "category": "torrent",
       "success": true,
       "count": 39666,
-      "error": ""
-    },
-    {
-      "name": "HaGeZi Dynamic DNS",
-      "category": "malware",
-      "success": true,
-      "count": 1524,
       "error": ""
     },
     {
@@ -212,10 +205,10 @@
       "error": ""
     },
     {
-      "name": "OISD NSFW Blocklist",
-      "category": "nsfw",
+      "name": "HaGeZi Dynamic DNS",
+      "category": "malware",
       "success": true,
-      "count": 488560,
+      "count": 1524,
       "error": ""
     },
     {
@@ -230,6 +223,13 @@
       "category": "ads",
       "success": true,
       "count": 209769,
+      "error": ""
+    },
+    {
+      "name": "OISD NSFW Blocklist",
+      "category": "nsfw",
+      "success": true,
+      "count": 488765,
       "error": ""
     },
     {
