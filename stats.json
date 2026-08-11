@@ -1,34 +1,20 @@
 {
-  "last_updated": "2026-08-11T01:24:25.699245+00:00",
-  "total_domains": 2458705,
+  "last_updated": "2026-08-11T08:52:55.541072+00:00",
+  "total_domains": 2455614,
   "categories": {
     "gambling": 396585,
     "dating": 1343,
     "cryptomining": 297,
-    "malware": 11989,
-    "tracking": 785499,
+    "malware": 11985,
+    "tracking": 782114,
     "social": 24625,
     "spam": 7636,
     "torrent": 2602,
-    "ads": 394510,
-    "phishing": 131083,
-    "nsfw": 1113207
+    "ads": 394569,
+    "phishing": 131180,
+    "nsfw": 1113296
   },
   "feeds": [
-    {
-      "name": "NoCoin Cryptomining List",
-      "category": "cryptomining",
-      "success": true,
-      "count": 313,
-      "error": ""
-    },
-    {
-      "name": "StevenBlack Adware & Malware",
-      "category": "ads",
-      "success": true,
-      "count": 99569,
-      "error": ""
-    },
     {
       "name": "AdGuard Tracking Filter",
       "category": "tracking",
@@ -37,10 +23,24 @@
       "error": ""
     },
     {
+      "name": "NoCoin Cryptomining List",
+      "category": "cryptomining",
+      "success": true,
+      "count": 313,
+      "error": ""
+    },
+    {
       "name": "URLHaus Malware Domains",
       "category": "malware",
       "success": true,
-      "count": 361,
+      "count": 357,
+      "error": ""
+    },
+    {
+      "name": "StevenBlack Adware & Malware",
+      "category": "ads",
+      "success": true,
+      "count": 99569,
       "error": ""
     },
     {
@@ -61,7 +61,7 @@
       "name": "Phishing Army",
       "category": "phishing",
       "success": true,
-      "count": 156071,
+      "count": 156177,
       "error": ""
     },
     {
@@ -100,17 +100,17 @@
       "error": ""
     },
     {
+      "name": "BlockList Project - Gambling",
+      "category": "gambling",
+      "success": true,
+      "count": 342623,
+      "error": ""
+    },
+    {
       "name": "BlockList Project - Porn (NSFW)",
       "category": "nsfw",
       "success": true,
       "count": 953393,
-      "error": ""
-    },
-    {
-      "name": "StevenBlack NSFW Alternate",
-      "category": "nsfw",
-      "success": true,
-      "count": 175696,
       "error": ""
     },
     {
@@ -121,17 +121,10 @@
       "error": ""
     },
     {
-      "name": "BlockList Project - Gambling",
-      "category": "gambling",
+      "name": "StevenBlack NSFW Alternate",
+      "category": "nsfw",
       "success": true,
-      "count": 342623,
-      "error": ""
-    },
-    {
-      "name": "Sakib-m Torrent Trackers List",
-      "category": "torrent",
-      "success": true,
-      "count": 492,
+      "count": 175696,
       "error": ""
     },
     {
@@ -142,6 +135,13 @@
       "error": ""
     },
     {
+      "name": "Sakib-m Torrent Trackers List",
+      "category": "torrent",
+      "success": true,
+      "count": 492,
+      "error": ""
+    },
+    {
       "name": "EasyPrivacy Tracking List",
       "category": "tracking",
       "success": true,
@@ -149,17 +149,24 @@
       "error": ""
     },
     {
-      "name": "Polish Filters Team - KADhosts",
-      "category": "ads",
-      "success": true,
-      "count": 61383,
-      "error": ""
-    },
-    {
       "name": "AdGuard DNS Ads list",
       "category": "ads",
       "success": true,
       "count": 153360,
+      "error": ""
+    },
+    {
+      "name": "HaGeZi Multi PRO",
+      "category": "ads",
+      "success": false,
+      "count": 0,
+      "error": "HTTP 404"
+    },
+    {
+      "name": "OISD Big Blocklist",
+      "category": "ads",
+      "success": true,
+      "count": 251251,
       "error": ""
     },
     {
@@ -177,13 +184,6 @@
       "error": "HTTP 404"
     },
     {
-      "name": "HaGeZi Multi PRO",
-      "category": "ads",
-      "success": false,
-      "count": 0,
-      "error": "HTTP 404"
-    },
-    {
       "name": "HaGeZi NSFW (Adult)",
       "category": "nsfw",
       "success": false,
@@ -191,11 +191,11 @@
       "error": "HTTP 404"
     },
     {
-      "name": "HaGeZi Anti-Piracy (Torrent)",
-      "category": "torrent",
-      "success": false,
-      "count": 0,
-      "error": "HTTP 404"
+      "name": "Polish Filters Team - KADhosts",
+      "category": "ads",
+      "success": true,
+      "count": 61184,
+      "error": ""
     },
     {
       "name": "HaGeZi Fake (Scam/Spam)",
@@ -219,31 +219,31 @@
       "error": "HTTP 404"
     },
     {
-      "name": "OISD Big Blocklist",
-      "category": "ads",
+      "name": "HaGeZi Anti-Piracy (Torrent)",
+      "category": "torrent",
+      "success": false,
+      "count": 0,
+      "error": "HTTP 404"
+    },
+    {
+      "name": "OISD NSFW Blocklist",
+      "category": "nsfw",
       "success": true,
-      "count": 251159,
+      "count": 489652,
       "error": ""
     },
     {
       "name": "1Hosts Lite",
       "category": "ads",
       "success": true,
-      "count": 207207,
-      "error": ""
-    },
-    {
-      "name": "OISD NSFW Blocklist",
-      "category": "nsfw",
-      "success": true,
-      "count": 489567,
+      "count": 205692,
       "error": ""
     },
     {
       "name": "1Hosts Xtra",
       "category": "tracking",
       "success": true,
-      "count": 1121261,
+      "count": 1107944,
       "error": ""
     }
   ]
