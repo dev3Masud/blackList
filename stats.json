@@ -1,18 +1,18 @@
 {
-  "last_updated": "2026-08-13T16:56:18.435417+00:00",
-  "total_domains": 2474307,
+  "last_updated": "2026-08-14T01:42:00.093675+00:00",
+  "total_domains": 4490757,
   "categories": {
     "dating": 1343,
     "social": 24625,
-    "ads": 407803,
-    "gambling": 395766,
+    "ads": 482123,
+    "gambling": 492304,
     "cryptomining": 297,
     "tracking": 785511,
-    "torrent": 2602,
-    "malware": 11999,
-    "nsfw": 1114388,
-    "phishing": 131291,
-    "spam": 7636
+    "torrent": 42089,
+    "malware": 2005742,
+    "nsfw": 1138711,
+    "phishing": 130952,
+    "spam": 24193
   },
   "feeds": [
     {
@@ -23,10 +23,24 @@
       "error": ""
     },
     {
+      "name": "URLHaus Malware Domains",
+      "category": "malware",
+      "success": true,
+      "count": 366,
+      "error": ""
+    },
+    {
       "name": "AdGuard Tracking Filter",
       "category": "tracking",
       "success": true,
       "count": 3522,
+      "error": ""
+    },
+    {
+      "name": "StevenBlack Adware & Malware",
+      "category": "ads",
+      "success": true,
+      "count": 98961,
       "error": ""
     },
     {
@@ -37,24 +51,17 @@
       "error": ""
     },
     {
-      "name": "URLHaus Malware Domains",
-      "category": "malware",
-      "success": true,
-      "count": 371,
-      "error": ""
-    },
-    {
-      "name": "StevenBlack Adware & Malware",
-      "category": "ads",
-      "success": true,
-      "count": 97658,
-      "error": ""
-    },
-    {
       "name": "ShadowWhisperer - Dating",
       "category": "dating",
       "success": true,
       "count": 1353,
+      "error": ""
+    },
+    {
+      "name": "Phishing Army",
+      "category": "phishing",
+      "success": true,
+      "count": 155826,
       "error": ""
     },
     {
@@ -65,13 +72,6 @@
       "error": ""
     },
     {
-      "name": "BlockList Project - TikTok",
-      "category": "social",
-      "success": true,
-      "count": 3725,
-      "error": ""
-    },
-    {
       "name": "BlockList Project - Twitter",
       "category": "social",
       "success": true,
@@ -79,10 +79,17 @@
       "error": ""
     },
     {
-      "name": "Phishing Army",
-      "category": "phishing",
+      "name": "BlockList Project - TikTok",
+      "category": "social",
       "success": true,
-      "count": 156332,
+      "count": 3725,
+      "error": ""
+    },
+    {
+      "name": "BlockList Project - Porn (NSFW)",
+      "category": "nsfw",
+      "success": true,
+      "count": 953393,
       "error": ""
     },
     {
@@ -100,13 +107,6 @@
       "error": ""
     },
     {
-      "name": "StevenBlack NSFW Alternate",
-      "category": "nsfw",
-      "success": true,
-      "count": 173771,
-      "error": ""
-    },
-    {
       "name": "BlockList Project - Gambling",
       "category": "gambling",
       "success": true,
@@ -121,10 +121,10 @@
       "error": ""
     },
     {
-      "name": "StevenBlack Gambling Alternate",
-      "category": "gambling",
+      "name": "StevenBlack NSFW Alternate",
+      "category": "nsfw",
       "success": true,
-      "count": 104234,
+      "count": 175069,
       "error": ""
     },
     {
@@ -149,38 +149,17 @@
       "error": ""
     },
     {
-      "name": "BlockList Project - Porn (NSFW)",
-      "category": "nsfw",
-      "success": true,
-      "count": 953393,
-      "error": ""
-    },
-    {
-      "name": "HaGeZi Multi PRO",
-      "category": "ads",
-      "success": false,
-      "count": 0,
-      "error": "HTTP 404"
-    },
-    {
       "name": "Polish Filters Team - KADhosts",
       "category": "ads",
       "success": true,
-      "count": 62242,
+      "count": 62152,
       "error": ""
     },
     {
-      "name": "HaGeZi Threat Intelligence (TIF)",
-      "category": "malware",
-      "success": false,
-      "count": 0,
-      "error": "HTTP 404"
-    },
-    {
-      "name": "OISD Big Blocklist",
-      "category": "ads",
+      "name": "StevenBlack Gambling Alternate",
+      "category": "gambling",
       "success": true,
-      "count": 265868,
+      "count": 105557,
       "error": ""
     },
     {
@@ -191,52 +170,73 @@
       "error": ""
     },
     {
-      "name": "HaGeZi NSFW (Adult)",
-      "category": "nsfw",
-      "success": false,
-      "count": 0,
-      "error": "HTTP 404"
+      "name": "HaGeZi Multi PRO",
+      "category": "ads",
+      "success": true,
+      "count": 213564,
+      "error": ""
     },
     {
-      "name": "HaGeZi Gambling",
-      "category": "gambling",
-      "success": false,
-      "count": 0,
-      "error": "HTTP 404"
+      "name": "HaGeZi NSFW (Adult)",
+      "category": "nsfw",
+      "success": true,
+      "count": 110339,
+      "error": ""
+    },
+    {
+      "name": "OISD Big Blocklist",
+      "category": "ads",
+      "success": true,
+      "count": 265837,
+      "error": ""
     },
     {
       "name": "HaGeZi Anti-Piracy (Torrent)",
       "category": "torrent",
-      "success": false,
-      "count": 0,
-      "error": "HTTP 404"
-    },
-    {
-      "name": "HaGeZi Dynamic DNS",
-      "category": "malware",
-      "success": false,
-      "count": 0,
-      "error": "HTTP 404"
+      "success": true,
+      "count": 40957,
+      "error": ""
     },
     {
       "name": "HaGeZi Fake (Scam/Spam)",
       "category": "spam",
-      "success": false,
-      "count": 0,
-      "error": "HTTP 404"
+      "success": true,
+      "count": 16557,
+      "error": ""
     },
     {
-      "name": "1Hosts Lite",
-      "category": "ads",
+      "name": "HaGeZi Dynamic DNS",
+      "category": "malware",
       "success": true,
-      "count": 205732,
+      "count": 1524,
+      "error": ""
+    },
+    {
+      "name": "HaGeZi Gambling",
+      "category": "gambling",
+      "success": true,
+      "count": 430948,
       "error": ""
     },
     {
       "name": "OISD NSFW Blocklist",
       "category": "nsfw",
       "success": true,
-      "count": 490909,
+      "count": 491640,
+      "error": ""
+    },
+    {
+      "name": "HaGeZi Threat Intelligence (TIF)",
+      "category": "malware",
+      "success": true,
+      "count": 2006032,
+      "error": ""
+    },
+    {
+      "name": "1Hosts Lite",
+      "category": "ads",
+      "success": true,
+      "count": 205732,
       "error": ""
     },
     {
