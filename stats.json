@@ -1,17 +1,17 @@
 {
-  "last_updated": "2026-08-17T16:25:35.286126+00:00",
-  "total_domains": 4576704,
+  "last_updated": "2026-08-18T01:02:38.230567+00:00",
+  "total_domains": 4577336,
   "categories": {
     "dating": 1345,
     "social": 24625,
-    "ads": 486934,
+    "ads": 487439,
     "gambling": 514332,
     "cryptomining": 297,
-    "tracking": 789830,
+    "tracking": 789831,
     "torrent": 42678,
-    "malware": 2063875,
-    "nsfw": 1142080,
-    "phishing": 131372,
+    "malware": 2063876,
+    "nsfw": 1142140,
+    "phishing": 131657,
     "spam": 24497
   },
   "feeds": [
@@ -26,7 +26,7 @@
       "name": "AdGuard Tracking Filter",
       "category": "tracking",
       "success": true,
-      "count": 3517,
+      "count": 3518,
       "error": ""
     },
     {
@@ -37,17 +37,17 @@
       "error": ""
     },
     {
+      "name": "URLHaus Malware Domains",
+      "category": "malware",
+      "success": true,
+      "count": 346,
+      "error": ""
+    },
+    {
       "name": "Spam404",
       "category": "spam",
       "success": true,
       "count": 8140,
-      "error": ""
-    },
-    {
-      "name": "URLHaus Malware Domains",
-      "category": "malware",
-      "success": true,
-      "count": 339,
       "error": ""
     },
     {
@@ -58,17 +58,17 @@
       "error": ""
     },
     {
+      "name": "Phishing Army",
+      "category": "phishing",
+      "success": true,
+      "count": 156151,
+      "error": ""
+    },
+    {
       "name": "BlockList Project - Facebook",
       "category": "social",
       "success": true,
       "count": 22362,
-      "error": ""
-    },
-    {
-      "name": "BlockList Project - Porn (NSFW)",
-      "category": "nsfw",
-      "success": true,
-      "count": 953393,
       "error": ""
     },
     {
@@ -83,13 +83,6 @@
       "category": "social",
       "success": true,
       "count": 1193,
-      "error": ""
-    },
-    {
-      "name": "Phishing Army",
-      "category": "phishing",
-      "success": true,
-      "count": 155913,
       "error": ""
     },
     {
@@ -111,6 +104,13 @@
       "category": "nsfw",
       "success": true,
       "count": 175069,
+      "error": ""
+    },
+    {
+      "name": "BlockList Project - Gambling",
+      "category": "gambling",
+      "success": true,
+      "count": 342623,
       "error": ""
     },
     {
@@ -142,17 +142,10 @@
       "error": ""
     },
     {
-      "name": "BlockList Project - Gambling",
-      "category": "gambling",
-      "success": true,
-      "count": 342623,
-      "error": ""
-    },
-    {
-      "name": "Polish Filters Team - KADhosts",
+      "name": "AdGuard DNS Ads list",
       "category": "ads",
       "success": true,
-      "count": 61687,
+      "count": 154432,
       "error": ""
     },
     {
@@ -163,17 +156,31 @@
       "error": ""
     },
     {
-      "name": "AdGuard DNS Ads list",
+      "name": "BlockList Project - Porn (NSFW)",
+      "category": "nsfw",
+      "success": true,
+      "count": 953393,
+      "error": ""
+    },
+    {
+      "name": "Polish Filters Team - KADhosts",
       "category": "ads",
       "success": true,
-      "count": 154432,
+      "count": 57961,
+      "error": ""
+    },
+    {
+      "name": "HaGeZi Multi PRO",
+      "category": "ads",
+      "success": true,
+      "count": 217939,
       "error": ""
     },
     {
       "name": "OISD Big Blocklist",
       "category": "ads",
       "success": true,
-      "count": 269203,
+      "count": 269836,
       "error": ""
     },
     {
@@ -184,17 +191,17 @@
       "error": ""
     },
     {
-      "name": "OISD NSFW Blocklist",
-      "category": "nsfw",
+      "name": "HaGeZi Fake (Scam/Spam)",
+      "category": "spam",
       "success": true,
-      "count": 494546,
+      "count": 16861,
       "error": ""
     },
     {
-      "name": "HaGeZi Multi PRO",
-      "category": "ads",
+      "name": "OISD NSFW Blocklist",
+      "category": "nsfw",
       "success": true,
-      "count": 217939,
+      "count": 494638,
       "error": ""
     },
     {
@@ -209,13 +216,6 @@
       "category": "malware",
       "success": true,
       "count": 1521,
-      "error": ""
-    },
-    {
-      "name": "HaGeZi Fake (Scam/Spam)",
-      "category": "spam",
-      "success": true,
-      "count": 16861,
       "error": ""
     },
     {
