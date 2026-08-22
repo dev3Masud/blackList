@@ -1,17 +1,17 @@
 {
-  "last_updated": "2026-08-22T01:01:30.108135+00:00",
-  "total_domains": 4675778,
+  "last_updated": "2026-08-22T08:25:44.741648+00:00",
+  "total_domains": 4679053,
   "categories": {
     "dating": 1345,
     "social": 24625,
-    "ads": 511859,
+    "ads": 511891,
     "gambling": 525708,
     "cryptomining": 297,
-    "tracking": 793035,
+    "tracking": 796334,
     "torrent": 44425,
     "malware": 2138752,
-    "nsfw": 1141686,
-    "phishing": 132674,
+    "nsfw": 1141701,
+    "phishing": 132576,
     "spam": 24610
   },
   "feeds": [
@@ -23,10 +23,10 @@
       "error": ""
     },
     {
-      "name": "AdGuard Tracking Filter",
-      "category": "tracking",
+      "name": "URLHaus Malware Domains",
+      "category": "malware",
       "success": true,
-      "count": 3512,
+      "count": 384,
       "error": ""
     },
     {
@@ -37,10 +37,10 @@
       "error": ""
     },
     {
-      "name": "URLHaus Malware Domains",
-      "category": "malware",
+      "name": "AdGuard Tracking Filter",
+      "category": "tracking",
       "success": true,
-      "count": 381,
+      "count": 3512,
       "error": ""
     },
     {
@@ -65,17 +65,17 @@
       "error": ""
     },
     {
-      "name": "Phishing Army",
-      "category": "phishing",
-      "success": true,
-      "count": 156945,
-      "error": ""
-    },
-    {
       "name": "BlockList Project - TikTok",
       "category": "social",
       "success": true,
       "count": 3725,
+      "error": ""
+    },
+    {
+      "name": "Phishing Army",
+      "category": "phishing",
+      "success": true,
+      "count": 156829,
       "error": ""
     },
     {
@@ -107,10 +107,10 @@
       "error": ""
     },
     {
-      "name": "StevenBlack Gambling Alternate",
+      "name": "BlockList Project - Gambling",
       "category": "gambling",
       "success": true,
-      "count": 100136,
+      "count": 342623,
       "error": ""
     },
     {
@@ -121,17 +121,10 @@
       "error": ""
     },
     {
-      "name": "Sakib-m Torrent Trackers List",
-      "category": "torrent",
+      "name": "StevenBlack Gambling Alternate",
+      "category": "gambling",
       "success": true,
-      "count": 468,
-      "error": ""
-    },
-    {
-      "name": "BlockList Project - Porn (NSFW)",
-      "category": "nsfw",
-      "success": true,
-      "count": 953393,
+      "count": 100136,
       "error": ""
     },
     {
@@ -142,17 +135,24 @@
       "error": ""
     },
     {
-      "name": "BlockList Project - Gambling",
-      "category": "gambling",
+      "name": "Sakib-m Torrent Trackers List",
+      "category": "torrent",
       "success": true,
-      "count": 342623,
+      "count": 469,
       "error": ""
     },
     {
       "name": "Polish Filters Team - KADhosts",
       "category": "ads",
       "success": true,
-      "count": 49510,
+      "count": 48670,
+      "error": ""
+    },
+    {
+      "name": "BlockList Project - Porn (NSFW)",
+      "category": "nsfw",
+      "success": true,
+      "count": 953393,
       "error": ""
     },
     {
@@ -170,17 +170,17 @@
       "error": ""
     },
     {
-      "name": "OISD Big Blocklist",
-      "category": "ads",
-      "success": true,
-      "count": 268924,
-      "error": ""
-    },
-    {
       "name": "HaGeZi Multi PRO",
       "category": "ads",
       "success": true,
       "count": 223971,
+      "error": ""
+    },
+    {
+      "name": "OISD Big Blocklist",
+      "category": "ads",
+      "success": true,
+      "count": 268882,
       "error": ""
     },
     {
@@ -191,24 +191,17 @@
       "error": ""
     },
     {
-      "name": "HaGeZi Fake (Scam/Spam)",
-      "category": "spam",
-      "success": true,
-      "count": 16974,
-      "error": ""
-    },
-    {
-      "name": "OISD NSFW Blocklist",
-      "category": "nsfw",
-      "success": true,
-      "count": 495112,
-      "error": ""
-    },
-    {
       "name": "HaGeZi Anti-Piracy (Torrent)",
       "category": "torrent",
       "success": true,
       "count": 43321,
+      "error": ""
+    },
+    {
+      "name": "HaGeZi Fake (Scam/Spam)",
+      "category": "spam",
+      "success": true,
+      "count": 16974,
       "error": ""
     },
     {
@@ -219,17 +212,24 @@
       "error": ""
     },
     {
+      "name": "1Hosts Lite",
+      "category": "ads",
+      "success": true,
+      "count": 205504,
+      "error": ""
+    },
+    {
+      "name": "OISD NSFW Blocklist",
+      "category": "nsfw",
+      "success": true,
+      "count": 495127,
+      "error": ""
+    },
+    {
       "name": "HaGeZi Gambling",
       "category": "gambling",
       "success": true,
       "count": 464291,
-      "error": ""
-    },
-    {
-      "name": "1Hosts Lite",
-      "category": "ads",
-      "success": true,
-      "count": 205460,
       "error": ""
     },
     {
@@ -243,7 +243,7 @@
       "name": "1Hosts Xtra",
       "category": "tracking",
       "success": true,
-      "count": 1118086,
+      "count": 1126131,
       "error": ""
     }
   ]
