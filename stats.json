@@ -1,17 +1,17 @@
 {
-  "last_updated": "2026-08-27T18:49:05.281983+00:00",
-  "total_domains": 4697080,
+  "last_updated": "2026-08-28T08:51:53.470960+00:00",
+  "total_domains": 4697741,
   "categories": {
     "dating": 1353,
     "social": 24625,
-    "ads": 509490,
-    "gambling": 525721,
+    "ads": 509899,
+    "gambling": 524882,
     "cryptomining": 297,
     "tracking": 780321,
     "torrent": 45981,
-    "malware": 2155613,
-    "nsfw": 1131127,
-    "phishing": 132431,
+    "malware": 2155618,
+    "nsfw": 1130364,
+    "phishing": 132477,
     "spam": 24809
   },
   "feeds": [
@@ -33,14 +33,7 @@
       "name": "URLHaus Malware Domains",
       "category": "malware",
       "success": true,
-      "count": 394,
-      "error": ""
-    },
-    {
-      "name": "StevenBlack Adware & Malware",
-      "category": "ads",
-      "success": true,
-      "count": 81406,
+      "count": 405,
       "error": ""
     },
     {
@@ -51,17 +44,17 @@
       "error": ""
     },
     {
+      "name": "StevenBlack Adware & Malware",
+      "category": "ads",
+      "success": true,
+      "count": 79758,
+      "error": ""
+    },
+    {
       "name": "ShadowWhisperer - Dating",
       "category": "dating",
       "success": true,
       "count": 1363,
-      "error": ""
-    },
-    {
-      "name": "BlockList Project - Facebook",
-      "category": "social",
-      "success": true,
-      "count": 22362,
       "error": ""
     },
     {
@@ -72,10 +65,17 @@
       "error": ""
     },
     {
-      "name": "BlockList Project - TikTok",
+      "name": "BlockList Project - Facebook",
       "category": "social",
       "success": true,
-      "count": 3725,
+      "count": 22362,
+      "error": ""
+    },
+    {
+      "name": "Phishing Army",
+      "category": "phishing",
+      "success": true,
+      "count": 156832,
       "error": ""
     },
     {
@@ -86,10 +86,17 @@
       "error": ""
     },
     {
-      "name": "Phishing Army",
-      "category": "phishing",
+      "name": "BlockList Project - TikTok",
+      "category": "social",
       "success": true,
-      "count": 156735,
+      "count": 3725,
+      "error": ""
+    },
+    {
+      "name": "BlockList Project - Torrent & Piracy",
+      "category": "torrent",
+      "success": true,
+      "count": 2620,
       "error": ""
     },
     {
@@ -103,14 +110,7 @@
       "name": "StevenBlack NSFW Alternate",
       "category": "nsfw",
       "success": true,
-      "count": 157498,
-      "error": ""
-    },
-    {
-      "name": "BlockList Project - Torrent & Piracy",
-      "category": "torrent",
-      "success": true,
-      "count": 2620,
+      "count": 155851,
       "error": ""
     },
     {
@@ -138,7 +138,7 @@
       "name": "StevenBlack Gambling Alternate",
       "category": "gambling",
       "success": true,
-      "count": 88022,
+      "count": 86395,
       "error": ""
     },
     {
@@ -149,10 +149,10 @@
       "error": ""
     },
     {
-      "name": "Polish Filters Team - KADhosts",
+      "name": "OISD Big Blocklist",
       "category": "ads",
       "success": true,
-      "count": 42120,
+      "count": 267561,
       "error": ""
     },
     {
@@ -170,17 +170,17 @@
       "error": ""
     },
     {
+      "name": "Polish Filters Team - KADhosts",
+      "category": "ads",
+      "success": true,
+      "count": 42324,
+      "error": ""
+    },
+    {
       "name": "HaGeZi Multi PRO",
       "category": "ads",
       "success": true,
       "count": 226021,
-      "error": ""
-    },
-    {
-      "name": "OISD Big Blocklist",
-      "category": "ads",
-      "success": true,
-      "count": 266883,
       "error": ""
     },
     {
@@ -191,10 +191,10 @@
       "error": ""
     },
     {
-      "name": "OISD NSFW Blocklist",
-      "category": "nsfw",
+      "name": "HaGeZi Anti-Piracy (Torrent)",
+      "category": "torrent",
       "success": true,
-      "count": 480088,
+      "count": 44875,
       "error": ""
     },
     {
@@ -205,10 +205,10 @@
       "error": ""
     },
     {
-      "name": "HaGeZi Anti-Piracy (Torrent)",
-      "category": "torrent",
+      "name": "OISD NSFW Blocklist",
+      "category": "nsfw",
       "success": true,
-      "count": 44875,
+      "count": 480281,
       "error": ""
     },
     {
