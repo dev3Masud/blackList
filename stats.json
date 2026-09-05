@@ -1,27 +1,20 @@
 {
-  "last_updated": "2026-09-04T18:49:03.307976+00:00",
-  "total_domains": 4736463,
+  "last_updated": "2026-09-05T02:46:18.745433+00:00",
+  "total_domains": 4736700,
   "categories": {
-    "gambling": 519040,
-    "torrent": 49646,
-    "phishing": 134171,
+    "gambling": 518993,
+    "torrent": 49626,
+    "phishing": 134090,
     "social": 24625,
     "dating": 1353,
-    "ads": 508586,
+    "ads": 510407,
     "tracking": 790425,
     "cryptomining": 297,
-    "spam": 24600,
-    "malware": 2175962,
-    "nsfw": 1137651
+    "spam": 24570,
+    "malware": 2174411,
+    "nsfw": 1137450
   },
   "feeds": [
-    {
-      "name": "NoCoin Cryptomining List",
-      "category": "cryptomining",
-      "success": true,
-      "count": 313,
-      "error": ""
-    },
     {
       "name": "AdGuard Tracking Filter",
       "category": "tracking",
@@ -30,10 +23,17 @@
       "error": ""
     },
     {
-      "name": "URLHaus Malware Domains",
-      "category": "malware",
+      "name": "NoCoin Cryptomining List",
+      "category": "cryptomining",
       "success": true,
-      "count": 385,
+      "count": 313,
+      "error": ""
+    },
+    {
+      "name": "Spam404",
+      "category": "spam",
+      "success": true,
+      "count": 8140,
       "error": ""
     },
     {
@@ -44,10 +44,10 @@
       "error": ""
     },
     {
-      "name": "Spam404",
-      "category": "spam",
+      "name": "URLHaus Malware Domains",
+      "category": "malware",
       "success": true,
-      "count": 8140,
+      "count": 390,
       "error": ""
     },
     {
@@ -72,6 +72,13 @@
       "error": ""
     },
     {
+      "name": "BlockList Project - TikTok",
+      "category": "social",
+      "success": true,
+      "count": 3725,
+      "error": ""
+    },
+    {
       "name": "BlockList Project - Twitter",
       "category": "social",
       "success": true,
@@ -82,28 +89,7 @@
       "name": "Phishing Army",
       "category": "phishing",
       "success": true,
-      "count": 158202,
-      "error": ""
-    },
-    {
-      "name": "BlockList Project - TikTok",
-      "category": "social",
-      "success": true,
-      "count": 3725,
-      "error": ""
-    },
-    {
-      "name": "BlockList Project - Torrent & Piracy",
-      "category": "torrent",
-      "success": true,
-      "count": 2620,
-      "error": ""
-    },
-    {
-      "name": "BlockList Project - Gambling",
-      "category": "gambling",
-      "success": true,
-      "count": 342623,
+      "count": 158059,
       "error": ""
     },
     {
@@ -114,10 +100,10 @@
       "error": ""
     },
     {
-      "name": "FadeMind Spam Hosts",
-      "category": "spam",
+      "name": "BlockList Project - Torrent & Piracy",
+      "category": "torrent",
       "success": true,
-      "count": 57,
+      "count": 2620,
       "error": ""
     },
     {
@@ -128,10 +114,10 @@
       "error": ""
     },
     {
-      "name": "Sakib-m Torrent Trackers List",
-      "category": "torrent",
+      "name": "FadeMind Spam Hosts",
+      "category": "spam",
       "success": true,
-      "count": 479,
+      "count": 57,
       "error": ""
     },
     {
@@ -142,24 +128,24 @@
       "error": ""
     },
     {
+      "name": "Sakib-m Torrent Trackers List",
+      "category": "torrent",
+      "success": true,
+      "count": 480,
+      "error": ""
+    },
+    {
+      "name": "BlockList Project - Gambling",
+      "category": "gambling",
+      "success": true,
+      "count": 342623,
+      "error": ""
+    },
+    {
       "name": "EasyPrivacy Tracking List",
       "category": "tracking",
       "success": true,
       "count": 43000,
-      "error": ""
-    },
-    {
-      "name": "Polish Filters Team - KADhosts",
-      "category": "ads",
-      "success": true,
-      "count": 43191,
-      "error": ""
-    },
-    {
-      "name": "DandelionSprout Anti-Malware",
-      "category": "malware",
-      "success": true,
-      "count": 12357,
       "error": ""
     },
     {
@@ -170,31 +156,52 @@
       "error": ""
     },
     {
-      "name": "OISD Big Blocklist",
+      "name": "DandelionSprout Anti-Malware",
+      "category": "malware",
+      "success": true,
+      "count": 12357,
+      "error": ""
+    },
+    {
+      "name": "Polish Filters Team - KADhosts",
       "category": "ads",
       "success": true,
-      "count": 270117,
+      "count": 43173,
+      "error": ""
+    },
+    {
+      "name": "HaGeZi Multi PRO",
+      "category": "ads",
+      "success": true,
+      "count": 226420,
       "error": ""
     },
     {
       "name": "HaGeZi NSFW (Adult)",
       "category": "nsfw",
       "success": true,
-      "count": 125657,
-      "error": ""
-    },
-    {
-      "name": "OISD NSFW Blocklist",
-      "category": "nsfw",
-      "success": true,
-      "count": 489684,
+      "count": 125626,
       "error": ""
     },
     {
       "name": "HaGeZi Anti-Piracy (Torrent)",
       "category": "torrent",
       "success": true,
-      "count": 48521,
+      "count": 48501,
+      "error": ""
+    },
+    {
+      "name": "OISD Big Blocklist",
+      "category": "ads",
+      "success": true,
+      "count": 270033,
+      "error": ""
+    },
+    {
+      "name": "HaGeZi Fake (Scam/Spam)",
+      "category": "spam",
+      "success": true,
+      "count": 16935,
       "error": ""
     },
     {
@@ -205,17 +212,17 @@
       "error": ""
     },
     {
-      "name": "HaGeZi Fake (Scam/Spam)",
-      "category": "spam",
+      "name": "HaGeZi Gambling",
+      "category": "gambling",
       "success": true,
-      "count": 16965,
+      "count": 461086,
       "error": ""
     },
     {
-      "name": "HaGeZi Multi PRO",
-      "category": "ads",
+      "name": "OISD NSFW Blocklist",
+      "category": "nsfw",
       "success": true,
-      "count": 224442,
+      "count": 489395,
       "error": ""
     },
     {
@@ -226,17 +233,10 @@
       "error": ""
     },
     {
-      "name": "HaGeZi Gambling",
-      "category": "gambling",
-      "success": true,
-      "count": 461179,
-      "error": ""
-    },
-    {
       "name": "HaGeZi Threat Intelligence (TIF)",
       "category": "malware",
       "success": true,
-      "count": 2175118,
+      "count": 2173533,
       "error": ""
     },
     {
