@@ -1,32 +1,25 @@
 {
-  "last_updated": "2026-09-07T02:41:28.345670+00:00",
-  "total_domains": 4700469,
+  "last_updated": "2026-09-07T13:57:45.603617+00:00",
+  "total_domains": 4734250,
   "categories": {
-    "gambling": 527752,
-    "torrent": 50082,
-    "phishing": 132874,
+    "gambling": 530502,
+    "torrent": 49984,
+    "phishing": 133325,
     "social": 24625,
     "dating": 1353,
-    "ads": 509110,
+    "ads": 510899,
     "tracking": 790425,
     "cryptomining": 297,
-    "spam": 24505,
-    "malware": 2122551,
-    "nsfw": 1140048
+    "spam": 24438,
+    "malware": 2151234,
+    "nsfw": 1141007
   },
   "feeds": [
     {
       "name": "AdGuard Tracking Filter",
       "category": "tracking",
       "success": true,
-      "count": 3531,
-      "error": ""
-    },
-    {
-      "name": "URLHaus Malware Domains",
-      "category": "malware",
-      "success": true,
-      "count": 379,
+      "count": 3532,
       "error": ""
     },
     {
@@ -37,10 +30,10 @@
       "error": ""
     },
     {
-      "name": "Spam404",
-      "category": "spam",
+      "name": "URLHaus Malware Domains",
+      "category": "malware",
       "success": true,
-      "count": 8140,
+      "count": 359,
       "error": ""
     },
     {
@@ -51,17 +44,17 @@
       "error": ""
     },
     {
+      "name": "Spam404",
+      "category": "spam",
+      "success": true,
+      "count": 8140,
+      "error": ""
+    },
+    {
       "name": "ShadowWhisperer - Dating",
       "category": "dating",
       "success": true,
       "count": 1363,
-      "error": ""
-    },
-    {
-      "name": "BlockList Project - Porn (NSFW)",
-      "category": "nsfw",
-      "success": true,
-      "count": 953393,
       "error": ""
     },
     {
@@ -72,10 +65,10 @@
       "error": ""
     },
     {
-      "name": "Phishing Army",
-      "category": "phishing",
+      "name": "BlockList Project - TikTok",
+      "category": "social",
       "success": true,
-      "count": 156363,
+      "count": 3725,
       "error": ""
     },
     {
@@ -86,17 +79,10 @@
       "error": ""
     },
     {
-      "name": "BlockList Project - TikTok",
-      "category": "social",
+      "name": "BlockList Project - Porn (NSFW)",
+      "category": "nsfw",
       "success": true,
-      "count": 3725,
-      "error": ""
-    },
-    {
-      "name": "BlockList Project - Torrent & Piracy",
-      "category": "torrent",
-      "success": true,
-      "count": 2620,
+      "count": 953393,
       "error": ""
     },
     {
@@ -107,31 +93,17 @@
       "error": ""
     },
     {
-      "name": "StevenBlack NSFW Alternate",
-      "category": "nsfw",
+      "name": "Phishing Army",
+      "category": "phishing",
       "success": true,
-      "count": 156136,
+      "count": 156789,
       "error": ""
     },
     {
-      "name": "FadeMind Spam Hosts",
-      "category": "spam",
-      "success": true,
-      "count": 57,
-      "error": ""
-    },
-    {
-      "name": "StevenBlack Gambling Alternate",
-      "category": "gambling",
-      "success": true,
-      "count": 86694,
-      "error": ""
-    },
-    {
-      "name": "Sakib-m Torrent Trackers List",
+      "name": "BlockList Project - Torrent & Piracy",
       "category": "torrent",
       "success": true,
-      "count": 480,
+      "count": 2620,
       "error": ""
     },
     {
@@ -142,17 +114,38 @@
       "error": ""
     },
     {
+      "name": "FadeMind Spam Hosts",
+      "category": "spam",
+      "success": true,
+      "count": 57,
+      "error": ""
+    },
+    {
+      "name": "StevenBlack NSFW Alternate",
+      "category": "nsfw",
+      "success": true,
+      "count": 156136,
+      "error": ""
+    },
+    {
+      "name": "Sakib-m Torrent Trackers List",
+      "category": "torrent",
+      "success": true,
+      "count": 480,
+      "error": ""
+    },
+    {
+      "name": "StevenBlack Gambling Alternate",
+      "category": "gambling",
+      "success": true,
+      "count": 86694,
+      "error": ""
+    },
+    {
       "name": "EasyPrivacy Tracking List",
       "category": "tracking",
       "success": true,
       "count": 43000,
-      "error": ""
-    },
-    {
-      "name": "Polish Filters Team - KADhosts",
-      "category": "ads",
-      "success": true,
-      "count": 42399,
       "error": ""
     },
     {
@@ -170,31 +163,38 @@
       "error": ""
     },
     {
-      "name": "OISD Big Blocklist",
+      "name": "Polish Filters Team - KADhosts",
       "category": "ads",
       "success": true,
-      "count": 268662,
+      "count": 43115,
       "error": ""
     },
     {
       "name": "HaGeZi NSFW (Adult)",
       "category": "nsfw",
       "success": true,
-      "count": 127091,
+      "count": 127897,
       "error": ""
     },
     {
-      "name": "OISD NSFW Blocklist",
-      "category": "nsfw",
+      "name": "OISD Big Blocklist",
+      "category": "ads",
       "success": true,
-      "count": 490018,
+      "count": 270589,
       "error": ""
     },
     {
-      "name": "HaGeZi Anti-Piracy (Torrent)",
-      "category": "torrent",
+      "name": "HaGeZi Multi PRO",
+      "category": "ads",
       "success": true,
-      "count": 48957,
+      "count": 224011,
+      "error": ""
+    },
+    {
+      "name": "HaGeZi Fake (Scam/Spam)",
+      "category": "spam",
+      "success": true,
+      "count": 16803,
       "error": ""
     },
     {
@@ -205,24 +205,24 @@
       "error": ""
     },
     {
-      "name": "HaGeZi Multi PRO",
-      "category": "ads",
+      "name": "OISD NSFW Blocklist",
+      "category": "nsfw",
       "success": true,
-      "count": 224797,
+      "count": 490169,
       "error": ""
     },
     {
-      "name": "HaGeZi Fake (Scam/Spam)",
-      "category": "spam",
+      "name": "HaGeZi Anti-Piracy (Torrent)",
+      "category": "torrent",
       "success": true,
-      "count": 16870,
+      "count": 48859,
       "error": ""
     },
     {
       "name": "HaGeZi Gambling",
       "category": "gambling",
       "success": true,
-      "count": 469516,
+      "count": 471875,
       "error": ""
     },
     {
@@ -236,7 +236,7 @@
       "name": "HaGeZi Threat Intelligence (TIF)",
       "category": "malware",
       "success": true,
-      "count": 2121596,
+      "count": 2150248,
       "error": ""
     },
     {
