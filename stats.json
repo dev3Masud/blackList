@@ -1,34 +1,20 @@
 {
-  "last_updated": "2026-09-06T18:00:29.825227+00:00",
-  "total_domains": 4699560,
+  "last_updated": "2026-09-07T02:41:28.345670+00:00",
+  "total_domains": 4700469,
   "categories": {
     "gambling": 527752,
     "torrent": 50082,
-    "phishing": 132962,
+    "phishing": 132874,
     "social": 24625,
     "dating": 1353,
-    "ads": 509794,
+    "ads": 509110,
     "tracking": 790425,
     "cryptomining": 297,
     "spam": 24505,
-    "malware": 2122545,
-    "nsfw": 1139234
+    "malware": 2122551,
+    "nsfw": 1140048
   },
   "feeds": [
-    {
-      "name": "NoCoin Cryptomining List",
-      "category": "cryptomining",
-      "success": true,
-      "count": 313,
-      "error": ""
-    },
-    {
-      "name": "URLHaus Malware Domains",
-      "category": "malware",
-      "success": true,
-      "count": 373,
-      "error": ""
-    },
     {
       "name": "AdGuard Tracking Filter",
       "category": "tracking",
@@ -37,10 +23,17 @@
       "error": ""
     },
     {
-      "name": "StevenBlack Adware & Malware",
-      "category": "ads",
+      "name": "URLHaus Malware Domains",
+      "category": "malware",
       "success": true,
-      "count": 80006,
+      "count": 379,
+      "error": ""
+    },
+    {
+      "name": "NoCoin Cryptomining List",
+      "category": "cryptomining",
+      "success": true,
+      "count": 313,
       "error": ""
     },
     {
@@ -51,24 +44,17 @@
       "error": ""
     },
     {
+      "name": "StevenBlack Adware & Malware",
+      "category": "ads",
+      "success": true,
+      "count": 80006,
+      "error": ""
+    },
+    {
       "name": "ShadowWhisperer - Dating",
       "category": "dating",
       "success": true,
       "count": 1363,
-      "error": ""
-    },
-    {
-      "name": "BlockList Project - Facebook",
-      "category": "social",
-      "success": true,
-      "count": 22362,
-      "error": ""
-    },
-    {
-      "name": "BlockList Project - TikTok",
-      "category": "social",
-      "success": true,
-      "count": 3725,
       "error": ""
     },
     {
@@ -79,6 +65,20 @@
       "error": ""
     },
     {
+      "name": "BlockList Project - Facebook",
+      "category": "social",
+      "success": true,
+      "count": 22362,
+      "error": ""
+    },
+    {
+      "name": "Phishing Army",
+      "category": "phishing",
+      "success": true,
+      "count": 156363,
+      "error": ""
+    },
+    {
       "name": "BlockList Project - Twitter",
       "category": "social",
       "success": true,
@@ -86,10 +86,17 @@
       "error": ""
     },
     {
-      "name": "Phishing Army",
-      "category": "phishing",
+      "name": "BlockList Project - TikTok",
+      "category": "social",
       "success": true,
-      "count": 156554,
+      "count": 3725,
+      "error": ""
+    },
+    {
+      "name": "BlockList Project - Torrent & Piracy",
+      "category": "torrent",
+      "success": true,
+      "count": 2620,
       "error": ""
     },
     {
@@ -104,13 +111,6 @@
       "category": "nsfw",
       "success": true,
       "count": 156136,
-      "error": ""
-    },
-    {
-      "name": "BlockList Project - Torrent & Piracy",
-      "category": "torrent",
-      "success": true,
-      "count": 2620,
       "error": ""
     },
     {
@@ -142,13 +142,6 @@
       "error": ""
     },
     {
-      "name": "OISD Big Blocklist",
-      "category": "ads",
-      "success": true,
-      "count": 269334,
-      "error": ""
-    },
-    {
       "name": "EasyPrivacy Tracking List",
       "category": "tracking",
       "success": true,
@@ -159,14 +152,7 @@
       "name": "Polish Filters Team - KADhosts",
       "category": "ads",
       "success": true,
-      "count": 42247,
-      "error": ""
-    },
-    {
-      "name": "DandelionSprout Anti-Malware",
-      "category": "malware",
-      "success": true,
-      "count": 12357,
+      "count": 42399,
       "error": ""
     },
     {
@@ -177,17 +163,17 @@
       "error": ""
     },
     {
-      "name": "OISD NSFW Blocklist",
-      "category": "nsfw",
+      "name": "DandelionSprout Anti-Malware",
+      "category": "malware",
       "success": true,
-      "count": 489026,
+      "count": 12357,
       "error": ""
     },
     {
-      "name": "HaGeZi Multi PRO",
+      "name": "OISD Big Blocklist",
       "category": "ads",
       "success": true,
-      "count": 224797,
+      "count": 268662,
       "error": ""
     },
     {
@@ -198,6 +184,13 @@
       "error": ""
     },
     {
+      "name": "OISD NSFW Blocklist",
+      "category": "nsfw",
+      "success": true,
+      "count": 490018,
+      "error": ""
+    },
+    {
       "name": "HaGeZi Anti-Piracy (Torrent)",
       "category": "torrent",
       "success": true,
@@ -205,17 +198,24 @@
       "error": ""
     },
     {
-      "name": "HaGeZi Fake (Scam/Spam)",
-      "category": "spam",
-      "success": true,
-      "count": 16870,
-      "error": ""
-    },
-    {
       "name": "HaGeZi Dynamic DNS",
       "category": "malware",
       "success": true,
       "count": 1534,
+      "error": ""
+    },
+    {
+      "name": "HaGeZi Multi PRO",
+      "category": "ads",
+      "success": true,
+      "count": 224797,
+      "error": ""
+    },
+    {
+      "name": "HaGeZi Fake (Scam/Spam)",
+      "category": "spam",
+      "success": true,
+      "count": 16870,
       "error": ""
     },
     {
