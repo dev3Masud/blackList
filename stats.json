@@ -1,18 +1,18 @@
 {
-  "last_updated": "2026-09-21T14:50:16.725582+00:00",
-  "total_domains": 5323080,
+  "last_updated": "2026-09-21T20:16:31.948932+00:00",
+  "total_domains": 5323481,
   "categories": {
     "gambling": 584729,
     "torrent": 52829,
-    "phishing": 129220,
+    "phishing": 129204,
     "social": 24625,
     "dating": 1361,
-    "ads": 499698,
-    "tracking": 790469,
+    "ads": 499908,
+    "tracking": 790472,
     "cryptomining": 296,
     "spam": 24893,
-    "malware": 2714153,
-    "nsfw": 1107226
+    "malware": 2714154,
+    "nsfw": 1107461
   },
   "feeds": [
     {
@@ -23,6 +23,20 @@
       "error": ""
     },
     {
+      "name": "AdGuard Tracking Filter",
+      "category": "tracking",
+      "success": true,
+      "count": 3538,
+      "error": ""
+    },
+    {
+      "name": "URLHaus Malware Domains",
+      "category": "malware",
+      "success": true,
+      "count": 393,
+      "error": ""
+    },
+    {
       "name": "StevenBlack Adware & Malware",
       "category": "ads",
       "success": true,
@@ -30,24 +44,10 @@
       "error": ""
     },
     {
-      "name": "AdGuard Tracking Filter",
-      "category": "tracking",
-      "success": true,
-      "count": 3535,
-      "error": ""
-    },
-    {
       "name": "Spam404",
       "category": "spam",
       "success": true,
       "count": 8140,
-      "error": ""
-    },
-    {
-      "name": "URLHaus Malware Domains",
-      "category": "malware",
-      "success": true,
-      "count": 367,
       "error": ""
     },
     {
@@ -89,7 +89,7 @@
       "name": "Phishing Army",
       "category": "phishing",
       "success": true,
-      "count": 151525,
+      "count": 151481,
       "error": ""
     },
     {
@@ -107,10 +107,10 @@
       "error": ""
     },
     {
-      "name": "StevenBlack NSFW Alternate",
-      "category": "nsfw",
+      "name": "BlockList Project - Gambling",
+      "category": "gambling",
       "success": true,
-      "count": 152651,
+      "count": 342623,
       "error": ""
     },
     {
@@ -121,10 +121,10 @@
       "error": ""
     },
     {
-      "name": "StevenBlack Gambling Alternate",
-      "category": "gambling",
+      "name": "StevenBlack NSFW Alternate",
+      "category": "nsfw",
       "success": true,
-      "count": 83247,
+      "count": 152651,
       "error": ""
     },
     {
@@ -135,31 +135,17 @@
       "error": ""
     },
     {
-      "name": "BlockList Project - Gambling",
+      "name": "StevenBlack Gambling Alternate",
       "category": "gambling",
       "success": true,
-      "count": 342623,
-      "error": ""
-    },
-    {
-      "name": "OISD Big Blocklist",
-      "category": "ads",
-      "success": true,
-      "count": 246360,
-      "error": ""
-    },
-    {
-      "name": "EasyPrivacy Tracking List",
-      "category": "tracking",
-      "success": true,
-      "count": 43081,
+      "count": 83247,
       "error": ""
     },
     {
       "name": "Polish Filters Team - KADhosts",
       "category": "ads",
       "success": true,
-      "count": 42423,
+      "count": 42515,
       "error": ""
     },
     {
@@ -170,17 +156,24 @@
       "error": ""
     },
     {
-      "name": "OISD NSFW Blocklist",
-      "category": "nsfw",
+      "name": "EasyPrivacy Tracking List",
+      "category": "tracking",
       "success": true,
-      "count": 465499,
+      "count": 43081,
       "error": ""
     },
     {
-      "name": "HaGeZi NSFW (Adult)",
+      "name": "OISD NSFW Blocklist",
       "category": "nsfw",
       "success": true,
-      "count": 74134,
+      "count": 465630,
+      "error": ""
+    },
+    {
+      "name": "OISD Big Blocklist",
+      "category": "ads",
+      "success": true,
+      "count": 246527,
       "error": ""
     },
     {
@@ -191,24 +184,10 @@
       "error": ""
     },
     {
-      "name": "HaGeZi Anti-Piracy (Torrent)",
-      "category": "torrent",
+      "name": "HaGeZi NSFW (Adult)",
+      "category": "nsfw",
       "success": true,
-      "count": 51717,
-      "error": ""
-    },
-    {
-      "name": "HaGeZi Dynamic DNS",
-      "category": "malware",
-      "success": true,
-      "count": 1539,
-      "error": ""
-    },
-    {
-      "name": "HaGeZi Fake (Scam/Spam)",
-      "category": "spam",
-      "success": true,
-      "count": 17257,
+      "count": 74134,
       "error": ""
     },
     {
@@ -219,10 +198,24 @@
       "error": ""
     },
     {
-      "name": "HaGeZi Gambling",
-      "category": "gambling",
+      "name": "HaGeZi Fake (Scam/Spam)",
+      "category": "spam",
       "success": true,
-      "count": 528738,
+      "count": 17257,
+      "error": ""
+    },
+    {
+      "name": "HaGeZi Dynamic DNS",
+      "category": "malware",
+      "success": true,
+      "count": 1539,
+      "error": ""
+    },
+    {
+      "name": "HaGeZi Anti-Piracy (Torrent)",
+      "category": "torrent",
+      "success": true,
+      "count": 51717,
       "error": ""
     },
     {
@@ -230,6 +223,13 @@
       "category": "ads",
       "success": true,
       "count": 202954,
+      "error": ""
+    },
+    {
+      "name": "HaGeZi Gambling",
+      "category": "gambling",
+      "success": true,
+      "count": 528738,
       "error": ""
     },
     {
