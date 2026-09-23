@@ -1,18 +1,18 @@
 {
-  "last_updated": "2026-09-22T19:33:46.119523+00:00",
-  "total_domains": 5384797,
+  "last_updated": "2026-09-23T03:07:34.619048+00:00",
+  "total_domains": 5385347,
   "categories": {
     "gambling": 586621,
     "torrent": 52930,
-    "phishing": 129102,
+    "phishing": 129101,
     "social": 24625,
     "dating": 1361,
-    "ads": 500418,
+    "ads": 500495,
     "tracking": 790475,
     "cryptomining": 296,
     "spam": 24928,
-    "malware": 2772218,
-    "nsfw": 1107587
+    "malware": 2772223,
+    "nsfw": 1108121
   },
   "feeds": [
     {
@@ -23,17 +23,17 @@
       "error": ""
     },
     {
-      "name": "URLHaus Malware Domains",
-      "category": "malware",
-      "success": true,
-      "count": 373,
-      "error": ""
-    },
-    {
       "name": "StevenBlack Adware & Malware",
       "category": "ads",
       "success": true,
       "count": 76241,
+      "error": ""
+    },
+    {
+      "name": "URLHaus Malware Domains",
+      "category": "malware",
+      "success": true,
+      "count": 388,
       "error": ""
     },
     {
@@ -79,17 +79,17 @@
       "error": ""
     },
     {
-      "name": "Phishing Army",
-      "category": "phishing",
-      "success": true,
-      "count": 151362,
-      "error": ""
-    },
-    {
       "name": "BlockList Project - YouTube",
       "category": "social",
       "success": true,
       "count": 24280,
+      "error": ""
+    },
+    {
+      "name": "Phishing Army",
+      "category": "phishing",
+      "success": true,
+      "count": 151247,
       "error": ""
     },
     {
@@ -142,10 +142,24 @@
       "error": ""
     },
     {
+      "name": "AdGuard DNS Ads list",
+      "category": "ads",
+      "success": true,
+      "count": 180537,
+      "error": ""
+    },
+    {
       "name": "OISD Big Blocklist",
       "category": "ads",
       "success": true,
-      "count": 246685,
+      "count": 246775,
+      "error": ""
+    },
+    {
+      "name": "DandelionSprout Anti-Malware",
+      "category": "malware",
+      "success": true,
+      "count": 12357,
       "error": ""
     },
     {
@@ -159,21 +173,7 @@
       "name": "Polish Filters Team - KADhosts",
       "category": "ads",
       "success": true,
-      "count": 42886,
-      "error": ""
-    },
-    {
-      "name": "DandelionSprout Anti-Malware",
-      "category": "malware",
-      "success": true,
-      "count": 12357,
-      "error": ""
-    },
-    {
-      "name": "HaGeZi Multi PRO",
-      "category": "ads",
-      "success": true,
-      "count": 229019,
+      "count": 42968,
       "error": ""
     },
     {
@@ -184,10 +184,10 @@
       "error": ""
     },
     {
-      "name": "OISD NSFW Blocklist",
-      "category": "nsfw",
+      "name": "HaGeZi Multi PRO",
+      "category": "ads",
       "success": true,
-      "count": 465450,
+      "count": 229019,
       "error": ""
     },
     {
@@ -198,10 +198,10 @@
       "error": ""
     },
     {
-      "name": "AdGuard DNS Ads list",
-      "category": "ads",
+      "name": "HaGeZi Fake (Scam/Spam)",
+      "category": "spam",
       "success": true,
-      "count": 180537,
+      "count": 17292,
       "error": ""
     },
     {
@@ -212,10 +212,10 @@
       "error": ""
     },
     {
-      "name": "HaGeZi Fake (Scam/Spam)",
-      "category": "spam",
+      "name": "OISD NSFW Blocklist",
+      "category": "nsfw",
       "success": true,
-      "count": 17292,
+      "count": 465700,
       "error": ""
     },
     {
