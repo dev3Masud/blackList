@@ -1,27 +1,20 @@
 {
-  "last_updated": "2026-10-10T14:12:48.919827+00:00",
-  "total_domains": 4636941,
+  "last_updated": "2026-10-10T19:43:23.622880+00:00",
+  "total_domains": 4638599,
   "categories": {
     "tracking": 790534,
     "dating": 1369,
     "gambling": 638180,
     "cryptomining": 296,
     "torrent": 56052,
-    "nsfw": 1113354,
+    "nsfw": 1115099,
     "social": 24625,
     "spam": 24662,
-    "malware": 2004576,
-    "phishing": 121395,
-    "ads": 480739
+    "malware": 2004578,
+    "phishing": 121133,
+    "ads": 480793
   },
   "feeds": [
-    {
-      "name": "AdGuard Tracking Filter",
-      "category": "tracking",
-      "success": true,
-      "count": 3535,
-      "error": ""
-    },
     {
       "name": "NoCoin Cryptomining List",
       "category": "cryptomining",
@@ -37,17 +30,24 @@
       "error": ""
     },
     {
-      "name": "Spam404",
-      "category": "spam",
+      "name": "AdGuard Tracking Filter",
+      "category": "tracking",
       "success": true,
-      "count": 8140,
+      "count": 3536,
       "error": ""
     },
     {
       "name": "URLHaus Malware Domains",
       "category": "malware",
       "success": true,
-      "count": 398,
+      "count": 399,
+      "error": ""
+    },
+    {
+      "name": "Spam404",
+      "category": "spam",
+      "success": true,
+      "count": 8140,
       "error": ""
     },
     {
@@ -75,7 +75,7 @@
       "name": "Phishing Army",
       "category": "phishing",
       "success": true,
-      "count": 142222,
+      "count": 141980,
       "error": ""
     },
     {
@@ -121,24 +121,10 @@
       "error": ""
     },
     {
-      "name": "StevenBlack Gambling Alternate",
-      "category": "gambling",
-      "success": true,
-      "count": 79658,
-      "error": ""
-    },
-    {
       "name": "Sakib-m Torrent Trackers List",
       "category": "torrent",
       "success": true,
       "count": 495,
-      "error": ""
-    },
-    {
-      "name": "EasyPrivacy Tracking List",
-      "category": "tracking",
-      "success": true,
-      "count": 43184,
       "error": ""
     },
     {
@@ -149,17 +135,24 @@
       "error": ""
     },
     {
-      "name": "Polish Filters Team - KADhosts",
-      "category": "ads",
+      "name": "EasyPrivacy Tracking List",
+      "category": "tracking",
       "success": true,
-      "count": 39975,
+      "count": 43184,
       "error": ""
     },
     {
-      "name": "AdGuard DNS Ads list",
+      "name": "StevenBlack Gambling Alternate",
+      "category": "gambling",
+      "success": true,
+      "count": 79658,
+      "error": ""
+    },
+    {
+      "name": "Polish Filters Team - KADhosts",
       "category": "ads",
       "success": true,
-      "count": 178722,
+      "count": 40121,
       "error": ""
     },
     {
@@ -170,6 +163,13 @@
       "error": ""
     },
     {
+      "name": "AdGuard DNS Ads list",
+      "category": "ads",
+      "success": true,
+      "count": 178722,
+      "error": ""
+    },
+    {
       "name": "HaGeZi Multi PRO",
       "category": "ads",
       "success": true,
@@ -177,17 +177,17 @@
       "error": ""
     },
     {
-      "name": "OISD Big Blocklist",
-      "category": "ads",
-      "success": true,
-      "count": 237935,
-      "error": ""
-    },
-    {
       "name": "HaGeZi NSFW (Adult)",
       "category": "nsfw",
       "success": true,
       "count": 87298,
+      "error": ""
+    },
+    {
+      "name": "OISD Big Blocklist",
+      "category": "ads",
+      "success": true,
+      "count": 237760,
       "error": ""
     },
     {
@@ -212,10 +212,10 @@
       "error": ""
     },
     {
-      "name": "OISD NSFW Blocklist",
-      "category": "nsfw",
+      "name": "HaGeZi Gambling",
+      "category": "gambling",
       "success": true,
-      "count": 462977,
+      "count": 580947,
       "error": ""
     },
     {
@@ -226,10 +226,10 @@
       "error": ""
     },
     {
-      "name": "HaGeZi Gambling",
-      "category": "gambling",
+      "name": "OISD NSFW Blocklist",
+      "category": "nsfw",
       "success": true,
-      "count": 580947,
+      "count": 464807,
       "error": ""
     },
     {
